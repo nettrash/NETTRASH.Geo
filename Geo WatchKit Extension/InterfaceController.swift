@@ -12,11 +12,15 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+	@IBOutlet var lblAltitudeInfo: WKInterfaceLabel!
+	
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
-    }
+		let ext: ExtensionDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+		ext.bar.dataUpdated = barometerDataUpdate
+	}
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
@@ -27,5 +31,10 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+	
+	func barometerDataUpdate() {
+		let ext: ExtensionDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+		self.lblAltitudeInfo.setText(String(format: "%.0f m", ext.bar.height))
+	}
 
 }

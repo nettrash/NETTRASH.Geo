@@ -9,67 +9,61 @@
 import UIKit
 import CoreMotion
 import CoreLocation
+import MapKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
-	var barometerManager: CMAltimeter? = nil
-	var locationManager: CLLocationManager? = nil
-	var isLocationEnabled: Bool = false
-	var barH: Double = 0
-	var locH: Double = 0
-	var barPressure: Double = 0
-	var barDeltaH: Double = 0
+	private let bar: Barometer = Barometer()
+	private let locationManager: CLLocationManager = CLLocationManager()
 	
-	@IBOutlet var lblResult: UILabel?
+	@IBOutlet var lblBarometerAltitude: UILabel!
+	@IBOutlet var lblLocationAltitude: UILabel!
+	@IBOutlet var lblLocationCoordinatesLatitude: UILabel!
+	@IBOutlet var lblLocationCoordinatesLongitude: UILabel!
+	@IBOutlet var lblBarometerPressure: UILabel!
+	@IBOutlet var lblGeocodeInformation: UILabel!
+
+	private var barAltitude: Double = 0
+	private var barPressure: Double = 0
+	private var location: CLLocation? = nil
 	
+	private var stepLocation: CLLocation? = nil
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		if CMAltimeter.isRelativeAltitudeAvailable() {
-			// Do any additional setup after loading the view.
-			barometerManager = CMAltimeter()
-			barometerManager?.startRelativeAltitudeUpdates(to: OperationQueue.main, withHandler: { (data: CMAltitudeData?
-				, error: Error?) in
-				if data != nil {
-					self.barPressure = data!.pressure.doubleValue
-					self.barDeltaH = data!.relativeAltitude.doubleValue
-					//h = k*T*ln(P0/Ph)/(m*g)
-					//P0 = 101325 Па
-					//g = 9.8 м/с^2
-					//k = 1.38*10^-23 Дж/К
-					//m = 4,817*10^-26 кг
-					//Ph = data!.preassure * 1000
-					//T - температура 293 K = 20 C
-					let T: Double = 296
-					let P0: Double = 101325
-					let g: Double = 9.8
-					let k: Double = 1.38 * pow(10, -23)
-					let m: Double = 4.817 * pow(10, -26)
-					let Ph: Double = data!.pressure.doubleValue * Double(1000)
-					let h: Double = k * T * log(P0 / Ph) / ( m * g )
-					
-					self.barH = h
-					self.refreshAltitudeInfo()
-				}
-			})
-		} else {
-			NSLog("not supported barometer")
-		}
-		
-		locationManager = CLLocationManager()
-		locationManager?.delegate = self
-		locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+		locationManager.delegate = self
+		locationManager.desiredAccuracy = kCLLocationAccuracyBest
 		let status = CLLocationManager.authorizationStatus()
 		if status == .authorizedAlways || status == .authorizedWhenInUse {
 			startLocationMonitor()
 		} else {
-			locationManager?.requestAlwaysAuthorization()
+			locationManager.requestAlwaysAuthorization()
 		}
+		
+		let app = UIApplication.shared.delegate as! AppDelegate
+		app.bar!.dataUpdated = refreshAltitudeInfo
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		if locations.count > 0 {
-			locH = locations[locations.count - 1].altitude
+			self.location = locations[locations.count - 1]
+			if self.stepLocation == nil {
+				self.stepLocation = CLLocation(latitude: self.location!.coordinate.latitude, longitude: self.location!.coordinate.longitude)
+				refreshGeocode()
+			} else if self.stepLocation!.distance(from: self.location!) > 100.0 { // > 100 m
+				self.stepLocation = CLLocation(latitude: self.location!.coordinate.latitude, longitude: self.location!.coordinate.longitude)
+				refreshGeocode()
+			}
+			if self.location != nil {
+				self.lblLocationAltitude.text = String(format: "%.0fm according to the GPS/GLONASS", self.location!.altitude)
+				self.lblLocationCoordinatesLatitude.text = String(format: "%.6f latitude", self.location!.coordinate.latitude)
+				self.lblLocationCoordinatesLongitude.text = String(format: "%.6f longitude", self.location!.coordinate.longitude)
+			} else {
+				self.lblLocationAltitude.text = ""
+				self.lblLocationCoordinatesLatitude.text = ""
+				self.lblLocationCoordinatesLongitude.text = ""
+			}
 		}
 	}
 	
@@ -86,22 +80,40 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	}
 	
 	func startLocationMonitor() {
-		isLocationEnabled = true
-		locationManager?.startUpdatingLocation()
+		locationManager.startUpdatingLocation()
+		self.lblLocationAltitude.text = ""
 	}
 	
 	func stopLocationMonitor() {
-		isLocationEnabled = false
-		locationManager?.stopUpdatingLocation()
+		locationManager.stopUpdatingLocation()
+		self.lblLocationAltitude.text = ""
 	}
 	
 	func refreshAltitudeInfo() {
-		NSLog("barH \(barH) barPressure \(barPressure) barRelativeH \(barDeltaH) locH \(locH)")
-		if isLocationEnabled {
-			self.lblResult?.text = String(format: "%.0f m", locH + barDeltaH)
+		let app = UIApplication.shared.delegate as! AppDelegate
+		if (app.bar != nil) {
+			self.barAltitude = app.bar!.height
+			self.barPressure = app.bar!.pressure
+			self.lblBarometerAltitude.text = String(format: "%.0fm according to the barometer", app.bar!.height)
+			self.lblBarometerPressure.text = String(format: "%.4f kPa %.4f mm Hg %.4f atm", app.bar!.pressure, app.bar!.pressure * 7.50062, app.bar!.pressure / 101.325)
 		} else {
-			self.lblResult?.text = String(format: "%.0f m (293K)", barH)
+			self.lblBarometerAltitude.text = ""
+			self.lblBarometerPressure.text = ""
 		}
+	}
+	
+	func refreshGeocode() {
+		let geocode = Geocode(self.stepLocation!)
+		if geocode.Response?.response?.GeoObjectCollection?.featureMember?.count ?? 0 > 0 {
+			self.lblGeocodeInformation.text = String(format: "%@", geocode.Response?.response?.GeoObjectCollection?.featureMember?[0].GeoObject?.description ?? "")
+		} else {
+			self.lblGeocodeInformation.text = "Geocode unavailable"
+		}
+	}
+	
+	@IBAction func openInMap() {
+		let currentLocationMapItem: MKMapItem = MKMapItem.forCurrentLocation()
+		MKMapItem.openMaps(with: [currentLocationMapItem], launchOptions: [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving])
 	}
 }
 
