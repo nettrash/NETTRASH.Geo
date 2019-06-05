@@ -10,7 +10,9 @@ import ClockKit
 import WatchKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
-    
+	
+	let ext: ExtensionDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+	
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
@@ -33,7 +35,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        handler(nil)
+		return handler(CLKComplicationTimelineEntry(date: Date(), complicationTemplate: getTemplate(complication)))
     }
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
@@ -50,14 +52,25 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
+		return handler(getTemplate(complication))
+	}
+	
+	// MAIN FUNCTION
+	
+	private func getTemplate(_ complication: CLKComplication) -> CLKComplicationTemplate {
+		let heightText = String(format: "%.0f", ext.bar.height)
+		let pressureText = String(format: "%.0f", ext.bar.pressure * 7.50062)
+		let everest: Float = Float(ext.bar.height / 8848)
+		let heightUnitText = "m"
+		
 		var template: CLKComplicationTemplate?
 		switch complication.family {
 		case .modularSmall:
 			let modularSmallTemplate =
 				CLKComplicationTemplateModularSmallRingText()
 			modularSmallTemplate.textProvider =
-				CLKSimpleTextProvider(text: "R")
-			modularSmallTemplate.fillFraction = 0.75
+				CLKSimpleTextProvider(text: heightText)
+			modularSmallTemplate.fillFraction = everest
 			modularSmallTemplate.ringStyle = CLKComplicationRingStyle.closed
 			template = modularSmallTemplate
 		case .modularLarge:
@@ -67,50 +80,80 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 				CLKTimeIntervalTextProvider(start: NSDate() as Date,
 											end: NSDate(timeIntervalSinceNow: 1 * 60 * 60) as Date)
 			modularLargeTemplate.body1TextProvider =
-				CLKSimpleTextProvider(text: "Movie Name",
-									  shortText: "Movie")
+				CLKSimpleTextProvider(text: heightText,
+									  shortText: heightText)
 			modularLargeTemplate.body2TextProvider =
-				CLKSimpleTextProvider(text: "Running Time",
-									  shortText: "Time")
+				CLKSimpleTextProvider(text: pressureText,
+									  shortText: pressureText)
 			template = modularLargeTemplate
 		case .circularSmall:
-			template = nil
+			let circularSmallTemplate =
+				CLKComplicationTemplateCircularSmallRingText()
+			circularSmallTemplate.textProvider =
+				CLKSimpleTextProvider(text: heightText)
+			circularSmallTemplate.fillFraction = everest
+			circularSmallTemplate.ringStyle = CLKComplicationRingStyle.closed
+			template = circularSmallTemplate
 		case .extraLarge:
-			template = nil
+			let extraLargeTemplate =
+				CLKComplicationTemplateExtraLargeSimpleText()
+			extraLargeTemplate.textProvider =
+				CLKSimpleTextProvider(text: heightText)
+			template = extraLargeTemplate
 		case .graphicBezel:
-			template = nil
+			let graphicBezelTemplate =
+				CLKComplicationTemplateGraphicBezelCircularText()
+			graphicBezelTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			template = graphicBezelTemplate
 		case .graphicCircular:
-			template = nil
+			let graphicCircularTemplate =
+				CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
+			graphicCircularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColor: UIColor.green, fillFraction: everest)
+			graphicCircularTemplate.centerTextProvider = CLKSimpleTextProvider(text: heightText)
+			graphicCircularTemplate.bottomTextProvider = CLKSimpleTextProvider(text: heightUnitText)
+			template = graphicCircularTemplate
 		case .graphicCorner:
-			template = nil
+			let graphicCornerTemplate =
+				CLKComplicationTemplateGraphicCornerGaugeText()
+			graphicCornerTemplate.outerTextProvider = CLKSimpleTextProvider(text: heightText)
+			graphicCornerTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColor: UIColor.green, fillFraction: everest)
+			template = graphicCornerTemplate
 		case .graphicRectangular:
 			let graphicRectangularTemplate =
-				CLKComplicationTemplateUtilitarianLargeFlat()
-			graphicRectangularTemplate.textProvider =
-				CLKSimpleTextProvider(text: "R")
+				CLKComplicationTemplateGraphicRectangularTextGauge()
+			graphicRectangularTemplate.headerTextProvider =
+				CLKSimpleTextProvider(text: pressureText)
+			graphicRectangularTemplate.body1TextProvider =
+				CLKSimpleTextProvider(text: heightText)
+			graphicRectangularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColor: UIColor.green, fillFraction: everest)
 			template = graphicRectangularTemplate
 		case .utilitarianLarge:
 			let utilitarianLargeTemplate =
 				CLKComplicationTemplateUtilitarianLargeFlat()
 			utilitarianLargeTemplate.textProvider =
-				CLKSimpleTextProvider(text: "R")
+				CLKSimpleTextProvider(text: heightText)
 			template = utilitarianLargeTemplate
 		case .utilitarianSmall:
 			let utilitarianSmallTemplate =
 				CLKComplicationTemplateUtilitarianSmallRingText()
 			utilitarianSmallTemplate.textProvider =
-				CLKSimpleTextProvider(text: "R")
-			utilitarianSmallTemplate.fillFraction = 0.75
+				CLKSimpleTextProvider(text: heightText)
+			utilitarianSmallTemplate.fillFraction = everest
 			utilitarianSmallTemplate.ringStyle = CLKComplicationRingStyle.closed
 			template = utilitarianSmallTemplate
 		case .utilitarianSmallFlat:
 			let utilitarianSmallFlatTemplate =
 				CLKComplicationTemplateUtilitarianSmallFlat()
 			utilitarianSmallFlatTemplate.textProvider =
-				CLKSimpleTextProvider(text: "R")
+				CLKSimpleTextProvider(text: heightText)
 			template = utilitarianSmallFlatTemplate
+		default:
+			let defaultTemplate =
+				CLKComplicationTemplateModularSmallStackText()
+			defaultTemplate.line1TextProvider = CLKSimpleTextProvider(text: heightText)
+			defaultTemplate.line2TextProvider = CLKSimpleTextProvider(text: pressureText)
+			template = defaultTemplate
 		}
-		handler(template)
+		return template!
 	}
-    
 }

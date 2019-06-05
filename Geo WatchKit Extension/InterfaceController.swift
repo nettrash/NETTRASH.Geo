@@ -34,7 +34,7 @@ class InterfaceController: WKInterfaceController {
 	
 	func barometerDataUpdate() {
 		let ext: ExtensionDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-		self.lblAltitudeInfo.setText(String(format: "%.0f m", ext.bar.height))
+		self.lblAltitudeInfo.setText(String(format: "%.0f m\n%.0f mm Hg", ext.bar.height, ext.bar.pressure * 7.50062))
 	}
 
 }
