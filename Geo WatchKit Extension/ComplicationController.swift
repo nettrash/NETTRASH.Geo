@@ -75,12 +75,17 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 		let everest: Float = Float(ext?.bar.everest ?? 0)
 		let heightUnitText = "m"
 		
+		let everestPercent = 100.0 * everest
+		let colorDelta = everestPercent * 255.0 / 100.0
+		
+		let everestColor = UIColor(red: CGFloat(colorDelta / 255.0), green: CGFloat((255.0 - colorDelta) / 255.0), blue: 0, alpha: 1)
+		
 		var template: CLKComplicationTemplate?
 		switch complication.family {
 		case .graphicCircular:
 			let graphicCircularTemplate =
 				CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-			graphicCircularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.fill, gaugeColor: UIColor.green, 	fillFraction: everest)
+			graphicCircularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.fill, gaugeColor: everestColor, 	fillFraction: everest)
 			graphicCircularTemplate.centerTextProvider = CLKSimpleTextProvider(text: heightText)
 			graphicCircularTemplate.bottomTextProvider = CLKSimpleTextProvider(text: heightUnitText)
 			template = graphicCircularTemplate
