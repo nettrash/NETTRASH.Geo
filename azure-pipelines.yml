@@ -14,7 +14,7 @@ steps:
   inputs:
     actions: 'build'
     scheme: 'Geo'
-    sdk: 'iphoneos'
+    sdk: ''
     configuration: 'Release'
     xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
     xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
