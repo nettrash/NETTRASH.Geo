@@ -18,6 +18,7 @@ class Barometer {
 	var pressure: Double
 	var delta: Double
 	var height: Double
+	var everest: Double
 	
 	var dataUpdated: (() -> Void)?
 	
@@ -26,7 +27,20 @@ class Barometer {
 		pressure = 0
 		delta = 0
 		height = 0
+		everest = 0
 		available = CMAltimeter.isRelativeAltitudeAvailable()
+	}
+	
+	init(autoStart: Bool) {
+		barometerManager = CMAltimeter()
+		pressure = 0
+		delta = 0
+		height = 0
+		everest = 0
+		available = CMAltimeter.isRelativeAltitudeAvailable()
+		if autoStart {
+			Start()
+		}
 	}
 	
 	init(_ handler: @escaping (() -> Void)) {
@@ -34,6 +48,7 @@ class Barometer {
 		pressure = 0
 		delta = 0
 		height = 0
+		everest = 0
 		available = CMAltimeter.isRelativeAltitudeAvailable()
 		dataUpdated = handler
 	}
@@ -65,6 +80,7 @@ class Barometer {
 			let h: Double = log(P0 / Ph) / 0.00012
 			
 			self.height = h
+			self.everest = h / 8848
 			
 			self.dataUpdated?()
 		}

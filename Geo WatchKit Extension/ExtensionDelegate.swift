@@ -14,18 +14,18 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 	
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
-		self.bar.Start()
     }
 
     func applicationDidBecomeActive() {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 		self.bar.Start()
+		clockRefresh()
     }
 
     func applicationWillResignActive() {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, etc.
-		self.bar.Stop()
+//		self.bar.Stop()
     }
 
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
@@ -35,6 +35,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             switch task {
             case let backgroundTask as WKApplicationRefreshBackgroundTask:
                 // Be sure to complete the background task once you’re done.
+				self.refreshComplication()
                 backgroundTask.setTaskCompletedWithSnapshot(false)
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
@@ -58,4 +59,21 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         }
     }
 
+	func clockRefresh() {
+		let fireDate = Date(timeIntervalSinceNow: 10)
+		let ext = WKExtension.shared()
+		ext.scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil) { (_ error: Error?) in
+			if error == nil {
+			}
+		}
+	}
+	
+	func refreshComplication() {
+		let server = CLKComplicationServer.sharedInstance()
+		if server.activeComplications != nil {
+			for c in server.activeComplications! {
+				server.reloadTimeline(for: c)
+			}
+		}
+	}
 }

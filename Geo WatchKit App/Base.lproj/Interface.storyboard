@@ -14,7 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Geo_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="1" height="1" alignment="center" verticalAlignment="center" text="175 m" textAlignment="center" numberOfLines="2" id="rLc-2m-ySt">
+                        <label width="1" height="1" alignment="center" verticalAlignment="center" text="..." textAlignment="center" numberOfLines="2" id="rLc-2m-ySt">
                             <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
                         </label>
                     </items>
