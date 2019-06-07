@@ -27,7 +27,6 @@
 		E5BD421A22893DA60085CA4B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD421922893DA60085CA4B /* NotificationController.swift */; };
 		E5BD421C22893DA60085CA4B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD421B22893DA60085CA4B /* ComplicationController.swift */; };
 		E5BD421E22893DA70085CA4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5BD421D22893DA70085CA4B /* Assets.xcassets */; };
-		E5EDD39D2297E75C00E3737F /* Geo.png in Resources */ = {isa = PBXBuildFile; fileRef = E5EDD39C2297E75C00E3737F /* Geo.png */; };
 		E5EDD3A02297EDE100E3737F /* Barometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDD39F2297EDE100E3737F /* Barometer.swift */; };
 		E5F57A9022958CBA004D3A60 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F57A8F22958CBA004D3A60 /* CoreMotion.framework */; };
 		E5F57A9222958CD6004D3A60 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F57A9122958CD6004D3A60 /* CoreMotion.framework */; };
@@ -122,7 +121,6 @@
 		E5BD423422893DE50085CA4B /* Geo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Geo.entitlements; sourceTree = "<group>"; };
 		E5BD423522893E860085CA4B /* Geo WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Geo WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		E5BD423622893E8F0085CA4B /* Geo WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Geo WatchKit App.entitlements"; sourceTree = "<group>"; };
-		E5EDD39C2297E75C00E3737F /* Geo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Geo.png; sourceTree = "<group>"; };
 		E5EDD39F2297EDE100E3737F /* Barometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barometer.swift; sourceTree = "<group>"; };
 		E5F57A8F22958CBA004D3A60 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		E5F57A9122958CD6004D3A60 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.2.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
@@ -254,7 +252,6 @@
 		E5EDD39B2297E6DB00E3737F /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				E5EDD39C2297E75C00E3737F /* Geo.png */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -462,7 +459,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5BD41E722893DA50085CA4B /* LaunchScreen.storyboard in Resources */,
-				E5EDD39D2297E75C00E3737F /* Geo.png in Resources */,
 				E5BD41E422893DA50085CA4B /* Assets.xcassets in Resources */,
 				E5BD41E222893DA30085CA4B /* Main.storyboard in Resources */,
 			);
