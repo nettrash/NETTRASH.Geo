@@ -169,7 +169,6 @@
 		E5BD41D022893DA30085CA4B = {
 			isa = PBXGroup;
 			children = (
-				E5EDD39B2297E6DB00E3737F /* Content */,
 				E5BD41DB22893DA30085CA4B /* Geo */,
 				E5BD41F022893DA50085CA4B /* GeoTests */,
 				E5BD41FB22893DA50085CA4B /* GeoUITests */,
@@ -195,6 +194,7 @@
 		E5BD41DB22893DA30085CA4B /* Geo */ = {
 			isa = PBXGroup;
 			children = (
+				E5EDD39B2297E6DB00E3737F /* Content */,
 				E5EDD39E2297EDB700E3737F /* Manager */,
 				E5BD423422893DE50085CA4B /* Geo.entitlements */,
 				E5BD41DC22893DA30085CA4B /* AppDelegate.swift */,
