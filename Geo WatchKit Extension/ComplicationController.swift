@@ -61,7 +61,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 	
 	func getNextRequestedUpdateDateWithHandler(handler: (Date?) -> Void) {
 		// Call the handler with the date when you would next like to be given the opportunity to update your complication content
-		handler(Date(timeIntervalSinceNow: 30))
+		let next = Date(timeIntervalSinceNow: 60);
+		handler(next)
 	}
 
 	// MAIN FUNCTION

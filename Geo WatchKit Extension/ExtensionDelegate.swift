@@ -25,7 +25,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func applicationWillResignActive() {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, etc.
-//		self.bar.Stop()
+		//self.bar.Stop()
     }
 
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
@@ -37,6 +37,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 // Be sure to complete the background task once you’re done.
 				self.refreshComplication()
                 backgroundTask.setTaskCompletedWithSnapshot(false)
+				self.clockRefresh()
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
                 snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: Date.distantFuture, userInfo: nil)
@@ -60,7 +61,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
 
 	func clockRefresh() {
-		let fireDate = Date(timeIntervalSinceNow: 10)
+		let fireDate = Date(timeIntervalSinceNow: 60)
 		let ext = WKExtension.shared()
 		ext.scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil) { (_ error: Error?) in
 			if error == nil {
