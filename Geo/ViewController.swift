@@ -22,7 +22,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	@IBOutlet var lblLocationCoordinatesLongitude: UILabel!
 	@IBOutlet var lblBarometerPressure: UILabel!
 	@IBOutlet var lblGeocodeInformation: UILabel!
-
+	@IBOutlet var lblEverestDeltaAltitude: UILabel!
+	
 	private var barAltitude: Double = 0
 	private var barPressure: Double = 0
 	private var location: CLLocation? = nil
@@ -92,10 +93,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	func refreshAltitudeInfo() {
 		let app = UIApplication.shared.delegate as! AppDelegate
 		if (app.bar != nil) {
+			
+			let everestPercent = 100.0 * app.bar!.everest
+			let colorDelta = everestPercent * 255.0 / 100.0
+			let everestPercentText = String(format: "%.4f", everestPercent)
+			let everestColor = UIColor(red: CGFloat(colorDelta / 255.0), green: CGFloat((255.0 - colorDelta) / 255.0), blue: 0, alpha: 1)
+
 			self.barAltitude = app.bar!.height
 			self.barPressure = app.bar!.pressure
 			self.lblBarometerAltitude.text = String(format: "%.0fm according to the barometer", app.bar!.height)
 			self.lblBarometerPressure.text = String(format: "%.4f kPa %.4f mm Hg %.4f atm", app.bar!.pressure, app.bar!.pressure * 7.50062, app.bar!.pressure / 101.325)
+			
+			self.lblEverestDeltaAltitude.text = everestPercentText + "%🏔 (Everest)"
 		} else {
 			self.lblBarometerAltitude.text = ""
 			self.lblBarometerPressure.text = ""

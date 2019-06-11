@@ -138,6 +138,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="lightTextColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clF-Ov-h7A">
+                                <rect key="frame" x="20" y="453" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Wnn-NZ-r9f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -152,6 +161,7 @@
                             <constraint firstItem="1v1-9s-JrU" firstAttribute="top" secondItem="0Wj-aR-egH" secondAttribute="bottom" constant="15" id="KOQ-xE-md0"/>
                             <constraint firstItem="Ebf-s4-0O6" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="NEA-hE-M6H"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="eHq-Z8-FhY" secondAttribute="trailing" constant="20" id="OEk-hU-Hww"/>
+                            <constraint firstItem="clF-Ov-h7A" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="SMw-Z1-jKx"/>
                             <constraint firstItem="643-qI-aUm" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="SlP-Hl-L9x"/>
                             <constraint firstItem="DWs-da-0gU" firstAttribute="top" secondItem="McP-fU-HGy" secondAttribute="bottom" constant="15" id="Syf-Ng-RQN"/>
                             <constraint firstItem="sXP-5K-zA0" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="Tbp-cR-h4g"/>
@@ -173,9 +183,11 @@
                             <constraint firstItem="bUi-vg-Jyg" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="jzR-x1-5ZI"/>
                             <constraint firstAttribute="trailing" secondItem="D91-al-yS4" secondAttribute="trailing" constant="20" id="nSM-WN-0Y6"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="Ebf-s4-0O6" secondAttribute="trailing" constant="20" id="oDz-ap-hAv"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="clF-Ov-h7A" secondAttribute="trailing" constant="20" id="sa1-eb-U96"/>
                             <constraint firstItem="56q-BH-QoM" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="sxC-1Z-E3E"/>
                             <constraint firstItem="Ebf-s4-0O6" firstAttribute="top" secondItem="sXP-5K-zA0" secondAttribute="bottom" constant="8" id="t0S-i6-l6L"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="643-qI-aUm" secondAttribute="trailing" constant="20" id="tyj-iW-gqF"/>
+                            <constraint firstItem="clF-Ov-h7A" firstAttribute="top" secondItem="D91-al-yS4" secondAttribute="bottom" constant="8" id="urj-Qg-hiP"/>
                             <constraint firstItem="iUh-im-HNo" firstAttribute="bottom" secondItem="Uee-0j-aNJ" secondAttribute="bottom" id="vDh-Xd-aIG"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="MBV-ca-vof" secondAttribute="trailing" constant="20" id="wBC-PQ-PDc"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="1v1-9s-JrU" secondAttribute="trailing" constant="20" id="x8G-ad-Kbc"/>
@@ -186,6 +198,7 @@
                     <connections>
                         <outlet property="lblBarometerAltitude" destination="Ebf-s4-0O6" id="MRg-AY-tEE"/>
                         <outlet property="lblBarometerPressure" destination="0Wj-aR-egH" id="iUj-aD-6FR"/>
+                        <outlet property="lblEverestDeltaAltitude" destination="clF-Ov-h7A" id="11j-5c-Mdu"/>
                         <outlet property="lblGeocodeInformation" destination="D91-al-yS4" id="W9S-4U-Qkn"/>
                         <outlet property="lblLocationAltitude" destination="643-qI-aUm" id="j5M-8w-8Pu"/>
                         <outlet property="lblLocationCoordinatesLatitude" destination="MBV-ca-vof" id="347-9c-9eJ"/>

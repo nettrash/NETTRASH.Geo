@@ -63,7 +63,7 @@ class Barometer {
 		barometerManager.stopRelativeAltitudeUpdates()
 	}
 	
-	private func Handler(_ data: CMAltitudeData?, _ error: Error?) {
+	func Handler(_ data: CMAltitudeData?, _ error: Error?) {
 		if data != nil {
 			self.pressure = data!.pressure.doubleValue
 			self.delta = data!.relativeAltitude.doubleValue

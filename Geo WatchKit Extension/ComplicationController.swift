@@ -70,14 +70,28 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 	private func getData(_ complication: CLKComplication) -> CLKComplicationTemplate {
 		let ext: ExtensionDelegate? = WKExtension.shared().delegate as? ExtensionDelegate
 		
-		let heightText = String(format: "%.0f", ext?.bar.height ?? 0)
+		var heightText = String(format: "%.0f", ext?.bar.height ?? 0)
 		let pressureText = String(format: "%.0f", (ext?.bar.pressure ?? 0) * 7.50062)
 		let everest: Float = Float(ext?.bar.everest ?? 0)
 		let heightUnitText = "m"
+		let pressureUnitText = "mm Hg"
+		let everestUnitText = "% 🏔"
+
+		if ext == nil {
+			heightText = "--"
+			WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date(timeIntervalSinceNow: 5), userInfo: nil) { (_ error: Error?) in
+				NSLog(error.debugDescription)
+			}
+		} else if ext!.bar.height < 1 {
+			ext!.bar.Start()
+			WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date(timeIntervalSinceNow: 5), userInfo: nil) { (_ error: Error?) in
+				NSLog(error.debugDescription)
+			}
+		}
 		
 		let everestPercent = 100.0 * everest
 		let colorDelta = everestPercent * 255.0 / 100.0
-		
+		let everestPercentText = String(format: "%.4f", everestPercent)
 		let everestColor = UIColor(red: CGFloat(colorDelta / 255.0), green: CGFloat((255.0 - colorDelta) / 255.0), blue: 0, alpha: 1)
 		
 		var template: CLKComplicationTemplate?
@@ -89,6 +103,68 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 			graphicCircularTemplate.centerTextProvider = CLKSimpleTextProvider(text: heightText)
 			graphicCircularTemplate.bottomTextProvider = CLKSimpleTextProvider(text: heightUnitText)
 			template = graphicCircularTemplate
+		case .graphicCorner:
+			let graphicCornerTemplate = CLKComplicationTemplateGraphicCornerGaugeText()
+			graphicCornerTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.fill, gaugeColor: UIColor.green, 	fillFraction: everest)
+			graphicCornerTemplate.outerTextProvider = CLKSimpleTextProvider(text: heightText)
+			return graphicCornerTemplate
+		case .modularSmall:
+			let modularSmallTemplate = CLKComplicationTemplateModularSmallRingText()
+			modularSmallTemplate.fillFraction = everest
+			modularSmallTemplate.ringStyle = .open;
+			modularSmallTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			return modularSmallTemplate
+		case .modularLarge:
+			let modularLargeTemplate = CLKComplicationTemplateModularLargeColumns()
+			modularLargeTemplate.column2Alignment = .right
+			modularLargeTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: heightUnitText)
+			modularLargeTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: heightText)
+			modularLargeTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: pressureUnitText)
+			modularLargeTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text: pressureText)
+			modularLargeTemplate.row3Column2TextProvider = CLKSimpleTextProvider(text: everestUnitText)
+			modularLargeTemplate.row3Column1TextProvider = CLKSimpleTextProvider(text: everestPercentText)
+			return modularLargeTemplate
+		case .circularSmall:
+			let circularSmallTemplate = CLKComplicationTemplateCircularSmallRingText()
+			circularSmallTemplate.fillFraction = everest
+			circularSmallTemplate.ringStyle = .open;
+			circularSmallTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			return circularSmallTemplate
+		case .graphicRectangular:
+			let graphicRectangularTemplate = CLKComplicationTemplateGraphicRectangularTextGauge()
+			graphicRectangularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.fill, gaugeColor: UIColor.green, 	fillFraction: everest)
+			graphicRectangularTemplate.body1TextProvider = CLKSimpleTextProvider(text: heightText + " " + heightUnitText)
+			graphicRectangularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Altitude")
+			return graphicRectangularTemplate
+		case .graphicBezel:
+			let graphicBezelTemplate = CLKComplicationTemplateGraphicBezelCircularText()
+			let circular = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
+			circular.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.fill, gaugeColor: UIColor.green, 	fillFraction: everest)
+			circular.centerTextProvider = CLKSimpleTextProvider(text: heightText)
+			circular.bottomTextProvider = CLKSimpleTextProvider(text: heightUnitText)
+			graphicBezelTemplate.circularTemplate = circular
+			graphicBezelTemplate.textProvider = CLKSimpleTextProvider(text: pressureText + " " + pressureUnitText + ", " + everestPercentText + " " + everestUnitText)
+			return graphicBezelTemplate
+		case .extraLarge:
+			let extraLargeTemplate = CLKComplicationTemplateExtraLargeRingText()
+			extraLargeTemplate.fillFraction = everest
+			extraLargeTemplate.ringStyle = .open;
+			extraLargeTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			return extraLargeTemplate
+		case .utilitarianSmall:
+			let utilitarianSmallTemplate = CLKComplicationTemplateUtilitarianSmallRingText()
+			utilitarianSmallTemplate.fillFraction = everest
+			utilitarianSmallTemplate.ringStyle = .open;
+			utilitarianSmallTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			return utilitarianSmallTemplate
+		case .utilitarianSmallFlat:
+			let utilitarianSmallFlatTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+			utilitarianSmallFlatTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			return utilitarianSmallFlatTemplate
+		case .utilitarianLarge:
+			let utilitarianLargeTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
+			utilitarianLargeTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			return utilitarianLargeTemplate
 		default:
 			let defaultTemplate =
 				CLKComplicationTemplateModularSmallStackText()
@@ -105,6 +181,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 		let pressureText = "---"
 		let everest: Float = 0
 		let heightUnitText = "m"
+		let everestPercentText = "---"
+		let pressureUnitText = "mm Hg"
+		let everestUnitText = "% 🏔"
 		
 		var template: CLKComplicationTemplate?
 		switch complication.family {
@@ -115,6 +194,68 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 			graphicCircularTemplate.centerTextProvider = CLKSimpleTextProvider(text: heightText)
 			graphicCircularTemplate.bottomTextProvider = CLKSimpleTextProvider(text: heightUnitText)
 			template = graphicCircularTemplate
+		case .graphicCorner:
+			let graphicCornerTemplate = CLKComplicationTemplateGraphicCornerGaugeText()
+			graphicCornerTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.fill, gaugeColor: UIColor.green, 	fillFraction: everest)
+			graphicCornerTemplate.outerTextProvider = CLKSimpleTextProvider(text: heightText)
+			return graphicCornerTemplate
+		case .modularSmall:
+			let modularSmallTemplate = CLKComplicationTemplateModularSmallRingText()
+			modularSmallTemplate.fillFraction = everest
+			modularSmallTemplate.ringStyle = .open;
+			modularSmallTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			return modularSmallTemplate
+		case .modularLarge:
+			let modularLargeTemplate = CLKComplicationTemplateModularLargeColumns()
+			modularLargeTemplate.column2Alignment = .right
+			modularLargeTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: heightUnitText)
+			modularLargeTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: heightText)
+			modularLargeTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: pressureUnitText)
+			modularLargeTemplate.row2Column1TextProvider = CLKSimpleTextProvider(text: pressureText)
+			modularLargeTemplate.row3Column2TextProvider = CLKSimpleTextProvider(text: everestUnitText)
+			modularLargeTemplate.row3Column1TextProvider = CLKSimpleTextProvider(text: everestPercentText)
+			return modularLargeTemplate
+		case .circularSmall:
+			let circularSmallTemplate = CLKComplicationTemplateCircularSmallRingText()
+			circularSmallTemplate.fillFraction = everest
+			circularSmallTemplate.ringStyle = .open;
+			circularSmallTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			return circularSmallTemplate
+		case .graphicRectangular:
+			let graphicRectangularTemplate = CLKComplicationTemplateGraphicRectangularTextGauge()
+			graphicRectangularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.fill, gaugeColor: UIColor.green, 	fillFraction: everest)
+			graphicRectangularTemplate.body1TextProvider = CLKSimpleTextProvider(text: heightText + " " + heightUnitText)
+			graphicRectangularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Altitude")
+			return graphicRectangularTemplate
+		case .graphicBezel:
+			let graphicBezelTemplate = CLKComplicationTemplateGraphicBezelCircularText()
+			let circular = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
+			circular.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.fill, gaugeColor: UIColor.green, 	fillFraction: everest)
+			circular.centerTextProvider = CLKSimpleTextProvider(text: heightText)
+			circular.bottomTextProvider = CLKSimpleTextProvider(text: heightUnitText)
+			graphicBezelTemplate.circularTemplate = circular
+			graphicBezelTemplate.textProvider = CLKSimpleTextProvider(text: pressureText + " " + pressureUnitText + ", " + everestPercentText + " " + everestUnitText)
+			return graphicBezelTemplate
+		case .extraLarge:
+			let extraLargeTemplate = CLKComplicationTemplateExtraLargeRingText()
+			extraLargeTemplate.fillFraction = everest
+			extraLargeTemplate.ringStyle = .open;
+			extraLargeTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			return extraLargeTemplate
+		case .utilitarianSmall:
+			let utilitarianSmallTemplate = CLKComplicationTemplateUtilitarianSmallRingText()
+			utilitarianSmallTemplate.fillFraction = everest
+			utilitarianSmallTemplate.ringStyle = .open;
+			utilitarianSmallTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			return utilitarianSmallTemplate
+		case .utilitarianSmallFlat:
+			let utilitarianSmallFlatTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+			utilitarianSmallFlatTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			return utilitarianSmallFlatTemplate
+		case .utilitarianLarge:
+			let utilitarianLargeTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
+			utilitarianLargeTemplate.textProvider = CLKSimpleTextProvider(text: heightText)
+			return utilitarianLargeTemplate
 		default:
 			let defaultTemplate =
 				CLKComplicationTemplateModularSmallStackText()

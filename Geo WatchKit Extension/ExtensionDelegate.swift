@@ -10,7 +10,7 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
-	let bar: Barometer = Barometer()
+	let bar: WatchBarometer = WatchBarometer()
 	
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
@@ -35,6 +35,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             switch task {
             case let backgroundTask as WKApplicationRefreshBackgroundTask:
                 // Be sure to complete the background task once you’re done.
+				self.bar.Start()
 				self.refreshComplication()
                 backgroundTask.setTaskCompletedWithSnapshot(false)
 				self.clockRefresh()

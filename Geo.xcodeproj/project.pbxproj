@@ -11,6 +11,7 @@
 		E52BA739229ED9B600077476 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA738229ED9B600077476 /* YandexResponse.swift */; };
 		E55E348622A142E700BDCE56 /* Barometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDD39F2297EDE100E3737F /* Barometer.swift */; };
 		E57DF9DE229FD8B6006D8F87 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA738229ED9B600077476 /* YandexResponse.swift */; };
+		E5A51DE322AE5FD600622A7F /* Barometer+Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A51DE222AE5FD600622A7F /* Barometer+Watch.swift */; };
 		E5BD41DD22893DA30085CA4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD41DC22893DA30085CA4B /* AppDelegate.swift */; };
 		E5BD41DF22893DA30085CA4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD41DE22893DA30085CA4B /* ViewController.swift */; };
 		E5BD41E222893DA30085CA4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5BD41E022893DA30085CA4B /* Main.storyboard */; };
@@ -95,6 +96,7 @@
 /* Begin PBXFileReference section */
 		E52BA736229ECF3200077476 /* Geocode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocode.swift; sourceTree = "<group>"; };
 		E52BA738229ED9B600077476 /* YandexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponse.swift; sourceTree = "<group>"; };
+		E5A51DE222AE5FD600622A7F /* Barometer+Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Barometer+Watch.swift"; sourceTree = "<group>"; };
 		E5BD41D922893DA30085CA4B /* Geo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5BD41DC22893DA30085CA4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5BD41DE22893DA30085CA4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				E5BD421D22893DA70085CA4B /* Assets.xcassets */,
 				E5BD421F22893DA70085CA4B /* Info.plist */,
 				E5BD422022893DA70085CA4B /* PushNotificationPayload.apns */,
+				E5A51DE222AE5FD600622A7F /* Barometer+Watch.swift */,
 			);
 			path = "Geo WatchKit Extension";
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5BD421A22893DA60085CA4B /* NotificationController.swift in Sources */,
+				E5A51DE322AE5FD600622A7F /* Barometer+Watch.swift in Sources */,
 				E55E348622A142E700BDCE56 /* Barometer.swift in Sources */,
 				E5BD421C22893DA60085CA4B /* ComplicationController.swift in Sources */,
 				E5BD421822893DA60085CA4B /* ExtensionDelegate.swift in Sources */,
