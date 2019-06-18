@@ -19,6 +19,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	private let locationManager: CLLocationManager = CLLocationManager()
 	
 	@IBOutlet var tblData: UITableView!
+	@IBOutlet var aiLoading: UIActivityIndicatorView!
 	
 	private var groups: [Int:String] = [:]
 	private var items: [Int:[Int:String]] = [:]
@@ -62,6 +63,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		items[4] = [:]
 		
 		self.tblData.reloadData()
+		self.tblData.isHidden = true
 	}
 
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -76,6 +78,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			}
 			if self.location != nil {
 				//LocationAltitude
+				if self.items[0]![0] == nil {
+					self.items[0]![0] = "..."
+				}
 				self.items[0]![1] = String(format: "%.0fm according to the GPS/GLONASS", self.location!.altitude)
 				
 				//Location Latitude
@@ -90,6 +95,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		}
 		
 		self.tblData.reloadData()
+		refreshView()
+	}
+	
+	func refreshView() {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+			self.aiLoading.stopAnimating()
+			self.tblData.isHidden = false
+		}
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -138,6 +151,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		}
 		
 		self.tblData.reloadData()
+		refreshView()
 	}
 	
 	func refreshData() {
@@ -159,6 +173,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		}
 		
 		self.tblData.reloadData()
+		refreshView()
 	}
 	
 	func refreshWeather() {
@@ -177,6 +192,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		}
 		
 		self.tblData.reloadData()
+		refreshView()
 	}
 	
 	@IBAction func openInMap() {
@@ -213,7 +229,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 20
+		return 22
 	}
 }
 

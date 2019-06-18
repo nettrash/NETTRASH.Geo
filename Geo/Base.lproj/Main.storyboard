@@ -23,6 +23,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NETTRASH.Geo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUi-vg-Jyg">
                                 <rect key="frame" x="20" y="44" width="374" height="39"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="XQq-bh-ddU"/>
                                 </constraints>
@@ -30,9 +31,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="lightTextColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sXY-9S-K0f">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sXY-9S-K0f">
                                 <rect key="frame" x="20" y="91" width="374" height="771"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,20 +41,30 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nB3-x9-wHy"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Z1h-1j-tuV">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Z1h-1j-tuV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6nb-Jh-HHT"/>
+                            <constraint firstItem="sXY-9S-K0f" firstAttribute="top" secondItem="bUi-vg-Jyg" secondAttribute="bottom" constant="8" id="6us-fn-Sjn"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="sXY-9S-K0f" secondAttribute="trailing" constant="20" id="F1z-4I-Jhw"/>
+                            <constraint firstItem="Z1h-1j-tuV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wad-XI-LwR"/>
                             <constraint firstItem="iUh-im-HNo" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" id="Zdk-iK-wxu"/>
                             <constraint firstItem="iUh-im-HNo" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="ZyP-TL-cds"/>
+                            <constraint firstItem="sXY-9S-K0f" firstAttribute="bottom" secondItem="Uee-0j-aNJ" secondAttribute="bottom" id="dn9-XQ-DMV"/>
                             <constraint firstItem="bUi-vg-Jyg" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" id="i2N-yJ-VfR"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="bUi-vg-Jyg" secondAttribute="trailing" constant="20" id="ihG-lf-Ozo"/>
                             <constraint firstItem="bUi-vg-Jyg" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="jzR-x1-5ZI"/>
+                            <constraint firstItem="sXY-9S-K0f" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="q0q-nQ-kp5"/>
                             <constraint firstItem="iUh-im-HNo" firstAttribute="bottom" secondItem="Uee-0j-aNJ" secondAttribute="bottom" id="vDh-Xd-aIG"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="iUh-im-HNo" secondAttribute="trailing" constant="20" id="xZK-n6-RE4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                     </view>
                     <connections>
+                        <outlet property="aiLoading" destination="Z1h-1j-tuV" id="X2T-bx-icb"/>
                         <outlet property="tblData" destination="sXY-9S-K0f" id="xRa-ad-aTf"/>
                     </connections>
                 </viewController>
