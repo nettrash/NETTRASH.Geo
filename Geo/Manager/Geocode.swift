@@ -60,6 +60,6 @@ class Geocode {
 		if self.Data == nil { return }
 		
 		let decoder = JSONDecoder()
-		Response = try! decoder.decode(YandexResponse.self, from: (self.Data?.data(using: String.Encoding.utf8))!)
+		Response = try? decoder.decode(YandexResponse.self, from: (self.Data?.data(using: String.Encoding.utf8))!)
 	}
 }

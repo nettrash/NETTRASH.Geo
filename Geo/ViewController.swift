@@ -14,6 +14,8 @@ import MapKit
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
 	private let bar: Barometer = Barometer()
+	private let weather: Weather = Weather()
+	
 	private let locationManager: CLLocationManager = CLLocationManager()
 	
 	@IBOutlet var lblBarometerAltitude: UILabel!
@@ -23,7 +25,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	@IBOutlet var lblBarometerPressure: UILabel!
 	@IBOutlet var lblGeocodeInformation: UILabel!
 	@IBOutlet var lblEverestDeltaAltitude: UILabel!
-	
+	@IBOutlet var lblWeather: UILabel!
+
 	private var barAltitude: Double = 0
 	private var barPressure: Double = 0
 	private var location: CLLocation? = nil
@@ -51,10 +54,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 			self.location = locations[locations.count - 1]
 			if self.stepLocation == nil {
 				self.stepLocation = CLLocation(latitude: self.location!.coordinate.latitude, longitude: self.location!.coordinate.longitude)
-				refreshGeocode()
+				refreshData()
 			} else if self.stepLocation!.distance(from: self.location!) > 100.0 { // > 100 m
 				self.stepLocation = CLLocation(latitude: self.location!.coordinate.latitude, longitude: self.location!.coordinate.longitude)
-				refreshGeocode()
+				refreshData()
 			}
 			if self.location != nil {
 				self.lblLocationAltitude.text = String(format: "%.0fm according to the GPS/GLONASS", self.location!.altitude)
@@ -111,12 +114,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 		}
 	}
 	
+	func refreshData() {
+		DispatchQueue.main.async {
+			self.refreshGeocode()
+		}
+		DispatchQueue.main.async {
+			self.refreshWeather()
+		}
+	}
+	
 	func refreshGeocode() {
 		let geocode = Geocode(self.stepLocation!)
 		if geocode.Response?.response?.GeoObjectCollection?.featureMember?.count ?? 0 > 0 {
 			self.lblGeocodeInformation.text = String(format: "%@", geocode.Response?.response?.GeoObjectCollection?.featureMember?[0].GeoObject?.description ?? "")
 		} else {
 			self.lblGeocodeInformation.text = "Geocode unavailable"
+		}
+	}
+	
+	func refreshWeather() {
+		if self.stepLocation == nil { return }
+		let result: Any? = weather.Get(api: Weather.WeatherAPI.OpenWeatherMap, coordinate: self.stepLocation!)
+		if let response = result as? OpenWeatherMapResponse {
+			self.lblWeather.text = response.weatherDetails
+		} else {
+			self.lblWeather.text = "Weather unavailable"
 		}
 	}
 	

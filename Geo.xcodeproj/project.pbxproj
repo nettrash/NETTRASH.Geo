@@ -11,6 +11,10 @@
 		E52BA739229ED9B600077476 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA738229ED9B600077476 /* YandexResponse.swift */; };
 		E55E348622A142E700BDCE56 /* Barometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDD39F2297EDE100E3737F /* Barometer.swift */; };
 		E57DF9DE229FD8B6006D8F87 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA738229ED9B600077476 /* YandexResponse.swift */; };
+		E582AD7E22B2221400F5364A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582AD7D22B2221400F5364A /* Weather.swift */; };
+		E582AD7F22B2221B00F5364A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582AD7D22B2221400F5364A /* Weather.swift */; };
+		E582AD8122B2245900F5364A /* OpenWeatherMapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582AD8022B2245900F5364A /* OpenWeatherMapResponse.swift */; };
+		E582AD8222B2245900F5364A /* OpenWeatherMapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582AD8022B2245900F5364A /* OpenWeatherMapResponse.swift */; };
 		E5A51DE322AE5FD600622A7F /* Barometer+Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A51DE222AE5FD600622A7F /* Barometer+Watch.swift */; };
 		E5BD41DD22893DA30085CA4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD41DC22893DA30085CA4B /* AppDelegate.swift */; };
 		E5BD41DF22893DA30085CA4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD41DE22893DA30085CA4B /* ViewController.swift */; };
@@ -96,6 +100,8 @@
 /* Begin PBXFileReference section */
 		E52BA736229ECF3200077476 /* Geocode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocode.swift; sourceTree = "<group>"; };
 		E52BA738229ED9B600077476 /* YandexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponse.swift; sourceTree = "<group>"; };
+		E582AD7D22B2221400F5364A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		E582AD8022B2245900F5364A /* OpenWeatherMapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapResponse.swift; sourceTree = "<group>"; };
 		E5A51DE222AE5FD600622A7F /* Barometer+Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Barometer+Watch.swift"; sourceTree = "<group>"; };
 		E5BD41D922893DA30085CA4B /* Geo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5BD41DC22893DA30085CA4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -271,6 +277,8 @@
 				E5EDD39F2297EDE100E3737F /* Barometer.swift */,
 				E52BA736229ECF3200077476 /* Geocode.swift */,
 				E52BA738229ED9B600077476 /* YandexResponse.swift */,
+				E582AD7D22B2221400F5364A /* Weather.swift */,
+				E582AD8022B2245900F5364A /* OpenWeatherMapResponse.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -517,6 +525,8 @@
 				E5BD41DF22893DA30085CA4B /* ViewController.swift in Sources */,
 				E52BA737229ECF3200077476 /* Geocode.swift in Sources */,
 				E52BA739229ED9B600077476 /* YandexResponse.swift in Sources */,
+				E582AD8122B2245900F5364A /* OpenWeatherMapResponse.swift in Sources */,
+				E582AD7E22B2221400F5364A /* Weather.swift in Sources */,
 				E5BD41DD22893DA30085CA4B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,6 +558,8 @@
 				E5BD421C22893DA60085CA4B /* ComplicationController.swift in Sources */,
 				E5BD421822893DA60085CA4B /* ExtensionDelegate.swift in Sources */,
 				E5BD421622893DA60085CA4B /* InterfaceController.swift in Sources */,
+				E582AD8222B2245900F5364A /* OpenWeatherMapResponse.swift in Sources */,
+				E582AD7F22B2221B00F5364A /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

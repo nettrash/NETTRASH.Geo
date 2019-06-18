@@ -11,6 +11,7 @@ import WatchKit
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
 	let bar: WatchBarometer = WatchBarometer()
+	let weather: Weather = Weather()
 	
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.

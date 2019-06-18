@@ -14,11 +14,13 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Geo_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="1" height="1" alignment="center" verticalAlignment="center" text="..." textAlignment="center" numberOfLines="3" id="rLc-2m-ySt">
+                        <label alignment="center" verticalAlignment="center" text="..." textAlignment="center" numberOfLines="3" id="rLc-2m-ySt">
                             <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
                         </label>
+                        <imageView height="8" alignment="center" verticalAlignment="bottom" id="5lS-ZB-Xry"/>
                     </items>
                     <connections>
+                        <outlet property="imgEverestBar" destination="5lS-ZB-Xry" id="uJi-SQ-2b3"/>
                         <outlet property="lblAltitudeInfo" destination="rLc-2m-ySt" id="pDq-Gb-h6a"/>
                     </connections>
                 </controller>
