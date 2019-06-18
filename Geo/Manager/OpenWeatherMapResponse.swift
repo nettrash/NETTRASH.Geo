@@ -88,6 +88,30 @@ class OpenWeatherMapResponse : Decodable {
 			return values.joined(separator: "\n")
 		}
 	}
+	
+	var weatherDetailsTemperature: String? {
+		get {
+			return String(format:"Temperature %.1f C", main!.temp!-273.15)
+		}
+	}
+	
+	var weatherDetailsHumidity: String? {
+		get {
+			return String(format: "Humidity %i %%", main!.humidity!)
+		}
+	}
+	
+	var weatherDetailsVisibility: String? {
+		get {
+			return String(format:"Visibility %i m", visibility!)
+		}
+	}
+	
+	var weatherDetailsWindSpeed: String? {
+		get {
+			return String(format:"Wind speed %.1f m/s", wind!.speed!)
+		}
+	}
 }
 
 class OpenWeatherMapSystem : Decodable {

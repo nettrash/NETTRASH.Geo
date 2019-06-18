@@ -11,21 +11,17 @@ import CoreMotion
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
 
 	private let bar: Barometer = Barometer()
 	private let weather: Weather = Weather()
 	
 	private let locationManager: CLLocationManager = CLLocationManager()
 	
-	@IBOutlet var lblBarometerAltitude: UILabel!
-	@IBOutlet var lblLocationAltitude: UILabel!
-	@IBOutlet var lblLocationCoordinatesLatitude: UILabel!
-	@IBOutlet var lblLocationCoordinatesLongitude: UILabel!
-	@IBOutlet var lblBarometerPressure: UILabel!
-	@IBOutlet var lblGeocodeInformation: UILabel!
-	@IBOutlet var lblEverestDeltaAltitude: UILabel!
-	@IBOutlet var lblWeather: UILabel!
+	@IBOutlet var tblData: UITableView!
+	
+	private var groups: [Int:String] = [:]
+	private var items: [Int:[Int:String]] = [:]
 
 	private var barAltitude: Double = 0
 	private var barPressure: Double = 0
@@ -35,6 +31,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		self.tblData.register(GeoTableViewCell.self, forCellReuseIdentifier: "GeoCell")
+		_initGroups()
 		
 		locationManager.delegate = self
 		locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -49,6 +48,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 		app.bar!.dataUpdated = refreshAltitudeInfo
 	}
 	
+	private func _initGroups() {
+		groups[0] = "Altitude"
+		groups[1] = "Location"
+		groups[2] = "Pressure"
+		groups[3] = "Weather"
+		groups[4] = "Other"
+		
+		items[0] = [:]
+		items[1] = [:]
+		items[2] = [:]
+		items[3] = [:]
+		items[4] = [:]
+		
+		self.tblData.reloadData()
+	}
+
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		if locations.count > 0 {
 			self.location = locations[locations.count - 1]
@@ -60,15 +75,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 				refreshData()
 			}
 			if self.location != nil {
-				self.lblLocationAltitude.text = String(format: "%.0fm according to the GPS/GLONASS", self.location!.altitude)
-				self.lblLocationCoordinatesLatitude.text = String(format: "%.6f latitude", self.location!.coordinate.latitude)
-				self.lblLocationCoordinatesLongitude.text = String(format: "%.6f longitude", self.location!.coordinate.longitude)
+				//LocationAltitude
+				self.items[0]![1] = String(format: "%.0fm according to the GPS/GLONASS", self.location!.altitude)
+				
+				//Location Latitude
+				self.items[1]![0] = String(format: "%.6f latitude", self.location!.coordinate.latitude)
+				//Location Longitude
+				self.items[1]![1] = String(format: "%.6f longitude", self.location!.coordinate.longitude)
 			} else {
-				self.lblLocationAltitude.text = ""
-				self.lblLocationCoordinatesLatitude.text = ""
-				self.lblLocationCoordinatesLongitude.text = ""
+				self.items[0]![1] = ""
+				self.items[1]![0] = ""
+				self.items[1]![1] = ""
 			}
 		}
+		
+		self.tblData.reloadData()
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -85,12 +106,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	
 	func startLocationMonitor() {
 		locationManager.startUpdatingLocation()
-		self.lblLocationAltitude.text = ""
+		self.items[0]![1] = ""
 	}
 	
 	func stopLocationMonitor() {
 		locationManager.stopUpdatingLocation()
-		self.lblLocationAltitude.text = ""
+		self.items[0]![1] = ""
 	}
 	
 	func refreshAltitudeInfo() {
@@ -104,14 +125,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
 			self.barAltitude = app.bar!.height
 			self.barPressure = app.bar!.pressure
-			self.lblBarometerAltitude.text = String(format: "%.0fm according to the barometer", app.bar!.height)
-			self.lblBarometerPressure.text = String(format: "%.4f kPa %.4f mm Hg %.4f atm", app.bar!.pressure, app.bar!.pressure * 7.50062, app.bar!.pressure / 101.325)
-			
-			self.lblEverestDeltaAltitude.text = everestPercentText + "%🏔 (Everest)"
+			//Barometer Altitude
+			self.items[0]![0] = String(format: "%.0fm according to the barometer", app.bar!.height)
+			//Barometer Pressure
+			self.items[2]![0] = String(format: "%.4f kPa %.4f mm Hg %.4f atm", app.bar!.pressure, app.bar!.pressure * 7.50062, app.bar!.pressure / 101.325)
+			//Everest Percent
+			self.items[4]![0] = everestPercentText + "%🏔 (Everest)"
 		} else {
-			self.lblBarometerAltitude.text = ""
-			self.lblBarometerPressure.text = ""
+			self.items[0]![0] = ""
+			self.items[2]![0] = ""
+			self.items[1]![0] = ""
 		}
+		
+		self.tblData.reloadData()
 	}
 	
 	func refreshData() {
@@ -126,25 +152,68 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	func refreshGeocode() {
 		let geocode = Geocode(self.stepLocation!)
 		if geocode.Response?.response?.GeoObjectCollection?.featureMember?.count ?? 0 > 0 {
-			self.lblGeocodeInformation.text = String(format: "%@", geocode.Response?.response?.GeoObjectCollection?.featureMember?[0].GeoObject?.description ?? "")
+			//Geocode Information
+			self.items[4]![1] = String(format: "%@", geocode.Response?.response?.GeoObjectCollection?.featureMember?[0].GeoObject?.description ?? "")
 		} else {
-			self.lblGeocodeInformation.text = "Geocode unavailable"
+			self.items[4]![1] = "Geocode unavailable"
 		}
+		
+		self.tblData.reloadData()
 	}
 	
 	func refreshWeather() {
 		if self.stepLocation == nil { return }
 		let result: Any? = weather.Get(api: Weather.WeatherAPI.OpenWeatherMap, coordinate: self.stepLocation!)
 		if let response = result as? OpenWeatherMapResponse {
-			self.lblWeather.text = response.weatherDetails
+			self.items[3]![0] = response.weatherDetailsTemperature
+			self.items[3]![1] = response.weatherDetailsHumidity
+			self.items[3]![2] = response.weatherDetailsVisibility
+			self.items[3]![3] = response.weatherDetailsWindSpeed
 		} else {
-			self.lblWeather.text = "Weather unavailable"
+			self.items[3]![0] = "Weather unavailable"
+			self.items[3]![1] = nil
+			self.items[3]![2] = nil
+			self.items[3]![3] = nil
 		}
+		
+		self.tblData.reloadData()
 	}
 	
 	@IBAction func openInMap() {
 		let currentLocationMapItem: MKMapItem = MKMapItem.forCurrentLocation()
 		MKMapItem.openMaps(with: [currentLocationMapItem], launchOptions: [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving])
+	}
+	
+	//UITableViewDelegate
+
+	//UITableViewDataSource
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return items[section]?.count ?? 0
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let value = items[indexPath.section]?[indexPath.row] else {
+			return UITableViewCell()
+		}
+	
+		let cell = tableView.dequeueReusableCell(withIdentifier: "GeoCell", for: indexPath) as! GeoTableViewCell
+
+		cell.textLabel?.text = value
+		cell.backgroundColor = UIColor.clear
+		
+		return cell
+	}
+	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return groups.count
+	}
+	
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return groups[section]
+	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 20
 	}
 }
 
