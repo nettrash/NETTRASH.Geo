@@ -33,9 +33,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		_initTable()
+		_initLocation()
+		
+		let app = UIApplication.shared.delegate as! AppDelegate
+		app.bar!.dataUpdated = refreshAltitudeInfo
+	}
+
+	private func _initTable() {
 		self.tblData.register(GeoTableViewCell.self, forCellReuseIdentifier: "GeoCell")
 		_initGroups()
-		
+	}
+	
+	private func _initLocation() {
 		locationManager.delegate = self
 		locationManager.desiredAccuracy = kCLLocationAccuracyBest
 		let status = CLLocationManager.authorizationStatus()
@@ -44,9 +54,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		} else {
 			locationManager.requestAlwaysAuthorization()
 		}
-		
-		let app = UIApplication.shared.delegate as! AppDelegate
-		app.bar!.dataUpdated = refreshAltitudeInfo
 	}
 	
 	private func _initGroups() {
@@ -87,10 +94,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 				self.items[1]![0] = String(format: "%.6f latitude", self.location!.coordinate.latitude)
 				//Location Longitude
 				self.items[1]![1] = String(format: "%.6f longitude", self.location!.coordinate.longitude)
+				self.items[1]![2] = "::actionBar"
 			} else {
 				self.items[0]![1] = ""
 				self.items[1]![0] = ""
 				self.items[1]![1] = ""
+				self.items[1]![2] = nil
 			}
 		}
 		
@@ -195,11 +204,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		refreshView()
 	}
 	
-	@IBAction func openInMap() {
-		let currentLocationMapItem: MKMapItem = MKMapItem.forCurrentLocation()
-		MKMapItem.openMaps(with: [currentLocationMapItem], launchOptions: [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving])
-	}
-	
 	//UITableViewDelegate
 
 	//UITableViewDataSource
@@ -212,10 +216,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			return UITableViewCell()
 		}
 	
+		if value == "::actionBar" {
+			let cell = tableView.dequeueReusableCell(withIdentifier: "GeoActionCell", for: indexPath) as! GeoActionTableViewCell
+			cell.location = self.stepLocation
+			cell.viewController = self
+			return cell
+		}
+		
 		let cell = tableView.dequeueReusableCell(withIdentifier: "GeoCell", for: indexPath) as! GeoTableViewCell
 
 		cell.textLabel?.text = value
-		cell.backgroundColor = UIColor.clear
 		
 		return cell
 	}

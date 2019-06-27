@@ -22,6 +22,7 @@ class GeoTableViewCell : UITableViewCell {
 	}
 	
 	func initialize() {
+		selectionStyle = UITableViewCell.SelectionStyle.none
 		backgroundColor = UIColor.clear
 		textLabel?.textColor = UIColor.lightText
 		textLabel?.font = textLabel?.font.withSize(12)

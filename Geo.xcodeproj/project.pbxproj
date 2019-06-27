@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E52BA737229ECF3200077476 /* Geocode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA736229ECF3200077476 /* Geocode.swift */; };
 		E52BA739229ED9B600077476 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA738229ED9B600077476 /* YandexResponse.swift */; };
+		E5306E7022BCABC100026C2E /* GeoActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5306E6F22BCABC100026C2E /* GeoActionTableViewCell.swift */; };
 		E55E348622A142E700BDCE56 /* Barometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDD39F2297EDE100E3737F /* Barometer.swift */; };
 		E57DF9DE229FD8B6006D8F87 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA738229ED9B600077476 /* YandexResponse.swift */; };
 		E582AD7E22B2221400F5364A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582AD7D22B2221400F5364A /* Weather.swift */; };
@@ -101,6 +102,7 @@
 /* Begin PBXFileReference section */
 		E52BA736229ECF3200077476 /* Geocode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocode.swift; sourceTree = "<group>"; };
 		E52BA738229ED9B600077476 /* YandexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponse.swift; sourceTree = "<group>"; };
+		E5306E6F22BCABC100026C2E /* GeoActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoActionTableViewCell.swift; sourceTree = "<group>"; };
 		E582AD7D22B2221400F5364A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		E582AD8022B2245900F5364A /* OpenWeatherMapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapResponse.swift; sourceTree = "<group>"; };
 		E5A51DE222AE5FD600622A7F /* Barometer+Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Barometer+Watch.swift"; sourceTree = "<group>"; };
@@ -178,6 +180,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5306E6E22BCAB9C00026C2E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E5D78BEA22B91EDE006A3DF0 /* GeoTableViewCell.swift */,
+				E5306E6F22BCABC100026C2E /* GeoActionTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E5BD41D022893DA30085CA4B = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +217,7 @@
 		E5BD41DB22893DA30085CA4B /* Geo */ = {
 			isa = PBXGroup;
 			children = (
+				E5306E6E22BCAB9C00026C2E /* Cells */,
 				E5C8603522AA8D360002CB91 /* Content */,
 				E5EDD39E2297EDB700E3737F /* Manager */,
 				E5BD423422893DE50085CA4B /* Geo.entitlements */,
@@ -215,7 +227,6 @@
 				E5BD41E322893DA50085CA4B /* Assets.xcassets */,
 				E5BD41E522893DA50085CA4B /* LaunchScreen.storyboard */,
 				E5BD41E822893DA50085CA4B /* Info.plist */,
-				E5D78BEA22B91EDE006A3DF0 /* GeoTableViewCell.swift */,
 			);
 			path = Geo;
 			sourceTree = "<group>";
@@ -532,6 +543,7 @@
 				E582AD7E22B2221400F5364A /* Weather.swift in Sources */,
 				E5BD41DD22893DA30085CA4B /* AppDelegate.swift in Sources */,
 				E5D78BEB22B91EDE006A3DF0 /* GeoTableViewCell.swift in Sources */,
+				E5306E7022BCABC100026C2E /* GeoActionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
