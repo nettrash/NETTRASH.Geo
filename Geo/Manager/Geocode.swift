@@ -30,7 +30,7 @@ class Geocode {
 	private var sco: String
 	private let kind: String = "district"
 	private let format: String = "json"
-	private let lang: String = "en_US"//"ru_RU"
+	private let lang: String = NSLocalizedString("Local", comment: "")//"ru_RU"
 	private var YandexURL: URL?
 	
 	var Data: String?

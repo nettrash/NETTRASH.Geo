@@ -73,9 +73,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 		var heightText = String(format: "%.0f", ext?.bar.height ?? 0)
 		let pressureText = String(format: "%.0f", (ext?.bar.pressure ?? 0) * 7.50062)
 		let everest: Float = Float(ext?.bar.everest ?? 0)
-		let heightUnitText = "m"
-		let pressureUnitText = "mm Hg"
-		let everestUnitText = "% 🏔"
+		let heightUnitText = NSLocalizedString("m", comment: "")
+		let pressureUnitText = NSLocalizedString("mm Hg", comment: "")
+		let everestUnitText = NSLocalizedString("% 🏔", comment: "")
 
 		if ext == nil {
 			heightText = "--"
@@ -134,7 +134,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 			let graphicRectangularTemplate = CLKComplicationTemplateGraphicRectangularTextGauge()
 			graphicRectangularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.fill, gaugeColor: UIColor.green, 	fillFraction: everest)
 			graphicRectangularTemplate.body1TextProvider = CLKSimpleTextProvider(text: heightText + " " + heightUnitText)
-			graphicRectangularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Altitude")
+			graphicRectangularTemplate.headerTextProvider = CLKSimpleTextProvider(text: NSLocalizedString("Altitude", comment:""))
 			return graphicRectangularTemplate
 		case .graphicBezel:
 			let graphicBezelTemplate = CLKComplicationTemplateGraphicBezelCircularText()
@@ -180,10 +180,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 		let heightText = "----"
 		let pressureText = "---"
 		let everest: Float = 0
-		let heightUnitText = "m"
+		let heightUnitText = NSLocalizedString("m", comment: "")
 		let everestPercentText = "---"
-		let pressureUnitText = "mm Hg"
-		let everestUnitText = "% 🏔"
+		let pressureUnitText = NSLocalizedString("mm Hg", comment: "")
+		let everestUnitText = NSLocalizedString("% 🏔", comment: "")
 		
 		var template: CLKComplicationTemplate?
 		switch complication.family {
@@ -225,7 +225,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 			let graphicRectangularTemplate = CLKComplicationTemplateGraphicRectangularTextGauge()
 			graphicRectangularTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.fill, gaugeColor: UIColor.green, 	fillFraction: everest)
 			graphicRectangularTemplate.body1TextProvider = CLKSimpleTextProvider(text: heightText + " " + heightUnitText)
-			graphicRectangularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Altitude")
+			graphicRectangularTemplate.headerTextProvider = CLKSimpleTextProvider(text: NSLocalizedString("Altitude", comment: ""))
 			return graphicRectangularTemplate
 		case .graphicBezel:
 			let graphicBezelTemplate = CLKComplicationTemplateGraphicBezelCircularText()

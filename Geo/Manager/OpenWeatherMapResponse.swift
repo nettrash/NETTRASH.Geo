@@ -73,16 +73,16 @@ class OpenWeatherMapResponse : Decodable {
 			var values: [String] = []
 			
 			if main?.temp != nil {
-				values.append(String(format:"Temperature %.1f C", main!.temp!-273.15))
+				values.append(String(format:NSLocalizedString("Temperature %.1f C", comment: ""), main!.temp!-273.15))
 			}
 			if main?.humidity != nil {
-				values.append(String(format: "Humidity %i %%", main!.humidity!))
+				values.append(String(format: NSLocalizedString("Humidity %i %%", comment: ""), main!.humidity!))
 			}
 			if visibility != nil {
-				values.append(String(format:"Visibility %i m", visibility!))
+				values.append(String(format:NSLocalizedString("Visibility %i m", comment: ""), visibility!))
 			}
 			if wind?.speed != nil {
-				values.append(String(format:"Wind speed %.1f m/s", wind!.speed!))
+				values.append(String(format:NSLocalizedString("Wind speed %.1f m/s", comment: ""), wind!.speed!))
 			}
 			
 			return values.joined(separator: "\n")
@@ -91,25 +91,25 @@ class OpenWeatherMapResponse : Decodable {
 	
 	var weatherDetailsTemperature: String? {
 		get {
-			return String(format:"Temperature %.1f C", main!.temp!-273.15)
+			return String(format:NSLocalizedString("Temperature %.1f C", comment: ""), main!.temp!-273.15)
 		}
 	}
 	
 	var weatherDetailsHumidity: String? {
 		get {
-			return String(format: "Humidity %i %%", main!.humidity!)
+			return String(format: NSLocalizedString("Humidity %i %%", comment: ""), main!.humidity!)
 		}
 	}
 	
 	var weatherDetailsVisibility: String? {
 		get {
-			return String(format:"Visibility %i m", visibility!)
+			return String(format:NSLocalizedString("Visibility %i m", comment: ""), visibility!)
 		}
 	}
 	
 	var weatherDetailsWindSpeed: String? {
 		get {
-			return String(format:"Wind speed %.1f m/s", wind!.speed!)
+			return String(format:NSLocalizedString("Wind speed %.1f m/s", comment: ""), wind!.speed!)
 		}
 	}
 }

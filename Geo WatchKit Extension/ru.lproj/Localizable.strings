@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Geo
+
+  Created by Иван Алексеев on 29/06/2019.
+  Copyright © 2019 NETTRASH. All rights reserved.
+*/
+"m"="м";
+"mm Hg"="мм.рт.ст.";
+"% 🏔"="% 🏔";
+"Altitude"="Высота";
+"%.0f m\n%.0f mm Hg\n%@ %%🏔"="%.0f м\n%.0f мм.рт.ст.\n%@ %%🏔";

@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  Geo
+
+  Created by Иван Алексеев on 29/06/2019.
+  Copyright © 2019 NETTRASH. All rights reserved.
+*/
+"Weather unavailable"="Weather unavailable";
+"Geocode unavailable"="Geocode unavailable";
+"%🏔 (Everest)"="%🏔 (Everest)";
+"%.4f kPa %.4f mm Hg %.4f atm"="%.4f kPa %.4f mm Hg %.4f atm";
+"%.0fm according to the barometer"="%.0fm according to the barometer";
+"%.6f longitude"="%.6f longitude";
+"%.6f latitude"="%.6f latitude";
+"%.0fm according to the GPS/GLONASS"="%.0fm according to the GPS/GLONASS";
+"Altitude"="Altitude";
+"Location"="Location";
+"Pressure"="Pressure";
+"Weather"="Weather";
+"Other"="Other";
+"Local"="en_US";
+"Temperature %.1f C"="Temperature %.1f C";
+"Humidity %i %%"="Humidity %i %%";
+"Visibility %i m"="Visibility %i m";
+"Wind speed %.1f m/s"="Wind speed %.1f m/s";

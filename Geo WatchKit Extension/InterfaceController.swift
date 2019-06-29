@@ -48,7 +48,7 @@ class InterfaceController: WKInterfaceController {
 
 		drawEverestBar(width, everestColor)
 		
-		self.lblAltitudeInfo.setText(String(format: "%.0f m\n%.0f mm Hg\n%@ %%🏔", ext.bar.height, ext.bar.pressure * 7.50062, everestPercentText))
+		self.lblAltitudeInfo.setText(String(format: NSLocalizedString("%.0f m\n%.0f mm Hg\n%@ %%🏔", comment: ""), ext.bar.height, ext.bar.pressure * 7.50062, everestPercentText))
 		ext.refreshComplication()
 	}
 

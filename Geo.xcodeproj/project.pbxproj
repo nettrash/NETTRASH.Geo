@@ -33,6 +33,12 @@
 		E5BD421A22893DA60085CA4B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD421922893DA60085CA4B /* NotificationController.swift */; };
 		E5BD421C22893DA60085CA4B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD421B22893DA60085CA4B /* ComplicationController.swift */; };
 		E5BD421E22893DA70085CA4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5BD421D22893DA70085CA4B /* Assets.xcassets */; };
+		E5C795E422C7EB1D001DD791 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5C795E622C7EB1D001DD791 /* InfoPlist.strings */; };
+		E5C795E922C7EBAB001DD791 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5C795EB22C7EBAB001DD791 /* Localizable.strings */; };
+		E5C795EF22C7EBE2001DD791 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5C795F122C7EBE2001DD791 /* InfoPlist.strings */; };
+		E5C795F522C7EC3C001DD791 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5C795F722C7EC3C001DD791 /* InfoPlist.strings */; };
+		E5C795FD22C7EC76001DD791 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5C795FF22C7EC76001DD791 /* Localizable.strings */; };
+		E5C7960122C7EC80001DD791 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5C7960322C7EC80001DD791 /* Localizable.strings */; };
 		E5C8603822AA8D610002CB91 /* Geo.png in Resources */ = {isa = PBXBuildFile; fileRef = E5C8603622AA8D600002CB91 /* Geo.png */; };
 		E5C8603922AA8D610002CB91 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E5C8603722AA8D610002CB91 /* readme.txt */; };
 		E5D78BEB22B91EDE006A3DF0 /* GeoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D78BEA22B91EDE006A3DF0 /* GeoTableViewCell.swift */; };
@@ -134,6 +140,21 @@
 		E5BD423422893DE50085CA4B /* Geo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Geo.entitlements; sourceTree = "<group>"; };
 		E5BD423522893E860085CA4B /* Geo WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Geo WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		E5BD423622893E8F0085CA4B /* Geo WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Geo WatchKit App.entitlements"; sourceTree = "<group>"; };
+		E5C795DC22C7E9B5001DD791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		E5C795DD22C7E9B5001DD791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E5C795DE22C7E9B5001DD791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Interface.strings; sourceTree = "<group>"; };
+		E5C795E722C7EB26001DD791 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E5C795E822C7EB9D001DD791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E5C795EA22C7EBAB001DD791 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E5C795EC22C7EBB0001DD791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E5C795F022C7EBE2001DD791 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E5C795F222C7EBE3001DD791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E5C795F622C7EC3C001DD791 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E5C795F822C7EC3D001DD791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E5C795FE22C7EC76001DD791 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E5C7960022C7EC79001DD791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E5C7960222C7EC80001DD791 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E5C7960422C7EC84001DD791 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E5C8603622AA8D600002CB91 /* Geo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Geo.png; sourceTree = "<group>"; };
 		E5C8603722AA8D610002CB91 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		E5D78BEA22B91EDE006A3DF0 /* GeoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoTableViewCell.swift; sourceTree = "<group>"; };
@@ -227,6 +248,8 @@
 				E5BD41E322893DA50085CA4B /* Assets.xcassets */,
 				E5BD41E522893DA50085CA4B /* LaunchScreen.storyboard */,
 				E5BD41E822893DA50085CA4B /* Info.plist */,
+				E5C795EB22C7EBAB001DD791 /* Localizable.strings */,
+				E5C795E622C7EB1D001DD791 /* InfoPlist.strings */,
 			);
 			path = Geo;
 			sourceTree = "<group>";
@@ -256,6 +279,8 @@
 				E5BD420622893DA50085CA4B /* Interface.storyboard */,
 				E5BD420922893DA60085CA4B /* Assets.xcassets */,
 				E5BD420B22893DA60085CA4B /* Info.plist */,
+				E5C795F122C7EBE2001DD791 /* InfoPlist.strings */,
+				E5C795FF22C7EC76001DD791 /* Localizable.strings */,
 			);
 			path = "Geo WatchKit App";
 			sourceTree = "<group>";
@@ -272,6 +297,8 @@
 				E5BD421F22893DA70085CA4B /* Info.plist */,
 				E5BD422022893DA70085CA4B /* PushNotificationPayload.apns */,
 				E5A51DE222AE5FD600622A7F /* Barometer+Watch.swift */,
+				E5C795F722C7EC3C001DD791 /* InfoPlist.strings */,
+				E5C7960322C7EC80001DD791 /* Localizable.strings */,
 			);
 			path = "Geo WatchKit Extension";
 			sourceTree = "<group>";
@@ -469,6 +496,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = E5BD41D022893DA30085CA4B;
 			productRefGroup = E5BD41DA22893DA30085CA4B /* Products */;
@@ -490,6 +518,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5C8603922AA8D610002CB91 /* readme.txt in Resources */,
+				E5C795E422C7EB1D001DD791 /* InfoPlist.strings in Resources */,
+				E5C795E922C7EBAB001DD791 /* Localizable.strings in Resources */,
 				E5BD41E722893DA50085CA4B /* LaunchScreen.storyboard in Resources */,
 				E5C8603822AA8D610002CB91 /* Geo.png in Resources */,
 				E5BD41E422893DA50085CA4B /* Assets.xcassets in Resources */,
@@ -516,6 +546,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5BD420A22893DA60085CA4B /* Assets.xcassets in Resources */,
+				E5C795FD22C7EC76001DD791 /* Localizable.strings in Resources */,
+				E5C795EF22C7EBE2001DD791 /* InfoPlist.strings in Resources */,
 				E5BD420822893DA50085CA4B /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +557,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5BD421E22893DA70085CA4B /* Assets.xcassets in Resources */,
+				E5C7960122C7EC80001DD791 /* Localizable.strings in Resources */,
+				E5C795F522C7EC3C001DD791 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +643,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E5BD41E122893DA30085CA4B /* Base */,
+				E5C795DC22C7E9B5001DD791 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -617,6 +652,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E5BD41E622893DA50085CA4B /* Base */,
+				E5C795DD22C7E9B5001DD791 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -625,8 +661,63 @@
 			isa = PBXVariantGroup;
 			children = (
 				E5BD420722893DA50085CA4B /* Base */,
+				E5C795DE22C7E9B5001DD791 /* ru */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		E5C795E622C7EB1D001DD791 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5C795E722C7EB26001DD791 /* en */,
+				E5C795E822C7EB9D001DD791 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E5C795EB22C7EBAB001DD791 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5C795EA22C7EBAB001DD791 /* en */,
+				E5C795EC22C7EBB0001DD791 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E5C795F122C7EBE2001DD791 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5C795F022C7EBE2001DD791 /* en */,
+				E5C795F222C7EBE3001DD791 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E5C795F722C7EC3C001DD791 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5C795F622C7EC3C001DD791 /* en */,
+				E5C795F822C7EC3D001DD791 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E5C795FF22C7EC76001DD791 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5C795FE22C7EC76001DD791 /* en */,
+				E5C7960022C7EC79001DD791 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E5C7960322C7EC80001DD791 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5C7960222C7EC80001DD791 /* en */,
+				E5C7960422C7EC84001DD791 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -636,6 +727,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -697,6 +789,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

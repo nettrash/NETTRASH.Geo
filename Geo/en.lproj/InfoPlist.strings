@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  Geo
+
+  Created by Иван Алексеев on 29/06/2019.
+  Copyright © 2019 NETTRASH. All rights reserved.
+*/
+"CFBundleDisplayName" = "GEO";
+"NSCameraUsageDescription" = "Camera access for link photo and geo metadata.";
+"NSPhotoLibraryAddUsageDescription" = "Photo access for save linked photo with metadata.";
+"NSSiriUsageDescription" = "Access Siri for answer current metadata.";
+"NSFaceIDUsageDescription" = "Application Access";
