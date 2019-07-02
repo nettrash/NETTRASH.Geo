@@ -69,7 +69,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		items[3] = [:]
 		items[4] = [:]
 		
+		items[0]![0] = ""
+		items[1]![0] = ""
+		items[2]![0] = ""
+		items[3]![0] = ""
+		items[4]![0] = ""
+
+		#if targetEnvironment(simulator)
+		
+		refreshSimulatorInfo()
+		
+		#else
+		
 		self.tblData.reloadData()
+
+		#endif
+
 		self.tblData.isHidden = true
 	}
 
@@ -136,6 +151,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		self.items[0]![1] = ""
 	}
 	
+	#if targetEnvironment(simulator)
+	
+	func refreshSimulatorInfo() {
+		let pressure = 101.325
+		let P0: Double = 101.325
+		let Ph: Double = 98.768
+		let h: Double = log(P0 / Ph) / 0.00012
+		let everest = h / 8848
+		
+		let everestPercent = 100.0 * everest
+		let colorDelta = everestPercent * 255.0 / 100.0
+		let everestPercentText = String(format: "%.4f", everestPercent)
+		let everestColor = UIColor(red: CGFloat(colorDelta / 255.0), green: CGFloat((255.0 - colorDelta) / 255.0), blue: 0, alpha: 1)
+		
+		self.barAltitude = h
+		self.barPressure = pressure
+		//Barometer Altitude
+		self.items[0]![0] = String(format: NSLocalizedString("%.0fm according to the barometer", comment: ""), h)
+		//Barometer Pressure
+		self.items[2]![0] = String(format: NSLocalizedString("%.4f kPa %.4f mm Hg %.4f atm", comment: ""), pressure, pressure * 7.50062, pressure / 101.325)
+		//Everest Percent
+		self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest)", comment: "")
+
+	}
+	
+	#endif
+	
 	func refreshAltitudeInfo() {
 		let app = UIApplication.shared.delegate as! AppDelegate
 		if (app.bar != nil) {
@@ -155,8 +197,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest)", comment: "")
 		} else {
 			self.items[0]![0] = ""
-			self.items[2]![0] = ""
 			self.items[1]![0] = ""
+			self.items[2]![0] = ""
+			self.items[4]![0] = ""
 		}
 		
 		self.tblData.reloadData()
