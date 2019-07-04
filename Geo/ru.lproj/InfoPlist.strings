@@ -6,6 +6,10 @@
   Copyright © 2019 NETTRASH. All rights reserved.
 */
 "CFBundleDisplayName" = "GEO";
+"NSLocationAlwaysAndWhenInUseUsageDescription"="Доступ к местоположению для расчета высоты над уровнем моря, погоды и данных геокодирования";
+"NSLocationAlwaysUsageDescription"="Доступ к местоположению для расчета высоты над уровнем моря, погоды и данных геокодирования";
+"NSLocationUsageDescription"="Доступ к местоположению для расчета высоты над уровнем моря, погоды и данных геокодирования";
+"NSLocationWhenInUseUsageDescription"="Доступ к местоположению для расчета высоты над уровнем моря, погоды и данных геокодирования";
 "NSCameraUsageDescription" = "Доступ к камере для связи данных с актуальным изображением.";
 "NSPhotoLibraryAddUsageDescription" = "Доступ к фотографиям для сохранения связи актуального окружения и данных.";
 "NSSiriUsageDescription" = "Доступ к Siri для запроса текущих показателей.";

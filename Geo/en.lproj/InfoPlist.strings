@@ -6,6 +6,10 @@
   Copyright © 2019 NETTRASH. All rights reserved.
 */
 "CFBundleDisplayName" = "GEO";
+"NSLocationAlwaysAndWhenInUseUsageDescription"="Access location to get altitude by gps/glonass, get geocode information and weather";
+"NSLocationAlwaysUsageDescription"="Access location to get altitude by gps/glonass, get geocode information and weather";
+"NSLocationUsageDescription"="Access location to get altitude by gps/glonass, get geocode information and weather";
+"NSLocationWhenInUseUsageDescription"="Access location to get altitude by gps/glonass, get geocode information and weather";
 "NSCameraUsageDescription" = "Camera access for link photo and geo metadata.";
 "NSPhotoLibraryAddUsageDescription" = "Photo access for save linked photo with metadata.";
 "NSSiriUsageDescription" = "Access Siri for answer current metadata.";
