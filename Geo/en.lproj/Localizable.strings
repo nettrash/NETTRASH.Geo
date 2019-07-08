@@ -23,3 +23,6 @@
 "Humidity %i %%"="Humidity %i %%";
 "Visibility %i m"="Visibility %i m";
 "Wind speed %.1f m/s"="Wind speed %.1f m/s";
+"Location"="Location";
+"The lack of access to the location makes some of the functions of the application unusable"="The lack of access to the location makes some of the functions of the application unusable. You can allow access to location data in your privacy settings.";
+"Continue"="Continue";

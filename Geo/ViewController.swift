@@ -130,13 +130,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-		if status == .authorizedAlways {
+		if status == .notDetermined { return }
+		
+		if status == .authorizedAlways || status == .authorizedWhenInUse {
 			startLocationMonitor()
 		} else {
 			if status == .denied {
-				manager.requestWhenInUseAuthorization()
-			} else {
 				stopLocationMonitor()
+				let alert = UIAlertController(title: NSLocalizedString("Location", comment: ""), message: NSLocalizedString("The lack of access to the location makes some of the functions of the application unusable", comment: ""), preferredStyle: UIAlertController.Style.actionSheet)
+				alert.addAction(UIAlertAction(title: NSLocalizedString("Continue", comment: ""), style: UIAlertAction.Style.cancel, handler: { (_ action: UIAlertAction) in
+					alert.dismiss(animated: true, completion: nil)
+					self.refreshView()
+				}))
+				self.show(alert, sender: nil)
 			}
 		}
 	}
