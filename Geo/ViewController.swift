@@ -9,6 +9,7 @@
 import UIKit
 import CoreMotion
 import CoreLocation
+import CoreData
 import MapKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
@@ -116,6 +117,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 				self.items[1]![1] = ""
 				self.items[1]![2] = nil
 			}
+			traceLocation();
 		}
 		
 		self.tblData.reloadData()
@@ -189,9 +191,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		if (app.bar != nil) {
 			
 			let everestPercent = 100.0 * app.bar!.everest
-			let colorDelta = everestPercent * 255.0 / 100.0
+			//let colorDelta = everestPercent * 255.0 / 100.0
 			let everestPercentText = String(format: "%.4f", everestPercent)
-			let everestColor = UIColor(red: CGFloat(colorDelta / 255.0), green: CGFloat((255.0 - colorDelta) / 255.0), blue: 0, alpha: 1)
+			//let everestColor = UIColor(red: CGFloat(colorDelta / 255.0), green: CGFloat((255.0 - colorDelta) / 255.0), blue: 0, alpha: 1)
 
 			self.barAltitude = app.bar!.height
 			self.barPressure = app.bar!.pressure
@@ -201,6 +203,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			self.items[2]![0] = String(format: NSLocalizedString("%.4f kPa %.4f mm Hg %.4f atm", comment: ""), app.bar!.pressure, app.bar!.pressure * 7.50062, app.bar!.pressure / 101.325)
 			//Everest Percent
 			self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest)", comment: "")
+			
+			traceBarometer();
 		} else {
 			self.items[0]![0] = ""
 			self.items[1]![0] = ""
@@ -289,6 +293,88 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 22
+	}
+	
+	// TRACE
+	
+	func traceLocation() {
+		let app = UIApplication.shared.delegate as! AppDelegate
+		if (self.location != nil) {
+			
+			let moc = app.persistentContainer.viewContext
+			let traces = try? moc.fetch(Trace.fetchRequest()) as [Trace]
+			
+			if (traces != nil) {
+				var lastTrace: Trace? = nil
+				if traces!.count > 0 { lastTrace = traces![traces!.count-1] }
+				var date = Date()
+				let calendar = Calendar.current
+				let minute = calendar.component(.minute, from: date)
+				let second = calendar.component(.second, from: date)
+				let nanosecond = calendar.component(.nanosecond, from: date)
+				let minuteDelta = minute - 10 * (minute / 10)
+				date = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: date)!
+				date = calendar.date(byAdding: .second, value: -second, to: date)!
+				date = calendar.date(byAdding: .minute, value: -minuteDelta, to: date)!
+				if lastTrace != nil && lastTrace?.date != nil && lastTrace!.date! as Date == date {
+					lastTrace!.latitude = self.location!.coordinate.latitude
+					lastTrace!.longitude = self.location!.coordinate.longitude
+					lastTrace!.altitudeGPS = self.location!.altitude
+					try? moc.save()
+				} else if minuteDelta == 0 || lastTrace == nil {
+					let trace = NSEntityDescription.insertNewObject(forEntityName: "Trace", into: moc) as! Trace
+					trace.date = date as NSDate
+					trace.latitude = self.location!.coordinate.latitude
+					trace.longitude = self.location!.coordinate.longitude
+					trace.altitudeGPS = self.location!.altitude
+					try? moc.save()
+				}
+			}
+		}
+	}
+	
+	func traceBarometer() {
+		let app = UIApplication.shared.delegate as! AppDelegate
+		if (app.bar != nil) {
+			
+			let everestPercent = 100.0 * app.bar!.everest
+			self.barAltitude = app.bar!.height
+			self.barPressure = app.bar!.pressure
+			
+			let moc = app.persistentContainer.viewContext
+			let traces = try? moc.fetch(Trace.fetchRequest()) as [Trace]
+			
+			if (traces != nil) {
+				let lastTrace = traces![traces!.count-1]
+				var date = Date()
+				let calendar = Calendar.current
+				let minute = calendar.component(.minute, from: date)
+				let second = calendar.component(.second, from: date)
+				let nanosecond = calendar.component(.nanosecond, from: date)
+				let minuteDelta = minute - 10 * (minute / 10)
+				date = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: date)!
+				date = calendar.date(byAdding: .second, value: -second, to: date)!
+				date = calendar.date(byAdding: .minute, value: -minuteDelta, to: date)!
+				if lastTrace.date != nil && lastTrace.date! as Date == date {
+					lastTrace.altitudeBAR = self.barAltitude
+					lastTrace.pressure = self.barPressure
+					lastTrace.everest = everestPercent
+					try? moc.save()
+				} else if minuteDelta == 0 {
+					let trace = NSEntityDescription.insertNewObject(forEntityName: "Trace", into: moc) as! Trace
+					trace.date = date as NSDate
+					trace.altitudeBAR = self.barAltitude
+					trace.pressure = self.barPressure
+					trace.everest = everestPercent
+					try? moc.save()
+				}
+				
+				if traces!.count > 100 {
+					moc.delete(traces![0])
+					try? moc.save()
+				}
+			}
+		}
 	}
 }
 

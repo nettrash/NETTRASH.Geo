@@ -7,11 +7,23 @@
 //
 
 import WatchKit
+import CoreData
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
 	let bar: WatchBarometer = WatchBarometer()
 	let weather: Weather = Weather()
+	
+	public var persistentContainer: PersistentContainer = {
+		let container = PersistentContainer(name: "Geo")
+		container.loadPersistentStores(completionHandler: { (storeDescription:NSPersistentStoreDescription, error:Error?) in
+			if let error = error as NSError?{
+				fatalError("UnResolved error \(error), \(error.userInfo)")
+			}
+		})
+		
+		return container
+	}()
 	
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
@@ -40,6 +52,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 				self.refreshComplication()
                 backgroundTask.setTaskCompletedWithSnapshot(false)
 				self.clockRefresh()
+				self.traceBarometer()
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
                 snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: Date.distantFuture, userInfo: nil)
@@ -79,4 +92,46 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 			}
 		}
 	}
+	
+	func traceBarometer() {
+			let everestPercent = 100.0 * self.bar.everest
+			let barAltitude = self.bar.height
+			let barPressure = self.bar.pressure
+			
+			let moc = self.persistentContainer.viewContext
+			let traces = try? moc.fetch(Trace.fetchRequest()) as [Trace]
+			
+			if (traces != nil) {
+				var lastTrace: Trace? = nil
+				if traces!.count > 0 { lastTrace = traces![traces!.count-1] }
+				var date = Date()
+				let calendar = Calendar.current
+				let minute = calendar.component(.minute, from: date)
+				let second = calendar.component(.second, from: date)
+				let nanosecond = calendar.component(.nanosecond, from: date)
+				let minuteDelta = minute - 10 * (minute / 10)
+				date = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: date)!
+				date = calendar.date(byAdding: .second, value: -second, to: date)!
+				date = calendar.date(byAdding: .minute, value: -minuteDelta, to: date)!
+				if lastTrace != nil && lastTrace?.date != nil && lastTrace!.date! as Date == date {
+					lastTrace!.altitudeBAR = barAltitude
+					lastTrace!.pressure = barPressure
+					lastTrace!.everest = everestPercent
+					try? moc.save()
+				} else if minuteDelta == 0 || lastTrace == nil {
+					let trace = NSEntityDescription.insertNewObject(forEntityName: "Trace", into: moc) as! Trace
+					trace.date = date as NSDate
+					trace.altitudeBAR = barAltitude
+					trace.pressure = barPressure
+					trace.everest = everestPercent
+					try? moc.save()
+				}
+				
+				if traces!.count > 100 {
+					moc.delete(traces![0])
+					try? moc.save()
+				}
+			}
+	}
+
 }
