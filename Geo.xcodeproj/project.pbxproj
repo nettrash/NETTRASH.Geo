@@ -12,6 +12,7 @@
 		E5306E7022BCABC100026C2E /* GeoActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5306E6F22BCABC100026C2E /* GeoActionTableViewCell.swift */; };
 		E536F74D22D51BCF00258788 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E536F74C22D51BCF00258788 /* GraphView.swift */; };
 		E55E348622A142E700BDCE56 /* Barometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDD39F2297EDE100E3737F /* Barometer.swift */; };
+		E55F483F22D5D8A100948AB4 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55F483E22D5D8A100948AB4 /* GraphViewController.swift */; };
 		E57DF9DE229FD8B6006D8F87 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA738229ED9B600077476 /* YandexResponse.swift */; };
 		E57FD32722D4A82E009A1740 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57FD32622D4A82E009A1740 /* PersistentContainer.swift */; };
 		E57FD32822D4A82E009A1740 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57FD32622D4A82E009A1740 /* PersistentContainer.swift */; };
@@ -125,6 +126,7 @@
 		E52BA738229ED9B600077476 /* YandexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponse.swift; sourceTree = "<group>"; };
 		E5306E6F22BCABC100026C2E /* GeoActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoActionTableViewCell.swift; sourceTree = "<group>"; };
 		E536F74C22D51BCF00258788 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		E55F483E22D5D8A100948AB4 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		E57FD32622D4A82E009A1740 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		E57FD32922D4A862009A1740 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E57FD32F22D4A88B009A1740 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
@@ -303,6 +305,7 @@
 				E5BD423422893DE50085CA4B /* Geo.entitlements */,
 				E5BD41DC22893DA30085CA4B /* AppDelegate.swift */,
 				E5BD41DE22893DA30085CA4B /* ViewController.swift */,
+				E55F483E22D5D8A100948AB4 /* GraphViewController.swift */,
 				E5BD41E022893DA30085CA4B /* Main.storyboard */,
 				E5BD41E322893DA50085CA4B /* Assets.xcassets */,
 				E5BD41E522893DA50085CA4B /* LaunchScreen.storyboard */,
@@ -641,6 +644,7 @@
 				E57FD32722D4A82E009A1740 /* PersistentContainer.swift in Sources */,
 				E52BA737229ECF3200077476 /* Geocode.swift in Sources */,
 				E52BA739229ED9B600077476 /* YandexResponse.swift in Sources */,
+				E55F483F22D5D8A100948AB4 /* GraphViewController.swift in Sources */,
 				E582AD8122B2245900F5364A /* OpenWeatherMapResponse.swift in Sources */,
 				E582AD7E22B2221400F5364A /* Weather.swift in Sources */,
 				E5BD41DD22893DA30085CA4B /* AppDelegate.swift in Sources */,

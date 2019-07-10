@@ -39,9 +39,37 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		
 		let app = UIApplication.shared.delegate as! AppDelegate
 		app.bar!.dataUpdated = refreshAltitudeInfo
+		
+		title = NSLocalizedString("NETTRASH.Geo", comment: "")
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.bookmarks, target: self, action: #selector(gotoGraph(_:)))
 	}
 
-	private func _initTable() {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "graph" {
+			//prepare graph
+			let graph = segue.destination as! GraphViewController
+			
+			let app = UIApplication.shared.delegate as! AppDelegate
+			let moc = app.persistentContainer.viewContext
+			let traces: [Dictionary<String, Any>]? = try? moc.fetch(Trace.weekAggregateFetchRequest()) as? [Dictionary<String, Any>]
+			var points: [Int] = [0, 0, 0, 0, 0, 0, 0]
+			var idx = traces?.count ?? 0
+			var cnt = 0
+			while idx > 0 && cnt < 7 {
+				idx -= 1
+				cnt += 1
+				let element = traces![idx]
+				points[7-cnt] = Int(element["max"] as! Double)
+			}
+			graph.graphPointsAltitudeBar = points
+		}
+	}
+	
+	@objc func gotoGraph(_ sender: Any?) {
+		self.performSegue(withIdentifier: "graph", sender: self)
+	}
+	
+	func _initTable() {
 		self.tblData.register(GeoTableViewCell.self, forCellReuseIdentifier: "GeoCell")
 		_initGroups()
 	}
@@ -309,21 +337,39 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 				if traces!.count > 0 { lastTrace = traces![traces!.count-1] }
 				var date = Date()
 				let calendar = Calendar.current
-				let minute = calendar.component(.minute, from: date)
-				let second = calendar.component(.second, from: date)
-				let nanosecond = calendar.component(.nanosecond, from: date)
-				let minuteDelta = minute - 10 * (minute / 10)
+				var minute = calendar.component(.minute, from: date)
+				var second = calendar.component(.second, from: date)
+				var nanosecond = calendar.component(.nanosecond, from: date)
+				var minuteDelta = minute - 10 * (minute / 10)
 				date = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: date)!
 				date = calendar.date(byAdding: .second, value: -second, to: date)!
 				date = calendar.date(byAdding: .minute, value: -minuteDelta, to: date)!
+				
+				var d = Date()
+				let hour = calendar.component(.hour, from: d)
+				minute = calendar.component(.minute, from: d)
+				second = calendar.component(.second, from: d)
+				nanosecond = calendar.component(.nanosecond, from: d)
+				minuteDelta = minute - 10 * (minute / 10)
+				d = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: d)!
+				d = calendar.date(byAdding: .second, value: -second, to: d)!
+				d = calendar.date(byAdding: .minute, value: -minute, to: d)!
+				d = calendar.date(byAdding: .hour, value: -hour, to: d)!
+				
+				var mDiff = 0
+				if lastTrace != nil && lastTrace!.date != nil {
+					let diff = calendar.dateComponents([.minute], from: lastTrace!.date! as Date, to: date)
+					mDiff = diff.minute!
+				}
 				if lastTrace != nil && lastTrace?.date != nil && lastTrace!.date! as Date == date {
 					lastTrace!.latitude = self.location!.coordinate.latitude
 					lastTrace!.longitude = self.location!.coordinate.longitude
 					lastTrace!.altitudeGPS = self.location!.altitude
 					try? moc.save()
-				} else if minuteDelta == 0 || lastTrace == nil {
+				} else if minuteDelta == 0 || mDiff > 9 || lastTrace == nil {
 					let trace = NSEntityDescription.insertNewObject(forEntityName: "Trace", into: moc) as! Trace
 					trace.date = date as NSDate
+					trace.day = d as NSDate
 					trace.latitude = self.location!.coordinate.latitude
 					trace.longitude = self.location!.coordinate.longitude
 					trace.altitudeGPS = self.location!.altitude
@@ -345,24 +391,43 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			let traces = try? moc.fetch(Trace.fetchRequest()) as [Trace]
 			
 			if (traces != nil) {
-				let lastTrace = traces![traces!.count-1]
+				var lastTrace: Trace? = nil
+				if traces!.count > 0 { lastTrace = traces![traces!.count-1] }
 				var date = Date()
 				let calendar = Calendar.current
-				let minute = calendar.component(.minute, from: date)
-				let second = calendar.component(.second, from: date)
-				let nanosecond = calendar.component(.nanosecond, from: date)
-				let minuteDelta = minute - 10 * (minute / 10)
+				var minute = calendar.component(.minute, from: date)
+				var second = calendar.component(.second, from: date)
+				var nanosecond = calendar.component(.nanosecond, from: date)
+				var minuteDelta = minute - 10 * (minute / 10)
 				date = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: date)!
 				date = calendar.date(byAdding: .second, value: -second, to: date)!
 				date = calendar.date(byAdding: .minute, value: -minuteDelta, to: date)!
-				if lastTrace.date != nil && lastTrace.date! as Date == date {
-					lastTrace.altitudeBAR = self.barAltitude
-					lastTrace.pressure = self.barPressure
-					lastTrace.everest = everestPercent
+				
+				var d = Date()
+				let hour = calendar.component(.hour, from: d)
+				minute = calendar.component(.minute, from: d)
+				second = calendar.component(.second, from: d)
+				nanosecond = calendar.component(.nanosecond, from: d)
+				minuteDelta = minute - 10 * (minute / 10)
+				d = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: d)!
+				d = calendar.date(byAdding: .second, value: -second, to: d)!
+				d = calendar.date(byAdding: .minute, value: -minute, to: d)!
+				d = calendar.date(byAdding: .hour, value: -hour, to: d)!
+				
+				var mDiff = 0
+				if lastTrace != nil && lastTrace!.date != nil {
+					let diff = calendar.dateComponents([.minute], from: lastTrace!.date! as Date, to: date)
+					mDiff = diff.minute!
+				}
+				if lastTrace != nil && lastTrace!.date != nil && lastTrace!.date! as Date == date {
+					lastTrace!.altitudeBAR = self.barAltitude
+					lastTrace!.pressure = self.barPressure
+					lastTrace!.everest = everestPercent
 					try? moc.save()
-				} else if minuteDelta == 0 {
+				} else if minuteDelta == 0 || mDiff > 9 || lastTrace == nil {
 					let trace = NSEntityDescription.insertNewObject(forEntityName: "Trace", into: moc) as! Trace
 					trace.date = date as NSDate
+					trace.day = d as NSDate
 					trace.altitudeBAR = self.barAltitude
 					trace.pressure = self.barPressure
 					trace.everest = everestPercent

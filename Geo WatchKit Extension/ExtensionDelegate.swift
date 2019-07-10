@@ -106,21 +106,39 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 				if traces!.count > 0 { lastTrace = traces![traces!.count-1] }
 				var date = Date()
 				let calendar = Calendar.current
-				let minute = calendar.component(.minute, from: date)
-				let second = calendar.component(.second, from: date)
-				let nanosecond = calendar.component(.nanosecond, from: date)
-				let minuteDelta = minute - 10 * (minute / 10)
+				var minute = calendar.component(.minute, from: date)
+				var second = calendar.component(.second, from: date)
+				var nanosecond = calendar.component(.nanosecond, from: date)
+				var minuteDelta = minute - 10 * (minute / 10)
 				date = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: date)!
 				date = calendar.date(byAdding: .second, value: -second, to: date)!
 				date = calendar.date(byAdding: .minute, value: -minuteDelta, to: date)!
+				
+				var d = Date()
+				let hour = calendar.component(.hour, from: d)
+				minute = calendar.component(.minute, from: d)
+				second = calendar.component(.second, from: d)
+				nanosecond = calendar.component(.nanosecond, from: d)
+				minuteDelta = minute - 10 * (minute / 10)
+				d = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: d)!
+				d = calendar.date(byAdding: .second, value: -second, to: d)!
+				d = calendar.date(byAdding: .minute, value: -minute, to: d)!
+				d = calendar.date(byAdding: .hour, value: -hour, to: d)!
+				
+				var mDiff = 0
+				if lastTrace != nil && lastTrace!.date != nil {
+					let diff = calendar.dateComponents([.minute], from: lastTrace!.date! as Date, to: date)
+					mDiff = diff.minute!
+				}
 				if lastTrace != nil && lastTrace?.date != nil && lastTrace!.date! as Date == date {
 					lastTrace!.altitudeBAR = barAltitude
 					lastTrace!.pressure = barPressure
 					lastTrace!.everest = everestPercent
 					try? moc.save()
-				} else if minuteDelta == 0 || lastTrace == nil {
+				} else if minuteDelta == 0 || mDiff > 9 || lastTrace == nil {
 					let trace = NSEntityDescription.insertNewObject(forEntityName: "Trace", into: moc) as! Trace
 					trace.date = date as NSDate
+					trace.day = d as NSDate
 					trace.altitudeBAR = barAltitude
 					trace.pressure = barPressure
 					trace.everest = everestPercent
