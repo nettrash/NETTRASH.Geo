@@ -41,9 +41,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		app.bar!.dataUpdated = refreshAltitudeInfo
 		
 		title = NSLocalizedString("NETTRASH.Geo", comment: "")
-		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.bookmarks, target: self, action: #selector(gotoGraph(_:)))
+		
+		navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "iconGraph.png"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(gotoGraph(_:)))
 	}
 
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 28)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+	}
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "graph" {
 			//prepare graph
@@ -375,6 +381,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 					trace.altitudeGPS = self.location!.altitude
 					try? moc.save()
 				}
+				
+				if traces!.count > 10000 {
+					moc.delete(traces![0])
+					try? moc.save()
+				}
 			}
 		}
 	}
@@ -434,7 +445,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 					try? moc.save()
 				}
 				
-				if traces!.count > 100 {
+				if traces!.count > 10000 {
 					moc.delete(traces![0])
 					try? moc.save()
 				}

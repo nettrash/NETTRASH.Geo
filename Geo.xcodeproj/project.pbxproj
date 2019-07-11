@@ -13,6 +13,9 @@
 		E536F74D22D51BCF00258788 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E536F74C22D51BCF00258788 /* GraphView.swift */; };
 		E55E348622A142E700BDCE56 /* Barometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDD39F2297EDE100E3737F /* Barometer.swift */; };
 		E55F483F22D5D8A100948AB4 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55F483E22D5D8A100948AB4 /* GraphViewController.swift */; };
+		E57A7D1A22D79F4F00DD5121 /* iconGraph@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E57A7D1722D79F4F00DD5121 /* iconGraph@3x.png */; };
+		E57A7D1B22D79F4F00DD5121 /* iconGraph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E57A7D1822D79F4F00DD5121 /* iconGraph@2x.png */; };
+		E57A7D1C22D79F4F00DD5121 /* iconGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = E57A7D1922D79F4F00DD5121 /* iconGraph.png */; };
 		E57DF9DE229FD8B6006D8F87 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA738229ED9B600077476 /* YandexResponse.swift */; };
 		E57FD32722D4A82E009A1740 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57FD32622D4A82E009A1740 /* PersistentContainer.swift */; };
 		E57FD32822D4A82E009A1740 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57FD32622D4A82E009A1740 /* PersistentContainer.swift */; };
@@ -127,6 +130,9 @@
 		E5306E6F22BCABC100026C2E /* GeoActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoActionTableViewCell.swift; sourceTree = "<group>"; };
 		E536F74C22D51BCF00258788 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		E55F483E22D5D8A100948AB4 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		E57A7D1722D79F4F00DD5121 /* iconGraph@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconGraph@3x.png"; sourceTree = "<group>"; };
+		E57A7D1822D79F4F00DD5121 /* iconGraph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconGraph@2x.png"; sourceTree = "<group>"; };
+		E57A7D1922D79F4F00DD5121 /* iconGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconGraph.png; sourceTree = "<group>"; };
 		E57FD32622D4A82E009A1740 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		E57FD32922D4A862009A1740 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E57FD32F22D4A88B009A1740 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
@@ -368,6 +374,9 @@
 		E5C8603522AA8D360002CB91 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				E57A7D1922D79F4F00DD5121 /* iconGraph.png */,
+				E57A7D1822D79F4F00DD5121 /* iconGraph@2x.png */,
+				E57A7D1722D79F4F00DD5121 /* iconGraph@3x.png */,
 				E5C8603622AA8D600002CB91 /* Geo.png */,
 				E5C8603722AA8D610002CB91 /* readme.txt */,
 			);
@@ -586,8 +595,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5C8603922AA8D610002CB91 /* readme.txt in Resources */,
+				E57A7D1A22D79F4F00DD5121 /* iconGraph@3x.png in Resources */,
 				E5C795E422C7EB1D001DD791 /* InfoPlist.strings in Resources */,
+				E57A7D1B22D79F4F00DD5121 /* iconGraph@2x.png in Resources */,
 				E5C795E922C7EBAB001DD791 /* Localizable.strings in Resources */,
+				E57A7D1C22D79F4F00DD5121 /* iconGraph.png in Resources */,
 				E5BD41E722893DA50085CA4B /* LaunchScreen.storyboard in Resources */,
 				E5C8603822AA8D610002CB91 /* Geo.png in Resources */,
 				E5BD41E422893DA50085CA4B /* Assets.xcassets in Resources */,

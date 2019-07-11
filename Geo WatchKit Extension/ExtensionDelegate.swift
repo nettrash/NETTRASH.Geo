@@ -145,7 +145,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 					try? moc.save()
 				}
 				
-				if traces!.count > 100 {
+				if traces!.count > 10000 {
 					moc.delete(traces![0])
 					try? moc.save()
 				}

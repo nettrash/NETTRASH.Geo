@@ -23,6 +23,9 @@ class GraphViewController : UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		
+		self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 28)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+
 		self.setupGraphDisplay()
 	}
 	
