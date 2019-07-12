@@ -18,18 +18,34 @@ extension Trace {
 	}
 
 	@nonobjc public class func weekAggregateFetchRequest() -> NSFetchRequest<NSFetchRequestResult> {
-		let keypathExp = NSExpression(forKeyPath: "altitudeBAR")
-		let expression = NSExpression(forFunction: "max:", arguments: [keypathExp])
+		let keypathExpAltitudeBar = NSExpression(forKeyPath: "altitudeBAR")
+		let expressionMaxAltitudeBAR = NSExpression(forFunction: "max:", arguments: [keypathExpAltitudeBar])
 		
-		let maxDesc = NSExpressionDescription()
-		maxDesc.expression = expression
-		maxDesc.name = "max"
-		maxDesc.expressionResultType = .doubleAttributeType
+		let descMaxAltitudeBar = NSExpressionDescription()
+		descMaxAltitudeBar.expression = expressionMaxAltitudeBAR
+		descMaxAltitudeBar.name = "maxAltitudeBAR"
+		descMaxAltitudeBar.expressionResultType = .doubleAttributeType
+
+		let keypathExpPressure = NSExpression(forKeyPath: "pressure")
+		let expressionMinPressure = NSExpression(forFunction: "min:", arguments: [keypathExpPressure])
 		
+		let descMinPressure = NSExpressionDescription()
+		descMinPressure.expression = expressionMinPressure
+		descMinPressure.name = "minPressure"
+		descMinPressure.expressionResultType = .doubleAttributeType
+
+		let keypathExpEverest = NSExpression(forKeyPath: "everest")
+		let expressionMaxEverest = NSExpression(forFunction: "max:", arguments: [keypathExpEverest])
+		
+		let descMaxEverest = NSExpressionDescription()
+		descMaxEverest.expression = expressionMaxEverest
+		descMaxEverest.name = "maxEverest"
+		descMaxEverest.expressionResultType = .doubleAttributeType
+
 		let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Trace")
 		request.returnsObjectsAsFaults = false
 		request.propertiesToGroupBy = ["day"]
-		request.propertiesToFetch = ["day", maxDesc]
+		request.propertiesToFetch = ["day", descMaxAltitudeBar, descMinPressure, descMaxEverest]
 		request.resultType = .dictionaryResultType
 		return request
 	}

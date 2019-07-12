@@ -8,6 +8,7 @@
 "Weather unavailable"="Weather unavailable";
 "Geocode unavailable"="Geocode unavailable";
 "%🏔 (Everest)"="%🏔 (Everest)";
+"%🏔 (Everest) GPS"="%🏔 (Everest GPS/GLONASS)";
 "%.4f kPa %.4f mm Hg %.4f atm"="%.4f kPa %.4f mm Hg %.4f atm";
 "%.0fm according to the barometer"="%.0fm according to the barometer";
 "%.6f longitude"="%.6f longitude";
@@ -30,3 +31,5 @@
 "Graph"="Graph";
 "Average"="Average";
 "Altitude (Bar)"="Altitude (Bar) m";
+"Pressure"="Pressure kPa";
+"Everest"="Everest %";

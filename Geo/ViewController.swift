@@ -42,7 +42,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		
 		title = NSLocalizedString("NETTRASH.Geo", comment: "")
 		
-		navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "iconGraph.png"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(gotoGraph(_:)))
+		//navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "iconGraph.png"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(gotoGraph(_:)))
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -58,20 +58,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			let app = UIApplication.shared.delegate as! AppDelegate
 			let moc = app.persistentContainer.viewContext
 			let traces: [Dictionary<String, Any>]? = try? moc.fetch(Trace.weekAggregateFetchRequest()) as? [Dictionary<String, Any>]
-			var points: [Int] = [0, 0, 0, 0, 0, 0, 0]
+			var pointsAltitudeBar: [Int] = [0, 0, 0, 0, 0, 0, 0]
+			var pointsPressure: [Int] = [0, 0, 0, 0, 0, 0, 0]
+			var pointsEverest: [Int] = [0, 0, 0, 0, 0, 0, 0]
 			var idx = traces?.count ?? 0
 			var cnt = 0
 			while idx > 0 && cnt < 7 {
 				idx -= 1
 				cnt += 1
 				let element = traces![idx]
-				points[7-cnt] = Int(element["max"] as! Double)
+				pointsAltitudeBar[7-cnt] = Int(element["maxAltitudeBAR"] as! Double)
+				pointsPressure[7-cnt] = Int(element["minPressure"] as! Double)
+				pointsEverest[7-cnt] = Int(element["maxEverest"] as! Double)
 			}
-			graph.graphPointsAltitudeBar = points
+			graph.graphPointsAltitudeBar = pointsAltitudeBar
+			graph.graphPointsPressure = pointsPressure
+			graph.graphPointsEverest = pointsEverest
 		}
 	}
 	
-	@objc func gotoGraph(_ sender: Any?) {
+	@IBAction @objc func gotoGraph(_ sender: Any?) {
 		self.performSegue(withIdentifier: "graph", sender: self)
 	}
 	
@@ -140,6 +146,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 				}
 				self.items[0]![1] = String(format: NSLocalizedString("%.0fm according to the GPS/GLONASS", comment: ""), self.location!.altitude)
 				
+				if self.items[4]![0] == "" {
+					let everest = self.location!.coordinate.longitude / 8848
+					let everestPercent = 100.0 * everest
+					//let colorDelta = everestPercent * 255.0 / 100.0
+					let everestPercentText = String(format: "%.4f", everestPercent)
+					//Everest Percent
+					self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest) GPS", comment: "")
+				}
+				
 				//Location Latitude
 				self.items[1]![0] = String(format: NSLocalizedString("%.6f latitude", comment: ""), self.location!.coordinate.latitude)
 				//Location Longitude
@@ -203,9 +218,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		let everest = h / 8848
 		
 		let everestPercent = 100.0 * everest
-		let colorDelta = everestPercent * 255.0 / 100.0
+		//let colorDelta = everestPercent * 255.0 / 100.0
 		let everestPercentText = String(format: "%.4f", everestPercent)
-		let everestColor = UIColor(red: CGFloat(colorDelta / 255.0), green: CGFloat((255.0 - colorDelta) / 255.0), blue: 0, alpha: 1)
+		//let everestColor = UIColor(red: CGFloat(colorDelta / 255.0), green: CGFloat((255.0 - colorDelta) / 255.0), blue: 0, alpha: 1)
 		
 		self.barAltitude = h
 		self.barPressure = pressure
@@ -244,6 +259,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			self.items[1]![0] = ""
 			self.items[2]![0] = ""
 			self.items[4]![0] = ""
+			if self.items[4]![0] == "" && self.stepLocation != nil {
+				let everest = self.stepLocation!.coordinate.longitude / 8848
+				let everestPercent = 100.0 * everest
+				//let colorDelta = everestPercent * 255.0 / 100.0
+				let everestPercentText = String(format: "%.4f", everestPercent)
+				//Everest Percent
+				self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest GPS)", comment: "")
+			}
 		}
 		
 		self.tblData.reloadData()
@@ -334,6 +357,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	func traceLocation() {
 		let app = UIApplication.shared.delegate as! AppDelegate
 		if (self.location != nil) {
+			var everestPercent: Double = 0
+			if (app.bar != nil) {
+				everestPercent = 100.0 * app.bar!.everest
+				if everestPercent == 0 {
+					everestPercent = 100.0 * self.location!.altitude / 8848
+				}
+			}
 			
 			let moc = app.persistentContainer.viewContext
 			let traces = try? moc.fetch(Trace.fetchRequest()) as [Trace]
@@ -371,6 +401,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 					lastTrace!.latitude = self.location!.coordinate.latitude
 					lastTrace!.longitude = self.location!.coordinate.longitude
 					lastTrace!.altitudeGPS = self.location!.altitude
+					lastTrace!.everest = everestPercent
 					try? moc.save()
 				} else if minuteDelta == 0 || mDiff > 9 || lastTrace == nil {
 					let trace = NSEntityDescription.insertNewObject(forEntityName: "Trace", into: moc) as! Trace
@@ -379,6 +410,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 					trace.latitude = self.location!.coordinate.latitude
 					trace.longitude = self.location!.coordinate.longitude
 					trace.altitudeGPS = self.location!.altitude
+					trace.everest = everestPercent
 					try? moc.save()
 				}
 				
@@ -394,7 +426,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		let app = UIApplication.shared.delegate as! AppDelegate
 		if (app.bar != nil) {
 			
-			let everestPercent = 100.0 * app.bar!.everest
+			var everestPercent = 100.0 * app.bar!.everest
+			if everestPercent == 0 && self.stepLocation != nil {
+				everestPercent = 100.0 * self.stepLocation!.altitude / 8848
+			}
 			self.barAltitude = app.bar!.height
 			self.barPressure = app.bar!.pressure
 			
