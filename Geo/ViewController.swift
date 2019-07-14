@@ -56,6 +56,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			//prepare graph
 			let graph = segue.destination as! GraphViewController
 			
+			#if targetEnvironment(simulator)
+			
+			graph.graphPointsAltitudeBar = [190, 313, 323, 306, 265, 233, 211]
+			graph.graphPointsPressure = [98, 97, 97, 97, 98, 98, 98]
+			graph.graphPointsEverest = [1, 3, 3, 3, 2, 2, 2]
+
+			#else
+			
 			let app = UIApplication.shared.delegate as! AppDelegate
 			let moc = app.persistentContainer.viewContext
 			let traces: [Dictionary<String, Any>]? = try? moc.fetch(Trace.weekAggregateFetchRequest()) as? [Dictionary<String, Any>]
@@ -86,6 +94,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			graph.graphPointsAltitudeBar = pointsAltitudeBar
 			graph.graphPointsPressure = pointsPressure
 			graph.graphPointsEverest = pointsEverest
+
+			#endif
 		}
 	}
 	
@@ -350,6 +360,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 
 		cell.textLabel?.text = value
 		
+		if indexPath.section == 4 && indexPath.row == 1 {
+			cell.textLabel?.numberOfLines = 0
+		} else {
+			cell.textLabel?.numberOfLines = 1
+		}
+		
 		return cell
 	}
 	
@@ -362,6 +378,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		if indexPath.section == 4 && indexPath.row == 1 {
+			return 44
+		}
 		return 22
 	}
 	

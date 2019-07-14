@@ -20,7 +20,7 @@ import UIKit
 		static let circleDiameter: CGFloat = 5.0
 	}
 	
-	@IBInspectable var bgStartColor: UIColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1)//UIColor(red: 250/255, green: 233/255, blue: 222/255, alpha: 1)//UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1)
+	@IBInspectable var bgStartColor: UIColor = UIColor(red: 60/255, green: 60/255, blue: 60/255, alpha: 1)//UIColor(red: 250/255, green: 233/255, blue: 222/255, alpha: 1)//UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1)
 	@IBInspectable var bgEndColor: UIColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)//UIColor(red: 252/255, green: 79/255, blue: 8/255, alpha: 1)//UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
 	
 	@IBOutlet var lblTitle: UILabel!
