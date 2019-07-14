@@ -27,7 +27,10 @@ import UIKit
 	@IBOutlet var lblAggregateTitle: UILabel!
 	@IBOutlet var lblAggregateValue: UILabel!
 	@IBOutlet var lblMaxY: UILabel!
+	@IBOutlet var lblMinY: UILabel!
 	@IBOutlet var svLabelsY: UIStackView!
+	@IBOutlet var lblStartX: UILabel!
+	@IBOutlet var lblEndX: UILabel!
 	
 	var graphPoints = [4, 2, 6, 4, 5, 8, 3]
 	

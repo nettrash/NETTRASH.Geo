@@ -45,15 +45,19 @@ class GraphViewController : UIViewController {
 		
 		let maxDayIndex = graphViewAltitudeBar.svLabelsY.arrangedSubviews.count - 1
 		
-		graphViewAltitudeBar.graphPoints = graphPointsAltitudeBar
+		let max = graphPointsAltitudeBar.max()!
+		let min = graphPointsAltitudeBar.min()!
+		
+		graphViewAltitudeBar.graphPoints = graphPointsAltitudeBar.map({ (_ v: Int) -> Int in
+			return v - min
+		})
 		graphViewAltitudeBar.setNeedsDisplay()
-		graphViewAltitudeBar.lblMaxY.text = "\(graphViewAltitudeBar.graphPoints.max()!)"
+		graphViewAltitudeBar.lblMaxY.text = "\(max)"
+		graphViewAltitudeBar.lblMinY.text = "\(min)"
 		
 		graphViewAltitudeBar.lblTitle.text = NSLocalizedString("Altitude (Bar)", comment: "")
 		
-		let average = graphViewAltitudeBar.graphPoints.reduce(0, +) / graphViewAltitudeBar.graphPoints.map({ (_ a: Int) -> Int in
-			return a > 0 ? 1 : a
-		}).reduce(0, +)
+		let average = graphPointsAltitudeBar.reduce(0, +) / graphPointsAltitudeBar.count
 		graphViewAltitudeBar.lblAggregateTitle.text = NSLocalizedString("Average", comment: "")
 		graphViewAltitudeBar.lblAggregateValue.text = "\(average)"
 		
@@ -69,21 +73,36 @@ class GraphViewController : UIViewController {
 				label.text = formatter.string(from: date)
 			}
 		}
+		
+		formatter.setLocalizedDateFormatFromTemplate("d LLL")
+		if let startDate = calendar.date(byAdding: .day, value: -maxDayIndex, to: today) {
+			graphViewAltitudeBar.lblStartX.text = formatter.string(from: startDate)
+			let todayMonth = calendar.dateComponents([.month], from: today)
+			let startMonth = calendar.dateComponents([.month], from: startDate)
+			if todayMonth == startMonth {
+				formatter.setLocalizedDateFormatFromTemplate("d")
+			}
+		}
+		graphViewAltitudeBar.lblEndX.text = formatter.string(from: today)
 	}
 	
 	func setupGraphPressure() {
 		
 		let maxDayIndex = graphViewPressure.svLabelsY.arrangedSubviews.count - 1
 		
-		graphViewPressure.graphPoints = graphPointsPressure
+		let max = graphPointsPressure.max()!
+		let min = graphPointsPressure.min()!
+		
+		graphViewPressure.graphPoints = graphPointsPressure.map({ (_ v: Int) -> Int in
+			return v - min
+		})
 		graphViewPressure.setNeedsDisplay()
-		graphViewPressure.lblMaxY.text = "\(graphViewPressure.graphPoints.max()!)"
+		graphViewPressure.lblMaxY.text = "\(max)"
+		graphViewPressure.lblMinY.text = "\(min)"
+
+		graphViewPressure.lblTitle.text = NSLocalizedString("Pressure kPa", comment: "")
 		
-		graphViewPressure.lblTitle.text = NSLocalizedString("Pressure", comment: "")
-		
-		let average = graphViewPressure.graphPoints.reduce(0, +) / graphViewPressure.graphPoints.map({ (_ a: Int) -> Int in
-			return a > 0 ? 1 : a
-		}).reduce(0, +)
+		let average = graphPointsPressure.reduce(0, +) / graphPointsPressure.count
 		graphViewPressure.lblAggregateTitle.text = NSLocalizedString("Average", comment: "")
 		graphViewPressure.lblAggregateValue.text = "\(average)"
 		
@@ -99,21 +118,36 @@ class GraphViewController : UIViewController {
 				label.text = formatter.string(from: date)
 			}
 		}
+		
+		formatter.setLocalizedDateFormatFromTemplate("d LLL")
+		if let startDate = calendar.date(byAdding: .day, value: -maxDayIndex, to: today) {
+			graphViewPressure.lblStartX.text = formatter.string(from: startDate)
+			let todayMonth = calendar.dateComponents([.month], from: today)
+			let startMonth = calendar.dateComponents([.month], from: startDate)
+			if todayMonth == startMonth {
+				formatter.setLocalizedDateFormatFromTemplate("d")
+			}
+		}
+		graphViewPressure.lblEndX.text = formatter.string(from: today)
 	}
 	
 	func setupGraphEverest() {
 		
 		let maxDayIndex = graphViewEverest.svLabelsY.arrangedSubviews.count - 1
 		
-		graphViewEverest.graphPoints = graphPointsEverest
-		graphViewEverest.setNeedsDisplay()
-		graphViewEverest.lblMaxY.text = "\(graphViewEverest.graphPoints.max()!)"
+		let max = graphPointsEverest.max()!
+		let min = graphPointsEverest.min()!
 		
+		graphViewEverest.graphPoints = graphPointsEverest.map({ (_ v: Int) -> Int in
+			return v - min
+		})
+		graphViewEverest.setNeedsDisplay()
+		graphViewEverest.lblMaxY.text = "\(max)"
+		graphViewEverest.lblMinY.text = "\(min)"
+
 		graphViewEverest.lblTitle.text = NSLocalizedString("Everest", comment: "")
 		
-		let average = graphViewEverest.graphPoints.reduce(0, +) / graphViewEverest.graphPoints.map({ (_ a: Int) -> Int in
-			return a > 0 ? 1 : a
-		}).reduce(0, +)
+		let average = graphPointsEverest.reduce(0, +) / graphPointsEverest.count
 		graphViewEverest.lblAggregateTitle.text = NSLocalizedString("Average", comment: "")
 		graphViewEverest.lblAggregateValue.text = "\(average)"
 		
@@ -129,6 +163,17 @@ class GraphViewController : UIViewController {
 				label.text = formatter.string(from: date)
 			}
 		}
+		
+		formatter.setLocalizedDateFormatFromTemplate("d LLL")
+		if let startDate = calendar.date(byAdding: .day, value: -maxDayIndex, to: today) {
+			graphViewEverest.lblStartX.text = formatter.string(from: startDate)
+			let todayMonth = calendar.dateComponents([.month], from: today)
+			let startMonth = calendar.dateComponents([.month], from: startDate)
+			if todayMonth == startMonth {
+				formatter.setLocalizedDateFormatFromTemplate("d")
+			}
+		}
+		graphViewEverest.lblEndX.text = formatter.string(from: today)
 	}
 
 }

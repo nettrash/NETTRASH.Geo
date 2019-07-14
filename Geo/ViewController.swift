@@ -21,6 +21,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	
 	@IBOutlet var tblData: UITableView!
 	@IBOutlet var aiLoading: UIActivityIndicatorView!
+	@IBOutlet var btnGraph: UIButton!
 	
 	private var groups: [Int:String] = [:]
 	private var items: [Int:[Int:String]] = [:]
@@ -70,6 +71,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 				pointsAltitudeBar[7-cnt] = Int(element["maxAltitudeBAR"] as! Double)
 				pointsPressure[7-cnt] = Int(element["minPressure"] as! Double)
 				pointsEverest[7-cnt] = Int(element["maxEverest"] as! Double)
+			}
+			if cnt < 7 && cnt > 0 {
+				let pab = pointsAltitudeBar[7-cnt]
+				let pp = pointsPressure[7-cnt]
+				let pe = pointsEverest[7-cnt]
+				while cnt < 7 {
+					cnt += 1
+					pointsAltitudeBar[7-cnt] = pab
+					pointsPressure[7-cnt] = pp
+					pointsEverest[7-cnt] = pe
+				}
 			}
 			graph.graphPointsAltitudeBar = pointsAltitudeBar
 			graph.graphPointsPressure = pointsPressure
@@ -177,6 +189,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 			self.aiLoading.stopAnimating()
 			self.tblData.isHidden = false
+			self.btnGraph.isHidden = false
 		}
 	}
 	
