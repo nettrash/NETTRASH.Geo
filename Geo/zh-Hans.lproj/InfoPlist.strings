@@ -1,0 +1,16 @@
+/* 
+  InfoPlist.strings
+  Geo
+
+  Created by Иван Алексеев on 29/06/2019.
+  Copyright © 2019 NETTRASH. All rights reserved.
+*/
+"CFBundleDisplayName" = "GEO";
+"NSLocationAlwaysAndWhenInUseUsageDescription"="访问位置进行计算海拔, 天气和地理编码数据";
+"NSLocationAlwaysUsageDescription"="访问位置进行计算海拔, 天气和地理编码数据";
+"NSLocationUsageDescription"="访问位置进行计算海拔, 天气和地理编码数据";
+"NSLocationWhenInUseUsageDescription"="访问位置进行计算海拔, 天气和地理编码数据";
+"NSCameraUsageDescription" = "访问相机以链接图像数据";
+"NSPhotoLibraryAddUsageDescription" = "访问照片以保持当前环境和数据连接";
+"NSSiriUsageDescription" = "访问Siri以查询当前指标。";
+"NSFaceIDUsageDescription" = "访问在附录";

@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Share"; ObjectID = "Qhz-9W-7DV"; */
+"Qhz-9W-7DV.normalTitle" = "链接";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "TyW-dd-2Ji"; */
+"TyW-dd-2Ji.text" = "文本";
+
+/* Class = "UIButton"; normalTitle = "Map"; ObjectID = "W6C-4P-50s"; */
+"W6C-4P-50s.normalTitle" = "地​图";
+
+/* Class = "UILabel"; text = "NETTRASH.Geo"; ObjectID = "bUi-vg-Jyg"; */
+"bUi-vg-Jyg.text" = "NETTRASH.Geo";

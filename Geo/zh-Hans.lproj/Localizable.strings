@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  Geo
+
+  Created by Иван Алексеев on 29/06/2019.
+  Copyright © 2019 NETTRASH. All rights reserved.
+*/
+"Weather unavailable"="天气数据没有";
+"Geocode unavailable"=" 地理定位没有";
+"%🏔 (Everest)"="%🏔 (珠穆朗玛峰)";
+"%🏔 (Everest) GPS"="%🏔 (珠穆朗玛峰 GPS/ГЛОНАСС)";
+"%.4f kPa %.4f mm Hg %.4f atm"="%.4f kPa %.4f mm Hg %.4f atm";
+"%.0fm according to the barometer"="%.0fm 晴雨表表明";
+"%.6f longitude"="%.6f 经度";
+"%.6f latitude"="%.6f ​纬​度";
+"%.0fm according to the GPS/GLONASS"="%.0fm ​卫​星表明";
+"Altitude"="​高";
+"Location"="方位";
+"Pressure"="压力";
+"Weather"="天气";
+"Other"="其​他";
+"Local"="ru_RU";
+"Temperature %.1f C"="​气​温 %.1f C";
+"Humidity %i %%"="湿度 %i %%";
+"Visibility %i m"="可见度 %i m";
+"Wind speed %.1f m/s"="快慢冈 %.1f m/s";
+"Location"="方位";
+"The lack of access to the location makes some of the functions of the application unusable"="如果地理定位没有, 有些功能不起作用。 允许访问隐私设置中的位置数据。";
+"Continue"="继续";
+"NETTRASH.Geo"="GEO";
+"Graph"="日程表";
+"Average"="平​均";
+"Altitude (Bar)"="高 (晴雨表) m";
+"Pressure kPa"="压力 kPa";
+"Everest"="珠穆朗玛峰 %";

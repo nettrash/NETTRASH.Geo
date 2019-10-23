@@ -50,7 +50,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		super.viewWillAppear(animated)
 		
 		self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 28)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+		
+		#if targetEnvironment(simulator)
+		
+		refreshSimulatorInfo()
+		tblData.reloadData()
+		
+		#endif
 	}
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "graph" {
 			//prepare graph
@@ -249,11 +257,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		self.barPressure = pressure
 		//Barometer Altitude
 		self.items[0]![0] = String(format: NSLocalizedString("%.0fm according to the barometer", comment: ""), h)
+		self.items[0]![1] = String(format: NSLocalizedString("%.0fm according to the GPS/GLONASS", comment: ""), h)
 		//Barometer Pressure
 		self.items[2]![0] = String(format: NSLocalizedString("%.4f kPa %.4f mm Hg %.4f atm", comment: ""), pressure, pressure * 7.50062, pressure / 101.325)
 		//Everest Percent
 		self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest)", comment: "")
 
+		self.tblData.reloadData()
+		refreshView()
 	}
 	
 	#endif
@@ -306,16 +317,64 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	}
 	
 	func refreshGeocode() {
-		let geocode = Geocode(self.stepLocation!)
-		if geocode.Response?.response?.GeoObjectCollection?.featureMember?.count ?? 0 > 0 {
-			//Geocode Information
-			self.items[4]![1] = String(format: "%@", geocode.Response?.response?.GeoObjectCollection?.featureMember?[0].GeoObject?.description ?? "")
+		if self.stepLocation != nil {
+			let geocoder = CLGeocoder()
+			geocoder.reverseGeocodeLocation(self.stepLocation!) { (marks: [CLPlacemark]?, error: Error?) in
+				var address: String = ""
+				if (marks?.count ?? 0) > 0 {
+					let mark = marks![0]
+					var parts: [String] = []
+					if mark.isoCountryCode != nil {
+						parts.append(mark.isoCountryCode!)
+					}
+					if mark.postalCode != nil {
+						parts.append(mark.postalCode!)
+					}
+					if mark.subThoroughfare != nil {
+						parts.append(mark.subThoroughfare!)
+					}
+					if mark.thoroughfare != nil {
+						parts.append(mark.thoroughfare!)
+					}
+					if mark.subLocality != nil {
+						parts.append(mark.subLocality!)
+					}
+					if mark.locality != nil {
+						parts.append(mark.locality!)
+					}
+					if mark.country != nil {
+						parts.append(mark.country!)
+					}
+					if mark.inlandWater != nil {
+						parts.append(mark.inlandWater!)
+					}
+					if mark.ocean != nil {
+						parts.append(mark.ocean!)
+					}
+					address = parts.joined(separator: ", ")
+				} else {
+					address = NSLocalizedString("Geocode unavailable", comment: "")
+				}
+				self.items[4]![1] = String(format: "%@", address)
+				DispatchQueue.main.async {
+					self.tblData.reloadData()
+					self.refreshView()
+				}
+			}
+			/*let geocode = Geocode(self.stepLocation!)
+			if geocode.Response?.response?.GeoObjectCollection?.featureMember?.count ?? 0 > 0 {
+				//Geocode Information
+				self.items[4]![1] = String(format: "%@", 	geocode.Response?.response?.GeoObjectCollection?.featureMember?[0].GeoObject?.description ?? "")
+			} else {
+				self.items[4]![1] = NSLocalizedString("Geocode unavailable", comment: "")
+			}*/
 		} else {
 			self.items[4]![1] = NSLocalizedString("Geocode unavailable", comment: "")
+			self.tblData.reloadData()
+			refreshView()
 		}
-		
-		self.tblData.reloadData()
-		refreshView()
+		//self.tblData.reloadData()
+		//refreshView()
 	}
 	
 	func refreshWeather() {
