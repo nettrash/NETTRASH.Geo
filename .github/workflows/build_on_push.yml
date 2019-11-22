@@ -11,4 +11,4 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build
       run: |
-        xcodebuild -project Geo.xcodeproj -scheme Application -configuration Release -derivedDataPath $HOME/Geo build
+        xcodebuild -project Geo.xcodeproj -scheme Geo -configuration Release -derivedDataPath $HOME/Geo build
