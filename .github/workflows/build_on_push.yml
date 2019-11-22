@@ -1,0 +1,15 @@
+name: BuildOnPush
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: |
+        xcode-select -switch /Applications/Xcode_11.app
+        xcodebuild -project Geo.xcodeproj -scheme Application -configuration Release -derivedDataPath $HOME/Geo build
