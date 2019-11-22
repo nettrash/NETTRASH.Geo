@@ -11,5 +11,4 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build
       run: |
-        sudo xcode-select -switch /Applications/Xcode_11.app
         xcodebuild -project Geo.xcodeproj -scheme Application -configuration Release -derivedDataPath $HOME/Geo build
