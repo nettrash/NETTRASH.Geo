@@ -70,7 +70,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 	private func getData(_ complication: CLKComplication) -> CLKComplicationTemplate {
 		let ext: ExtensionDelegate? = WKExtension.shared().delegate as? ExtensionDelegate
 		
-		var heightText = String(format: "%.0f", ext?.bar.height ?? 0)
+		let h = ext?.bar.height ?? 0
+		var heightText = (h > 1000 ? String(format: "%.1fk", h/1000.0) : String(format: "%.0f", h))
 		let pressureText = String(format: "%.0f", (ext?.bar.pressure ?? 0) * 7.50062)
 		let everest: Float = Float(ext?.bar.everest ?? 0)
 		let heightUnitText = NSLocalizedString("m", comment: "")
@@ -116,7 +117,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 			return modularSmallTemplate
 		case .modularLarge:
 			let modularLargeTemplate = CLKComplicationTemplateModularLargeColumns()
-			modularLargeTemplate.column2Alignment = .right
+			modularLargeTemplate.column2Alignment = CLKComplicationColumnAlignment.trailing
 			modularLargeTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: heightUnitText)
 			modularLargeTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: heightText)
 			modularLargeTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: pressureUnitText)
@@ -207,7 +208,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 			return modularSmallTemplate
 		case .modularLarge:
 			let modularLargeTemplate = CLKComplicationTemplateModularLargeColumns()
-			modularLargeTemplate.column2Alignment = .right
+			modularLargeTemplate.column2Alignment = CLKComplicationColumnAlignment.trailing
 			modularLargeTemplate.row1Column2TextProvider = CLKSimpleTextProvider(text: heightUnitText)
 			modularLargeTemplate.row1Column1TextProvider = CLKSimpleTextProvider(text: heightText)
 			modularLargeTemplate.row2Column2TextProvider = CLKSimpleTextProvider(text: pressureUnitText)
