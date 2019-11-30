@@ -190,6 +190,7 @@
 		E566AF782392EA60005CA340 /* TodayBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TodayBackground@2x.png"; sourceTree = "<group>"; };
 		E566AF792392EA60005CA340 /* TodayBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TodayBackground.png; sourceTree = "<group>"; };
 		E566AF7A2392EA60005CA340 /* TodayBackground@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TodayBackground@3x.png"; sourceTree = "<group>"; };
+		E566AF812392EF7A005CA340 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E57A7D1722D79F4F00DD5121 /* iconGraph@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconGraph@3x.png"; sourceTree = "<group>"; };
 		E57A7D1822D79F4F00DD5121 /* iconGraph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconGraph@2x.png"; sourceTree = "<group>"; };
 		E57A7D1922D79F4F00DD5121 /* iconGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconGraph.png; sourceTree = "<group>"; };
@@ -359,6 +360,7 @@
 		E5BD41D022893DA30085CA4B = {
 			isa = PBXGroup;
 			children = (
+				E566AF812392EF7A005CA340 /* README.md */,
 				E5BD41DB22893DA30085CA4B /* Geo */,
 				E5BD41F022893DA50085CA4B /* GeoTests */,
 				E5BD41FB22893DA50085CA4B /* GeoUITests */,
