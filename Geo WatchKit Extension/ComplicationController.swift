@@ -71,10 +71,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 		let ext: ExtensionDelegate? = WKExtension.shared().delegate as? ExtensionDelegate
 		
 		let h = ext?.bar.height ?? 0
-		var heightText = (h > 1000 ? String(format: "%.1fk", h/1000.0) : String(format: "%.0f", h))
+		var heightText = (h > 999 ? String(format: "%.1f", h/1000.0) : String(format: "%.0f", h))
 		let pressureText = String(format: "%.0f", (ext?.bar.pressure ?? 0) * 7.50062)
 		let everest: Float = Float(ext?.bar.everest ?? 0)
-		let heightUnitText = NSLocalizedString("m", comment: "")
+		let heightUnitText = (h > 999 ? NSLocalizedString("km", comment: "") : NSLocalizedString("m", comment: ""))
 		let pressureUnitText = NSLocalizedString("mm Hg", comment: "")
 		let everestUnitText = NSLocalizedString("% 🏔", comment: "")
 

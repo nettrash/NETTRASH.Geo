@@ -14,7 +14,6 @@ import MapKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
 
-	private let bar: Barometer = Barometer()
 	private let weather: Weather = Weather()
 	
 	private let locationManager: CLLocationManager = CLLocationManager()

@@ -13,6 +13,24 @@
 		E536F74D22D51BCF00258788 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E536F74C22D51BCF00258788 /* GraphView.swift */; };
 		E55E348622A142E700BDCE56 /* Barometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDD39F2297EDE100E3737F /* Barometer.swift */; };
 		E55F483F22D5D8A100948AB4 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55F483E22D5D8A100948AB4 /* GraphViewController.swift */; };
+		E566AF532392BE29005CA340 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E566AF522392BE29005CA340 /* NotificationCenter.framework */; };
+		E566AF562392BE29005CA340 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566AF552392BE29005CA340 /* TodayViewController.swift */; };
+		E566AF592392BE29005CA340 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E566AF572392BE29005CA340 /* MainInterface.storyboard */; };
+		E566AF5E2392BE29005CA340 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E566AF512392BE29005CA340 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E566AF642392BF5A005CA340 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E566AF662392BF5A005CA340 /* InfoPlist.strings */; };
+		E566AF6A2392C6E6005CA340 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57FD32622D4A82E009A1740 /* PersistentContainer.swift */; };
+		E566AF6C2392CA31005CA340 /* Barometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDD39F2297EDE100E3737F /* Barometer.swift */; };
+		E566AF6F2392CCC5005CA340 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E566AF712392CCC5005CA340 /* Localizable.strings */; };
+		E566AF742392D18C005CA340 /* Trace+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57FD35522D4AF33009A1740 /* Trace+CoreDataClass.swift */; };
+		E566AF752392D18F005CA340 /* Trace+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57FD35422D4AF33009A1740 /* Trace+CoreDataProperties.swift */; };
+		E566AF762392D197005CA340 /* Geo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E57FD35A22D4AF44009A1740 /* Geo.xcdatamodeld */; };
+		E566AF772392D1F7005CA340 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E536F74C22D51BCF00258788 /* GraphView.swift */; };
+		E566AF7B2392EA60005CA340 /* TodayBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E566AF782392EA60005CA340 /* TodayBackground@2x.png */; };
+		E566AF7C2392EA60005CA340 /* TodayBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E566AF782392EA60005CA340 /* TodayBackground@2x.png */; };
+		E566AF7D2392EA60005CA340 /* TodayBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E566AF792392EA60005CA340 /* TodayBackground.png */; };
+		E566AF7E2392EA60005CA340 /* TodayBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E566AF792392EA60005CA340 /* TodayBackground.png */; };
+		E566AF7F2392EA60005CA340 /* TodayBackground@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E566AF7A2392EA60005CA340 /* TodayBackground@3x.png */; };
+		E566AF802392EA60005CA340 /* TodayBackground@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E566AF7A2392EA60005CA340 /* TodayBackground@3x.png */; };
 		E57A7D1A22D79F4F00DD5121 /* iconGraph@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E57A7D1722D79F4F00DD5121 /* iconGraph@3x.png */; };
 		E57A7D1B22D79F4F00DD5121 /* iconGraph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E57A7D1822D79F4F00DD5121 /* iconGraph@2x.png */; };
 		E57A7D1C22D79F4F00DD5121 /* iconGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = E57A7D1922D79F4F00DD5121 /* iconGraph.png */; };
@@ -69,6 +87,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E566AF5B2392BE29005CA340 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5BD41D122893DA30085CA4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E566AF502392BE29005CA340;
+			remoteInfo = Today;
+		};
 		E5BD41EE22893DA50085CA4B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E5BD41D122893DA30085CA4B /* Project object */;
@@ -100,6 +125,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		E566AF5D2392BE29005CA340 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E566AF5E2392BE29005CA340 /* Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E5BD422622893DA70085CA4B /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -139,6 +175,21 @@
 		E53A02312307E6E60007F771 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E53A02322307E6E60007F771 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E55F483E22D5D8A100948AB4 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		E566AF512392BE29005CA340 /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E566AF522392BE29005CA340 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		E566AF552392BE29005CA340 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		E566AF582392BE29005CA340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		E566AF5A2392BE29005CA340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E566AF652392BF5A005CA340 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E566AF672392BF5D005CA340 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E566AF682392BF5D005CA340 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E566AF6B2392C825005CA340 /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Today.entitlements; sourceTree = "<group>"; };
+		E566AF702392CCC5005CA340 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E566AF722392CCC6005CA340 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E566AF732392CCC7005CA340 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E566AF782392EA60005CA340 /* TodayBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TodayBackground@2x.png"; sourceTree = "<group>"; };
+		E566AF792392EA60005CA340 /* TodayBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TodayBackground.png; sourceTree = "<group>"; };
+		E566AF7A2392EA60005CA340 /* TodayBackground@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TodayBackground@3x.png"; sourceTree = "<group>"; };
 		E57A7D1722D79F4F00DD5121 /* iconGraph@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconGraph@3x.png"; sourceTree = "<group>"; };
 		E57A7D1822D79F4F00DD5121 /* iconGraph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconGraph@2x.png"; sourceTree = "<group>"; };
 		E57A7D1922D79F4F00DD5121 /* iconGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconGraph.png; sourceTree = "<group>"; };
@@ -207,6 +258,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E566AF4E2392BE29005CA340 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E566AF532392BE29005CA340 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E57FD32D22D4A871009A1740 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,6 +330,19 @@
 			path = Graph;
 			sourceTree = "<group>";
 		};
+		E566AF542392BE29005CA340 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				E566AF6B2392C825005CA340 /* Today.entitlements */,
+				E566AF552392BE29005CA340 /* TodayViewController.swift */,
+				E566AF572392BE29005CA340 /* MainInterface.storyboard */,
+				E566AF5A2392BE29005CA340 /* Info.plist */,
+				E566AF662392BF5A005CA340 /* InfoPlist.strings */,
+				E566AF712392CCC5005CA340 /* Localizable.strings */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
 		E57FD32422D4A7EB009A1740 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +364,7 @@
 				E5BD41FB22893DA50085CA4B /* GeoUITests */,
 				E5BD420522893DA50085CA4B /* Geo WatchKit App */,
 				E5BD421422893DA60085CA4B /* Geo WatchKit Extension */,
+				E566AF542392BE29005CA340 /* Today */,
 				E5BD41DA22893DA30085CA4B /* Products */,
 				E5F57A8E22958CBA004D3A60 /* Frameworks */,
 			);
@@ -305,6 +378,7 @@
 				E5BD41F822893DA50085CA4B /* GeoUITests.xctest */,
 				E5BD420122893DA50085CA4B /* Geo WatchKit App.app */,
 				E5BD421022893DA60085CA4B /* Geo WatchKit Extension.appex */,
+				E566AF512392BE29005CA340 /* Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -383,6 +457,9 @@
 		E5C8603522AA8D360002CB91 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				E566AF792392EA60005CA340 /* TodayBackground.png */,
+				E566AF782392EA60005CA340 /* TodayBackground@2x.png */,
+				E566AF7A2392EA60005CA340 /* TodayBackground@3x.png */,
 				E57A7D1922D79F4F00DD5121 /* iconGraph.png */,
 				E57A7D1822D79F4F00DD5121 /* iconGraph@2x.png */,
 				E57A7D1722D79F4F00DD5121 /* iconGraph@3x.png */,
@@ -413,6 +490,7 @@
 				E5F57A9522958CF1004D3A60 /* CoreLocation.framework */,
 				E5F57A9122958CD6004D3A60 /* CoreMotion.framework */,
 				E5F57A8F22958CBA004D3A60 /* CoreMotion.framework */,
+				E566AF522392BE29005CA340 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -420,6 +498,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E566AF502392BE29005CA340 /* Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E566AF612392BE29005CA340 /* Build configuration list for PBXNativeTarget "Today" */;
+			buildPhases = (
+				E566AF4D2392BE29005CA340 /* Sources */,
+				E566AF4E2392BE29005CA340 /* Frameworks */,
+				E566AF4F2392BE29005CA340 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Today;
+			productName = Today;
+			productReference = E566AF512392BE29005CA340 /* Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E5BD41D822893DA30085CA4B /* Geo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5BD422B22893DA70085CA4B /* Build configuration list for PBXNativeTarget "Geo" */;
@@ -429,11 +524,13 @@
 				E5BD41D722893DA30085CA4B /* Resources */,
 				E5BD422A22893DA70085CA4B /* Embed Watch Content */,
 				E5187E272389CA6300963CA6 /* ShellScript */,
+				E566AF5D2392BE29005CA340 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				E5BD420422893DA50085CA4B /* PBXTargetDependency */,
+				E566AF5C2392BE29005CA340 /* PBXTargetDependency */,
 			);
 			name = Geo;
 			productName = Geo;
@@ -517,10 +614,13 @@
 		E5BD41D122893DA30085CA4B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = NETTRASH;
 				TargetAttributes = {
+					E566AF502392BE29005CA340 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
 					E5BD41D822893DA30085CA4B = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
@@ -596,11 +696,25 @@
 				E5BD41F722893DA50085CA4B /* GeoUITests */,
 				E5BD420022893DA50085CA4B /* Geo WatchKit App */,
 				E5BD420F22893DA60085CA4B /* Geo WatchKit Extension */,
+				E566AF502392BE29005CA340 /* Today */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E566AF4F2392BE29005CA340 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E566AF7C2392EA60005CA340 /* TodayBackground@2x.png in Resources */,
+				E566AF592392BE29005CA340 /* MainInterface.storyboard in Resources */,
+				E566AF6F2392CCC5005CA340 /* Localizable.strings in Resources */,
+				E566AF802392EA60005CA340 /* TodayBackground@3x.png in Resources */,
+				E566AF642392BF5A005CA340 /* InfoPlist.strings in Resources */,
+				E566AF7E2392EA60005CA340 /* TodayBackground.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E5BD41D722893DA30085CA4B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -608,13 +722,16 @@
 				E5C8603922AA8D610002CB91 /* readme.txt in Resources */,
 				E57A7D1A22D79F4F00DD5121 /* iconGraph@3x.png in Resources */,
 				E5C795E422C7EB1D001DD791 /* InfoPlist.strings in Resources */,
+				E566AF7D2392EA60005CA340 /* TodayBackground.png in Resources */,
 				E57A7D1B22D79F4F00DD5121 /* iconGraph@2x.png in Resources */,
 				E5C795E922C7EBAB001DD791 /* Localizable.strings in Resources */,
 				E57A7D1C22D79F4F00DD5121 /* iconGraph.png in Resources */,
+				E566AF7F2392EA60005CA340 /* TodayBackground@3x.png in Resources */,
 				E5BD41E722893DA50085CA4B /* LaunchScreen.storyboard in Resources */,
 				E5C8603822AA8D610002CB91 /* Geo.png in Resources */,
 				E5BD41E422893DA50085CA4B /* Assets.xcassets in Resources */,
 				E5BD41E222893DA30085CA4B /* Main.storyboard in Resources */,
+				E566AF7B2392EA60005CA340 /* TodayBackground@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +794,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E566AF4D2392BE29005CA340 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E566AF6C2392CA31005CA340 /* Barometer.swift in Sources */,
+				E566AF762392D197005CA340 /* Geo.xcdatamodeld in Sources */,
+				E566AF772392D1F7005CA340 /* GraphView.swift in Sources */,
+				E566AF752392D18F005CA340 /* Trace+CoreDataProperties.swift in Sources */,
+				E566AF6A2392C6E6005CA340 /* PersistentContainer.swift in Sources */,
+				E566AF562392BE29005CA340 /* TodayViewController.swift in Sources */,
+				E566AF742392D18C005CA340 /* Trace+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E5BD41D522893DA30085CA4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -738,6 +869,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E566AF5C2392BE29005CA340 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E566AF502392BE29005CA340 /* Today */;
+			targetProxy = E566AF5B2392BE29005CA340 /* PBXContainerItemProxy */;
+		};
 		E5BD41EF22893DA50085CA4B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E5BD41D822893DA30085CA4B /* Geo */;
@@ -761,6 +897,34 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E566AF572392BE29005CA340 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E566AF582392BE29005CA340 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		E566AF662392BF5A005CA340 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E566AF652392BF5A005CA340 /* en */,
+				E566AF672392BF5D005CA340 /* zh-Hans */,
+				E566AF682392BF5D005CA340 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E566AF712392CCC5005CA340 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E566AF702392CCC5005CA340 /* en */,
+				E566AF722392CCC6005CA340 /* ru */,
+				E566AF732392CCC7005CA340 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E5BD41E022893DA30085CA4B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -854,6 +1018,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E566AF5F2392BE29005CA340 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 382;
+				DEVELOPMENT_TEAM = L3973VL47F;
+				INFOPLIST_FILE = Today/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.nettrash.Geo.Today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E566AF602392BE29005CA340 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 382;
+				DEVELOPMENT_TEAM = L3973VL47F;
+				INFOPLIST_FILE = Today/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.nettrash.Geo.Today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		E5BD422122893DA70085CA4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -979,7 +1189,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit Extension/Geo WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 141;
+				CURRENT_PROJECT_VERSION = 382;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = "Geo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1008,7 +1218,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit Extension/Geo WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 141;
+				CURRENT_PROJECT_VERSION = 382;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = "Geo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1037,7 +1247,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit App/Geo WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 141;
+				CURRENT_PROJECT_VERSION = 382;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				IBSC_MODULE = Geo_WatchKit_Extension;
 				INFOPLIST_FILE = "Geo WatchKit App/Info.plist";
@@ -1069,7 +1279,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit App/Geo WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 141;
+				CURRENT_PROJECT_VERSION = 382;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				IBSC_MODULE = Geo_WatchKit_Extension;
 				INFOPLIST_FILE = "Geo WatchKit App/Info.plist";
@@ -1095,11 +1305,12 @@
 		E5BD422C22893DA70085CA4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Geo/Geo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 141;
+				CURRENT_PROJECT_VERSION = 382;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Geo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1120,11 +1331,12 @@
 		E5BD422D22893DA70085CA4B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Geo/Geo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 141;
+				CURRENT_PROJECT_VERSION = 382;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Geo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1226,6 +1438,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E566AF612392BE29005CA340 /* Build configuration list for PBXNativeTarget "Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E566AF5F2392BE29005CA340 /* Debug */,
+				E566AF602392BE29005CA340 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E5BD41D422893DA30085CA4B /* Build configuration list for PBXProject "Geo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

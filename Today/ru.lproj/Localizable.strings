@@ -2,7 +2,7 @@
   Localizable.strings
   Geo
 
-  Created by Иван Алексеев on 29/06/2019.
+  Created by Иван Алексеев on 30.11.2019.
   Copyright © 2019 NETTRASH. All rights reserved.
 */
 "m"="м";
@@ -11,3 +11,5 @@
 "% 🏔"="% 🏔";
 "Altitude"="Высота";
 "%.0f m\n%.0f mm Hg\n%@ %%🏔"="%.0f м\n%.0f мм.рт.ст.\n%@ %%🏔";
+"Average"="Среднее";
+"Altitude (Bar)"="Высота (Барометр) м";
