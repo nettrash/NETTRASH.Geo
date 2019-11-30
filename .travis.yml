@@ -2,4 +2,3 @@ osx_image: xcode11.2
 language: swift
 xcode_project: Geo.xcodeproj
 xcode_scheme: Geo
-xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
