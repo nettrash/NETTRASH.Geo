@@ -13,3 +13,4 @@
 "%.0f m\n%.0f mm Hg\n%@ %%🏔"="%.0f m\n%.0f mm Hg\n%@ %%🏔";
 "Average"="Average";
 "Altitude (Bar)"="Altitude (Bar) m";
+"barometer not available"="The barometer is not available";

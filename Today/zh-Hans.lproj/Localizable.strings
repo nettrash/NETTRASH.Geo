@@ -13,3 +13,4 @@
 "%.0f m\n%.0f mm Hg\n%@ %%🏔"="%.0f m\n%.0f mm Hg\n%@ %%🏔";
 "Average"="平​均";
 "Altitude (Bar)"="高 (晴雨表) m";
+"barometer not available"="气压计不可用";

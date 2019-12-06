@@ -20,7 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	
 	@IBOutlet var tblData: UITableView!
 	@IBOutlet var aiLoading: UIActivityIndicatorView!
-	@IBOutlet var btnGraph: UIButton!
+	@IBOutlet var toolBar: UIToolbar!
 	
 	private var groups: [Int:String] = [:]
 	private var items: [Int:[Int:String]] = [:]
@@ -206,7 +206,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 			self.aiLoading.stopAnimating()
 			self.tblData.isHidden = false
-			self.btnGraph.isHidden = false
+			self.toolBar.isHidden = false
 		}
 	}
 	

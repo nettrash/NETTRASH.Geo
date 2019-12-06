@@ -10,5 +10,3 @@
 Additionally, information about current weather and geocoding data on the ground is available in the application.  
 
 And the most interesting, the application saves the parameter data locally on the device, allowing you to watch their change over time in graphical form.  
-
-

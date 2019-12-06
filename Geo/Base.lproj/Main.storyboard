@@ -45,7 +45,7 @@
                                 <rect key="frame" x="20" y="-44" width="335" height="768"/>
                             </imageView>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sXY-9S-K0f">
-                                <rect key="frame" x="20" y="0.0" width="335" height="690"/>
+                                <rect key="frame" x="20" y="0.0" width="335" height="641"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -130,21 +130,25 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nB3-x9-wHy"/>
                                 </connections>
                             </tableView>
-                            <button hidden="YES" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQP-PY-9hS">
-                                <rect key="frame" x="271" y="586" width="64" height="64"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="ZwS-PY-eK9"/>
-                                    <constraint firstAttribute="height" constant="64" id="zeS-Ha-6fo"/>
-                                </constraints>
-                                <state key="normal" image="iconGraph.png"/>
-                                <connections>
-                                    <action selector="gotoGraph:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Usx-b1-16P"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Z1h-1j-tuV">
                                 <rect key="frame" x="169" y="321.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pff-pJ-eyo">
+                                <rect key="frame" x="0.0" y="641" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <barButtonItem systemItem="flexibleSpace" id="DjP-nw-g7O"/>
+                                    <barButtonItem systemItem="bookmarks" id="y5p-xT-Tht">
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="gotoGraph:" destination="BYZ-38-t0r" id="ekp-Mt-JCV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="21" style="plain" systemItem="fixedSpace" id="xlv-TP-QuM"/>
+                                </items>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,23 +156,24 @@
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="sXY-9S-K0f" secondAttribute="trailing" constant="20" id="0EI-iH-XgW"/>
                             <constraint firstItem="sXY-9S-K0f" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="3Xn-aE-cbE"/>
                             <constraint firstItem="Z1h-1j-tuV" firstAttribute="centerY" secondItem="iUh-im-HNo" secondAttribute="centerY" id="6nb-Jh-HHT"/>
-                            <constraint firstItem="sXY-9S-K0f" firstAttribute="bottom" secondItem="Uee-0j-aNJ" secondAttribute="bottom" id="7RO-n7-YOT"/>
+                            <constraint firstItem="sXY-9S-K0f" firstAttribute="bottom" secondItem="pff-pJ-eyo" secondAttribute="top" id="7RO-n7-YOT"/>
                             <constraint firstItem="iUh-im-HNo" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="7fy-b9-Wj6"/>
                             <constraint firstItem="iUh-im-HNo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-20" id="7hj-Yv-xE5"/>
                             <constraint firstItem="sXY-9S-K0f" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" id="DSb-UJ-BGr"/>
-                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="nQP-PY-9hS" secondAttribute="trailing" constant="40" id="SBY-iB-RkP"/>
+                            <constraint firstItem="pff-pJ-eyo" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" id="GgI-DX-bLr"/>
+                            <constraint firstItem="pff-pJ-eyo" firstAttribute="trailing" secondItem="Uee-0j-aNJ" secondAttribute="trailing" id="SfC-9p-wnv"/>
                             <constraint firstItem="iUh-im-HNo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="V0W-dL-7F0"/>
                             <constraint firstItem="Z1h-1j-tuV" firstAttribute="centerX" secondItem="iUh-im-HNo" secondAttribute="centerX" id="Wad-XI-LwR"/>
                             <constraint firstItem="iUh-im-HNo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-44" id="chN-tk-Nq1"/>
-                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="bottom" secondItem="nQP-PY-9hS" secondAttribute="bottom" constant="40" id="kh1-Vl-xFd"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="bottom" secondItem="pff-pJ-eyo" secondAttribute="bottom" id="hzt-i4-m4C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="NETTRASH.Geo" id="wmD-Tq-Fv3"/>
                     <connections>
                         <outlet property="aiLoading" destination="Z1h-1j-tuV" id="X2T-bx-icb"/>
-                        <outlet property="btnGraph" destination="nQP-PY-9hS" id="Jgz-fl-DrC"/>
                         <outlet property="tblData" destination="sXY-9S-K0f" id="xRa-ad-aTf"/>
+                        <outlet property="toolBar" destination="pff-pJ-eyo" id="XGw-si-yK8"/>
                         <segue destination="MdH-V9-HjE" kind="show" identifier="graph" id="avb-8v-5A5"/>
                     </connections>
                 </viewController>
@@ -675,6 +680,5 @@
     </scenes>
     <resources>
         <image name="Geo.png" width="1024" height="1024"/>
-        <image name="iconGraph.png" width="1063.3846435546875" height="1063.3846435546875"/>
     </resources>
 </document>

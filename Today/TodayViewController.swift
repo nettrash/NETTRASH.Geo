@@ -9,8 +9,9 @@
 import UIKit
 import NotificationCenter
 import CoreData
+import CoreLocation
 
-class TodayViewController: UIViewController, NCWidgetProviding {
+class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate {
         
 	var bar: Barometer?
 	var dataHandler: ((NCUpdateResult) -> Void)?
@@ -42,6 +43,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
 		lblInfo.text = ""
         dataHandler = completionHandler
+		if (!(self.bar?.available ?? false)) {
+			self.lblInfo.text = NSLocalizedString("barometer not available", comment: "")
+			dataHandler?(NCUpdateResult.newData)
+		}
     }
 	
 	func refreshAltitudeInfo() {
@@ -49,17 +54,22 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 			dataHandler?(NCUpdateResult.failed)
 			return
 		}
-		let everestPercent = 100.0 * barometer.everest
-		let everestPercentText = String(format: "%.4f", everestPercent)
-		let h = barometer.height
-		let heightText = (h > 999 ? String(format: "%.1f", h/1000.0) : String(format: "%.0f", h))
-		let pressureText = String(format: "%.0f", barometer.pressure * 7.50062)
-		let heightUnitText = (h > 999 ? NSLocalizedString("km", comment: "") : NSLocalizedString("m", comment: ""))
-		let pressureUnitText = NSLocalizedString("mm Hg", comment: "")
-		let everestUnitText = NSLocalizedString("% 🏔", comment: "")
+		if (barometer.available) {
+			let everestPercent = 100.0 * barometer.everest
+			let everestPercentText = String(format: "%.4f", everestPercent)
+			let h = barometer.height
+			let heightText = (h > 999 ? String(format: "%.1f", h/1000.0) : String(format: "%.0f", h))
+			let pressureText = String(format: "%.0f", barometer.pressure * 7.50062)
+			let heightUnitText = (h > 999 ? NSLocalizedString("km", comment: "") : NSLocalizedString("m", comment: ""))
+			let pressureUnitText = NSLocalizedString("mm Hg", comment: "")
+			let everestUnitText = NSLocalizedString("% 🏔", comment: "")
+			
+			self.lblInfo.text = "\(heightText) \(heightUnitText)\n\(everestPercentText) \(everestUnitText)\n\(pressureText) \(pressureUnitText)"
 		
-		self.lblInfo.text = "\(heightText) \(heightUnitText)\n\(everestPercentText) \(everestUnitText)\n\(pressureText) \(pressureUnitText)"
-		
-		dataHandler?(NCUpdateResult.newData)
+			dataHandler?(NCUpdateResult.newData)
+		} else {
+			self.lblInfo.text = NSLocalizedString("barometer not available", comment: "")
+			dataHandler?(NCUpdateResult.newData)
+		}
 	}
 }
