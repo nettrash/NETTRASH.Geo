@@ -22,9 +22,8 @@ where ![equation](http://latex.codecogs.com/gif.latex?P_0) pressure at sea level
 ![equation](http://latex.codecogs.com/gif.latex?g) - acceleration of free fall,  
 ![equation](http://latex.codecogs.com/gif.latex?g%20%3D%209.81%20%5Cfrac%7Bm%7D%20%7Bs%5E2%7D)  
 ![equation](http://latex.codecogs.com/gif.latex?R) is the universal gas constant,  
-![equation](http://latex.codecogs.com/gif.latex?T%20%3D%20273.15%20%2B%20t)  
-![equation](http://latex.codecogs.com/gif.latex?T) - absolute air temperature ![equation](http://latex.codecogs.com/gif.latex?K),  
 ![equation](http://latex.codecogs.com/gif.latex?T%20%3D%20273.15%20%2B%20t),  
+![equation](http://latex.codecogs.com/gif.latex?T) - absolute air temperature ![equation](http://latex.codecogs.com/gif.latex?K),  
 ![equation](http://latex.codecogs.com/gif.latex?t) - temperature in ![equation](http://latex.codecogs.com/gif.latex?C)
 ![equation](http://latex.codecogs.com/gif.latex?h) is the height m  
 
