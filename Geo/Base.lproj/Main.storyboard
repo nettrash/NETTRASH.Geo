@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qx9-dg-g4X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qx9-dg-g4X">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -138,7 +138,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <barButtonItem systemItem="flexibleSpace" id="DjP-nw-g7O"/>
-                                    <barButtonItem systemItem="bookmarks" id="y5p-xT-Tht">
+                                    <barButtonItem image="Compass.png" id="MmW-sB-U3k">
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="gotoMap:" destination="BYZ-38-t0r" id="rd7-Dq-UqW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="21" style="plain" systemItem="fixedSpace" id="ivo-P1-8O8"/>
+                                    <barButtonItem image="Graph.png" id="y5p-xT-Tht">
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="gotoGraph:" destination="BYZ-38-t0r" id="ekp-Mt-JCV"/>
@@ -175,11 +182,43 @@
                         <outlet property="tblData" destination="sXY-9S-K0f" id="xRa-ad-aTf"/>
                         <outlet property="toolBar" destination="pff-pJ-eyo" id="XGw-si-yK8"/>
                         <segue destination="MdH-V9-HjE" kind="show" identifier="graph" id="avb-8v-5A5"/>
+                        <segue destination="eat-Cc-RN1" kind="show" identifier="map" id="WTe-5x-4qm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1104.8" y="32.512315270935964"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="ccJ-ed-hJ5">
+            <objects>
+                <viewController id="eat-Cc-RN1" customClass="MapViewController" customModule="Geo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DJi-we-BIK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wsg-JI-rCD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="wsg-JI-rCD" secondAttribute="bottom" id="Nwd-zB-YYa"/>
+                            <constraint firstItem="Z3A-GU-sVH" firstAttribute="trailing" secondItem="wsg-JI-rCD" secondAttribute="trailing" id="Vbr-P2-neA"/>
+                            <constraint firstItem="wsg-JI-rCD" firstAttribute="top" secondItem="Z3A-GU-sVH" secondAttribute="top" id="XcP-mT-W02"/>
+                            <constraint firstItem="wsg-JI-rCD" firstAttribute="leading" secondItem="Z3A-GU-sVH" secondAttribute="leading" id="z9j-tr-9oM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Z3A-GU-sVH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pJi-fQ-vlm"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="map" destination="wsg-JI-rCD" id="YId-k4-aqS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oD8-Ws-X99" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1105" y="780"/>
         </scene>
         <!--Graph View Controller-->
         <scene sceneID="EE1-7e-deP">
@@ -679,6 +718,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Compass.png" width="35.333332061767578" height="35.333332061767578"/>
         <image name="Geo.png" width="1024" height="1024"/>
+        <image name="Graph.png" width="35.333332061767578" height="35.333332061767578"/>
     </resources>
 </document>

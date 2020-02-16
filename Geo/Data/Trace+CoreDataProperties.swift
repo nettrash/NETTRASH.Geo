@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension Trace {
 
 	@nonobjc public class func fetchRequest() -> NSFetchRequest<Trace> {
@@ -46,6 +45,50 @@ extension Trace {
 		request.returnsObjectsAsFaults = false
 		request.propertiesToGroupBy = ["day"]
 		request.propertiesToFetch = ["day", descMaxAltitudeBar, descMinPressure, descMaxEverest]
+		request.resultType = .dictionaryResultType
+		return request
+	}
+	
+	@nonobjc public class func mapRouteFetchRequest() -> NSFetchRequest<NSFetchRequestResult> {
+		
+		let keypathExpAltitudeBar = NSExpression(forKeyPath: "altitudeBAR")
+		let expressionMaxAltitudeBAR = NSExpression(forFunction: "max:", arguments: [keypathExpAltitudeBar])
+		
+		let descMaxAltitudeBar = NSExpressionDescription()
+		descMaxAltitudeBar.expression = expressionMaxAltitudeBAR
+		descMaxAltitudeBar.name = "altitudeBAR"
+		descMaxAltitudeBar.expressionResultType = .doubleAttributeType
+
+		let keypathExpAltitudeGps = NSExpression(forKeyPath: "altitudeGPS")
+		let expressionMaxAltitudeGPS = NSExpression(forFunction: "max:", arguments: [keypathExpAltitudeGps])
+		
+		let descMaxAltitudeGps = NSExpressionDescription()
+		descMaxAltitudeGps.expression = expressionMaxAltitudeGPS
+		descMaxAltitudeGps.name = "altitudeGPS"
+		descMaxAltitudeGps.expressionResultType = .doubleAttributeType
+
+		let keypathExpPressure = NSExpression(forKeyPath: "pressure")
+		let expressionMinPressure = NSExpression(forFunction: "min:", arguments: [keypathExpPressure])
+		
+		let descMinPressure = NSExpressionDescription()
+		descMinPressure.expression = expressionMinPressure
+		descMinPressure.name = "pressure"
+		descMinPressure.expressionResultType = .doubleAttributeType
+
+		let keypathExpEverest = NSExpression(forKeyPath: "everest")
+		let expressionMaxEverest = NSExpression(forFunction: "max:", arguments: [keypathExpEverest])
+		
+		let descMaxEverest = NSExpressionDescription()
+		descMaxEverest.expression = expressionMaxEverest
+		descMaxEverest.name = "everest"
+		descMaxEverest.expressionResultType = .doubleAttributeType
+
+		let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Trace")
+		request.returnsObjectsAsFaults = false
+		request.propertiesToFetch = ["date", "latitude", "longitude", descMinPressure, descMaxAltitudeBar, descMaxEverest, descMaxAltitudeGps]
+		let sortDate = NSSortDescriptor(key: "date", ascending: false)
+		request.sortDescriptors = [sortDate]
+		request.propertiesToGroupBy = ["date", "latitude", "longitude"]
 		request.resultType = .dictionaryResultType
 		return request
 	}

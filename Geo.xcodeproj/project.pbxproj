@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E50AFE0D23F9914900BFB71E /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50AFE0C23F9914900BFB71E /* MapPoint.swift */; };
 		E52BA737229ECF3200077476 /* Geocode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA736229ECF3200077476 /* Geocode.swift */; };
 		E52BA739229ED9B600077476 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA738229ED9B600077476 /* YandexResponse.swift */; };
 		E5306E7022BCABC100026C2E /* GeoActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5306E6F22BCABC100026C2E /* GeoActionTableViewCell.swift */; };
@@ -76,6 +77,13 @@
 		E5C8603822AA8D610002CB91 /* Geo.png in Resources */ = {isa = PBXBuildFile; fileRef = E5C8603622AA8D600002CB91 /* Geo.png */; };
 		E5C8603922AA8D610002CB91 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E5C8603722AA8D610002CB91 /* readme.txt */; };
 		E5D78BEB22B91EDE006A3DF0 /* GeoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D78BEA22B91EDE006A3DF0 /* GeoTableViewCell.swift */; };
+		E5D8317923A6341600A54C9F /* Compass.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D8317623A6341500A54C9F /* Compass.png */; };
+		E5D8317A23A6341600A54C9F /* Compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D8317723A6341500A54C9F /* Compass@2x.png */; };
+		E5D8317B23A6341600A54C9F /* Compass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D8317823A6341500A54C9F /* Compass@3x.png */; };
+		E5D8317F23A6359000A54C9F /* Graph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D8317C23A6359000A54C9F /* Graph@2x.png */; };
+		E5D8318023A6359000A54C9F /* Graph@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D8317D23A6359000A54C9F /* Graph@3x.png */; };
+		E5D8318123A6359000A54C9F /* Graph.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D8317E23A6359000A54C9F /* Graph.png */; };
+		E5D8318323A636C100A54C9F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D8318223A636C100A54C9F /* MapViewController.swift */; };
 		E5EDD3A02297EDE100E3737F /* Barometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDD39F2297EDE100E3737F /* Barometer.swift */; };
 		E5F57A9022958CBA004D3A60 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F57A8F22958CBA004D3A60 /* CoreMotion.framework */; };
 		E5F57A9222958CD6004D3A60 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F57A9122958CD6004D3A60 /* CoreMotion.framework */; };
@@ -158,6 +166,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E50AFE0C23F9914900BFB71E /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		E52BA736229ECF3200077476 /* Geocode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocode.swift; sourceTree = "<group>"; };
 		E52BA738229ED9B600077476 /* YandexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponse.swift; sourceTree = "<group>"; };
 		E5306E6F22BCABC100026C2E /* GeoActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoActionTableViewCell.swift; sourceTree = "<group>"; };
@@ -245,6 +254,13 @@
 		E5C8603622AA8D600002CB91 /* Geo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Geo.png; sourceTree = "<group>"; };
 		E5C8603722AA8D610002CB91 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		E5D78BEA22B91EDE006A3DF0 /* GeoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoTableViewCell.swift; sourceTree = "<group>"; };
+		E5D8317623A6341500A54C9F /* Compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Compass.png; sourceTree = "<group>"; };
+		E5D8317723A6341500A54C9F /* Compass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compass@2x.png"; sourceTree = "<group>"; };
+		E5D8317823A6341500A54C9F /* Compass@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compass@3x.png"; sourceTree = "<group>"; };
+		E5D8317C23A6359000A54C9F /* Graph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Graph@2x.png"; sourceTree = "<group>"; };
+		E5D8317D23A6359000A54C9F /* Graph@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Graph@3x.png"; sourceTree = "<group>"; };
+		E5D8317E23A6359000A54C9F /* Graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Graph.png; sourceTree = "<group>"; };
+		E5D8318223A636C100A54C9F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E5EDD39F2297EDE100E3737F /* Barometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barometer.swift; sourceTree = "<group>"; };
 		E5F57A8F22958CBA004D3A60 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		E5F57A9122958CD6004D3A60 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.2.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
@@ -308,6 +324,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E50AFE0B23F9912A00BFB71E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E50AFE0C23F9914900BFB71E /* MapPoint.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E5306E6E22BCAB9C00026C2E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +406,7 @@
 		E5BD41DB22893DA30085CA4B /* Geo */ = {
 			isa = PBXGroup;
 			children = (
+				E50AFE0B23F9912A00BFB71E /* Model */,
 				E536F74B22D51B2500258788 /* Graph */,
 				E57FD32422D4A7EB009A1740 /* Data */,
 				E5306E6E22BCAB9C00026C2E /* Cells */,
@@ -391,6 +416,7 @@
 				E5BD41DC22893DA30085CA4B /* AppDelegate.swift */,
 				E5BD41DE22893DA30085CA4B /* ViewController.swift */,
 				E55F483E22D5D8A100948AB4 /* GraphViewController.swift */,
+				E5D8318223A636C100A54C9F /* MapViewController.swift */,
 				E5BD41E022893DA30085CA4B /* Main.storyboard */,
 				E5BD41E322893DA50085CA4B /* Assets.xcassets */,
 				E5BD41E522893DA50085CA4B /* LaunchScreen.storyboard */,
@@ -453,6 +479,12 @@
 		E5C8603522AA8D360002CB91 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				E5D8317E23A6359000A54C9F /* Graph.png */,
+				E5D8317C23A6359000A54C9F /* Graph@2x.png */,
+				E5D8317D23A6359000A54C9F /* Graph@3x.png */,
+				E5D8317623A6341500A54C9F /* Compass.png */,
+				E5D8317723A6341500A54C9F /* Compass@2x.png */,
+				E5D8317823A6341500A54C9F /* Compass@3x.png */,
 				E566AF792392EA60005CA340 /* TodayBackground.png */,
 				E566AF782392EA60005CA340 /* TodayBackground@2x.png */,
 				E566AF7A2392EA60005CA340 /* TodayBackground@3x.png */,
@@ -713,14 +745,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5C8603922AA8D610002CB91 /* readme.txt in Resources */,
+				E5D8318023A6359000A54C9F /* Graph@3x.png in Resources */,
 				E5C795E422C7EB1D001DD791 /* InfoPlist.strings in Resources */,
+				E5D8317923A6341600A54C9F /* Compass.png in Resources */,
 				E566AF7D2392EA60005CA340 /* TodayBackground.png in Resources */,
 				E5C795E922C7EBAB001DD791 /* Localizable.strings in Resources */,
 				E566AF7F2392EA60005CA340 /* TodayBackground@3x.png in Resources */,
 				E5BD41E722893DA50085CA4B /* LaunchScreen.storyboard in Resources */,
+				E5D8317F23A6359000A54C9F /* Graph@2x.png in Resources */,
 				E5C8603822AA8D610002CB91 /* Geo.png in Resources */,
 				E5BD41E422893DA50085CA4B /* Assets.xcassets in Resources */,
+				E5D8317A23A6341600A54C9F /* Compass@2x.png in Resources */,
+				E5D8317B23A6341600A54C9F /* Compass@3x.png in Resources */,
 				E5BD41E222893DA30085CA4B /* Main.storyboard in Resources */,
+				E5D8318123A6359000A54C9F /* Graph.png in Resources */,
 				E566AF7B2392EA60005CA340 /* TodayBackground@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -812,11 +850,13 @@
 				E582AD8122B2245900F5364A /* OpenWeatherMapResponse.swift in Sources */,
 				E582AD7E22B2221400F5364A /* Weather.swift in Sources */,
 				E5BD41DD22893DA30085CA4B /* AppDelegate.swift in Sources */,
+				E50AFE0D23F9914900BFB71E /* MapPoint.swift in Sources */,
 				E536F74D22D51BCF00258788 /* GraphView.swift in Sources */,
 				E5D78BEB22B91EDE006A3DF0 /* GeoTableViewCell.swift in Sources */,
 				E5306E7022BCABC100026C2E /* GeoActionTableViewCell.swift in Sources */,
 				E57FD35622D4AF33009A1740 /* Trace+CoreDataProperties.swift in Sources */,
 				E57FD35822D4AF33009A1740 /* Trace+CoreDataClass.swift in Sources */,
+				E5D8318323A636C100A54C9F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1013,7 +1053,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 427;
+				CURRENT_PROJECT_VERSION = 571;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -1022,7 +1062,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.nettrash.Geo.Today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1036,7 +1076,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 427;
+				CURRENT_PROJECT_VERSION = 571;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -1045,7 +1085,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.nettrash.Geo.Today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1179,7 +1219,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit Extension/Geo WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 427;
+				CURRENT_PROJECT_VERSION = 571;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = "Geo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1187,7 +1227,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.nettrash.Geo.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1208,7 +1248,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit Extension/Geo WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 427;
+				CURRENT_PROJECT_VERSION = 571;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = "Geo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1216,7 +1256,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.nettrash.Geo.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1237,7 +1277,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit App/Geo WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 427;
+				CURRENT_PROJECT_VERSION = 571;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				IBSC_MODULE = Geo_WatchKit_Extension;
 				INFOPLIST_FILE = "Geo WatchKit App/Info.plist";
@@ -1247,7 +1287,7 @@
 					"@loader_path/../Frameworks",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.nettrash.Geo.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1269,7 +1309,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit App/Geo WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 427;
+				CURRENT_PROJECT_VERSION = 571;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				IBSC_MODULE = Geo_WatchKit_Extension;
 				INFOPLIST_FILE = "Geo WatchKit App/Info.plist";
@@ -1279,7 +1319,7 @@
 					"@loader_path/../Frameworks",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.nettrash.Geo.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1300,14 +1340,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Geo/Geo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 427;
+				CURRENT_PROJECT_VERSION = 571;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Geo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.nettrash.Geo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Geo/Data/Geo-Bridging-Header.h";
@@ -1326,14 +1366,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Geo/Geo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 427;
+				CURRENT_PROJECT_VERSION = 571;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Geo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.nettrash.Geo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Geo/Data/Geo-Bridging-Header.h";

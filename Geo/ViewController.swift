@@ -104,10 +104,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 
 			#endif
 		}
+		if segue.identifier == "map" {
+			let map = segue.destination as! MapViewController
+			let app = UIApplication.shared.delegate as! AppDelegate
+			let moc = app.persistentContainer.viewContext
+			let traces: [Dictionary<String, Any>]? = try? moc.fetch(Trace.mapRouteFetchRequest()) as? [Dictionary<String, Any>]
+			for element in traces! {
+				map.points.append(
+					MapPoint(
+						date: element["date"] as! Date,
+						latitude: element["latitude"] as! Double,
+						longitude: element["longitude"] as! Double,
+						pressure: element["pressure"] as! Double,
+						altitudeBAR: element["altitudeBAR"] as! Double,
+						everest: element["everest"] as! Double,
+						altitudeGPS: element["altitudeGPS"] as! Double))
+			}
+		}
 	}
 	
 	@IBAction @objc func gotoGraph(_ sender: Any?) {
 		self.performSegue(withIdentifier: "graph", sender: self)
+	}
+	
+	@IBAction @objc func gotoMap(_ sender: Any?) {
+		self.performSegue(withIdentifier: "map", sender: self)
 	}
 	
 	func _initTable() {
