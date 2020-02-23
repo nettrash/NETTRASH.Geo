@@ -109,16 +109,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			let app = UIApplication.shared.delegate as! AppDelegate
 			let moc = app.persistentContainer.viewContext
 			let traces: [Dictionary<String, Any>]? = try? moc.fetch(Trace.mapRouteFetchRequest()) as? [Dictionary<String, Any>]
-			for element in traces! {
+			let grps = Dictionary(grouping: traces!, by: {
+				String(format: "%.2f %.2f", $0["latitude"] as! Double, $0["longitude"] as! Double)
+			})
+			let items = grps.map() {
+				$0.value.sorted(by: { (a: [String : Any], b: [String : Any]) -> Bool in
+					a["date"] as! Date > b["date"] as! Date
+				}).first
+			}
+			
+			for element in items.sorted(by: { (a: [String : Any]?, b: [String : Any]?) -> Bool in
+				a!["date"] as! Date > b!["date"] as! Date
+			}) {
+				print("\(element!["date"] as! Date) \(element!["latitude"] as! Double) \(element!["longitude"] as! Double)")
 				map.points.append(
 					MapPoint(
-						date: element["date"] as! Date,
-						latitude: element["latitude"] as! Double,
-						longitude: element["longitude"] as! Double,
-						pressure: element["pressure"] as! Double,
-						altitudeBAR: element["altitudeBAR"] as! Double,
-						everest: element["everest"] as! Double,
-						altitudeGPS: element["altitudeGPS"] as! Double))
+						date: element!["date"] as! Date,
+						latitude: element!["latitude"] as! Double,
+						longitude: element!["longitude"] as! Double,
+						pressure: element!["pressure"] as! Double,
+						altitudeBAR: element!["altitudeBAR"] as! Double,
+						everest: element!["everest"] as! Double,
+						altitudeGPS: element!["altitudeGPS"] as! Double))
 			}
 		}
 	}

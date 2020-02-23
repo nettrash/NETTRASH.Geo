@@ -49,7 +49,7 @@ extension Trace {
 		return request
 	}
 	
-	@nonobjc public class func mapRouteFetchRequest() -> NSFetchRequest<NSFetchRequestResult> {
+	@nonobjc public class func mapRouteFetchRequest(count: Int? = nil) -> NSFetchRequest<NSFetchRequestResult> {
 		
 		let keypathExpAltitudeBar = NSExpression(forKeyPath: "altitudeBAR")
 		let expressionMaxAltitudeBAR = NSExpression(forFunction: "max:", arguments: [keypathExpAltitudeBar])
@@ -90,6 +90,9 @@ extension Trace {
 		request.sortDescriptors = [sortDate]
 		request.propertiesToGroupBy = ["date", "latitude", "longitude"]
 		request.resultType = .dictionaryResultType
+		if count != nil {
+			request.fetchLimit = count!
+		}
 		return request
 	}
 
@@ -101,4 +104,5 @@ extension Trace {
     @NSManaged public var altitudeBAR: Double
     @NSManaged public var everest: Double
     @NSManaged public var altitudeGPS: Double
+	
 }

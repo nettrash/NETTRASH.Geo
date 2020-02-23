@@ -36,6 +36,13 @@ class MapViewController : UIViewController {
 	private func setupMap() {
 		self.map.removeAnnotations(self.map.annotations)
 		self.map.addAnnotations(points)
-		self.map.userTrackingMode = .followWithHeading
+		self.map.userTrackingMode = .none
+		self.map.camera.altitude = 1500
+		if (self.points.count > 0) {
+			self.map.centerCoordinate = self.points.first!.coordinate
+			DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+				self.map.selectAnnotation(self.points.first!, animated: true)
+			}
+		}
 	}
 }

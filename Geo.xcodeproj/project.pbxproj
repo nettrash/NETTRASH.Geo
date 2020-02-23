@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E50AFE0D23F9914900BFB71E /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50AFE0C23F9914900BFB71E /* MapPoint.swift */; };
+		E528F2002403116600F01CD6 /* Mark+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E528F1FF2403116600F01CD6 /* Mark+CoreDataClass.swift */; };
+		E528F2022403118A00F01CD6 /* Mark+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E528F2012403118A00F01CD6 /* Mark+CoreDataProperties.swift */; };
 		E52BA737229ECF3200077476 /* Geocode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA736229ECF3200077476 /* Geocode.swift */; };
 		E52BA739229ED9B600077476 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52BA738229ED9B600077476 /* YandexResponse.swift */; };
 		E5306E7022BCABC100026C2E /* GeoActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5306E6F22BCABC100026C2E /* GeoActionTableViewCell.swift */; };
@@ -167,6 +169,8 @@
 
 /* Begin PBXFileReference section */
 		E50AFE0C23F9914900BFB71E /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
+		E528F1FF2403116600F01CD6 /* Mark+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mark+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E528F2012403118A00F01CD6 /* Mark+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mark+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E52BA736229ECF3200077476 /* Geocode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocode.swift; sourceTree = "<group>"; };
 		E52BA738229ED9B600077476 /* YandexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponse.swift; sourceTree = "<group>"; };
 		E5306E6F22BCABC100026C2E /* GeoActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoActionTableViewCell.swift; sourceTree = "<group>"; };
@@ -371,6 +375,8 @@
 				E57FD35A22D4AF44009A1740 /* Geo.xcdatamodeld */,
 				E57FD34222D4AD4F009A1740 /* Geo-Bridging-Header.h */,
 				E57FD34322D4AD4F009A1740 /* Geo WatchKit Extension-Bridging-Header.h */,
+				E528F1FF2403116600F01CD6 /* Mark+CoreDataClass.swift */,
+				E528F2012403118A00F01CD6 /* Mark+CoreDataProperties.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -844,6 +850,7 @@
 				E57FD35C22D4AF45009A1740 /* Geo.xcdatamodeld in Sources */,
 				E5BD41DF22893DA30085CA4B /* ViewController.swift in Sources */,
 				E57FD32722D4A82E009A1740 /* PersistentContainer.swift in Sources */,
+				E528F2002403116600F01CD6 /* Mark+CoreDataClass.swift in Sources */,
 				E52BA737229ECF3200077476 /* Geocode.swift in Sources */,
 				E52BA739229ED9B600077476 /* YandexResponse.swift in Sources */,
 				E55F483F22D5D8A100948AB4 /* GraphViewController.swift in Sources */,
@@ -851,6 +858,7 @@
 				E582AD7E22B2221400F5364A /* Weather.swift in Sources */,
 				E5BD41DD22893DA30085CA4B /* AppDelegate.swift in Sources */,
 				E50AFE0D23F9914900BFB71E /* MapPoint.swift in Sources */,
+				E528F2022403118A00F01CD6 /* Mark+CoreDataProperties.swift in Sources */,
 				E536F74D22D51BCF00258788 /* GraphView.swift in Sources */,
 				E5D78BEB22B91EDE006A3DF0 /* GeoTableViewCell.swift in Sources */,
 				E5306E7022BCABC100026C2E /* GeoActionTableViewCell.swift in Sources */,
@@ -1053,7 +1061,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 571;
+				CURRENT_PROJECT_VERSION = 688;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -1076,7 +1084,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 571;
+				CURRENT_PROJECT_VERSION = 688;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -1219,7 +1227,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit Extension/Geo WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 571;
+				CURRENT_PROJECT_VERSION = 688;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = "Geo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1248,7 +1256,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit Extension/Geo WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 571;
+				CURRENT_PROJECT_VERSION = 688;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = "Geo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1277,7 +1285,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit App/Geo WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 571;
+				CURRENT_PROJECT_VERSION = 688;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				IBSC_MODULE = Geo_WatchKit_Extension;
 				INFOPLIST_FILE = "Geo WatchKit App/Info.plist";
@@ -1309,7 +1317,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit App/Geo WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 571;
+				CURRENT_PROJECT_VERSION = 688;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				IBSC_MODULE = Geo_WatchKit_Extension;
 				INFOPLIST_FILE = "Geo WatchKit App/Info.plist";
@@ -1340,7 +1348,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Geo/Geo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 571;
+				CURRENT_PROJECT_VERSION = 688;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Geo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1366,7 +1374,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Geo/Geo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 571;
+				CURRENT_PROJECT_VERSION = 688;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Geo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
