@@ -41,8 +41,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		app.bar!.dataUpdated = refreshAltitudeInfo
 		
 		title = NSLocalizedString("NETTRASH.Geo", comment: "")
-		
-		//navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "iconGraph.png"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(gotoGraph(_:)))
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -296,6 +294,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest)", comment: "")
 
 		self.tblData.reloadData()
+		traceSimulator()
 		refreshView()
 	}
 	
@@ -544,6 +543,77 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			}
 		}
 	}
+	
+	#if targetEnvironment(simulator)
+	
+	func traceSimulator() {
+		let pressure = 101.325
+		let P0: Double = 101.325
+		let Ph: Double = 98.768
+		let h: Double = log(P0 / Ph) / 0.00012
+		let everest = h / 8848
+		
+		let everestPercent = 100.0 * everest
+		
+		self.barAltitude = h
+		self.barPressure = pressure
+
+		let app = UIApplication.shared.delegate as! AppDelegate
+		let moc = app.persistentContainer.viewContext
+		let traces = try? moc.fetch(Trace.fetchRequest()) as [Trace]
+		
+		if (traces != nil) {
+			var lastTrace: Trace? = nil
+			if traces!.count > 0 { lastTrace = traces![traces!.count-1] }
+			var date = Date()
+			let calendar = Calendar.current
+			var minute = calendar.component(.minute, from: date)
+			var second = calendar.component(.second, from: date)
+			var nanosecond = calendar.component(.nanosecond, from: date)
+			var minuteDelta = minute - 10 * (minute / 10)
+			date = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: date)!
+			date = calendar.date(byAdding: .second, value: -second, to: date)!
+			date = calendar.date(byAdding: .minute, value: -minuteDelta, to: date)!
+			
+			var d = Date()
+			let hour = calendar.component(.hour, from: d)
+			minute = calendar.component(.minute, from: d)
+			second = calendar.component(.second, from: d)
+			nanosecond = calendar.component(.nanosecond, from: d)
+			minuteDelta = minute - 10 * (minute / 10)
+			d = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: d)!
+			d = calendar.date(byAdding: .second, value: -second, to: d)!
+			d = calendar.date(byAdding: .minute, value: -minute, to: d)!
+			d = calendar.date(byAdding: .hour, value: -hour, to: d)!
+			
+			var mDiff = 0
+			if lastTrace != nil && lastTrace!.date != nil {
+				let diff = calendar.dateComponents([.minute], from: lastTrace!.date! as Date, to: date)
+				mDiff = diff.minute!
+			}
+			if lastTrace != nil && lastTrace!.date != nil && lastTrace!.date! as Date == date {
+				lastTrace!.altitudeBAR = self.barAltitude
+				lastTrace!.pressure = self.barPressure
+				lastTrace!.everest = everestPercent
+				try? moc.save()
+			} else if minuteDelta == 0 || mDiff > 9 || lastTrace == nil {
+				let trace = NSEntityDescription.insertNewObject(forEntityName: "Trace", into: moc) as! Trace
+				trace.date = date as NSDate
+				trace.day = d as NSDate
+				trace.altitudeBAR = self.barAltitude
+				trace.pressure = self.barPressure
+				trace.everest = everestPercent
+				try? moc.save()
+			}
+			
+			if traces!.count > 10000 {
+				moc.delete(traces![0])
+				try? moc.save()
+			}
+		}
+	}
+	
+	#endif
 	
 	func traceBarometer() {
 		let app = UIApplication.shared.delegate as! AppDelegate

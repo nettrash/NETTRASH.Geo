@@ -34,3 +34,9 @@
 "Pressure kPa"="Pressure kPa";
 "Everest"="Everest %";
 "Map"="Map";
+"Cancel"="Cancel";
+"Add marker"="Add marker";
+"Add marker title"="Create a tag";
+"Add marker message"="Enter the name of the tag and the current metrics will be saved in it.";
+"Add marker placeholder"="Commemorative tag";
+"MarkName"="Mark";

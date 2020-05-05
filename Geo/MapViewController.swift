@@ -9,10 +9,14 @@
 import Foundation
 import UIKit
 import MapKit
+import CoreData
 
 class MapViewController : UIViewController {
 	
 	@IBOutlet var map: MKMapView!
+	@IBOutlet var marker: UIView!
+	@IBOutlet var markerName: UITextField!
+	private var trace: Trace?
 	
 	var points: [MapPoint] = []
 	
@@ -20,6 +24,8 @@ class MapViewController : UIViewController {
 		super.viewDidLoad()
 		
 		title = NSLocalizedString("Map", comment: "")
+		
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addMark))
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -45,4 +51,48 @@ class MapViewController : UIViewController {
 			}
 		}
 	}
+	
+	@objc func addMark() {
+		self.markerName.attributedPlaceholder = NSAttributedString(
+			string: NSLocalizedString("Add marker placeholder", comment: "Add marker placeholder"),
+			attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray]
+		)
+		
+		self.markerName.text = ""
+		self.marker.isHidden = false
+		self.markerName.becomeFirstResponder()
+		
+		let app = UIApplication.shared.delegate as! AppDelegate
+		let moc = app.persistentContainer.viewContext
+		let traces = try? moc.fetch(Trace.lastTraceFetchRequest()) as [Trace]
+		if (traces?.count ?? 0 > 0) {
+			trace = traces?.first
+		}
+	}
+	
+	@objc @IBAction func cancelMarker() {
+		self.marker.isHidden = true
+		self.markerName.resignFirstResponder()
+		trace = nil
+	}
+	
+	@objc @IBAction func saveMarker() {
+		self.marker.isHidden = true
+		self.markerName.resignFirstResponder()
+
+		let app = UIApplication.shared.delegate as! AppDelegate
+		let moc = app.persistentContainer.viewContext
+		let mark = NSEntityDescription.insertNewObject(forEntityName: "Mark", into: moc) as! Mark
+		mark.date = trace!.date
+		mark.day = trace!.day
+		mark.altitudeBAR = trace!.altitudeBAR
+		mark.altitudeGPS = trace!.altitudeGPS
+		mark.latitude = trace!.latitude
+		mark.longitude = trace!.longitude
+		mark.pressure = trace!.pressure
+		mark.everest = trace!.everest
+		mark.name = self.markerName.text ?? "\(NSLocalizedString("MarkName", comment: "MarkName"))  \(trace?.date ?? Date() as NSDate)"
+		try? moc.save()
+	}
+	
 }

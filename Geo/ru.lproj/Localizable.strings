@@ -34,3 +34,9 @@
 "Pressure kPa"="Давление кПа";
 "Everest"="Эверест %";
 "Map"="Карта";
+"Cancel"="Отмена";
+"Add marker"="Добавить маркер";
+"Add marker title"="Создать метку";
+"Add marker message"="Укажите имя метки, в нее сохранятся текущие показатели.";
+"Add marker placeholder"="Памятная метка";
+"MarkName"="Метка";

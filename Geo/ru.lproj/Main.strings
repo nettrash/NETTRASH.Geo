@@ -10,3 +10,9 @@
 
 /* Class = "UILabel"; text = "NETTRASH.Geo"; ObjectID = "bUi-vg-Jyg"; */
 "bUi-vg-Jyg.text" = "NETTRASH.Geo";
+
+/* Class = "UIButton"; text = "Cancel"; ObjectID = "zah-ub-SlH"; */
+"zah-ub-SlH.title" = "Отмена";
+
+/* Class = "UIButton"; text = "Save"; ObjectID = "AW2-5O-b7v"; */
+"AW2-5O-b7v.title" = "Сохранить";

@@ -96,6 +96,15 @@ extension Trace {
 		return request
 	}
 
+	@nonobjc public class func lastTraceFetchRequest() -> NSFetchRequest<Trace> {
+		let request = NSFetchRequest<Trace>(entityName: "Trace")
+		request.returnsObjectsAsFaults = false
+		request.fetchLimit = 1
+		let sortDate = NSSortDescriptor(key: "date", ascending: false)
+		request.sortDescriptors = [sortDate]
+		return request
+	}
+
 	@NSManaged public var date: NSDate?
 	@NSManaged public var day: NSDate?
     @NSManaged public var latitude: Double
