@@ -92,6 +92,7 @@ class MapViewController : UIViewController {
 		mark.pressure = trace!.pressure
 		mark.everest = trace!.everest
 		mark.name = self.markerName.text ?? "\(NSLocalizedString("MarkName", comment: "MarkName"))  \(trace?.date ?? Date() as NSDate)"
+		mark.message = ""
 		try? moc.save()
 	}
 	
