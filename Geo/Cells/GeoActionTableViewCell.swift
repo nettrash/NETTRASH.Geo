@@ -36,13 +36,7 @@ class GeoActionTableViewCell : UITableViewCell {
 	}
 	
 	private func prepareView(_ btn: UIButton) {
-		let maskPath = UIBezierPath(roundedRect: btn.bounds,
-									byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight],
-									cornerRadii: CGSize(width: 4, height: 4))
-		let maskLayer = CAShapeLayer()
-		maskLayer.frame = btn.bounds
-		maskLayer.path = maskPath.cgPath
-		btn.layer.mask = maskLayer
+		btn.roundCorners(radius: 4)
 	}
 	
 	override func prepareForReuse() {

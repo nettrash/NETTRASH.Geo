@@ -40,3 +40,5 @@
 "Add marker message"="Enter the name of the tag and the current metrics will be saved in it.";
 "Add marker placeholder"="Commemorative tag";
 "MarkName"="Mark";
+"Error"="Error";
+"Marker name is empty"="The placemark name must be specified. Fill in the placemark name before saving it.";

@@ -11,14 +11,12 @@ import UIKit
 import MapKit
 import CoreData
 
-class MapViewController : UIViewController {
+class MapViewController : UIViewController, MKMapViewDelegate {
 	
 	@IBOutlet var map: MKMapView!
-	@IBOutlet var marker: UIView!
-	@IBOutlet var markerName: UITextField!
-	private var trace: Trace?
-	
+
 	var points: [MapPoint] = []
+	var markers: [MapPoint] = []
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -43,6 +41,16 @@ class MapViewController : UIViewController {
 		self.map.removeAnnotations(self.map.annotations)
 		self.map.addAnnotations(points)
 		self.map.userTrackingMode = .none
+		self.map.isZoomEnabled = true
+		self.map.isPitchEnabled = true
+		self.map.isRotateEnabled = true
+		self.map.isScrollEnabled = true
+		self.map.isUserInteractionEnabled = true
+		self.map.showsUserLocation = true
+		self.map.showsCompass = true
+		self.map.showsScale = true
+		self.map.showsBuildings = true
+		self.map.showsPointsOfInterest = true
 		self.map.camera.altitude = 1500
 		if (self.points.count > 0) {
 			self.map.centerCoordinate = self.points.first!.coordinate
@@ -53,47 +61,27 @@ class MapViewController : UIViewController {
 	}
 	
 	@objc func addMark() {
-		self.markerName.attributedPlaceholder = NSAttributedString(
-			string: NSLocalizedString("Add marker placeholder", comment: "Add marker placeholder"),
-			attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray]
-		)
+		performSegue(withIdentifier: "addmark", sender: self)
+	}
 		
-		self.markerName.text = ""
-		self.marker.isHidden = false
-		self.markerName.becomeFirstResponder()
-		
-		let app = UIApplication.shared.delegate as! AppDelegate
-		let moc = app.persistentContainer.viewContext
-		let traces = try? moc.fetch(Trace.lastTraceFetchRequest()) as [Trace]
-		if (traces?.count ?? 0 > 0) {
-			trace = traces?.first
+	//MKMapViewDelegate
+	
+	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+		if annotation is MKUserLocation {
+			return nil
 		}
+		if annotation is MapPoint {
+			var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: "MapPointAnnotationView") as? MKPinAnnotationView
+			if pinView == nil {
+				pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "MapPointAnnotationView")
+				pinView!.pinTintColor = .green
+				pinView!.animatesDrop = true
+				pinView!.canShowCallout = true
+			} else {
+				pinView?.annotation = annotation
+			}
+			return pinView
+		}
+		return nil
 	}
-	
-	@objc @IBAction func cancelMarker() {
-		self.marker.isHidden = true
-		self.markerName.resignFirstResponder()
-		trace = nil
-	}
-	
-	@objc @IBAction func saveMarker() {
-		self.marker.isHidden = true
-		self.markerName.resignFirstResponder()
-
-		let app = UIApplication.shared.delegate as! AppDelegate
-		let moc = app.persistentContainer.viewContext
-		let mark = NSEntityDescription.insertNewObject(forEntityName: "Mark", into: moc) as! Mark
-		mark.date = trace!.date
-		mark.day = trace!.day
-		mark.altitudeBAR = trace!.altitudeBAR
-		mark.altitudeGPS = trace!.altitudeGPS
-		mark.latitude = trace!.latitude
-		mark.longitude = trace!.longitude
-		mark.pressure = trace!.pressure
-		mark.everest = trace!.everest
-		mark.name = self.markerName.text ?? "\(NSLocalizedString("MarkName", comment: "MarkName"))  \(trace?.date ?? Date() as NSDate)"
-		mark.message = ""
-		try? moc.save()
-	}
-	
 }

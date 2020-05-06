@@ -130,6 +130,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 						everest: element!["everest"] as! Double,
 						altitudeGPS: element!["altitudeGPS"] as! Double))
 			}
+			
+			let markers: [Mark]? = try? moc.fetch(Mark.fetchRequest()) as? [Mark]
+			markers?.forEach { m in
+				map.markers.append(
+					MapPoint(
+						date: m.date! as Date,
+						latitude: m.latitude,
+						longitude: m.longitude,
+						pressure: m.pressure,
+						altitudeBAR: m.altitudeBAR,
+						everest: m.everest,
+						altitudeGPS: m.altitudeGPS
+					)
+				)
+			}
 		}
 	}
 	
@@ -325,7 +340,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			self.items[2]![0] = ""
 			self.items[4]![0] = ""
 			if self.items[4]![0] == "" && self.stepLocation != nil {
-				let everest = self.stepLocation!.coordinate.longitude / 8848
+				let everest = self.stepLocation!.altitude / 8848
 				let everestPercent = 100.0 * everest
 				//let colorDelta = everestPercent * 255.0 / 100.0
 				let everestPercentText = String(format: "%.4f", everestPercent)
