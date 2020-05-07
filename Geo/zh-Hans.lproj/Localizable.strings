@@ -35,10 +35,12 @@
 "Everest"="珠穆朗玛峰 %";
 "Map"="地图";
 "Cancel"="取消";
-"Add marker"="添加标记";
+"Add marker"="添加地标";
 "Add marker title"="创建标签";
 "Add marker message"="输入标签的名称和当前的指标将被保存在其中。";
 "Add marker placeholder"="纪念标签";
 "MarkName"="标记";
 "Error"="错误";
 "Marker name is empty"="必须指定地标名称。 在保存地标名称之前填写地标名称。";
+"Marker details"="马克";
+"%.0fm"="%.0fm";

@@ -8,11 +8,11 @@
 /* Class = "UIButton"; normalTitle = "Map"; ObjectID = "W6C-4P-50s"; */
 "W6C-4P-50s.normalTitle" = "地​图";
 
-/* Class = "UILabel"; text = "NETTRASH.Geo"; ObjectID = "bUi-vg-Jyg"; */
-"bUi-vg-Jyg.text" = "NETTRASH.Geo";
+/* Class = "UILabel"; normalTitle = "NETTRASH.Geo"; ObjectID = "bUi-vg-Jyg"; */
+"bUi-vg-Jyg.normalTitle" = "NETTRASH.Geo";
 
-/* Class = "UIButton"; text = "Cancel"; ObjectID = "zah-ub-SlH"; */
-"zah-ub-SlH.title" = "取消订单";
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "zah-ub-SlH"; */
+"zah-ub-SlH.normalTitle" = "取消订单";
 
-/* Class = "UIButton"; text = "Save"; ObjectID = "AW2-5O-b7v"; */
-"AW2-5O-b7v.title" = "保存";
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "AW2-5O-b7v"; */
+"AW2-5O-b7v.normalTitle" = "保存";

@@ -189,6 +189,126 @@
             </objects>
             <point key="canvasLocation" x="-1104.8" y="32.512315270935964"/>
         </scene>
+        <!--Mark Details View Controller-->
+        <scene sceneID="IW6-0S-UZH">
+            <objects>
+                <viewController id="UKo-pl-2A5" customClass="MarkDetailsViewController" customModule="Geo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rhv-Ho-n9m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5c-1x-da3">
+                                <rect key="frame" x="20" y="20" width="335" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="SVF-zd-aoc"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="zA5-DO-zDh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6w-R6-NP5">
+                                <rect key="frame" x="20" y="58" width="335" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ZoW-zu-yZx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDl-ma-zGY">
+                                <rect key="frame" x="20" y="84" width="335" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Y7Z-vI-zxa"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Altitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYO-Yo-yYF">
+                                <rect key="frame" x="20" y="105" width="335" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="94N-PS-ySf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIV-CX-rof">
+                                <rect key="frame" x="20" y="136" width="335" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="oHd-VH-PQY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="according to the barometer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwm-Rg-VoT">
+                                <rect key="frame" x="20" y="159" width="335" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="Ams-Gw-0qN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfG-ML-g87">
+                                <rect key="frame" x="20" y="181" width="335" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Pno-IU-OUs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="according to the gps" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sL-9d-5dv">
+                                <rect key="frame" x="20" y="204" width="335" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="nfI-x5-ete"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g6w-R6-NP5" firstAttribute="top" secondItem="H5c-1x-da3" secondAttribute="bottom" constant="2" id="0nv-5J-PcJ"/>
+                            <constraint firstItem="dLI-z0-lwZ" firstAttribute="trailing" secondItem="8sL-9d-5dv" secondAttribute="trailing" constant="20" id="37w-2N-Z3b"/>
+                            <constraint firstItem="dLI-z0-lwZ" firstAttribute="trailing" secondItem="uYO-Yo-yYF" secondAttribute="trailing" constant="20" id="4u7-zD-eQR"/>
+                            <constraint firstAttribute="trailing" secondItem="H5c-1x-da3" secondAttribute="trailing" constant="20" id="6ad-QY-EL4"/>
+                            <constraint firstItem="UfG-ML-g87" firstAttribute="leading" secondItem="dLI-z0-lwZ" secondAttribute="leading" constant="20" id="7aN-EE-dTr"/>
+                            <constraint firstItem="dLI-z0-lwZ" firstAttribute="trailing" secondItem="g6w-R6-NP5" secondAttribute="trailing" constant="20" id="9Hs-i8-hio"/>
+                            <constraint firstItem="dLI-z0-lwZ" firstAttribute="trailing" secondItem="IDl-ma-zGY" secondAttribute="trailing" constant="20" id="BYH-zB-6Rh"/>
+                            <constraint firstItem="uYO-Yo-yYF" firstAttribute="top" secondItem="IDl-ma-zGY" secondAttribute="bottom" constant="20" id="Dp6-VP-CxW"/>
+                            <constraint firstItem="g6w-R6-NP5" firstAttribute="leading" secondItem="dLI-z0-lwZ" secondAttribute="leading" constant="20" id="EKQ-cI-AH5"/>
+                            <constraint firstItem="dLI-z0-lwZ" firstAttribute="trailing" secondItem="UfG-ML-g87" secondAttribute="trailing" constant="20" id="HD6-FW-tSr"/>
+                            <constraint firstItem="8sL-9d-5dv" firstAttribute="leading" secondItem="dLI-z0-lwZ" secondAttribute="leading" constant="20" id="J15-56-vGH"/>
+                            <constraint firstItem="uYO-Yo-yYF" firstAttribute="leading" secondItem="dLI-z0-lwZ" secondAttribute="leading" constant="20" id="PjW-Ou-fyu"/>
+                            <constraint firstItem="nwm-Rg-VoT" firstAttribute="top" secondItem="jIV-CX-rof" secondAttribute="bottom" constant="2" id="Rlu-lm-0Se"/>
+                            <constraint firstItem="jIV-CX-rof" firstAttribute="leading" secondItem="dLI-z0-lwZ" secondAttribute="leading" constant="20" id="RqK-S6-DvG"/>
+                            <constraint firstItem="IDl-ma-zGY" firstAttribute="leading" secondItem="dLI-z0-lwZ" secondAttribute="leading" constant="20" id="SJb-Sg-lB2"/>
+                            <constraint firstItem="dLI-z0-lwZ" firstAttribute="trailing" secondItem="jIV-CX-rof" secondAttribute="trailing" constant="20" id="dA4-y3-E6v"/>
+                            <constraint firstItem="IDl-ma-zGY" firstAttribute="top" secondItem="g6w-R6-NP5" secondAttribute="bottom" constant="5" id="ecH-1E-KH6"/>
+                            <constraint firstItem="H5c-1x-da3" firstAttribute="leading" secondItem="dLI-z0-lwZ" secondAttribute="leading" constant="20" id="euu-Lj-08L"/>
+                            <constraint firstItem="8sL-9d-5dv" firstAttribute="top" secondItem="UfG-ML-g87" secondAttribute="bottom" constant="2" id="fZE-Cm-dh1"/>
+                            <constraint firstItem="jIV-CX-rof" firstAttribute="top" secondItem="uYO-Yo-yYF" secondAttribute="bottom" constant="10" id="l7B-0z-XDo"/>
+                            <constraint firstItem="H5c-1x-da3" firstAttribute="top" secondItem="dLI-z0-lwZ" secondAttribute="top" constant="20" id="npf-nu-3wG"/>
+                            <constraint firstItem="UfG-ML-g87" firstAttribute="top" secondItem="nwm-Rg-VoT" secondAttribute="bottom" constant="10" id="pyU-6i-GFQ"/>
+                            <constraint firstItem="nwm-Rg-VoT" firstAttribute="leading" secondItem="dLI-z0-lwZ" secondAttribute="leading" constant="20" id="uMi-xx-zmD"/>
+                            <constraint firstItem="dLI-z0-lwZ" firstAttribute="trailing" secondItem="nwm-Rg-VoT" secondAttribute="trailing" constant="20" id="zSj-8A-oMC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dLI-z0-lwZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblAltitudeBAR" destination="jIV-CX-rof" id="ZZx-3K-Vfv"/>
+                        <outlet property="lblAltitudeGPS" destination="UfG-ML-g87" id="xOg-Pn-yG1"/>
+                        <outlet property="lblDate" destination="g6w-R6-NP5" id="ELm-la-sYr"/>
+                        <outlet property="lblTitle" destination="H5c-1x-da3" id="QWZ-g9-oVT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0a-Ow-SKc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1106.4000000000001" y="1510.344827586207"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="ccJ-ed-hJ5">
             <objects>
@@ -218,6 +338,9 @@
                     <connections>
                         <outlet property="map" destination="wsg-JI-rCD" id="YId-k4-aqS"/>
                         <segue destination="YRC-48-8oo" kind="popoverPresentation" identifier="addmark" popoverAnchorView="wsg-JI-rCD" id="aCu-Te-wQf">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                        <segue destination="UKo-pl-2A5" kind="popoverPresentation" identifier="markdetail" popoverAnchorView="wsg-JI-rCD" id="hq4-Ar-lKJ">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>

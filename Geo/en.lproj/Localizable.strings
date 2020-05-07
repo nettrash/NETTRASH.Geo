@@ -35,10 +35,12 @@
 "Everest"="Everest %";
 "Map"="Map";
 "Cancel"="Cancel";
-"Add marker"="Add marker";
+"Add marker"="Add tag";
 "Add marker title"="Create a tag";
 "Add marker message"="Enter the name of the tag and the current metrics will be saved in it.";
 "Add marker placeholder"="Commemorative tag";
 "MarkName"="Mark";
 "Error"="Error";
 "Marker name is empty"="The placemark name must be specified. Fill in the placemark name before saving it.";
+"Marker details"="Tag";
+"%.0fm"="%.0fm";

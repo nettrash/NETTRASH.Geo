@@ -9,15 +9,15 @@
 import Foundation
 import MapKit
 
-class MapPoint: NSObject, MKAnnotation {
+open class MapPoint: NSObject {
 	
-	private var mDate: Date
-	private var mLatitude: Double
-	private var mLongitude: Double
-	private var mPressure: Double
-	private var mAltitudeBAR: Double
-	private var mEverest: Double
-	private var mAltitudeGPS: Double
+	internal var mDate: Date
+	internal var mLatitude: Double
+	internal var mLongitude: Double
+	internal var mPressure: Double
+	internal var mAltitudeBAR: Double
+	internal var mEverest: Double
+	internal var mAltitudeGPS: Double
 	
 	init(date: Date, latitude: Double, longitude: Double, pressure: Double,
 		altitudeBAR: Double, everest: Double, altitudeGPS: Double) {
@@ -29,9 +29,12 @@ class MapPoint: NSObject, MKAnnotation {
 		mEverest = everest
 		mAltitudeGPS = altitudeGPS
 	}
+}
+
+extension MapPoint : MKAnnotation {
 	
 	//MKAnnotqation
-	var coordinate: CLLocationCoordinate2D {
+	public var coordinate: CLLocationCoordinate2D {
 		get {
 			return
 				CLLocationCoordinate2D(
@@ -39,7 +42,8 @@ class MapPoint: NSObject, MKAnnotation {
 					longitude: mLongitude)
 		}
 	}
-	var title: String? {
+	
+	public var title: String? {
 		get {
 			let df = DateFormatter()
 			df.dateStyle = .medium
@@ -47,7 +51,8 @@ class MapPoint: NSObject, MKAnnotation {
 			return df.string(from: mDate)
 		}
 	}
-	var subtitle: String? {
+	
+	public var subtitle: String? {
 		get {
 			
 			let everestPercent = mEverest
@@ -59,7 +64,8 @@ class MapPoint: NSObject, MKAnnotation {
 			let pressureUnitText = NSLocalizedString("mm Hg", comment: "")
 			let everestUnitText = NSLocalizedString("% 🏔", comment: "")
 			
-			return "\(heightText) \(heightUnitText)\n\(everestPercentText) \(everestUnitText)\n\(pressureText) \(pressureUnitText)"
+			return "\(heightText)\(heightUnitText), \(everestPercentText)\(everestUnitText), \(pressureText)\(pressureUnitText)"
 		}
 	}
+	
 }
