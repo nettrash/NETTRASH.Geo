@@ -390,11 +390,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			self.items[3]![1] = response.weatherDetailsHumidity
 			self.items[3]![2] = response.weatherDetailsVisibility
 			self.items[3]![3] = response.weatherDetailsWindSpeed
+			self.items[3]![4] = response.weatherDetailsWindDirection
 		} else {
 			self.items[3]![0] = NSLocalizedString("Weather unavailable", comment: "")
 			self.items[3]![1] = nil
 			self.items[3]![2] = nil
 			self.items[3]![3] = nil
+			self.items[3]![4] = nil
 		}
 		
 		self.tblData.reloadData()

@@ -20,10 +20,11 @@
 "Weather"="天气";
 "Other"="其​他";
 "Local"="ru_RU";
-"Temperature %.1f C"="​气​温 %.1f C";
-"Humidity %i %%"="湿度 %i %%";
-"Visibility %i m"="可见度 %i m";
-"Wind speed %.1f m/s"="快慢冈 %.1f m/s";
+"Temperature: %.1f C"="​气​温: %.1f C";
+"Humidity: %i %%"="湿度: %i %%";
+"Visibility: %i m"="可见度: %i m";
+"Wind speed: %.1f m/s"="快慢冈: %.1f m/s";
+"Wind direction: %s (%.1f deg)"="风向: %@ (%iº)";
 "Location"="方位";
 "The lack of access to the location makes some of the functions of the application unusable"="如果地理定位没有, 有些功能不起作用。 允许访问隐私设置中的位置数据。";
 "Continue"="继续";
@@ -47,3 +48,11 @@
 "%.4f kPa"="%.4f kPa";
 "%.4f mm Hg"="%.4f mm Hg";
 "%.4f atm"="%.4f atm";
+"Nord"="北";
+"East"="东";
+"South"="南";
+"West"="西";
+"NordWest"="西北";
+"NordEast"="东北";
+"SouthEast"="东南";
+"SouthWest"="西南";

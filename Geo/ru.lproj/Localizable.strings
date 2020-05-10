@@ -20,10 +20,11 @@
 "Weather"="Погода";
 "Other"="Иное";
 "Local"="ru_RU";
-"Temperature %.1f C"="Температура %.1f C";
-"Humidity %i %%"="Влажность %i %%";
-"Visibility %i m"="Видимость %i м";
-"Wind speed %.1f m/s"="Скорость ветра %.1f м/с";
+"Temperature: %.1f C"="Температура: %.1f C";
+"Humidity: %i %%"="Влажность: %i %%";
+"Visibility: %i m"="Видимость: %i м";
+"Wind speed: %.1f m/s"="Скорость ветра: %.1f м/с";
+"Wind direction: %s (%.1f deg)"="Направление ветра: %@ (%iº)";
 "Location"="Местоположение";
 "The lack of access to the location makes some of the functions of the application unusable"="Отсутствие доступа к местоположению делает некоторые функции приложения непригодными для использования. Разрешить доступ к данным местоположения можно в настройках конфиденциальности.";
 "Continue"="Продолжить";
@@ -47,3 +48,11 @@
 "%.4f kPa"="%.4f кПа";
 "%.4f mm Hg"="%.4f мм.рт.ст.";
 "%.4f atm"="%.4f атм";
+"Nord"="Север";
+"East"="Восток";
+"South"="Юг";
+"West"="Запад";
+"NordWest"="Северо-запад";
+"NordEast"="Северо-восток";
+"SouthEast"="Юго-восток";
+"SouthWest"="Юго-запад";

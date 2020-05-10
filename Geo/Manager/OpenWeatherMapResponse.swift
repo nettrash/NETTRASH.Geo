@@ -91,25 +91,31 @@ class OpenWeatherMapResponse : Decodable {
 	
 	var weatherDetailsTemperature: String? {
 		get {
-			return String(format:NSLocalizedString("Temperature %.1f C", comment: ""), main!.temp!-273.15)
+			return String(format:NSLocalizedString("Temperature: %.1f C", comment: ""), main!.temp!-273.15)
 		}
 	}
 	
 	var weatherDetailsHumidity: String? {
 		get {
-			return String(format: NSLocalizedString("Humidity %i %%", comment: ""), main!.humidity!)
+			return String(format: NSLocalizedString("Humidity: %i %%", comment: ""), main!.humidity!)
 		}
 	}
 	
 	var weatherDetailsVisibility: String? {
 		get {
-			return String(format:NSLocalizedString("Visibility %i m", comment: ""), visibility!)
+			return String(format:NSLocalizedString("Visibility: %i m", comment: ""), visibility!)
 		}
 	}
 	
 	var weatherDetailsWindSpeed: String? {
 		get {
-			return String(format:NSLocalizedString("Wind speed %.1f m/s", comment: ""), wind!.speed!)
+			return String(format:NSLocalizedString("Wind speed: %.1f m/s", comment: ""), wind!.speed!)
+		}
+	}
+	
+	var weatherDetailsWindDirection: String? {
+		get {
+			return String(format:NSLocalizedString("Wind direction: %s (%.1f deg)", comment: ""), wind!.getDirection()!, wind!.deg!)
 		}
 	}
 }
@@ -150,6 +156,32 @@ class OpenWeatherMapClouds : Decodable {
 class OpenWeatherMapWind : Decodable {
 	let speed: Double?
 	let deg: Int64?
+	
+	func getDirection() -> String? {
+		guard let degree = deg else {
+			return ""
+		}
+		switch degree % 360 {
+		case 355...360, 0...5:
+			return NSLocalizedString("Nord", comment: "")
+		case 85...95:
+			return NSLocalizedString("East", comment: "")
+		case 175...185:
+			return NSLocalizedString("South", comment: "")
+		case 265...275:
+			return NSLocalizedString("West", comment: "")
+		case 276...354:
+			return NSLocalizedString("NordWest", comment: "")
+		case 6...84:
+			return NSLocalizedString("NordEast", comment: "")
+		case 96...174:
+			return NSLocalizedString("SouthEast", comment: "")
+		case 186...264:
+			return NSLocalizedString("SouthWest", comment: "")
+		default:
+			return ""
+		}
+	}
 }
 
 class OpenWeatherMapMain : Decodable {
