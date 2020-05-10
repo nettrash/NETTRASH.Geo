@@ -11,13 +11,49 @@ import MapKit
 
 open class MapPoint: NSObject {
 	
-	internal var mDate: Date
-	internal var mLatitude: Double
-	internal var mLongitude: Double
-	internal var mPressure: Double
-	internal var mAltitudeBAR: Double
-	internal var mEverest: Double
-	internal var mAltitudeGPS: Double
+	private var mDate: Date
+	private var mLatitude: Double
+	private var mLongitude: Double
+	private var mPressure: Double
+	private var mAltitudeBAR: Double
+	private var mEverest: Double
+	private var mAltitudeGPS: Double
+	
+	var date: Date {
+		get {
+			return mDate
+		}
+	}
+	var latitude: Double {
+		get {
+			return mLatitude
+		}
+	}
+	var longitude: Double {
+		get {
+			return mLongitude
+		}
+	}
+	var pressure: Double {
+		get {
+			return mPressure
+		}
+	}
+	var altitudeBAR: Double {
+		get {
+			return mAltitudeBAR
+		}
+	}
+	var altitudeGPS: Double {
+		get {
+			return mAltitudeGPS
+		}
+	}
+	var everest: Double {
+		get {
+			return mEverest
+		}
+	}
 	
 	init(date: Date, latitude: Double, longitude: Double, pressure: Double,
 		altitudeBAR: Double, everest: Double, altitudeGPS: Double) {

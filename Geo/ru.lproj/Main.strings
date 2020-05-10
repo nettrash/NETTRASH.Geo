@@ -16,3 +16,27 @@
 
 /* Class = "UIButton"; normalTitle = "Save"; ObjectID = "AW2-5O-b7v"; */
 "AW2-5O-b7v.normalTitle" = "Сохранить";
+
+/* Class = "UILabel"; text = "Altitude"; ObjectID = "uYO-Yo-yYF"; */
+"uYO-Yo-yYF.text" = "Высота над уровнем моря";
+
+/* Class = "UILabel"; text = "according to the barometer"; ObjectID = "nwm-Rg-VoT"; */
+"nwm-Rg-VoT.text" = "по показаниям барометра";
+
+/* Class = "UILabel"; text = "according to the gps"; ObjectID = "8sL-9d-5dv"; */
+"8sL-9d-5dv.text" = "по показаниям спутников";
+
+/* Class = "UILabel"; text = "Pressure"; ObjectID = "QGb-IA-Y5g"; */
+"QGb-IA-Y5g.text" = "Атмосферное давление";
+
+/* Class = "UILabel"; text = "Everest %"; ObjectID = "3PX-gX-DtW"; */
+"3PX-gX-DtW.text" = "% от высоты Эвереста";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "Udi-iy-TlH"; */
+"Udi-iy-TlH.text" = "Местоположение";
+
+/* Class = "UILabel"; text = "latitude"; ObjectID = "2UM-FS-qdY"; */
+"2UM-FS-qdY.text" = "широта";
+
+/* Class = "UILabel"; text = "longitude"; ObjectID = "4gY-ee-zn1"; */
+"4gY-ee-zn1.text" = "долгота";

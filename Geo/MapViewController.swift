@@ -40,7 +40,7 @@ class MapViewController : UIViewController, MKMapViewDelegate {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "markdetail" {
 			let dst = segue.destination as! MarkDetailsViewController
-			dst.marker = sender as! MapMarkPoint
+			dst.marker = sender as? MapMarkPoint
 		}
 	}
 	

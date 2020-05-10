@@ -44,3 +44,6 @@
 "Marker name is empty"="The placemark name must be specified. Fill in the placemark name before saving it.";
 "Marker details"="Tag";
 "%.0fm"="%.0fm";
+"%.4f kPa"="%.4f kPa";
+"%.4f mm Hg"="%.4f mm Hg";
+"%.4f atm"="%.4f atm";

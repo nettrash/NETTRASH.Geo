@@ -44,3 +44,6 @@
 "Marker name is empty"="必须指定地标名称。 在保存地标名称之前填写地标名称。";
 "Marker details"="马克";
 "%.0fm"="%.0fm";
+"%.4f kPa"="%.4f kPa";
+"%.4f mm Hg"="%.4f mm Hg";
+"%.4f atm"="%.4f atm";

@@ -11,8 +11,20 @@ import MapKit
 
 class MapMarkPoint : MapPoint {
 	
-	internal var mName: String
-	internal var mMessage: String
+	private var mName: String
+	private var mMessage: String
+	
+	var name: String {
+		get {
+			return mName
+		}
+	}
+	
+	var message: String {
+		get {
+			return mMessage
+		}
+	}
 	
 	init(name: String, message: String, date: Date, latitude: Double, longitude: Double, pressure: Double,
 		altitudeBAR: Double, everest: Double, altitudeGPS: Double) {
@@ -41,7 +53,7 @@ class MapMarkPoint : MapPoint {
 		}
 	}
 	
-	var date: String? {
+	var dateString: String? {
 		get {
 			return super.title
 		}
