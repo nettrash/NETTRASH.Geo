@@ -39,3 +39,18 @@ Simplistically, you can write as: ![equation](http://latex.codecogs.com/gif.late
 
 
 ![equation](http://latex.codecogs.com/gif.latex?%5Clog%20%5Cfrac%7Bx%7D%20%7By%7D%20%3D%20-%5Clog%20%5Cfrac%7By%7D%20%7Bx%7D)  
+
+
+## Compass Points
+
+| POINT | DEGREE FROM | DEGREE TO |
+|-|-|-|
+| NORD | 338 | 22 |
+| NORD EAST | 23 | 67 |
+| EAST | 68 | 112 |
+| SOUTH EAST | 113 | 157 |
+| SOUTH | 158 | 202 |
+| SOUTH WEST | 203 | 247 |
+| WEST | 248 | 292 |
+| NORD WEST | 293 | 337 |
+|-|-|-|
