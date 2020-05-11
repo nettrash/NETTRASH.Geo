@@ -162,22 +162,22 @@ class OpenWeatherMapWind : Decodable {
 			return ""
 		}
 		switch degree % 360 {
-		case 355...360, 0...5:
+		case 338...360, 0...22:
 			return NSLocalizedString("Nord", comment: "")
-		case 85...95:
-			return NSLocalizedString("East", comment: "")
-		case 175...185:
-			return NSLocalizedString("South", comment: "")
-		case 265...275:
-			return NSLocalizedString("West", comment: "")
-		case 276...354:
-			return NSLocalizedString("NordWest", comment: "")
-		case 6...84:
+		case 23...67:
 			return NSLocalizedString("NordEast", comment: "")
-		case 96...174:
+		case 68...112:
+			return NSLocalizedString("East", comment: "")
+		case 113...157:
 			return NSLocalizedString("SouthEast", comment: "")
-		case 186...264:
+		case 158...202:
+			return NSLocalizedString("South", comment: "")
+		case 203...247:
 			return NSLocalizedString("SouthWest", comment: "")
+		case 248...292:
+			return NSLocalizedString("West", comment: "")
+		case 293...337:
+			return NSLocalizedString("NordWest", comment: "")
 		default:
 			return ""
 		}
