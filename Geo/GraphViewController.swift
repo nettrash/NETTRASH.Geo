@@ -35,10 +35,60 @@ class GraphViewController : UIViewController {
 	
 	func setupGraphDisplay() {
 		
+		initializeData()
 		setupGraphAltitudeBar()
 		setupGraphPressure()
 		setupGraphEverest()
 		
+	}
+	
+	func initializeData() {
+		#if targetEnvironment(simulator)
+		
+		graphPointsAltitudeBar = [190, 313, 323, 306, 265, 233, 211]
+		graphPointsPressure = [98, 97, 97, 97, 98, 98, 98]
+		graphPointsEverest = [1, 3, 3, 3, 2, 2, 2]
+
+		#else
+		
+		let nMaxCount = 31
+		let app = UIApplication.shared.delegate as! AppDelegate
+		let moc = app.persistentContainer.viewContext
+		let traces: [Dictionary<String, Any>]? = try? moc.fetch(Trace.weekAggregateFetchRequest(nMaxCount)) as? [Dictionary<String, Any>]
+		var idx = traces?.count ?? 0
+		var cnt = 0
+		var pointsAltitudeBar: [Int] = []
+		var pointsPressure: [Int] = []
+		var pointsEverest: [Int] = []
+		for _ in 0..<nMaxCount {
+			pointsAltitudeBar.append(0)
+			pointsPressure.append(0)
+			pointsEverest.append(0)
+		}
+		while idx > 0 && cnt < nMaxCount {
+			idx -= 1
+			cnt += 1
+			let element = traces![idx]
+			pointsAltitudeBar[nMaxCount-cnt] = Int(element["maxAltitudeBAR"] as! Double)
+			pointsPressure[nMaxCount-cnt] = Int(element["minPressure"] as! Double)
+			pointsEverest[nMaxCount-cnt] = Int(element["maxEverest"] as! Double)
+		}
+		if cnt < nMaxCount && cnt > 0 {
+			let pab = pointsAltitudeBar[nMaxCount-cnt]
+			let pp = pointsPressure[nMaxCount-cnt]
+			let pe = pointsEverest[nMaxCount-cnt]
+			while cnt < nMaxCount {
+				cnt += 1
+				pointsAltitudeBar[nMaxCount-cnt] = pab
+				pointsPressure[nMaxCount-cnt] = pp
+				pointsEverest[nMaxCount-cnt] = pe
+			}
+		}
+		graphPointsAltitudeBar = pointsAltitudeBar
+		graphPointsPressure = pointsPressure
+		graphPointsEverest = pointsEverest
+
+		#endif
 	}
 	
 	func setupGraphAltitudeBar() {
