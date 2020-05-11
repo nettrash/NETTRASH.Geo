@@ -53,4 +53,4 @@ Simplistically, you can write as: ![equation](http://latex.codecogs.com/gif.late
 | SOUTH WEST | 203 | 247 |
 | WEST | 248 | 292 |
 | NORD WEST | 293 | 337 |
-|-|-|-|
+
