@@ -183,6 +183,9 @@
                         <outlet property="toolBar" destination="pff-pJ-eyo" id="XGw-si-yK8"/>
                         <segue destination="MdH-V9-HjE" kind="show" identifier="graph" id="avb-8v-5A5"/>
                         <segue destination="eat-Cc-RN1" kind="show" identifier="map" id="WTe-5x-4qm"/>
+                        <segue destination="YRC-48-8oo" kind="popoverPresentation" identifier="addmarkfrommain" popoverAnchorView="sXY-9S-K0f" id="wfX-OS-uti">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1165,6 +1168,9 @@
             <point key="canvasLocation" x="-207.19999999999999" y="32.512315270935964"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wfX-OS-uti"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Compass.png" width="35.333332061767578" height="35.333332061767578"/>
         <image name="Geo.png" width="1024" height="1024"/>

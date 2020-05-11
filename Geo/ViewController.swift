@@ -41,6 +41,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		app.bar!.dataUpdated = refreshAltitudeInfo
 		
 		title = NSLocalizedString("NETTRASH.Geo", comment: "")
+
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addMark))
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -106,7 +108,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			//let map = segue.destination as! MapViewController
 		}
 	}
-	
+		
+	@objc func addMark() {
+		performSegue(withIdentifier: "addmarkfrommain", sender: self)
+	}
+
 	@IBAction @objc func gotoGraph(_ sender: Any?) {
 		self.performSegue(withIdentifier: "graph", sender: self)
 	}
