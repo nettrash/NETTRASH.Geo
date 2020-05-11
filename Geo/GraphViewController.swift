@@ -43,7 +43,16 @@ class GraphViewController : UIViewController {
 	
 	func setupGraphAltitudeBar() {
 		
-		let maxDayIndex = graphViewAltitudeBar.svLabelsY.arrangedSubviews.count - 1
+		let maxDayIndex = graphPointsAltitudeBar.count
+		
+		while graphViewAltitudeBar.svLabelsY.arrangedSubviews.count > 0 {
+			graphViewAltitudeBar.svLabelsY.removeArrangedSubview(graphViewAltitudeBar.svLabelsY.arrangedSubviews[0])
+		}
+		
+		for _ in 0..<maxDayIndex {
+			let label = UILabel()
+			graphViewAltitudeBar.svLabelsY.addArrangedSubview(label)
+		}
 		
 		let max = graphPointsAltitudeBar.max()!
 		let min = graphPointsAltitudeBar.min()!
@@ -67,7 +76,7 @@ class GraphViewController : UIViewController {
 		let formatter = DateFormatter()
 		formatter.setLocalizedDateFormatFromTemplate("EEEEE")
 		
-		for i in 0...maxDayIndex {
+		for i in 1...maxDayIndex {
 			if let date = calendar.date(byAdding: .day, value: -i, to: today),
 				let label = graphViewAltitudeBar.svLabelsY.arrangedSubviews[maxDayIndex - i] as? UILabel {
 				label.text = formatter.string(from: date)
@@ -88,8 +97,17 @@ class GraphViewController : UIViewController {
 	
 	func setupGraphPressure() {
 		
-		let maxDayIndex = graphViewPressure.svLabelsY.arrangedSubviews.count - 1
+		let maxDayIndex = graphPointsPressure.count
 		
+		while graphViewPressure.svLabelsY.arrangedSubviews.count > 0 {
+			graphViewPressure.svLabelsY.removeArrangedSubview(graphViewPressure.svLabelsY.arrangedSubviews[0])
+		}
+		
+		for _ in 0..<maxDayIndex {
+			let label = UILabel()
+			graphViewPressure.svLabelsY.addArrangedSubview(label)
+		}
+
 		let max = graphPointsPressure.max()!
 		let min = graphPointsPressure.min()!
 		
@@ -112,7 +130,7 @@ class GraphViewController : UIViewController {
 		let formatter = DateFormatter()
 		formatter.setLocalizedDateFormatFromTemplate("EEEEE")
 		
-		for i in 0...maxDayIndex {
+		for i in 1...maxDayIndex {
 			if let date = calendar.date(byAdding: .day, value: -i, to: today),
 				let label = graphViewPressure.svLabelsY.arrangedSubviews[maxDayIndex - i] as? UILabel {
 				label.text = formatter.string(from: date)
@@ -133,7 +151,16 @@ class GraphViewController : UIViewController {
 	
 	func setupGraphEverest() {
 		
-		let maxDayIndex = graphViewEverest.svLabelsY.arrangedSubviews.count - 1
+		let maxDayIndex = graphPointsEverest.count
+		
+		while graphViewEverest.svLabelsY.arrangedSubviews.count > 0 {
+			graphViewEverest.svLabelsY.removeArrangedSubview(graphViewEverest.svLabelsY.arrangedSubviews[0])
+		}
+		
+		for _ in 0..<maxDayIndex {
+			let label = UILabel()
+			graphViewEverest.svLabelsY.addArrangedSubview(label)
+		}
 		
 		let max = graphPointsEverest.max()!
 		let min = graphPointsEverest.min()!
@@ -157,7 +184,7 @@ class GraphViewController : UIViewController {
 		let formatter = DateFormatter()
 		formatter.setLocalizedDateFormatFromTemplate("EEEEE")
 		
-		for i in 0...maxDayIndex {
+		for i in 1...maxDayIndex {
 			if let date = calendar.date(byAdding: .day, value: -i, to: today),
 				let label = graphViewEverest.svLabelsY.arrangedSubviews[maxDayIndex - i] as? UILabel {
 				label.text = formatter.string(from: date)

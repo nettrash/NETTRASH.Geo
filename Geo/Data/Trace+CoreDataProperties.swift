@@ -16,7 +16,7 @@ extension Trace {
 		return NSFetchRequest<Trace>(entityName: "Trace")
 	}
 
-	@nonobjc public class func weekAggregateFetchRequest() -> NSFetchRequest<NSFetchRequestResult> {
+	@nonobjc public class func weekAggregateFetchRequest(_ nMaxCount: Int) -> NSFetchRequest<NSFetchRequestResult> {
 		let keypathExpAltitudeBar = NSExpression(forKeyPath: "altitudeBAR")
 		let expressionMaxAltitudeBAR = NSExpression(forFunction: "max:", arguments: [keypathExpAltitudeBar])
 		
@@ -46,6 +46,9 @@ extension Trace {
 		request.propertiesToGroupBy = ["day"]
 		request.propertiesToFetch = ["day", descMaxAltitudeBar, descMinPressure, descMaxEverest]
 		request.resultType = .dictionaryResultType
+		request.fetchLimit = nMaxCount
+		let sortDay = NSSortDescriptor(key: "day", ascending: false)
+		request.sortDescriptors = [sortDay]
 		return request
 	}
 	

@@ -71,31 +71,37 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 
 			#else
 			
+			let nMaxCount = 31
 			let app = UIApplication.shared.delegate as! AppDelegate
 			let moc = app.persistentContainer.viewContext
-			let traces: [Dictionary<String, Any>]? = try? moc.fetch(Trace.weekAggregateFetchRequest()) as? [Dictionary<String, Any>]
-			var pointsAltitudeBar: [Int] = [0, 0, 0, 0, 0, 0, 0]
-			var pointsPressure: [Int] = [0, 0, 0, 0, 0, 0, 0]
-			var pointsEverest: [Int] = [0, 0, 0, 0, 0, 0, 0]
+			let traces: [Dictionary<String, Any>]? = try? moc.fetch(Trace.weekAggregateFetchRequest(nMaxCount)) as? [Dictionary<String, Any>]
 			var idx = traces?.count ?? 0
 			var cnt = 0
-			while idx > 0 && cnt < 7 {
+			var pointsAltitudeBar: [Int] = []
+			var pointsPressure: [Int] = []
+			var pointsEverest: [Int] = []
+			for _ in 0..<nMaxCount {
+				pointsAltitudeBar.append(0)
+				pointsPressure.append(0)
+				pointsEverest.append(0)
+			}
+			while idx > 0 && cnt < nMaxCount {
 				idx -= 1
 				cnt += 1
 				let element = traces![idx]
-				pointsAltitudeBar[7-cnt] = Int(element["maxAltitudeBAR"] as! Double)
-				pointsPressure[7-cnt] = Int(element["minPressure"] as! Double)
-				pointsEverest[7-cnt] = Int(element["maxEverest"] as! Double)
+				pointsAltitudeBar[nMaxCount-cnt] = Int(element["maxAltitudeBAR"] as! Double)
+				pointsPressure[nMaxCount-cnt] = Int(element["minPressure"] as! Double)
+				pointsEverest[nMaxCount-cnt] = Int(element["maxEverest"] as! Double)
 			}
-			if cnt < 7 && cnt > 0 {
-				let pab = pointsAltitudeBar[7-cnt]
-				let pp = pointsPressure[7-cnt]
-				let pe = pointsEverest[7-cnt]
-				while cnt < 7 {
+			if cnt < nMaxCount && cnt > 0 {
+				let pab = pointsAltitudeBar[nMaxCount-cnt]
+				let pp = pointsPressure[nMaxCount-cnt]
+				let pe = pointsEverest[nMaxCount-cnt]
+				while cnt < nMaxCount {
 					cnt += 1
-					pointsAltitudeBar[7-cnt] = pab
-					pointsPressure[7-cnt] = pp
-					pointsEverest[7-cnt] = pe
+					pointsAltitudeBar[nMaxCount-cnt] = pab
+					pointsPressure[nMaxCount-cnt] = pp
+					pointsEverest[nMaxCount-cnt] = pe
 				}
 			}
 			graph.graphPointsAltitudeBar = pointsAltitudeBar
