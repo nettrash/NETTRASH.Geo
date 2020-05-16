@@ -51,11 +51,15 @@ class MapViewController : UIViewController, MKMapViewDelegate {
 		let grps = Dictionary(grouping: traces!, by: {
 			String(format: "%.2f %.2f", $0["latitude"] as! Double, $0["longitude"] as! Double)
 		})
-		let items = grps.map() {
-			$0.value.sorted(by: { (a: [String : Any], b: [String : Any]) -> Bool in
-				a["date"] as! Date > b["date"] as! Date
-			}).first
-		}
+		let items = grps
+			.map() {
+				$0.value.sorted(by: { (a: [String : Any], b: [String : Any]) -> Bool in
+					a["date"] as! Date > b["date"] as! Date
+				}).first
+			}
+			.sorted(by: { (a: [String : Any]?, b: [String : Any]?) -> Bool in
+				a!["date"] as! Date > b!["date"] as! Date
+			})
 		
 		map.removeAnnotations(points)
 		points.removeAll()
