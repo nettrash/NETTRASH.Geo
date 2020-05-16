@@ -9,10 +9,14 @@
 import UIKit
 import WatchConnectivity
 import CoreData
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+	private let locationManager: CLLocationManager = CLLocationManager()
+	private var lastVisit: CLVisit? = nil
+	
 	var window: UIWindow?
 	var bar: Barometer?
 	lazy var persistentContainer: PersistentContainer = {
@@ -26,14 +30,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return container
 	}()
 
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+	private func initialize() {
 		self.bar = Barometer()
 		self.bar?.Start()
 		if WCSession.isSupported() {
 			WCSession.default.delegate = self
 			WCSession.default.activate()
 		}
+		locationManager.delegate = self
+	}
+	
+	private func initLocation() {
+		let status = CLLocationManager.authorizationStatus()
+		if status == .authorizedAlways || status == .authorizedWhenInUse {
+			locationManager.startMonitoringVisits()
+		}
+	}
+	
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+		// Override point for customization after application launch.
+		initialize()
 
 		return true
 	}
@@ -108,6 +124,8 @@ extension AppDelegate: WCSessionDelegate {
 	func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
 		
 		do {
+			initLocation()
+			
 			let moc = persistentContainer.viewContext
 			let traces = try? moc.fetch(Trace.fetchRequest()) as [Trace]
 			
@@ -144,6 +162,10 @@ extension AppDelegate: WCSessionDelegate {
 					lastTrace!.altitudeBAR = message["altitudeBAR"] as! Double
 					lastTrace!.pressure = message["pressure"] as! Double
 					lastTrace!.everest = message["everest"] as! Double
+					if (lastVisit != nil && lastTrace!.latitude == 0) {
+						lastTrace!.latitude = lastVisit!.coordinate.latitude
+						lastTrace!.longitude = lastVisit!.coordinate.longitude
+					}
 					try? moc.save()
 				} else if minuteDelta == 0 || mDiff > 9 || lastTrace == nil {
 					let trace = NSEntityDescription.insertNewObject(forEntityName: "Trace", into: moc) as! Trace
@@ -152,6 +174,10 @@ extension AppDelegate: WCSessionDelegate {
 					trace.altitudeBAR = message["altitudeBAR"] as! Double
 					trace.pressure = message["pressure"] as! Double
 					trace.everest = message["everest"] as! Double
+					if (lastVisit != nil) {
+						lastTrace!.latitude = lastVisit!.coordinate.latitude
+						lastTrace!.longitude = lastVisit!.coordinate.longitude
+					}
 					try? moc.save()
 				}
 			}
@@ -182,4 +208,12 @@ extension AppDelegate: WCSessionDelegate {
 		
 	}
 
+}
+
+extension AppDelegate: CLLocationManagerDelegate {
+	
+	func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
+		lastVisit = visit;
+	}
+	
 }
