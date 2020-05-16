@@ -12,69 +12,21 @@ import CoreLocation
 import CoreData
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
 
 	private let weather: Weather = Weather()
-	
 	private let locationManager: CLLocationManager = CLLocationManager()
+	private var groups: [Int:String] = [:]
+	private var items: [Int:[Int:String]] = [:]
+	private var barAltitude: Double = 0
+	private var barPressure: Double = 0
+	private var location: CLLocation? = nil
+	private var stepLocation: CLLocation? = nil
 	
 	@IBOutlet var tblData: UITableView!
 	@IBOutlet var aiLoading: UIActivityIndicatorView!
 	@IBOutlet var toolBar: UIToolbar!
-	
-	private var groups: [Int:String] = [:]
-	private var items: [Int:[Int:String]] = [:]
 
-	private var barAltitude: Double = 0
-	private var barPressure: Double = 0
-	private var location: CLLocation? = nil
-	
-	private var stepLocation: CLLocation? = nil
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		_initTable()
-		_initLocation()
-		
-		let app = UIApplication.shared.delegate as! AppDelegate
-		app.bar!.dataUpdated = refreshAltitudeInfo
-		
-		title = NSLocalizedString("NETTRASH.Geo", comment: "")
-
-		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addMark))
-	}
-
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 28)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray]
-		
-		#if targetEnvironment(simulator)
-		
-		refreshSimulatorInfo()
-		tblData.reloadData()
-		
-		#endif
-	}
-		
-	@objc func addMark() {
-		performSegue(withIdentifier: "addmarkfrommain", sender: self)
-	}
-
-	@IBAction @objc func gotoGraph(_ sender: Any?) {
-		self.performSegue(withIdentifier: "graph", sender: self)
-	}
-	
-	@IBAction @objc func gotoMap(_ sender: Any?) {
-		self.performSegue(withIdentifier: "map", sender: self)
-	}
-	
-	func _initTable() {
-		self.tblData.register(GeoTableViewCell.self, forCellReuseIdentifier: "GeoCell")
-		_initGroups()
-	}
-	
 	private func _initLocation() {
 		locationManager.delegate = self
 		locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -117,52 +69,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 
 		self.tblData.isHidden = true
 	}
-
-	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		if locations.count > 0 {
-			self.location = locations[locations.count - 1]
-			if self.stepLocation == nil {
-				self.stepLocation = CLLocation(latitude: self.location!.coordinate.latitude, longitude: self.location!.coordinate.longitude)
-				refreshData()
-			} else if self.stepLocation!.distance(from: self.location!) > 100.0 { // > 100 m
-				self.stepLocation = CLLocation(latitude: self.location!.coordinate.latitude, longitude: self.location!.coordinate.longitude)
-				refreshData()
-			}
-			if self.location != nil {
-				//LocationAltitude
-				if self.items[0]![0] == nil {
-					self.items[0]![0] = "..."
-				}
-				self.items[0]![1] = String(format: NSLocalizedString("%.0fm according to the GPS/GLONASS", comment: ""), self.location!.altitude)
-				
-				if self.items[4]![0] == "" {
-					let everest = self.location!.coordinate.longitude / 8848
-					let everestPercent = 100.0 * everest
-					//let colorDelta = everestPercent * 255.0 / 100.0
-					let everestPercentText = String(format: "%.4f", everestPercent)
-					//Everest Percent
-					self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest) GPS", comment: "")
-				}
-				
-				//Location Latitude
-				self.items[1]![0] = String(format: NSLocalizedString("%.6f latitude", comment: ""), self.location!.coordinate.latitude)
-				//Location Longitude
-				self.items[1]![1] = String(format: NSLocalizedString("%.6f longitude", comment: ""), self.location!.coordinate.longitude)
-				self.items[1]![2] = "::actionBar"
-			} else {
-				self.items[0]![1] = ""
-				self.items[1]![0] = ""
-				self.items[1]![1] = ""
-				self.items[1]![2] = nil
-			}
-			traceLocation();
-		}
-		
-		self.tblData.reloadData()
-		refreshView()
-	}
 	
-	func refreshView() {
+	private func _initTable() {
+		self.tblData.register(GeoTableViewCell.self, forCellReuseIdentifier: "GeoCell")
+		_initGroups()
+	}
+
+	private func refreshView() {
 		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 			self.aiLoading.stopAnimating()
 			self.tblData.isHidden = false
@@ -170,37 +83,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		}
 	}
 	
-	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-		if status == .notDetermined { return }
-		
-		if status == .authorizedAlways || status == .authorizedWhenInUse {
-			startLocationMonitor()
-		} else {
-			if status == .denied {
-				stopLocationMonitor()
-				let alert = UIAlertController(title: NSLocalizedString("Location", comment: ""), message: NSLocalizedString("The lack of access to the location makes some of the functions of the application unusable", comment: ""), preferredStyle: UIAlertController.Style.actionSheet)
-				alert.addAction(UIAlertAction(title: NSLocalizedString("Continue", comment: ""), style: UIAlertAction.Style.cancel, handler: { (_ action: UIAlertAction) in
-					alert.dismiss(animated: true, completion: nil)
-					self.refreshView()
-				}))
-				self.show(alert, sender: nil)
-			}
-		}
-	}
-	
-	func startLocationMonitor() {
+	private func startLocationMonitor() {
 		locationManager.startUpdatingLocation()
 		self.items[0]![1] = ""
 	}
 	
-	func stopLocationMonitor() {
+	private func stopLocationMonitor() {
 		locationManager.stopUpdatingLocation()
 		self.items[0]![1] = ""
 	}
 	
 	#if targetEnvironment(simulator)
 	
-	func refreshSimulatorInfo() {
+	private func refreshSimulatorInfo() {
 		let pressure = 101.325
 		let P0: Double = 101.325
 		let Ph: Double = 98.768
@@ -228,46 +123,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	}
 	
 	#endif
-	
-	func refreshAltitudeInfo() {
-		let app = UIApplication.shared.delegate as! AppDelegate
-		if (app.bar != nil) {
-			
-			let everestPercent = 100.0 * app.bar!.everest
-			//let colorDelta = everestPercent * 255.0 / 100.0
-			let everestPercentText = String(format: "%.4f", everestPercent)
-			//let everestColor = UIColor(red: CGFloat(colorDelta / 255.0), green: CGFloat((255.0 - colorDelta) / 255.0), blue: 0, alpha: 1)
-
-			self.barAltitude = app.bar!.height
-			self.barPressure = app.bar!.pressure
-			//Barometer Altitude
-			self.items[0]![0] = String(format: NSLocalizedString("%.0fm according to the barometer", comment: ""), app.bar!.height)
-			//Barometer Pressure
-			self.items[2]![0] = String(format: NSLocalizedString("%.4f kPa %.4f mm Hg %.4f atm", comment: ""), app.bar!.pressure, app.bar!.pressure * 7.50062, app.bar!.pressure / 101.325)
-			//Everest Percent
-			self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest)", comment: "")
-			
-			traceBarometer();
-		} else {
-			self.items[0]![0] = ""
-			self.items[1]![0] = ""
-			self.items[2]![0] = ""
-			self.items[4]![0] = ""
-			if self.items[4]![0] == "" && self.stepLocation != nil {
-				let everest = self.stepLocation!.altitude / 8848
-				let everestPercent = 100.0 * everest
-				//let colorDelta = everestPercent * 255.0 / 100.0
-				let everestPercentText = String(format: "%.4f", everestPercent)
-				//Everest Percent
-				self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest GPS)", comment: "")
-			}
-		}
 		
-		self.tblData.reloadData()
-		refreshView()
-	}
-	
-	func refreshData() {
+	private func refreshData() {
 		DispatchQueue.main.async {
 			self.refreshGeocode()
 		}
@@ -276,7 +133,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		}
 	}
 	
-	func refreshGeocode() {
+	private func refreshGeocode() {
 		if self.stepLocation != nil {
 			let geocoder = CLGeocoder()
 			geocoder.reverseGeocodeLocation(self.stepLocation!) { (marks: [CLPlacemark]?, error: Error?) in
@@ -337,7 +194,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		//refreshView()
 	}
 	
-	func refreshWeather() {
+	private func refreshWeather() {
 		if self.stepLocation == nil { return }
 		let result: Any? = weather.Get(api: Weather.WeatherAPI.OpenWeatherMap, coordinate: self.stepLocation!)
 		if let response = result as? OpenWeatherMapResponse {
@@ -357,57 +214,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 		self.tblData.reloadData()
 		refreshView()
 	}
-	
-	//UITableViewDelegate
 
-	//UITableViewDataSource
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return items[section]?.count ?? 0
-	}
-	
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let value = items[indexPath.section]?[indexPath.row] else {
-			return UITableViewCell()
-		}
-	
-		if value == "::actionBar" {
-			let cell = tableView.dequeueReusableCell(withIdentifier: "GeoActionCell", for: indexPath) as! GeoActionTableViewCell
-			cell.location = self.stepLocation
-			cell.viewController = self
-			return cell
-		}
-		
-		let cell = tableView.dequeueReusableCell(withIdentifier: "GeoCell", for: indexPath) as! GeoTableViewCell
-
-		cell.textLabel?.text = value
-		
-		if indexPath.section == 4 && indexPath.row == 1 {
-			cell.textLabel?.numberOfLines = 0
-		} else {
-			cell.textLabel?.numberOfLines = 1
-		}
-		
-		return cell
-	}
-	
-	func numberOfSections(in tableView: UITableView) -> Int {
-		return groups.count
-	}
-	
-	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return groups[section]
-	}
-	
-	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		if indexPath.section == 4 && indexPath.row == 1 {
-			return 44
-		}
-		return 22
-	}
-	
 	// TRACE
 	
-	func traceLocation() {
+	private func traceLocation() {
 		let app = UIApplication.shared.delegate as! AppDelegate
 		if (self.location != nil) {
 			var everestPercent: Double = 0
@@ -477,7 +287,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	
 	#if targetEnvironment(simulator)
 	
-	func traceSimulator() {
+	private func traceSimulator() {
 		let pressure = 101.325
 		let P0: Double = 101.325
 		let Ph: Double = 98.768
@@ -546,7 +356,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 	
 	#endif
 	
-	func traceBarometer() {
+	private func traceBarometer() {
 		let app = UIApplication.shared.delegate as! AppDelegate
 		if (app.bar != nil) {
 			
@@ -611,5 +421,200 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
 			}
 		}
 	}
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		_initTable()
+		_initLocation()
+		
+		let app = UIApplication.shared.delegate as! AppDelegate
+		app.bar!.dataUpdated = refreshAltitudeInfo
+		
+		title = NSLocalizedString("NETTRASH.Geo", comment: "")
+
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addMark))
+	}
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 28)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+		
+		#if targetEnvironment(simulator)
+		
+		refreshSimulatorInfo()
+		tblData.reloadData()
+		
+		#endif
+	}
+		
+	@objc func addMark() {
+		performSegue(withIdentifier: "addmarkfrommain", sender: self)
+	}
+
+	@IBAction @objc func gotoGraph(_ sender: Any?) {
+		self.performSegue(withIdentifier: "graph", sender: self)
+	}
+	
+	@IBAction @objc func gotoMap(_ sender: Any?) {
+		self.performSegue(withIdentifier: "map", sender: self)
+	}
+
+	func refreshAltitudeInfo() {
+		let app = UIApplication.shared.delegate as! AppDelegate
+		if (app.bar != nil) {
+			
+			let everestPercent = 100.0 * app.bar!.everest
+			//let colorDelta = everestPercent * 255.0 / 100.0
+			let everestPercentText = String(format: "%.4f", everestPercent)
+			//let everestColor = UIColor(red: CGFloat(colorDelta / 255.0), green: CGFloat((255.0 - colorDelta) / 255.0), blue: 0, alpha: 1)
+
+			self.barAltitude = app.bar!.height
+			self.barPressure = app.bar!.pressure
+			//Barometer Altitude
+			self.items[0]![0] = String(format: NSLocalizedString("%.0fm according to the barometer", comment: ""), app.bar!.height)
+			//Barometer Pressure
+			self.items[2]![0] = String(format: NSLocalizedString("%.4f kPa %.4f mm Hg %.4f atm", comment: ""), app.bar!.pressure, app.bar!.pressure * 7.50062, app.bar!.pressure / 101.325)
+			//Everest Percent
+			self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest)", comment: "")
+			
+			traceBarometer();
+		} else {
+			self.items[0]![0] = ""
+			self.items[1]![0] = ""
+			self.items[2]![0] = ""
+			self.items[4]![0] = ""
+			if self.items[4]![0] == "" && self.stepLocation != nil {
+				let everest = self.stepLocation!.altitude / 8848
+				let everestPercent = 100.0 * everest
+				//let colorDelta = everestPercent * 255.0 / 100.0
+				let everestPercentText = String(format: "%.4f", everestPercent)
+				//Everest Percent
+				self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest GPS)", comment: "")
+			}
+		}
+		
+		self.tblData.reloadData()
+		refreshView()
+	}
+
 }
 
+extension ViewController: UITableViewDelegate {
+	
+}
+
+extension ViewController: UITableViewDataSource {
+
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return items[section]?.count ?? 0
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let value = items[indexPath.section]?[indexPath.row] else {
+			return UITableViewCell()
+		}
+	
+		if value == "::actionBar" {
+			let cell = tableView.dequeueReusableCell(withIdentifier: "GeoActionCell", for: indexPath) as! GeoActionTableViewCell
+			cell.location = self.stepLocation
+			cell.viewController = self
+			return cell
+		}
+		
+		let cell = tableView.dequeueReusableCell(withIdentifier: "GeoCell", for: indexPath) as! GeoTableViewCell
+
+		cell.textLabel?.text = value
+		
+		if indexPath.section == 4 && indexPath.row == 1 {
+			cell.textLabel?.numberOfLines = 0
+		} else {
+			cell.textLabel?.numberOfLines = 1
+		}
+		
+		return cell
+	}
+	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return groups.count
+	}
+	
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return groups[section]
+	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		if indexPath.section == 4 && indexPath.row == 1 {
+			return 44
+		}
+		return 22
+	}
+	
+}
+
+extension ViewController: CLLocationManagerDelegate {
+	
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		if locations.count > 0 {
+			self.location = locations[locations.count - 1]
+			if self.stepLocation == nil {
+				self.stepLocation = CLLocation(latitude: self.location!.coordinate.latitude, longitude: self.location!.coordinate.longitude)
+				refreshData()
+			} else if self.stepLocation!.distance(from: self.location!) > 100.0 { // > 100 m
+				self.stepLocation = CLLocation(latitude: self.location!.coordinate.latitude, longitude: self.location!.coordinate.longitude)
+				refreshData()
+			}
+			if self.location != nil {
+				//LocationAltitude
+				if self.items[0]![0] == nil {
+					self.items[0]![0] = "..."
+				}
+				self.items[0]![1] = String(format: NSLocalizedString("%.0fm according to the GPS/GLONASS", comment: ""), self.location!.altitude)
+				
+				if self.items[4]![0] == "" {
+					let everest = self.location!.coordinate.longitude / 8848
+					let everestPercent = 100.0 * everest
+					//let colorDelta = everestPercent * 255.0 / 100.0
+					let everestPercentText = String(format: "%.4f", everestPercent)
+					//Everest Percent
+					self.items[4]![0] = everestPercentText + NSLocalizedString("%🏔 (Everest) GPS", comment: "")
+				}
+				
+				//Location Latitude
+				self.items[1]![0] = String(format: NSLocalizedString("%.6f latitude", comment: ""), self.location!.coordinate.latitude)
+				//Location Longitude
+				self.items[1]![1] = String(format: NSLocalizedString("%.6f longitude", comment: ""), self.location!.coordinate.longitude)
+				self.items[1]![2] = "::actionBar"
+			} else {
+				self.items[0]![1] = ""
+				self.items[1]![0] = ""
+				self.items[1]![1] = ""
+				self.items[1]![2] = nil
+			}
+			traceLocation();
+		}
+		
+		self.tblData.reloadData()
+		refreshView()
+	}
+	
+	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+		if status == .notDetermined { return }
+		
+		if status == .authorizedAlways || status == .authorizedWhenInUse {
+			startLocationMonitor()
+		} else {
+			if status == .denied {
+				stopLocationMonitor()
+				let alert = UIAlertController(title: NSLocalizedString("Location", comment: ""), message: NSLocalizedString("The lack of access to the location makes some of the functions of the application unusable", comment: ""), preferredStyle: UIAlertController.Style.actionSheet)
+				alert.addAction(UIAlertAction(title: NSLocalizedString("Continue", comment: ""), style: UIAlertAction.Style.cancel, handler: { (_ action: UIAlertAction) in
+					alert.dismiss(animated: true, completion: nil)
+					self.refreshView()
+				}))
+				self.show(alert, sender: nil)
+			}
+		}
+	}
+	
+}

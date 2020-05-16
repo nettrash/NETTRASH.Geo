@@ -38,5 +38,4 @@ class GeoTests: XCTestCase {
 		XCTAssert(Response.response?.GeoObjectCollection?.featureMember != nil)
 		XCTAssert(Response.response?.GeoObjectCollection?.featureMember?.count == 1)
 	}
-
 }

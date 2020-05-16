@@ -11,38 +11,12 @@ import UIKit
 import MapKit
 import CoreData
 
-class MapViewController : UIViewController, MKMapViewDelegate {
+class MapViewController : UIViewController {
 	
-	@IBOutlet var map: MKMapView!
+	private var points: [MapPoint] = []
+	private var markers: [MapMarkPoint] = []
 
-	var points: [MapPoint] = []
-	var markers: [MapMarkPoint] = []
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		title = NSLocalizedString("Map", comment: "")
-		
-		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addMark))
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		self.navigationController!.navigationBar.titleTextAttributes =
-			[NSAttributedString.Key.font:
-				UIFont(name: "HelveticaNeue-Bold", size: 28)!,
-			 NSAttributedString.Key.foregroundColor: UIColor.lightGray]
-		
-		self.setupMap()
-	}
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "markdetail" {
-			let dst = segue.destination as! MarkDetailsViewController
-			dst.marker = sender as? MapMarkPoint
-		}
-	}
+	@IBOutlet var map: MKMapView!
 	
 	private func refreshPoints() {
 		let app = UIApplication.shared.delegate as! AppDelegate
@@ -131,12 +105,40 @@ class MapViewController : UIViewController, MKMapViewDelegate {
 			}
 		}
 	}
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		title = NSLocalizedString("Map", comment: "")
+		
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addMark))
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		self.navigationController!.navigationBar.titleTextAttributes =
+			[NSAttributedString.Key.font:
+				UIFont(name: "HelveticaNeue-Bold", size: 28)!,
+			 NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+		
+		self.setupMap()
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "markdetail" {
+			let dst = segue.destination as! MarkDetailsViewController
+			dst.marker = sender as? MapMarkPoint
+		}
+	}
 	
 	@objc func addMark() {
 		performSegue(withIdentifier: "addmark", sender: self)
 	}
 		
-	//MKMapViewDelegate
+}
+
+extension MapViewController: MKMapViewDelegate {
 	
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 		if annotation is MKUserLocation {
@@ -179,4 +181,5 @@ class MapViewController : UIViewController, MKMapViewDelegate {
 			performSegue(withIdentifier: "markdetail", sender: annotation)
 		}
 	}
+	
 }

@@ -8,12 +8,13 @@
 
 import WatchKit
 import CoreData
+import WatchConnectivity
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
 	let bar: WatchBarometer = WatchBarometer()
 	let weather: Weather = Weather()
-	
+	var lastSendTraceToApp: Date? = nil
 	public var persistentContainer: PersistentContainer = {
 		let container = PersistentContainer(name: "Geo")
 		container.loadPersistentStores(completionHandler: { (storeDescription:NSPersistentStoreDescription, error:Error?) in
@@ -24,15 +25,61 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 		
 		return container
 	}()
+
+	override init() {
+		super.init()
+		
+		WCSession.default.delegate = self
+        WCSession.default.activate()
+	}
+	
+	private func sendTraceToApp(_ trace: Trace) {
+		if WCSession.isSupported() && sendToAppAvailable() {
+			var msg: [String: Any] = [:]
+			msg["date"] = trace.date
+			msg["day"] = trace.day
+			msg["latitude"] = trace.latitude
+			msg["longitude"] = trace.longitude
+			msg["altitudeGPS"] = trace.altitudeGPS
+			msg["altitudeBAR"] = trace.altitudeBAR
+			msg["everest"] = trace.everest
+			msg["pressure"] = trace.pressure
+			WCSession.default.sendMessage(msg, replyHandler: nil, errorHandler: nil)
+		}
+	}
+	
+	private func sendToAppAvailable() -> Bool {
+		if lastSendTraceToApp == nil {
+			lastSendTraceToApp = Date()
+			return true
+		}
+		let diff = Calendar.current.dateComponents([.minute], from: lastSendTraceToApp!, to: Date())
+		if diff.minute! > 5 {
+			lastSendTraceToApp = Date()
+			return true
+		}
+		return false
+	}
+	
+	private func clockRefresh() {
+		let fireDate = Date(timeIntervalSinceNow: 60)
+		let ext = WKExtension.shared()
+		ext.scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil) { (_ error: Error?) in
+			if error == nil {
+			}
+		}
+	}
 	
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+		lastSendTraceToApp = nil
     }
 
     func applicationDidBecomeActive() {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 		self.bar.Start()
 		clockRefresh()
+		lastSendTraceToApp = nil
     }
 
     func applicationWillResignActive() {
@@ -75,15 +122,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         }
     }
 
-	func clockRefresh() {
-		let fireDate = Date(timeIntervalSinceNow: 60)
-		let ext = WKExtension.shared()
-		ext.scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: nil) { (_ error: Error?) in
-			if error == nil {
-			}
-		}
-	}
-	
 	func refreshComplication() {
 		let server = CLKComplicationServer.sharedInstance()
 		if server.activeComplications != nil {
@@ -134,6 +172,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 					lastTrace!.altitudeBAR = barAltitude
 					lastTrace!.pressure = barPressure
 					lastTrace!.everest = everestPercent
+					sendTraceToApp(lastTrace!)
 					try? moc.save()
 				} else if minuteDelta == 0 || mDiff > 9 || lastTrace == nil {
 					let trace = NSEntityDescription.insertNewObject(forEntityName: "Trace", into: moc) as! Trace
@@ -142,6 +181,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 					trace.altitudeBAR = barAltitude
 					trace.pressure = barPressure
 					trace.everest = everestPercent
+					sendTraceToApp(trace)
 					try? moc.save()
 				}
 				
@@ -150,6 +190,53 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 					try? moc.save()
 				}
 			}
+	}
+
+}
+
+extension ExtensionDelegate: WCSessionDelegate {
+	
+	func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+	}
+
+	func sessionReachabilityDidChange(_ session: WCSession) {
+		
+	}
+
+	func session(_ session: WCSession, didReceive file: WCSessionFile) {
+		
+	}
+	
+	func session(_ session: WCSession, didFinish fileTransfer: WCSessionFileTransfer, error: Error?) {
+		
+	}
+
+	func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+		
+	}
+	
+	func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+		
+	}
+
+	func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
+		
+	}
+	
+	func session(_ session: WCSession, didReceiveMessageData messageData: Data, replyHandler: @escaping (Data) -> Void) {
+		
+	}
+
+	func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+		
+	}
+	
+	func session(_ session: WCSession, didFinish userInfoTransfer: WCSessionUserInfoTransfer, error: Error?) {
+		
+	}
+
+	func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+		
 	}
 
 }

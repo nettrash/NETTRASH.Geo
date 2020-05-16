@@ -22,17 +22,8 @@ class MarkDetailsViewController : UIViewController {
 	@IBOutlet var lblPressureATM: UILabel!
 	@IBOutlet var lblLatitude: UILabel!
 	@IBOutlet var lblLongitude: UILabel!
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		title = NSLocalizedString("Marker details", comment: "")
-	}
 	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		self.initialize()
+	private func initialize() {
 		self.lblTitle.text = marker.name
 		self.lblDate.text = marker.dateString
 		self.lblAltitudeBAR.text = String(format: NSLocalizedString("%.0fm", comment: ""), marker.altitudeBAR)
@@ -45,7 +36,15 @@ class MarkDetailsViewController : UIViewController {
 		self.lblLongitude.text = String(format: "%.6f", marker.longitude)
 	}
 
-	private func initialize() {
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
+		title = NSLocalizedString("Marker details", comment: "")
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		self.initialize()
 	}
 }

@@ -11,61 +11,6 @@ import WatchKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
 	
-    // MARK: - Timeline Configuration
-    
-    func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
-        handler([.forward, .backward])
-    }
-    /*
-    func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-		handler(nil)
-    }
-    
-    func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        handler(nil)
-    }
-*/
-    func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
-        handler(.showOnLockScreen)
-    }
-    
-    // MARK: - Timeline Population
-    
-    func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        // Call the handler with the current timeline entry
-		return handler(CLKComplicationTimelineEntry(date: Date(), complicationTemplate: getData(complication)))
-    }
-/*
-    func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
-        // Call the handler with the timeline entries prior to the given date
-		return handler(nil)
-    }
-    
-    func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
-        // Call the handler with the timeline entries after to the given date
-		return handler(nil)
-    }
-   */
-    // MARK: - Placeholder Templates
-	
-	func getPlaceholderTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
-		return handler(getTemplate(complication))
-	}
-	
-    func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
-        // This method will be called once per supported complication, and the results will be cached
-		return handler(getTemplate(complication))
-	}
-	
-	// MARK: - Update Scheduling
-	
-	func getNextRequestedUpdateDateWithHandler(handler: (Date?) -> Void) {
-		// Call the handler with the date when you would next like to be given the opportunity to update your complication content
-		let next = Date(timeIntervalSinceNow: 60);
-		handler(next)
-	}
-
-	// MAIN FUNCTION
 	
 	private func getData(_ complication: CLKComplication) -> CLKComplicationTemplate {
 		let ext: ExtensionDelegate? = WKExtension.shared().delegate as? ExtensionDelegate
@@ -266,4 +211,59 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 		}
 		return template!
 	}
+
+    // MARK: - Timeline Configuration
+    
+    func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
+        handler([.forward, .backward])
+    }
+    /*
+    func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
+		handler(nil)
+    }
+    
+    func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
+        handler(nil)
+    }
+*/
+    func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
+        handler(.showOnLockScreen)
+    }
+    
+    // MARK: - Timeline Population
+    
+    func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
+        // Call the handler with the current timeline entry
+		return handler(CLKComplicationTimelineEntry(date: Date(), complicationTemplate: getData(complication)))
+    }
+/*
+    func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
+        // Call the handler with the timeline entries prior to the given date
+		return handler(nil)
+    }
+    
+    func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
+        // Call the handler with the timeline entries after to the given date
+		return handler(nil)
+    }
+   */
+    // MARK: - Placeholder Templates
+	
+	func getPlaceholderTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
+		return handler(getTemplate(complication))
+	}
+	
+    func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
+        // This method will be called once per supported complication, and the results will be cached
+		return handler(getTemplate(complication))
+	}
+	
+	// MARK: - Update Scheduling
+	
+	func getNextRequestedUpdateDateWithHandler(handler: (Date?) -> Void) {
+		// Call the handler with the date when you would next like to be given the opportunity to update your complication content
+		let next = Date(timeIntervalSinceNow: 60);
+		handler(next)
+	}
+
 }

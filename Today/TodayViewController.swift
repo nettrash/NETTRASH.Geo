@@ -13,14 +13,14 @@ import CoreLocation
 
 class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate {
         
-	var bar: Barometer?
-	var dataHandler: ((NCUpdateResult) -> Void)?
+	private var bar: Barometer?
+	private var dataHandler: ((NCUpdateResult) -> Void)?
+	private var graphPointsAltitudeBar: [Int] = []
+	private var graphPointsPressure: [Int] = []
+	private var graphPointsEverest: [Int] = []
+
 	@IBOutlet var lblInfo: UILabel!
 	@IBOutlet var graphViewAltitudeBar: GraphView!
-	var graphPointsAltitudeBar: [Int] = []
-	var graphPointsPressure: [Int] = []
-	var graphPointsEverest: [Int] = []
-
 	static var persistentContainer: PersistentContainer = {
 		let container = PersistentContainer(name: "group.ru.nettrash.geo")
 		container.loadPersistentStores(completionHandler: { (storeDescription:NSPersistentStoreDescription, error:Error?) in

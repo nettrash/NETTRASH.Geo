@@ -13,25 +13,12 @@ import CoreData
 class AddMarkViewController : UIViewController {
 	
 	private var trace: Trace? = nil
+	
 	@IBOutlet var markerName: UITextField!
 	@IBOutlet var lblTitle: UILabel!
 	@IBOutlet var lblHeight: UILabel!
 	@IBOutlet var lblPressure: UILabel!
 	@IBOutlet var lblEverest: UILabel!
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		title = NSLocalizedString("Add marker", comment: "")
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		self.initialize()
-		self.lblTitle.text = title
-		roundButtons(view: self.view, radius: 8)
-	}
 	
 	private func roundButtons(view: UIView?, radius: Int) {
 		if (view == nil) { return }
@@ -65,6 +52,20 @@ class AddMarkViewController : UIViewController {
 		)
 
 		self.markerName.text = ""
+	}
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		title = NSLocalizedString("Add marker", comment: "")
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		self.initialize()
+		self.lblTitle.text = title
+		roundButtons(view: self.view, radius: 8)
 	}
 	
 	@objc @IBAction func cancelMarker() {

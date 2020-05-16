@@ -7,18 +7,34 @@
 //
 
 import UIKit
+import WatchConnectivity
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
 	var bar: Barometer?
+	lazy var persistentContainer: PersistentContainer = {
+		let container = PersistentContainer(name: "Geo")
+		
+		container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+			if let error = error as NSError? {
+				fatalError("Unresolved error \(error), \(error.userInfo)")
+			}
+		})
+		return container
+	}()
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 		self.bar = Barometer()
 		self.bar?.Start()
+		if WCSession.isSupported() {
+			WCSession.default.delegate = self
+			WCSession.default.activate()
+		}
+
 		return true
 	}
 
@@ -43,19 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationWillTerminate(_ application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
-
-	// Core Data
-	
-	lazy var persistentContainer: PersistentContainer = {
-		let container = PersistentContainer(name: "Geo")
-		
-		container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-			if let error = error as NSError? {
-				fatalError("Unresolved error \(error), \(error.userInfo)")
-			}
-		})
-		return container
-	}()
 	
 	func saveContext () {
 		let context = persistentContainer.viewContext
@@ -70,6 +73,113 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			}
 		}
 	}
-
+	
 }
 
+extension AppDelegate: WCSessionDelegate {
+	
+	func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+	}
+
+	func sessionDidBecomeInactive(_ session: WCSession) {
+		
+	}
+
+	func sessionDidDeactivate(_ session: WCSession) {
+		
+	}
+	
+	func sessionWatchStateDidChange(_ session: WCSession) {
+		
+	}
+	
+	func sessionReachabilityDidChange(_ session: WCSession) {
+		
+	}
+
+	func session(_ session: WCSession, didReceive file: WCSessionFile) {
+		
+	}
+	
+	func session(_ session: WCSession, didFinish fileTransfer: WCSessionFileTransfer, error: Error?) {
+		
+	}
+
+	func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+		
+		do {
+			let moc = persistentContainer.viewContext
+			let traces = try? moc.fetch(Trace.fetchRequest()) as [Trace]
+			
+			if (traces != nil) {
+				var lastTrace: Trace? = nil
+				if traces!.count > 0 { lastTrace = traces![traces!.count-1] }
+				var date = message["date"] as! Date
+				let calendar = Calendar.current
+				var minute = calendar.component(.minute, from: date)
+				var second = calendar.component(.second, from: date)
+				var nanosecond = calendar.component(.nanosecond, from: date)
+				var minuteDelta = minute - 10 * (minute / 10)
+				date = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: date)!
+				date = calendar.date(byAdding: .second, value: -second, to: date)!
+				date = calendar.date(byAdding: .minute, value: -minuteDelta, to: date)!
+				
+				var d = Date()
+				let hour = calendar.component(.hour, from: d)
+				minute = calendar.component(.minute, from: d)
+				second = calendar.component(.second, from: d)
+				nanosecond = calendar.component(.nanosecond, from: d)
+				minuteDelta = minute - 10 * (minute / 10)
+				d = calendar.date(byAdding: .nanosecond, value: -nanosecond, to: d)!
+				d = calendar.date(byAdding: .second, value: -second, to: d)!
+				d = calendar.date(byAdding: .minute, value: -minute, to: d)!
+				d = calendar.date(byAdding: .hour, value: -hour, to: d)!
+				
+				var mDiff = 0
+				if lastTrace != nil && lastTrace!.date != nil {
+					let diff = calendar.dateComponents([.minute], from: lastTrace!.date! as Date, to: date)
+					mDiff = diff.minute!
+				}
+				if lastTrace != nil && lastTrace!.date != nil && lastTrace!.date! as Date == date {
+					lastTrace!.altitudeBAR = message["altitudeBAR"] as! Double
+					lastTrace!.pressure = message["pressure"] as! Double
+					lastTrace!.everest = message["everest"] as! Double
+					try? moc.save()
+				} else if minuteDelta == 0 || mDiff > 9 || lastTrace == nil {
+					let trace = NSEntityDescription.insertNewObject(forEntityName: "Trace", into: moc) as! Trace
+					trace.date = date as NSDate
+					trace.day = d as NSDate
+					trace.altitudeBAR = message["altitudeBAR"] as! Double
+					trace.pressure = message["pressure"] as! Double
+					trace.everest = message["everest"] as! Double
+					try? moc.save()
+				}
+			}
+		}
+	}
+	
+	func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+		
+	}
+
+	func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
+		
+	}
+	
+	func session(_ session: WCSession, didReceiveMessageData messageData: Data, replyHandler: @escaping (Data) -> Void) {
+		
+	}
+
+	func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+		
+	}
+	
+	func session(_ session: WCSession, didFinish userInfoTransfer: WCSessionUserInfoTransfer, error: Error?) {
+		
+	}
+
+	func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+		
+	}
+
+}

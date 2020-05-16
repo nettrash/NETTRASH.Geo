@@ -10,30 +10,16 @@ import Foundation
 import UIKit
 
 class GraphViewController : UIViewController {
-	
+		
+	private var graphPointsAltitudeBar: [Int] = []
+	private var graphPointsPressure: [Int] = []
+	private var graphPointsEverest: [Int] = []
+
 	@IBOutlet var graphViewAltitudeBar: GraphView!
 	@IBOutlet var graphViewPressure: GraphView!
 	@IBOutlet var graphViewEverest: GraphView!
 
-	var graphPointsAltitudeBar: [Int] = []
-	var graphPointsPressure: [Int] = []
-	var graphPointsEverest: [Int] = []
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		title = NSLocalizedString("Graph", comment: "")
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 28)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray]
-
-		self.setupGraphDisplay()
-	}
-	
-	func setupGraphDisplay() {
+	private func setupGraphDisplay() {
 		
 		initializeData()
 		setupGraphAltitudeBar()
@@ -42,7 +28,7 @@ class GraphViewController : UIViewController {
 		
 	}
 	
-	func initializeData() {
+	private func initializeData() {
 		#if targetEnvironment(simulator)
 		
 		graphPointsAltitudeBar = [190, 313, 323, 306, 265, 233, 211]
@@ -91,7 +77,7 @@ class GraphViewController : UIViewController {
 		#endif
 	}
 	
-	func setupGraphAltitudeBar() {
+	private func setupGraphAltitudeBar() {
 		
 		let maxDayIndex = graphPointsAltitudeBar.count
 		
@@ -145,7 +131,7 @@ class GraphViewController : UIViewController {
 		graphViewAltitudeBar.lblEndX.text = formatter.string(from: today)
 	}
 	
-	func setupGraphPressure() {
+	private func setupGraphPressure() {
 		
 		let maxDayIndex = graphPointsPressure.count
 		
@@ -199,7 +185,7 @@ class GraphViewController : UIViewController {
 		graphViewPressure.lblEndX.text = formatter.string(from: today)
 	}
 	
-	func setupGraphEverest() {
+	private func setupGraphEverest() {
 		
 		let maxDayIndex = graphPointsEverest.count
 		
@@ -253,4 +239,18 @@ class GraphViewController : UIViewController {
 		graphViewEverest.lblEndX.text = formatter.string(from: today)
 	}
 
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		title = NSLocalizedString("Graph", comment: "")
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 28)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+
+		self.setupGraphDisplay()
+	}
+	
 }
