@@ -15,6 +15,7 @@ class MapViewController : UIViewController {
 	
 	private var points: [MapPoint] = []
 	private var markers: [MapMarkPoint] = []
+	private var mountains: [MapMountainPoint] = []
 
 	@IBOutlet var map: MKMapView!
 	
@@ -78,9 +79,19 @@ class MapViewController : UIViewController {
 		self.map.addAnnotations(markers)
 	}
 	
+	private func refreshMountains() {
+		self.map.removeAnnotations(mountains)
+		let app = UIApplication.shared.delegate as! AppDelegate
+		mountains = (app.mountainsData?.highest?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
+			MapMountainPoint(mountain: m)
+		}) ?? []) as [MapMountainPoint]
+		self.map.addAnnotations(mountains)
+	}
+	
 	private func setupMap() {
 		refreshPoints()
 		refreshMarkers()
+		refreshMountains()
 		self.map.userTrackingMode = .none
 		self.map.isZoomEnabled = true
 		self.map.isPitchEnabled = true
@@ -144,10 +155,23 @@ extension MapViewController: MKMapViewDelegate {
 		if annotation is MKUserLocation {
 			return nil
 		}
-		if annotation is MapPoint {
-			let identifier = annotation is MapMarkPoint ? "MapMarkPointAnnotationView" : "MapPointAnnotationView"
-			let tintColor: UIColor = annotation is MapMarkPoint ? .systemBlue : .red
-			let iconImageName = annotation is MapMarkPoint ? "MapMarkPoint" : "MapPoint"
+		if annotation is MapPoint || annotation is MapMountainPoint {
+			var identifier = ""
+			var tintColor: UIColor = .red
+			var iconImageName = ""
+			if annotation is MapMarkPoint {
+				identifier = "MapMarkPointAnnotationView"
+				tintColor = .systemBlue
+				iconImageName = "MapMarkPoint"
+			} else if annotation is MapMountainPoint {
+				identifier = "MapMountainPointAnnotationView"
+				tintColor = .black
+				iconImageName = "MapMountainPoint"
+			} else {
+				identifier = "MapPointAnnotationView"
+				tintColor = .red
+				iconImageName = "MapPoint"
+			}
 			var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
 			if pinView == nil {
 				pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)

@@ -56,3 +56,6 @@
 "NordEast"="东北";
 "SouthEast"="东南";
 "SouthWest"="西南";
+"MountainDetails"="高度 %im %@";
+"MountainSummit"="(第一次上升 %@)";
+"MountainNoSummit"="(没有征服)";

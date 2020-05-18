@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	var window: UIWindow?
 	var bar: Barometer?
+	var mountainsData: MountainData? = nil
 	lazy var persistentContainer: PersistentContainer = {
 		let container = PersistentContainer(name: "Geo")
 		
@@ -38,6 +39,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			WCSession.default.activate()
 		}
 		locationManager.delegate = self
+		loadMountains()
+	}
+	
+	private func loadMountains() {
+		do {
+			guard let listPath = Bundle.main.path(forResource: "list", ofType: "json") else {
+				return
+			}
+			let listUrl = URL(fileURLWithPath: listPath)
+			guard let jsonData = try? Data(contentsOf: listUrl) else {
+				return
+			}
+			let decoder = JSONDecoder()
+			mountainsData = try decoder.decode(MountainData.self, from: jsonData)
+		}
+		catch {
+			mountainsData = nil
+		}
 	}
 	
 	private func initLocation() {

@@ -56,3 +56,6 @@
 "NordEast"="Северо-восток";
 "SouthEast"="Юго-восток";
 "SouthWest"="Юго-запад";
+"MountainDetails"="высота %iм %@";
+"MountainSummit"="(первое восхождение %@г)";
+"MountainNoSummit"="(не покорена)";

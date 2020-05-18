@@ -56,3 +56,6 @@
 "NordEast"="NordEast";
 "SouthEast"="SouthEast";
 "SouthWest"="SouthWest";
+"MountainDetails"="height %im %@";
+"MountainSummit"="(first ascent %@)";
+"MountainNoSummit"="(not conquered)";
