@@ -61,6 +61,7 @@
 		E58D19D622D4B03F00EEBA49 /* Trace+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57FD35422D4AF33009A1740 /* Trace+CoreDataProperties.swift */; };
 		E59909152462ED3700CB1A85 /* AddMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59909142462ED3700CB1A85 /* AddMarkViewController.swift */; };
 		E59909182462F50000CB1A85 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59909172462F50000CB1A85 /* UIButton.swift */; };
+		E59B24062472C53D003D6E77 /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = E59B24052472C53D003D6E77 /* list.json */; };
 		E59BCC7422D348EC00172BB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5BD420922893DA60085CA4B /* Assets.xcassets */; };
 		E5A51DE322AE5FD600622A7F /* Barometer+Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A51DE222AE5FD600622A7F /* Barometer+Watch.swift */; };
 		E5BD41DD22893DA30085CA4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD41DC22893DA30085CA4B /* AppDelegate.swift */; };
@@ -231,6 +232,7 @@
 		E582AD8022B2245900F5364A /* OpenWeatherMapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapResponse.swift; sourceTree = "<group>"; };
 		E59909142462ED3700CB1A85 /* AddMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMarkViewController.swift; sourceTree = "<group>"; };
 		E59909172462F50000CB1A85 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		E59B24052472C53D003D6E77 /* list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
 		E5A51DE222AE5FD600622A7F /* Barometer+Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Barometer+Watch.swift"; sourceTree = "<group>"; };
 		E5BD41D922893DA30085CA4B /* Geo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5BD41DC22893DA30085CA4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -357,6 +359,14 @@
 				E527DDE22463DF4F003FE494 /* MapMarkPoint.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E51F05CD2471747A004A7468 /* Mountains */ = {
+			isa = PBXGroup;
+			children = (
+				E59B24052472C53D003D6E77 /* list.json */,
+			);
+			path = Mountains;
 			sourceTree = "<group>";
 		};
 		E5306E6E22BCAB9C00026C2E /* Cells */ = {
@@ -520,6 +530,7 @@
 		E5C8603522AA8D360002CB91 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				E51F05CD2471747A004A7468 /* Mountains */,
 				E527DDEB24640658003FE494 /* MapMarkPoint.png */,
 				E527DDEC24640658003FE494 /* MapMarkPoint@2x.png */,
 				E527DDEA24640658003FE494 /* MapMarkPoint@3x.png */,
@@ -812,6 +823,7 @@
 				E527DDE82463F137003FE494 /* MapPoint@2x.png in Resources */,
 				E527DDEF24640658003FE494 /* MapMarkPoint@2x.png in Resources */,
 				E5BD41E722893DA50085CA4B /* LaunchScreen.storyboard in Resources */,
+				E59B24062472C53D003D6E77 /* list.json in Resources */,
 				E5D8317F23A6359000A54C9F /* Graph@2x.png in Resources */,
 				E5C8603822AA8D610002CB91 /* Geo.png in Resources */,
 				E5BD41E422893DA50085CA4B /* Assets.xcassets in Resources */,
