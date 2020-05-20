@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E50AFE0D23F9914900BFB71E /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50AFE0C23F9914900BFB71E /* MapPoint.swift */; };
+		E5163F472473B7AD002CAC3A /* MapPointBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5163F462473B7AD002CAC3A /* MapPointBase.swift */; };
+		E5163F4B2473DD81002CAC3A /* MapMountainSnowLeopardPoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5163F482473DD80002CAC3A /* MapMountainSnowLeopardPoint@2x.png */; };
+		E5163F4C2473DD81002CAC3A /* MapMountainSnowLeopardPoint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5163F492473DD81002CAC3A /* MapMountainSnowLeopardPoint@3x.png */; };
+		E5163F4D2473DD81002CAC3A /* MapMountainSnowLeopardPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = E5163F4A2473DD81002CAC3A /* MapMountainSnowLeopardPoint.png */; };
+		E5163F512473F3A0002CAC3A /* MapMountainSevenPeaksPoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5163F4E2473F39F002CAC3A /* MapMountainSevenPeaksPoint@2x.png */; };
+		E5163F522473F3A0002CAC3A /* MapMountainSevenPeaksPoint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5163F4F2473F39F002CAC3A /* MapMountainSevenPeaksPoint@3x.png */; };
+		E5163F532473F3A0002CAC3A /* MapMountainSevenPeaksPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = E5163F502473F39F002CAC3A /* MapMountainSevenPeaksPoint.png */; };
 		E527DDE32463DF4F003FE494 /* MapMarkPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527DDE22463DF4F003FE494 /* MapMarkPoint.swift */; };
 		E527DDE72463F137003FE494 /* MapPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = E527DDE42463F136003FE494 /* MapPoint.png */; };
 		E527DDE82463F137003FE494 /* MapPoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E527DDE52463F137003FE494 /* MapPoint@2x.png */; };
@@ -189,6 +196,13 @@
 
 /* Begin PBXFileReference section */
 		E50AFE0C23F9914900BFB71E /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
+		E5163F462473B7AD002CAC3A /* MapPointBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPointBase.swift; sourceTree = "<group>"; };
+		E5163F482473DD80002CAC3A /* MapMountainSnowLeopardPoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MapMountainSnowLeopardPoint@2x.png"; sourceTree = "<group>"; };
+		E5163F492473DD81002CAC3A /* MapMountainSnowLeopardPoint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MapMountainSnowLeopardPoint@3x.png"; sourceTree = "<group>"; };
+		E5163F4A2473DD81002CAC3A /* MapMountainSnowLeopardPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapMountainSnowLeopardPoint.png; sourceTree = "<group>"; };
+		E5163F4E2473F39F002CAC3A /* MapMountainSevenPeaksPoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MapMountainSevenPeaksPoint@2x.png"; sourceTree = "<group>"; };
+		E5163F4F2473F39F002CAC3A /* MapMountainSevenPeaksPoint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MapMountainSevenPeaksPoint@3x.png"; sourceTree = "<group>"; };
+		E5163F502473F39F002CAC3A /* MapMountainSevenPeaksPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapMountainSevenPeaksPoint.png; sourceTree = "<group>"; };
 		E527DDE22463DF4F003FE494 /* MapMarkPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarkPoint.swift; sourceTree = "<group>"; };
 		E527DDE42463F136003FE494 /* MapPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapPoint.png; sourceTree = "<group>"; };
 		E527DDE52463F137003FE494 /* MapPoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MapPoint@2x.png"; sourceTree = "<group>"; };
@@ -375,6 +389,7 @@
 				E50AFE0C23F9914900BFB71E /* MapPoint.swift */,
 				E527DDE22463DF4F003FE494 /* MapMarkPoint.swift */,
 				E59B241824730248003D6E77 /* MapMountainPoint.swift */,
+				E5163F462473B7AD002CAC3A /* MapPointBase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -560,6 +575,12 @@
 			isa = PBXGroup;
 			children = (
 				E51F05CD2471747A004A7468 /* Mountains */,
+				E5163F502473F39F002CAC3A /* MapMountainSevenPeaksPoint.png */,
+				E5163F4E2473F39F002CAC3A /* MapMountainSevenPeaksPoint@2x.png */,
+				E5163F4F2473F39F002CAC3A /* MapMountainSevenPeaksPoint@3x.png */,
+				E5163F4A2473DD81002CAC3A /* MapMountainSnowLeopardPoint.png */,
+				E5163F482473DD80002CAC3A /* MapMountainSnowLeopardPoint@2x.png */,
+				E5163F492473DD81002CAC3A /* MapMountainSnowLeopardPoint@3x.png */,
 				E59B241A247307EF003D6E77 /* MapMountainPoint.png */,
 				E59B241C247307EF003D6E77 /* MapMountainPoint@2x.png */,
 				E59B241B247307EF003D6E77 /* MapMountainPoint@3x.png */,
@@ -842,15 +863,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5163F512473F3A0002CAC3A /* MapMountainSevenPeaksPoint@2x.png in Resources */,
 				E5C8603922AA8D610002CB91 /* readme.txt in Resources */,
+				E5163F4C2473DD81002CAC3A /* MapMountainSnowLeopardPoint@3x.png in Resources */,
 				E5D8318023A6359000A54C9F /* Graph@3x.png in Resources */,
 				E5C795E422C7EB1D001DD791 /* InfoPlist.strings in Resources */,
 				E5D8317923A6341600A54C9F /* Compass.png in Resources */,
 				E527DDED24640658003FE494 /* MapMarkPoint@3x.png in Resources */,
+				E5163F522473F3A0002CAC3A /* MapMountainSevenPeaksPoint@3x.png in Resources */,
 				E59B241E247307EF003D6E77 /* MapMountainPoint@3x.png in Resources */,
 				E566AF7D2392EA60005CA340 /* TodayBackground.png in Resources */,
 				E5C795E922C7EBAB001DD791 /* Localizable.strings in Resources */,
 				E527DDE72463F137003FE494 /* MapPoint.png in Resources */,
+				E5163F4D2473DD81002CAC3A /* MapMountainSnowLeopardPoint.png in Resources */,
 				E59B241F247307EF003D6E77 /* MapMountainPoint@2x.png in Resources */,
 				E527DDEE24640658003FE494 /* MapMarkPoint.png in Resources */,
 				E566AF7F2392EA60005CA340 /* TodayBackground@3x.png in Resources */,
@@ -859,9 +884,11 @@
 				E527DDEF24640658003FE494 /* MapMarkPoint@2x.png in Resources */,
 				E5BD41E722893DA50085CA4B /* LaunchScreen.storyboard in Resources */,
 				E59B24062472C53D003D6E77 /* list.json in Resources */,
+				E5163F4B2473DD81002CAC3A /* MapMountainSnowLeopardPoint@2x.png in Resources */,
 				E5D8317F23A6359000A54C9F /* Graph@2x.png in Resources */,
 				E5C8603822AA8D610002CB91 /* Geo.png in Resources */,
 				E5BD41E422893DA50085CA4B /* Assets.xcassets in Resources */,
+				E5163F532473F3A0002CAC3A /* MapMountainSevenPeaksPoint.png in Resources */,
 				E5D8317A23A6341600A54C9F /* Compass@2x.png in Resources */,
 				E5D8317B23A6341600A54C9F /* Compass@3x.png in Resources */,
 				E5BD41E222893DA30085CA4B /* Main.storyboard in Resources */,
@@ -976,6 +1003,7 @@
 				E527DDE32463DF4F003FE494 /* MapMarkPoint.swift in Sources */,
 				E59909152462ED3700CB1A85 /* AddMarkViewController.swift in Sources */,
 				E57FD35822D4AF33009A1740 /* Trace+CoreDataClass.swift in Sources */,
+				E5163F472473B7AD002CAC3A /* MapPointBase.swift in Sources */,
 				E5D8318323A636C100A54C9F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1173,7 +1201,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1767;
+				CURRENT_PROJECT_VERSION = 1786;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -1196,7 +1224,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1767;
+				CURRENT_PROJECT_VERSION = 1786;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -1339,7 +1367,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit Extension/Geo WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1767;
+				CURRENT_PROJECT_VERSION = 1786;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = "Geo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1368,7 +1396,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit Extension/Geo WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1767;
+				CURRENT_PROJECT_VERSION = 1786;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = "Geo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1397,7 +1425,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit App/Geo WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1767;
+				CURRENT_PROJECT_VERSION = 1786;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				IBSC_MODULE = Geo_WatchKit_Extension;
 				INFOPLIST_FILE = "Geo WatchKit App/Info.plist";
@@ -1429,7 +1457,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit App/Geo WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1767;
+				CURRENT_PROJECT_VERSION = 1786;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				IBSC_MODULE = Geo_WatchKit_Extension;
 				INFOPLIST_FILE = "Geo WatchKit App/Info.plist";
@@ -1460,7 +1488,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Geo/Geo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1767;
+				CURRENT_PROJECT_VERSION = 1786;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Geo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1486,7 +1514,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Geo/Geo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1767;
+				CURRENT_PROJECT_VERSION = 1786;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Geo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

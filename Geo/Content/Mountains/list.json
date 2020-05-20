@@ -1914,8 +1914,8 @@
                 "location": "Гималаи",
                 "county": "Непал/Китай",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 27.98806,
+                    "longitude": 86.92528
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -1932,8 +1932,8 @@
                 "location": "Анды",
                 "county": "Аргентина",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": -32.65383,
+                    "longitude": -70.01141
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -1950,8 +1950,8 @@
                 "location": "Аляскинский хребет",
                 "county": "США",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 63.0695,
+                    "longitude": -151.0074
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -1968,8 +1968,8 @@
                 "location": "Килиманджаро",
                 "county": "Танзания",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 3.0644209,
+                    "longitude": 37.3582268
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -1986,8 +1986,8 @@
                 "location": "Большой Кавказ",
                 "county": "Россия",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 43.355,
+                    "longitude": 42.43917
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2004,8 +2004,8 @@
                 "location": "Западные Альпы",
                 "county": "Франция/Италия",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 45.832778,
+                    "longitude": 6.864722
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2022,8 +2022,8 @@
                 "location": "Элсуэрт",
                 "county": "",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": -78.58333,
+                    "longitude": -85.41667
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2040,8 +2040,8 @@
                 "location": "Маоке",
                 "county": "Индонезия",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": -4.08333,
+                    "longitude": 137.183333
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2058,8 +2058,8 @@
                 "location": "Австралийские Альпы",
                 "county": "Австралия",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": -36.45,
+                    "longitude": 148.267
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2091,8 +2091,8 @@
                 "height": 5642,
                 "location": "",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 43.355,
+                    "longitude": 42.43917
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2107,8 +2107,8 @@
                 "height": 5204,
                 "location": "",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 43.05444,
+                    "longitude": 43.13028
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2123,8 +2123,8 @@
                 "height": 5193,
                 "location": "",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 42.99944,
+                    "longitude": 43.11167
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2139,8 +2139,8 @@
                 "height": 5151,
                 "location": "",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 43.05009,
+                    "longitude": 43.21426
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2155,8 +2155,8 @@
                 "height": 5025,
                 "location": "",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 43.043889,
+                    "longitude": 43.149167
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2171,8 +2171,8 @@
                 "height": 5100,
                 "location": "",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 43.049167,
+                    "longitude": 43.1375
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2187,8 +2187,8 @@
                 "height": 5085,
                 "location": "",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 43.017778,
+                    "longitude": 43.0575
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2203,8 +2203,8 @@
                 "height": 5034,
                 "location": "",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 42.69708,
+                    "longitude": 44.51792
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2219,8 +2219,8 @@
                 "height": 4688,
                 "location": "",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 56.067,
+                    "longitude": 160.633
                 },
                 "relativeHeight": 0,
                 "parent":"",
@@ -2235,8 +2235,8 @@
                 "height": 4506,
                 "location": "",
                 "coordinates": {
-                    "latitude": 0,
-                    "longitude": 0
+                    "latitude": 49.80667,
+                    "longitude": 86.59083
                 },
                 "relativeHeight": 0,
                 "parent":"",

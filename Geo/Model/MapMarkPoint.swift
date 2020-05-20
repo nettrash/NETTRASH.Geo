@@ -9,17 +9,31 @@
 import Foundation
 import MapKit
 
-class MapMarkPoint : MapPoint {
+class MapMarkPoint: MapPoint {
 	
 	private var mName: String
 	private var mMessage: String
 	
+	override public var identifier: String {
+		get {
+			return "MapMarkPointAnnotationView"
+		}
+	}
+	override public var tintColor: UIColor {
+		get {
+			return .systemBlue
+		}
+	}
+	override public var iconImage: UIImage? {
+		get {
+			return UIImage(named: "MapMarkPoint")
+		}
+	}
 	var name: String {
 		get {
 			return mName
 		}
 	}
-	
 	var message: String {
 		get {
 			return mMessage

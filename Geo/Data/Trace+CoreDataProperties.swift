@@ -49,6 +49,7 @@ extension Trace {
 		request.fetchLimit = nMaxCount
 		let sortDay = NSSortDescriptor(key: "day", ascending: false)
 		request.sortDescriptors = [sortDay]
+		request.predicate = NSPredicate(format: "pressure > 0")
 		return request
 	}
 	

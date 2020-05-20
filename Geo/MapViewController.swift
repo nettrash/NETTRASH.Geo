@@ -83,8 +83,14 @@ class MapViewController : UIViewController {
 		self.map.removeAnnotations(mountains)
 		let app = UIApplication.shared.delegate as! AppDelegate
 		mountains = (app.mountainsData?.highest?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
-			MapMountainPoint(mountain: m)
+			MapMountainPoint(mountain: m, type: .HIGHEST)
 		}) ?? []) as [MapMountainPoint]
+		mountains.append(contentsOf: (app.mountainsData?.sevenPeaks?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
+			MapMountainPoint(mountain: m, type: .SEVEN_PEAKS)
+		}) ?? []))
+		mountains.append(contentsOf: (app.mountainsData?.snowLeopardOfRussia?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
+			MapMountainPoint(mountain: m, type: .SNOW_LEOPARD_OF_RUSSIA)
+		}) ?? []))
 		self.map.addAnnotations(mountains)
 	}
 	
@@ -155,30 +161,17 @@ extension MapViewController: MKMapViewDelegate {
 		if annotation is MKUserLocation {
 			return nil
 		}
-		if annotation is MapPoint || annotation is MapMountainPoint {
-			var identifier = ""
-			var tintColor: UIColor = .red
-			var iconImageName = ""
-			if annotation is MapMarkPoint {
-				identifier = "MapMarkPointAnnotationView"
-				tintColor = .systemBlue
-				iconImageName = "MapMarkPoint"
-			} else if annotation is MapMountainPoint {
-				identifier = "MapMountainPointAnnotationView"
-				tintColor = .black
-				iconImageName = "MapMountainPoint"
-			} else {
-				identifier = "MapPointAnnotationView"
-				tintColor = .red
-				iconImageName = "MapPoint"
-			}
-			var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+		if annotation is MapPointBase {
+			let point = annotation as! MapPointBase
+			var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: point.identifier) as? MKPinAnnotationView
 			if pinView == nil {
-				pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-				pinView!.pinTintColor = tintColor
+				pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: point.identifier)
+				pinView!.pinTintColor = point.tintColor
 				pinView!.animatesDrop = true
 				pinView!.canShowCallout = true
-				pinView!.leftCalloutAccessoryView = UIImageView(image: UIImage(named: iconImageName))
+				if let image = point.iconImage {
+					pinView!.leftCalloutAccessoryView = UIImageView(image: image)
+				}
 				if annotation is MapMarkPoint {
 					let details = UILabel()
 					details.numberOfLines = 2

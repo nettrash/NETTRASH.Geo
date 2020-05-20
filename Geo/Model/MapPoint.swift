@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-open class MapPoint: NSObject {
+open class MapPoint: MapPointBase {
 	
 	private var mDate: Date
 	private var mLatitude: Double
@@ -19,6 +19,16 @@ open class MapPoint: NSObject {
 	private var mEverest: Double
 	private var mAltitudeGPS: Double
 	
+	override public var identifier: String {
+		get {
+			return "MapPointAnnotationView"
+		}
+	}
+	override public var iconImage: UIImage? {
+		get {
+			return UIImage(named: "MapPoint")
+		}
+	}
 	var date: Date {
 		get {
 			return mDate
