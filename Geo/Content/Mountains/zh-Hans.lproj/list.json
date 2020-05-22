@@ -1,25 +1,26 @@
 {
     "highest": {
-        "source": "https://ru.wikipedia.org/wiki/Список_высочайших_вершин_Земли",
+        "source": "https://zh.wikipedia.org/wiki/世界高山列表",
         "columns":[
-            "Место",
-            "Изображение",
-            "Гора",
-            "Высота (м)",
-            "Место расположения",
-            "Координаты",
-            "Видность (м) [Относительная высота вершины]",
-            "Родительская гора",
-            "Первое восхождение",
-            "Восхождения (попытки восхождения)"
+            "Place",
+            "Image",
+            "Mountain",
+            "Height (m)",
+            "Location",
+            "Coordinates",
+            "Visibility (m) [relative height of the mountain]",
+            "Parent mountain",
+            "First ascent",
+            "Ascents",
+			"Climbing attempts"
         ],
         "mountains": [
             {
                 "position": 1,
                 "image": "1.jpg",
-                "name":"Джомолунгма (Эверест)",
+                "name":"Jomolungma (Everest)",
                 "height": 8848,
-                "location": "Махалангур-Химал, Гималаи",
+                "location": "Mahalangur-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 27.98806,
                     "longitude": 86.92528
@@ -33,9 +34,9 @@
             {
                 "position": 2,
                 "image": "2.jpg",
-                "name":"Чогори",
+                "name":"Chogori",
                 "height": 8611,
-                "location": "Балторо Музтаг, Каракорум",
+                "location": "Baltoro Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.8825,
                     "longitude": 76.51333
@@ -49,9 +50,9 @@
             {
                 "position": 3,
                 "image": "3.jpg",
-                "name":"Канченджанга",
+                "name":"Kanchenjunga",
                 "height": 8586,
-                "location": "Канченджанга, Гималаи",
+                "location": "Kanchenjunga, Himalayas",
                 "coordinates": {
                     "latitude": 27.7025,
                     "longitude": 88.14694
@@ -65,15 +66,15 @@
             {
                 "position": 4,
                 "image": "4.jpg",
-                "name":"Лхоцзе",
+                "name":"Lhotse",
                 "height": 8516,
-                "location": "Махалангур-Химал, Гималаи",
+                "location": "Mahalangur-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 27.96167,
                     "longitude": 86.93306
                 },
                 "relativeHeight": 610,
-                "parent":"Джомолунгма",
+                "parent":"Chomolungma",
                 "firstAscent":"1956",
                 "ascents":26,
                 "attemptsToAscend":26
@@ -81,15 +82,15 @@
             {
                 "position": 5,
                 "image": "5.jpg",
-                "name":"Макалу",
+                "name":"Makalu",
                 "height": 8485,
-                "location": "Махалангур-Химал, Гималаи",
+                "location": "Mahalangur-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 27.88917,
                     "longitude": 87.08861
                 },
                 "relativeHeight": 2386,
-                "parent":"Лхоцзе",
+                "parent":"Lhotse",
                 "firstAscent":"1955",
                 "ascents":45,
                 "attemptsToAscend":52
@@ -97,15 +98,15 @@
             {
                 "position": 6,
                 "image": "6.jpg",
-                "name":"Чо-Ойю",
+                "name":"Cho-Oyu",
                 "height": 8188,
-                "location": "Махалангур-Химал, Гималаи",
+                "location": "Mahalangur-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 28.09417,
                     "longitude": 86.66083
                 },
                 "relativeHeight": 2340,
-                "parent":"Джомолунгма",
+                "parent":"Chomolungma",
                 "firstAscent":"1954",
                 "ascents":79,
                 "attemptsToAscend":28
@@ -113,9 +114,9 @@
             {
                 "position": 7,
                 "image": "7.jpg",
-                "name":"Дхаулагири",
+                "name":"Dhaulagiri",
                 "height": 8167,
-                "location": "Дхаулагири, Гималаи",
+                "location": "Dhaulagiri, Himalayas",
                 "coordinates": {
                     "latitude": 28.69583,
                     "longitude": 83.49333
@@ -129,9 +130,9 @@
             {
                 "position": 8,
                 "image": "8.jpg",
-                "name":"Манаслу",
+                "name":"Manaslu",
                 "height": 8163,
-                "location": "Манаслу, Гималаи",
+                "location": "Manaslu, Himalayas",
                 "coordinates": {
                     "latitude": 28.54944,
                     "longitude": 84.56083
@@ -145,9 +146,9 @@
             {
                 "position": 9,
                 "image": "9.jpg",
-                "name":"Нангапарбат",
+                "name":"Nangaparbat",
                 "height": 8126,
-                "location": "Нангапарбат, Гималаи",
+                "location": "Nangaparbat, Himalayas",
                 "coordinates": {
                     "latitude": 35.23833,
                     "longitude": 74.58944
@@ -161,9 +162,9 @@
             {
                 "position": 10,
                 "image": "10.jpg",
-                "name":"Аннапурна I",
+                "name":"Annapurna I",
                 "height": 8091,
-                "location": "Аннапурна, Гималаи",
+                "location": "Annapurna, Himalayas",
                 "coordinates": {
                     "latitude": 28.59528,
                     "longitude": 83.81972
@@ -177,9 +178,9 @@
             {
                 "position": 11,
                 "image": "11.jpg",
-                "name":"Гашербрум I",
+                "name":"Gasherbrum I",
                 "height": 8080,
-                "location": "Балторо Музтаг, Каракорум",
+                "location": "Baltoro Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.72417,
                     "longitude": 76.69556
@@ -193,15 +194,15 @@
             {
                 "position": 12,
                 "image": "12.jpg",
-                "name":"Броуд-Пик",
+                "name":"Broad Peak",
                 "height": 8051,
-                "location": "Балторо Музтаг, Каракорум",
+                "location": "Baltoro Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.81056,
                     "longitude": 76.56806
                 },
                 "relativeHeight": 1701,
-                "parent":"Гашербрум I",
+                "parent":"Gasherbrum I",
                 "firstAscent":"1957",
                 "ascents":39,
                 "attemptsToAscend":19
@@ -209,15 +210,15 @@
             {
                 "position": 13,
                 "image": "13.jpg",
-                "name":"Гашербрум II",
+                "name":"Gasherbrum II",
                 "height": 8034,
-                "location": "Балторо Музтаг, Каракорум",
+                "location": "Baltoro Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.7575,
                     "longitude": 76.65306
                 },
                 "relativeHeight": 1523,
-                "parent":"Гашербрум I",
+                "parent":"Gasherbrum I",
                 "firstAscent":"1956",
                 "ascents":54,
                 "attemptsToAscend":12
@@ -225,9 +226,9 @@
             {
                 "position": 14,
                 "image": "14.jpg",
-                "name":"Шишабангма",
+                "name":"Shishapangma",
                 "height": 8027,
-                "location": "Лангтанг, Гималаи",
+                "location": "Langtang, Himalayas",
                 "coordinates": {
                     "latitude": 28.35333,
                     "longitude": 85.77861
@@ -241,15 +242,15 @@
             {
                 "position": 15,
                 "image": "15-0.jpg",
-                "name":"Гьячунг-Канг",
+                "name":"Gyachung-Kang",
                 "height": 7952,
-                "location": "Махалангур-Химал, Гималаи",
+                "location": "Mahalangur-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 28.09778,
                     "longitude": 86.74639
                 },
                 "relativeHeight": 700,
-                "parent":"Чо-Ойю",
+                "parent":"Cho-Oyu",
                 "firstAscent":"1964",
                 "ascents":5,
                 "attemptsToAscend":3
@@ -257,15 +258,15 @@
             {
                 "position": 15,
                 "image": "15-1.jpg",
-                "name":"Гашербрум III",
+                "name":"Gasherbrum III",
                 "height": 7946,
-                "location": "Балторо Музтаг, Каракорум",
+                "location": "Baltoro Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.75944,
                     "longitude": 76.64194
                 },
                 "relativeHeight": 355,
-                "parent":"Гашербрум II",
+                "parent":"Gasherbrum II",
                 "firstAscent":"1975",
                 "ascents":2,
                 "attemptsToAscend":2
@@ -273,15 +274,15 @@
             {
                 "position": 16,
                 "image": "16.jpg",
-                "name":"Аннапурна II",
+                "name":"Annapurna II",
                 "height": 7937,
-                "location": "Аннапурна, Гималаи",
+                "location": "Annapurna, Himalayas",
                 "coordinates": {
                     "latitude": 28.53417,
                     "longitude": 84.12222
                 },
                 "relativeHeight": 2437,
-                "parent":"Аннапурна I",
+                "parent":"Annapurna I",
                 "firstAscent":"1960",
                 "ascents":6,
                 "attemptsToAscend":19
@@ -289,15 +290,15 @@
             {
                 "position": 17,
                 "image": "17.jpg",
-                "name":"Гашербрум IV",
+                "name":"Gasherbrum IV",
                 "height": 7932,
-                "location": "Балторо Музтаг, Каракорум",
+                "location": "Baltoro Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.75917,
                     "longitude": 76.61583
                 },
                 "relativeHeight": 715,
-                "parent":"Гашербрум III",
+                "parent":"Gasherbrum III",
                 "firstAscent":"1958",
                 "ascents":4,
                 "attemptsToAscend":11
@@ -305,15 +306,15 @@
             {
                 "position": 18,
                 "image": "18.jpg",
-                "name":"Хималчули",
+                "name":"Himalchuli",
                 "height": 7893,
-                "location": "Манаслу, Гималаи",
+                "location": "Manaslu, Himalayas",
                 "coordinates": {
                     "latitude": 28.43528,
                     "longitude": 84.64
                 },
                 "relativeHeight": 1633,
-                "parent":"Манаслу",
+                "parent":"Manaslu",
                 "firstAscent":"1960",
                 "ascents":6,
                 "attemptsToAscend":12
@@ -321,9 +322,9 @@
             {
                 "position": 19,
                 "image": "",
-                "name":"Дастогхил",
+                "name":"Dastoghil",
                 "height": 7884,
-                "location": "Хиспар-Музтаг, Каракорум",
+                "location": "Hispar-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 36.32583,
                     "longitude": 75.18833
@@ -337,15 +338,15 @@
             {
                 "position": 20,
                 "image": "20-0.jpg",
-                "name":"Нгади-Чули",
+                "name":"Ngadi-Chouli",
                 "height": 7871,
-                "location": "Манаслу, Гималаи",
+                "location": "Manaslu, Himalayas",
                 "coordinates": {
                     "latitude": 28.50333,
                     "longitude": 84.5675
                 },
                 "relativeHeight": 1020,
-                "parent":"Манаслу",
+                "parent":"Manaslu",
                 "firstAscent":"1970",
                 "ascents":2,
                 "attemptsToAscend":6
@@ -353,15 +354,15 @@
             {
                 "position": 20,
                 "image": "20-1.jpg",
-                "name":"Нупцзе",
+                "name":"Nuptse",
                 "height": 7864,
-                "location": "Махалангур-Химал, Гималаи",
+                "location": "Mahalangur-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 27.96722,
                     "longitude": 86.88611
                 },
                 "relativeHeight": 319,
-                "parent":"Джомолунгма",
+                "parent":"Chomolungma",
                 "firstAscent":"1961",
                 "ascents":5,
                 "attemptsToAscend":12
@@ -369,15 +370,15 @@
             {
                 "position": 21,
                 "image": "21.jpg",
-                "name":"Кунианг-Киш",
+                "name":"Kuniang-Kish",
                 "height": 7823,
-                "location": "Хиспар-Музтаг, Каракорум",
+                "location": "Hispar-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 36.20528,
                     "longitude": 75.20778
                 },
                 "relativeHeight": 1765,
-                "parent":"Дастогхил",
+                "parent":"Dastoghil",
                 "firstAscent":"1971",
                 "ascents":2,
                 "attemptsToAscend":6
@@ -385,9 +386,9 @@
             {
                 "position": 22,
                 "image": "22.jpg",
-                "name":"Машербрум",
+                "name":"Masherbrum",
                 "height": 7821,
-                "location": "Машербрум, Каракорум",
+                "location": "Masherbrum, Karakorum",
                 "coordinates": {
                     "latitude": 35.64111,
                     "longitude": 76.30583
@@ -401,9 +402,9 @@
             {
                 "position": 23,
                 "image": "23.jpg",
-                "name":"Нандадеви",
+                "name":"Nandadevi",
                 "height": 7816,
-                "location": "Гархвал, Гималаи",
+                "location": "Garhwal, Himalayas",
                 "coordinates": {
                     "latitude": 30.37667,
                     "longitude": 79.97083
@@ -417,15 +418,15 @@
             {
                 "position": 24,
                 "image": "24.jpg",
-                "name":"Чомолонзо",
+                "name":"Chomolonzo",
                 "height": 7804,
-                "location": "Махалангур-Химал, Гималаи",
+                "location": "Mahalangur-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 27.93,
                     "longitude": 87.10806
                 },
                 "relativeHeight": 590,
-                "parent":"Макалу",
+                "parent":"Makalu",
                 "firstAscent":"1954",
                 "ascents":3,
                 "attemptsToAscend":1
@@ -433,9 +434,9 @@
             {
                 "position": 25,
                 "image": "25.jpg",
-                "name":"Батура-Шар",
+                "name":"Batura-Shar",
                 "height": 7795,
-                "location": "Батура-Музтаг, Каракорум",
+                "location": "Batura-Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 36.51,
                     "longitude": 74.52417
@@ -449,15 +450,15 @@
             {
                 "position": 26,
                 "image": "26.jpg",
-                "name":"Канжут-Шар",
+                "name":"Kanjut-Shar",
                 "height": 7790,
-                "location": "Хиспар-Музтаг, Каракорум",
+                "location": "Hispar-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 36.205,
                     "longitude": 75.41778
                 },
                 "relativeHeight": 1690,
-                "parent":"Кунианг Киш",
+                "parent":"Kuniang Kish",
                 "firstAscent":"1959",
                 "ascents":2,
                 "attemptsToAscend":1
@@ -465,15 +466,15 @@
             {
                 "position": 27,
                 "image": "27.jpg",
-                "name":"Ракапоши",
+                "name":"Rakaposhi",
                 "height": 7788,
-                "location": "Ракапоши-Харамош, Каракорум",
+                "location": "Rakaposhi-Haramosh, Karakorum",
                 "coordinates": {
                     "latitude": 36.1425,
                     "longitude": 74.48917
                 },
                 "relativeHeight": 2818,
-                "parent":"Кунианг Киш",
+                "parent":"Kuniang Kish",
                 "firstAscent":"1958",
                 "ascents":8,
                 "attemptsToAscend":13
@@ -481,15 +482,15 @@
             {
                 "position": 28,
                 "image": "28.jpg",
-                "name":"Намджагбарва",
+                "name":"Namjagbarwa",
                 "height": 7782,
-                "location": "Ассам, Гималаи",
+                "location": "Assam, Himalayas",
                 "coordinates": {
                     "latitude": 29.63056,
                     "longitude": 95.05528
                 },
                 "relativeHeight": 4106,
-                "parent":"Канченджанга",
+                "parent":"Kanchenjunga",
                 "firstAscent":"1992",
                 "ascents":1,
                 "attemptsToAscend":2
@@ -497,15 +498,15 @@
             {
                 "position": 29,
                 "image": "",
-                "name":"Камет",
+                "name":"Kamet",
                 "height": 7756,
-                "location": "Гархвал, Гималаи",
+                "location": "Garhwal, Himalayas",
                 "coordinates": {
                     "latitude": 30.92,
                     "longitude": 79.59167
                 },
                 "relativeHeight": 2825,
-                "parent":"Нандадеви",
+                "parent":"Nandadevi",
                 "firstAscent":"1931",
                 "ascents":23,
                 "attemptsToAscend":14
@@ -513,15 +514,15 @@
             {
                 "position": 30,
                 "image": "30.jpg",
-                "name":"Дхаулагири II",
+                "name":"Dhaulagiri II",
                 "height": 7751,
-                "location": "Дхаулагири, Гималаи",
+                "location": "Dhaulagiri, Himalayas",
                 "coordinates": {
                     "latitude": 28.76278,
                     "longitude": 83.38722
                 },
                 "relativeHeight": 2396,
-                "parent":"Дхаулагири",
+                "parent":"Dhaulagiri",
                 "firstAscent":"1971",
                 "ascents":4,
                 "attemptsToAscend":11
@@ -529,15 +530,15 @@
             {
                 "position": 31,
                 "image": "31.jpg",
-                "name":"Салторо-Кангри",
+                "name":"Saltoro-Kangri",
                 "height": 7742,
-                "location": "Салторо, Каракорум",
+                "location": "Saltoro, Karakorum",
                 "coordinates": {
                     "latitude": 35.39917,
                     "longitude": 76.8475
                 },
                 "relativeHeight": 2160,
-                "parent":"Гашербрум I",
+                "parent":"Gasherbrum I",
                 "firstAscent":"1962",
                 "ascents":2,
                 "attemptsToAscend":1
@@ -545,15 +546,15 @@
             {
                 "position": 32,
                 "image": "32.jpg",
-                "name":"Жанну",
+                "name":"Jeannu",
                 "height": 7711,
-                "location": "Канченджанга, Гималаи",
+                "location": "Kanchenjunga, Himalayas",
                 "coordinates": {
                     "latitude": 27.68167,
                     "longitude": 88.04333
                 },
                 "relativeHeight": 1036,
-                "parent":"Канченджанга",
+                "parent":"Kanchenjunga",
                 "firstAscent":"1962",
                 "ascents":17,
                 "attemptsToAscend":12
@@ -561,15 +562,15 @@
             {
                 "position": 33,
                 "image": "33-0.jpg",
-                "name":"Тиричмир",
+                "name":"Tirichmir",
                 "height": 7708,
-                "location": "Гиндукуш",
+                "location": "Gindukush",
                 "coordinates": {
                     "latitude": 36.25528,
                     "longitude": 71.84167
                 },
                 "relativeHeight": 3910,
-                "parent":"Батура-Шар",
+                "parent":"Batura-Shar",
                 "firstAscent":"1950",
                 "ascents":20,
                 "attemptsToAscend":11
@@ -577,15 +578,15 @@
             {
                 "position": 33,
                 "image": "",
-                "name":"Моламенкинг",
+                "name":"Molamenqing",
                 "height": 7703,
-                "location": "Лангтанг, Гималаи",
+                "location": "Langtang, Himalayas",
                 "coordinates": {
                     "latitude": 28.35472,
                     "longitude": 85.81083
                 },
                 "relativeHeight": 430,
-                "parent":"Шишабангма",
+                "parent":"Shishapangma",
                 "firstAscent":"1981",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -593,15 +594,15 @@
             {
                 "position": 34,
                 "image": "34.jpg",
-                "name":"Гурла-Мандхата",
+                "name":"Gurla-Mandhata",
                 "height": 7694,
-                "location": "Налаканкар-Гимал, Гималаи",
+                "location": "Alcancar-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 30.43806,
                     "longitude": 81.29806
                 },
                 "relativeHeight": 2788,
-                "parent":"Дхаулагири",
+                "parent":"Dhaulagiri",
                 "firstAscent":"1985",
                 "ascents":6,
                 "attemptsToAscend":4
@@ -609,15 +610,15 @@
             {
                 "position": 35,
                 "image": "",
-                "name":"Сасер-Кангри I",
+                "name":"Saser-Kangri I",
                 "height": 7672,
-                "location": "Сасер-Музтаг, Каракорум",
+                "location": "Saser-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 34.86667,
                     "longitude": 77.7525
                 },
                 "relativeHeight": 2304,
-                "parent":"Гашербрум I",
+                "parent":"Gasherbrum I",
                 "firstAscent":"1973",
                 "ascents":6,
                 "attemptsToAscend":4
@@ -625,15 +626,15 @@
             {
                 "position": 36,
                 "image": "36-0.jpg",
-                "name":"Чоголиза",
+                "name":"Chogolisa",
                 "height": 7665,
-                "location": "Машербрум, Каракорум",
+                "location": "Masherbrum, Karakorum",
                 "coordinates": {
                     "latitude": 35.61167,
                     "longitude": 76.57167
                 },
                 "relativeHeight": 1624,
-                "parent":"Машербрум",
+                "parent":"Masherbrum",
                 "firstAscent":"1975",
                 "ascents":4,
                 "attemptsToAscend":2
@@ -641,15 +642,15 @@
             {
                 "position": 36,
                 "image": "36-1.jpg",
-                "name":"Дхаулагири IV",
+                "name":"Dhaulagiri IV",
                 "height": 7661,
-                "location": "Дхаулагири, Гималаи",
+                "location": "Dhaulagiri, Himalayas",
                 "coordinates": {
                     "latitude": 28.73583,
                     "longitude": 83.31528
                 },
                 "relativeHeight": 469,
-                "parent":"Дхаулагири II",
+                "parent":"Dhaulagiri II",
                 "firstAscent":"1975",
                 "ascents":2,
                 "attemptsToAscend":10
@@ -657,15 +658,15 @@
             {
                 "position": 37,
                 "image": "37-0.jpg",
-                "name":"Конгур",
+                "name":"Kongur",
                 "height": 7649,
-                "location": "Конгур, Куньлунь",
+                "location": "Kongur, Kunlun",
                 "coordinates": {
                     "latitude": 38.59333,
                     "longitude": 75.31333
                 },
                 "relativeHeight": 3585,
-                "parent":"Дастогхил",
+                "parent":"Dastoghil",
                 "firstAscent":"1981",
                 "ascents":2,
                 "attemptsToAscend":4
@@ -673,15 +674,15 @@
             {
                 "position": 37,
                 "image": "37-1.jpg",
-                "name":"Дхаулагири V",
+                "name":"Dhaulagiri V",
                 "height": 7618,
-                "location": "Дхаулагири, Гималаи",
+                "location": "Dhaulagiri, Himalayas",
                 "coordinates": {
                     "latitude": 28.73389,
                     "longitude": 83.36139
                 },
                 "relativeHeight": 340,
-                "parent":"Дхаулагири IV",
+                "parent":"Dhaulagiri IV",
                 "firstAscent":"1975",
                 "ascents":2,
                 "attemptsToAscend":3
@@ -689,15 +690,15 @@
             {
                 "position": 38,
                 "image": "38.jpg",
-                "name":"Шиспар",
+                "name":"Shispar",
                 "height": 7611,
-                "location": "Батура-Музтаг, Каракорум",
+                "location": "Batura-Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 36.44056,
                     "longitude": 74.68083
                 },
                 "relativeHeight": 1240,
-                "parent":"Батура-Шар",
+                "parent":"Batura-Shar",
                 "firstAscent":"1974",
                 "ascents":3,
                 "attemptsToAscend":1
@@ -705,15 +706,15 @@
             {
                 "position": 39,
                 "image": "",
-                "name":"Тривор",
+                "name":"Trivor",
                 "height": 7577,
-                "location": "Хиспар-Музтаг, Каракорум",
+                "location": "Hispar-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 36.2875,
                     "longitude": 75.08611
                 },
                 "relativeHeight": 980,
-                "parent":"Дастогхил",
+                "parent":"Dastoghil",
                 "firstAscent":"1960",
                 "ascents":2,
                 "attemptsToAscend":5
@@ -721,15 +722,15 @@
             {
                 "position": 40,
                 "image": "40.jpg",
-                "name":"Канкар-Пунсум",
+                "name":"Kankar-Punsum",
                 "height": 7570,
-                "location": "Кула-Кангри, Гималаи",
+                "location": "Kula-Kangri, Himalayas",
                 "coordinates": {
                     "latitude": 28.04667,
                     "longitude": 90.45583
                 },
                 "relativeHeight": 2995,
-                "parent":"Канченджанга",
+                "parent":"Kanchenjunga",
                 "firstAscent":"",
                 "ascents":0,
                 "attemptsToAscend":3
@@ -737,15 +738,15 @@
             {
                 "position": 41,
                 "image": "41.jpg",
-                "name":"Гунгашань",
+                "name":"Gungashan",
                 "height": 7556,
-                "location": "Даксю-Шань, Сычуань",
+                "location": "Daxu-Shan, Sichuan",
                 "coordinates": {
                     "latitude": 29.59528,
                     "longitude": 101.87972
                 },
                 "relativeHeight": 3642,
-                "parent":"Джомолунгма",
+                "parent":"Chomolungma",
                 "firstAscent":"1932",
                 "ascents":6,
                 "attemptsToAscend":7
@@ -753,15 +754,15 @@
             {
                 "position": 42,
                 "image": "42.jpg",
-                "name":"Аннапурна III",
+                "name":"Annapurna III",
                 "height": 7555,
-                "location": "Аннапурна, Гималаи",
+                "location": "Annapurna, Himalayas",
                 "coordinates": {
                     "latitude": 28.58472,
                     "longitude": 83.99111
                 },
                 "relativeHeight": 703,
-                "parent":"Аннапурна I",
+                "parent":"Annapurna I",
                 "firstAscent":"1961",
                 "ascents":10,
                 "attemptsToAscend":17
@@ -769,15 +770,15 @@
             {
                 "position": 43,
                 "image": "43.jpg",
-                "name":"Музтагата",
+                "name":"Muztagata",
                 "height": 7546,
-                "location": "Музтагата, Куньлунь",
+                "location": "Muztagata, Kunlun",
                 "coordinates": {
                     "latitude": 38.27833,
                     "longitude": 75.11583
                 },
                 "relativeHeight": 2735,
-                "parent":"Конгур",
+                "parent":"Kongur",
                 "firstAscent":"1956",
                 "ascents":-1,
                 "attemptsToAscend":-1
@@ -785,15 +786,15 @@
             {
                 "position": 44,
                 "image": "44.jpg",
-                "name":"Скьянг-Кангри",
+                "name":"Skjang-Kangri",
                 "height": 7545,
-                "location": "Балторо Музтаг, Каракорум",
+                "location": "Baltoro Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.92639,
                     "longitude": 76.5675
                 },
                 "relativeHeight": 1085,
-                "parent":"Чогори",
+                "parent":"Chogori",
                 "firstAscent":"1976",
                 "ascents":1,
                 "attemptsToAscend":2
@@ -801,15 +802,15 @@
             {
                 "position": 45,
                 "image": "45.jpg",
-                "name":"Чангзе",
+                "name":"Changtse",
                 "height": 7543,
-                "location": "Махалангур-Химал, Гималаи",
+                "location": "Mahalangur-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 28.02472,
                     "longitude": 86.90861
                 },
                 "relativeHeight": 520,
-                "parent":"Джомолунгма",
+                "parent":"Chomolungma",
                 "firstAscent":"1982",
                 "ascents":9,
                 "attemptsToAscend":9
@@ -817,15 +818,15 @@
             {
                 "position": 46,
                 "image": "",
-                "name":"Кула-Кангри",
+                "name":"Kula-Kangri",
                 "height": 7538,
-                "location": "Кула-Кангри, Гималаи",
+                "location": "Kula-Kangri, Himalayas",
                 "coordinates": {
                     "latitude": 28.22611,
                     "longitude": 90.615
                 },
                 "relativeHeight": 1650,
-                "parent":"Канкар-Пунсум",
+                "parent":"Kankar-Punsum",
                 "firstAscent":"1986",
                 "ascents":3,
                 "attemptsToAscend":2
@@ -833,15 +834,15 @@
             {
                 "position": 47,
                 "image": "47.jpg",
-                "name":"Конгуртюбе",
+                "name":"Kongurtube",
                 "height": 7530,
-                "location": "Конгур, Куньлунь",
+                "location": "Kongur, Kunlun",
                 "coordinates": {
                     "latitude": 38.61639,
                     "longitude": 75.19861
                 },
                 "relativeHeight": 840,
-                "parent":"Конгур",
+                "parent":"Kongur",
                 "firstAscent":"1956",
                 "ascents":2,
                 "attemptsToAscend":3
@@ -849,15 +850,15 @@
             {
                 "position": 48,
                 "image": "",
-                "name":"Мамостонг-Кангри",
+                "name":"Mamostong-Kangri",
                 "height": 7516,
-                "location": "Rimo, Каракорум",
+                "location": "Rimo, Karakorum",
                 "coordinates": {
                     "latitude": 35.14083,
                     "longitude": 77.5775
                 },
                 "relativeHeight": 1803,
-                "parent":"Гашербрум I",
+                "parent":"Gasherbrum I",
                 "firstAscent":"1984",
                 "ascents":5,
                 "attemptsToAscend":0
@@ -865,15 +866,15 @@
             {
                 "position": 49,
                 "image": "49.jpg",
-                "name":"Сасер-Кангри II",
+                "name":"Saser-Kangri II",
                 "height": 7513,
-                "location": "Сасер-Музтаг, Каракорум",
+                "location": "Saser-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 34.80417,
                     "longitude": 77.805
                 },
                 "relativeHeight": 1450,
-                "parent":"Сасер-Кангри I",
+                "parent":"Saser-Kangri I",
                 "firstAscent":"2011",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -881,15 +882,15 @@
             {
                 "position": 50,
                 "image": "50.jpg",
-                "name":"Пик Исмоила Сомони",
+                "name":"Ismoil Somoni Peak",
                 "height": 7495,
-                "location": "хребет Академии Наук, Памир",
+                "location": "ridge of the Academy of Sciences, Pamir",
                 "coordinates": {
                     "latitude": 38.94222,
                     "longitude": 72.01583
                 },
                 "relativeHeight": 3402,
-                "parent":"Музтагата",
+                "parent":"Muztagata",
                 "firstAscent":"1933",
                 "ascents":-1,
                 "attemptsToAscend":-1
@@ -897,15 +898,15 @@
             {
                 "position": 51,
                 "image": "51.jpg",
-                "name":"Сасер-Кангри III",
+                "name":"Saser-Kangri III",
                 "height": 7495,
-                "location": "Сасер-Музтаг, Каракорум",
+                "location": "Saser-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 34.84556,
                     "longitude": 77.785
                 },
                 "relativeHeight": 850,
-                "parent":"Сасер-Кангри I",
+                "parent":"Saser-Kangri I",
                 "firstAscent":"1986",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -913,15 +914,15 @@
             {
                 "position": 52,
                 "image": "52.jpg",
-                "name":"Ношак",
+                "name":"Noshak",
                 "height": 7492,
-                "location": "Гиндукуш",
+                "location": "Gindukush",
                 "coordinates": {
                     "latitude": 36.43333,
                     "longitude": 71.82778
                 },
                 "relativeHeight": 2024,
-                "parent":"Тиричмир",
+                "parent":"Tirichmir",
                 "firstAscent":"1960",
                 "ascents":33,
                 "attemptsToAscend":3
@@ -929,15 +930,15 @@
             {
                 "position": 53,
                 "image": "",
-                "name":"Пумари-Киш",
+                "name":"Pumari-Kish",
                 "height": 7492,
-                "location": "Хиспар-Музтаг, Каракорум",
+                "location": "Hispar-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 36.21111,
                     "longitude": 75.25278
                 },
                 "relativeHeight": 890,
-                "parent":"Кунианг Киш",
+                "parent":"Kuniang Kish",
                 "firstAscent":"1979",
                 "ascents":1,
                 "attemptsToAscend":2
@@ -945,15 +946,15 @@
             {
                 "position": 54,
                 "image": "54.jpg",
-                "name":"Пасу-Сар",
+                "name":"Pasu-Sar",
                 "height": 7476,
-                "location": "Батура-Музтаг, Каракорум",
+                "location": "Batura-Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 36.48778,
                     "longitude": 74.58778
                 },
                 "relativeHeight": 645,
-                "parent":"Батура-Шар",
+                "parent":"Batura-Shar",
                 "firstAscent":"1994",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -961,15 +962,15 @@
             {
                 "position": 55,
                 "image": "",
-                "name":"Юкшин-Гардан-Сар",
+                "name":"Ukshin-Gardanne-Sar",
                 "height": 7469,
-                "location": "Хиспар-Музтаг, Каракорум",
+                "location": "Hispar-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 36.25,
                     "longitude": 75.375
                 },
                 "relativeHeight": 1313,
-                "parent":"Пумари Киш",
+                "parent":"Pumari Kish",
                 "firstAscent":"1984",
                 "ascents":4,
                 "attemptsToAscend":1
@@ -977,15 +978,15 @@
             {
                 "position": 56,
                 "image": "",
-                "name":"Терам Кангри I",
+                "name":"Teram Kangri I",
                 "height": 7462,
-                "location": "Сиачен-Музтаг, Каракорум",
+                "location": "Siachen-Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.58,
                     "longitude": 77.07833
                 },
                 "relativeHeight": 1702,
-                "parent":"Гашербрум I",
+                "parent":"Gasherbrum I",
                 "firstAscent":"1975",
                 "ascents":2,
                 "attemptsToAscend":0
@@ -993,15 +994,15 @@
             {
                 "position": 57,
                 "image": "",
-                "name":"Джонгсонг",
+                "name":"Jongsong",
                 "height": 7462,
-                "location": "Канченджанга, Гималаи",
+                "location": "Kanchenjunga, Himalayas",
                 "coordinates": {
                     "latitude": 27.88111,
                     "longitude": 88.13472
                 },
                 "relativeHeight": 1298,
-                "parent":"Канченджанга",
+                "parent":"Kanchenjunga",
                 "firstAscent":"1930",
                 "ascents":2,
                 "attemptsToAscend":3
@@ -1009,9 +1010,9 @@
             {
                 "position": 58,
                 "image": "",
-                "name":"Малубитинг",
+                "name":"Malubiting",
                 "height": 7458,
-                "location": "Ракапоши-Харамош, Каракорум",
+                "location": "Rakaposhi-Haramosh, Karakorum",
                 "coordinates": {
                     "latitude": 36.00333,
                     "longitude": 74.87528
@@ -1025,15 +1026,15 @@
             {
                 "position": 59,
                 "image": "59.jpg",
-                "name":"Гангапурна",
+                "name":"Gangapurna",
                 "height": 7455,
-                "location": "Аннапурна, Гималаи",
+                "location": "Annapurna, Himalayas",
                 "coordinates": {
                     "latitude": 28.60472,
                     "longitude": 83.96417
                 },
                 "relativeHeight": 563,
-                "parent":"Аннапурна III",
+                "parent":"Annapurna III",
                 "firstAscent":"1965",
                 "ascents":8,
                 "attemptsToAscend":13
@@ -1041,15 +1042,15 @@
             {
                 "position": 60,
                 "image": "60.jpg",
-                "name":"Пик Победы",
+                "name":"Pobeda peak",
                 "height": 7439,
-                "location": "Тянь-Шань",
+                "location": "Tyan-Shan",
                 "coordinates": {
                     "latitude": 42.035,
                     "longitude": 80.12556
                 },
                 "relativeHeight": 4148,
-                "parent":"Пик Исмоила Сомони",
+                "parent":"Ismoil Somoni Peak",
                 "firstAscent":"1938",
                 "ascents":-1,
                 "attemptsToAscend":-1
@@ -1057,15 +1058,15 @@
             {
                 "position": 61,
                 "image": "",
-                "name":"К12",
+                "name":"K12",
                 "height": 7428,
-                "location": "Салторо, Каракорум",
+                "location": "Saltoro, Karakorum",
                 "coordinates": {
                     "latitude": 35.295,
                     "longitude": 77.02167
                 },
                 "relativeHeight": 1978,
-                "parent":"Салторо-Кангри",
+                "parent":"Saltoro-Kangri",
                 "firstAscent":"1974",
                 "ascents":4,
                 "attemptsToAscend":2
@@ -1073,15 +1074,15 @@
             {
                 "position": 62,
                 "image": "",
-                "name":"Янгра (Ганеш I)",
+                "name":"Yangra (Ganesh I)",
                 "height": 7422,
-                "location": "Ганеш-Гимал, Гималаи",
+                "location": "Ganesh-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 28.39111,
                     "longitude": 85.12722
                 },
                 "relativeHeight": 2352,
-                "parent":"Манаслу",
+                "parent":"Manaslu",
                 "firstAscent":"1955",
                 "ascents":1,
                 "attemptsToAscend":6
@@ -1091,13 +1092,13 @@
                 "image": "",
                 "name":"Sia Kangri",
                 "height": 7422,
-                "location": "Сиачен-Музтаг, Каракорум",
+                "location": "Siachen-Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.66333,
                     "longitude": 76.7625
                 },
                 "relativeHeight": 640,
-                "parent":"Гашербрум I",
+                "parent":"Gasherbrum I",
                 "firstAscent":"1934",
                 "ascents":6,
                 "attemptsToAscend":0
@@ -1105,15 +1106,15 @@
             {
                 "position": 64,
                 "image": "",
-                "name":"Момхиль-Шар",
+                "name":"Momhil-Shar",
                 "height": 7414,
-                "location": "Хиспар-Музтаг, Каракорум",
+                "location": "Hispar-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 36.31778,
                     "longitude": 75.03639
                 },
                 "relativeHeight": 980,
-                "parent":"Тривор",
+                "parent":"Trivor",
                 "firstAscent":"1964",
                 "ascents":2,
                 "attemptsToAscend":6
@@ -1123,13 +1124,13 @@
                 "image": "",
                 "name":"Kabru",
                 "height": 7412,
-                "location": "Канченджанга, Гималаи",
+                "location": "Kanchenjunga, Himalayas",
                 "coordinates": {
                     "latitude": 27.63389,
                     "longitude": 88.11667
                 },
                 "relativeHeight": 780,
-                "parent":"Канченджанга",
+                "parent":"Kanchenjunga",
                 "firstAscent":"1994",
                 "ascents":1,
                 "attemptsToAscend":2
@@ -1137,15 +1138,15 @@
             {
                 "position": 66,
                 "image": "",
-                "name":"Скил-Брум",
+                "name":"Skill-Broom",
                 "height": 7410,
-                "location": "Балторо Музтаг, Каракорум",
+                "location": "Baltoro Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.85083,
                     "longitude": 76.42917
                 },
                 "relativeHeight": 1152,
-                "parent":"Чогори",
+                "parent":"Chogori",
                 "firstAscent":"1957",
                 "ascents":2,
                 "attemptsToAscend":1
@@ -1153,15 +1154,15 @@
             {
                 "position": 67,
                 "image": "",
-                "name":"Харамош",
+                "name":"Haramosh",
                 "height": 7409,
-                "location": "Ракапоши-Харамош, Каракорум",
+                "location": "Rakaposhi-Haramosh, Karakorum",
                 "coordinates": {
                     "latitude": 35.84,
                     "longitude": 74.8975
                 },
                 "relativeHeight": 2277,
-                "parent":"Малубитинг",
+                "parent":"Malubiting",
                 "firstAscent":"1958",
                 "ascents":4,
                 "attemptsToAscend":3
@@ -1171,7 +1172,7 @@
                 "image": "",
                 "name":"Istor-o-Nal",
                 "height": 7403,
-                "location": "Гиндукуш",
+                "location": "Gindukush",
                 "coordinates": {
                     "latitude": 36.37639,
                     "longitude": 71.89861
@@ -1187,13 +1188,13 @@
                 "image": "",
                 "name":"Ghent Kangri",
                 "height": 7401,
-                "location": "Салторо, Каракорум",
+                "location": "Saltoro, Karakorum",
                 "coordinates": {
                     "latitude": 35.5175,
                     "longitude": 76.80028
                 },
                 "relativeHeight": 1493,
-                "parent":"Салторо-Кангри",
+                "parent":"Saltoro-Kangri",
                 "firstAscent":"1961",
                 "ascents":4,
                 "attemptsToAscend":0
@@ -1201,15 +1202,15 @@
             {
                 "position": 70,
                 "image": "",
-                "name":"Ултар",
+                "name":"Ultar",
                 "height": 7388,
-                "location": "Батура-Музтаг, Каракорум",
+                "location": "Batura-Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 36.39833,
                     "longitude": 74.70889
                 },
                 "relativeHeight": 700,
-                "parent":"Шиспар",
+                "parent":"Shispar",
                 "firstAscent":"1996",
                 "ascents":2,
                 "attemptsToAscend":5
@@ -1217,15 +1218,15 @@
             {
                 "position": 71,
                 "image": "",
-                "name":"Римо I",
+                "name":"Rimo I",
                 "height": 7385,
-                "location": "Римо-Музтаг, Каракорум",
+                "location": "Rimo-Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.35583,
                     "longitude": 77.36806
                 },
                 "relativeHeight": 1438,
-                "parent":"Терам Кангри I",
+                "parent":"Teram Kangri I",
                 "firstAscent":"1988",
                 "ascents":1,
                 "attemptsToAscend":3
@@ -1235,13 +1236,13 @@
                 "image": "",
                 "name":"Churen Himal",
                 "height": 7385,
-                "location": "Дхаулагири, Гималаи",
+                "location": "Dhaulagiri, Himalayas",
                 "coordinates": {
                     "latitude": 28.735,
                     "longitude": 83.21611
                 },
                 "relativeHeight": 600,
-                "parent":"Дхаулагири IV",
+                "parent":"Dhaulagiri IV",
                 "firstAscent":"1970",
                 "ascents":3,
                 "attemptsToAscend":0
@@ -1249,15 +1250,15 @@
             {
                 "position": 73,
                 "image": "",
-                "name":"Терам Кангри III",
+                "name":"Teram Kangri III",
                 "height": 7382,
-                "location": "Сиачен-Музтаг, Каракорум",
+                "location": "Siachen-Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.59972,
                     "longitude": 77.04806
                 },
                 "relativeHeight": 520,
-                "parent":"Терам Кангри I",
+                "parent":"Teram Kangri I",
                 "firstAscent":"1979",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1267,7 +1268,7 @@
                 "image": "",
                 "name":"Sherpi Kangri",
                 "height": 7380,
-                "location": "Салторо, Каракорум",
+                "location": "Saltoro, Karakorum",
                 "coordinates": {
                     "latitude": 35.46611,
                     "longitude": 76.78139
@@ -1283,13 +1284,13 @@
                 "image": "",
                 "name":"Labuche Kang",
                 "height": 7367,
-                "location": "Labuche, Гималаи",
+                "location": "Labuche, Himalayas",
                 "coordinates": {
                     "latitude": 28.30417,
                     "longitude": 86.35083
                 },
                 "relativeHeight": 1957,
-                "parent":"Чо-Ойю",
+                "parent":"Cho-Oyu",
                 "firstAscent":"1987",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1297,15 +1298,15 @@
             {
                 "position": 76,
                 "image": "",
-                "name":"Кират-Чули",
+                "name":"Kirat-Chuli",
                 "height": 7362,
-                "location": "Канченджанга, Гималаи",
+                "location": "Kanchenjunga, Himalayas",
                 "coordinates": {
                     "latitude": 27.78694,
                     "longitude": 88.19444
                 },
                 "relativeHeight": 1168,
-                "parent":"Канченджанга",
+                "parent":"Kanchenjunga",
                 "firstAscent":"1939",
                 "ascents":1,
                 "attemptsToAscend":6
@@ -1315,7 +1316,7 @@
                 "image": "",
                 "name":"Abi Gamin",
                 "height": 7355,
-                "location": "Garhwal, Гималаи",
+                "location": "Garhwal, Himalayas",
                 "coordinates": {
                     "latitude": 30.9325,
                     "longitude": 79.6025
@@ -1329,15 +1330,15 @@
             {
                 "position": 77,
                 "image": "",
-                "name":"Нангпаи-Госум",
+                "name":"Nangpai-Gosum",
                 "height": 7350,
-                "location": "Махалангур-Химал, Гималаи",
+                "location": "Mahalangur-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 28.07222,
                     "longitude": 86.61444
                 },
                 "relativeHeight": 500,
-                "parent":"Чо-Ойю",
+                "parent":"Cho-Oyu",
                 "firstAscent":"1996",
                 "ascents":3,
                 "attemptsToAscend":1
@@ -1347,13 +1348,13 @@
                 "image": "",
                 "name":"Gimmigela (The Twins)",
                 "height": 7350,
-                "location": "Канченджанга, Гималаи",
+                "location": "Kanchenjunga, Himalayas",
                 "coordinates": {
                     "latitude": 27.74,
                     "longitude": 88.15778
                 },
                 "relativeHeight": 432,
-                "parent":"Канченджанга",
+                "parent":"Kanchenjunga",
                 "firstAscent":"1994",
                 "ascents":3,
                 "attemptsToAscend":1
@@ -1363,13 +1364,13 @@
                 "image": "",
                 "name":"Saraghrar",
                 "height": 7349,
-                "location": "Гиндукуш",
+                "location": "Gindukush",
                 "coordinates": {
                     "latitude": 36.5475,
                     "longitude": 72.115
                 },
                 "relativeHeight": 1979,
-                "parent":"Ношак",
+                "parent":"Noshak",
                 "firstAscent":"1959",
                 "ascents":2,
                 "attemptsToAscend":3
@@ -1377,15 +1378,15 @@
             {
                 "position": 79,
                 "image": "",
-                "name":"Чамланг",
+                "name":"Chamlang",
                 "height": 7321,
-                "location": "Махалангур-Химал, Гималаи",
+                "location": "Mahalangur-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 27.775,
                     "longitude": 86.97972
                 },
                 "relativeHeight": 1240,
-                "parent":"Лхоцзе",
+                "parent":"Lhotse",
                 "firstAscent":"1961",
                 "ascents":7,
                 "attemptsToAscend":1
@@ -1393,15 +1394,15 @@
             {
                 "position": 80,
                 "image": "",
-                "name":"Джомолхари",
+                "name":"Jomolhari",
                 "height": 7315,
-                "location": "Джомолхари, Гималаи",
+                "location": "Jomolhari, Himalayas",
                 "coordinates": {
                     "latitude": 27.82694,
                     "longitude": 89.27444
                 },
                 "relativeHeight": 2065,
-                "parent":"Канкар-Пунсум",
+                "parent":"Kankar-Punsum",
                 "firstAscent":"1937",
                 "ascents":4,
                 "attemptsToAscend":0
@@ -1409,15 +1410,15 @@
             {
                 "position": 81,
                 "image": "",
-                "name":"Чонгтар",
+                "name":"Chongtar",
                 "height": 7315,
-                "location": "Балторо Музтаг, Каракорум",
+                "location": "Baltoro Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.91167,
                     "longitude": 76.42917
                 },
                 "relativeHeight": 1300,
-                "parent":"Скил Брум",
+                "parent":"Skill Broom",
                 "firstAscent":"1994",
                 "ascents":1,
                 "attemptsToAscend":1
@@ -1427,13 +1428,13 @@
                 "image": "",
                 "name":"Baltoro Kangri",
                 "height": 7312,
-                "location": "Машербрум, Каракорум",
+                "location": "Masherbrum, Karakorum",
                 "coordinates": {
                     "latitude": 35.63917,
                     "longitude": 76.67333
                 },
                 "relativeHeight": 1200,
-                "parent":"Чоголиза",
+                "parent":"Chogolisa",
                 "firstAscent":"1976",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1441,15 +1442,15 @@
             {
                 "position": 83,
                 "image": "",
-                "name":"Сигуанг-Ри",
+                "name":"Siguang-Ri",
                 "height": 7309,
-                "location": "Махалангур-Химал, Гималаи",
+                "location": "Mahalangur-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 28.14694,
                     "longitude": 86.685
                 },
                 "relativeHeight": 650,
-                "parent":"Чо-Ойю",
+                "parent":"Cho-Oyu",
                 "firstAscent":"1989",
                 "ascents":2,
                 "attemptsToAscend":1
@@ -1465,7 +1466,7 @@
                     "longitude": 76.20722
                 },
                 "relativeHeight": 1919,
-                "parent":"Скил Брум, Чогори",
+                "parent":"Skil Broom, Chogori",
                 "firstAscent":"1993",
                 "ascents":1,
                 "attemptsToAscend":3
@@ -1475,13 +1476,13 @@
                 "image": "",
                 "name":"Gyala Peri",
                 "height": 7294,
-                "location": "Ассам, Гималаи",
+                "location": "Assam, Himalayas",
                 "coordinates": {
                     "latitude": 29.81306,
                     "longitude": 94.9675
                 },
                 "relativeHeight": 2942,
-                "parent":"Джомолунгма",
+                "parent":"Chomolungma",
                 "firstAscent":"1986",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1489,15 +1490,15 @@
             {
                 "position": 86,
                 "image": "",
-                "name":"Поронг-Ри",
+                "name":"Porong-Ri",
                 "height": 7292,
-                "location": "Лангтанг, Гималаи",
+                "location": "Langtang, Himalayas",
                 "coordinates": {
                     "latitude": 28.38944,
                     "longitude": 85.72139
                 },
                 "relativeHeight": 520,
-                "parent":"Шишабангма",
+                "parent":"Shishapangma",
                 "firstAscent":"1982",
                 "ascents":5,
                 "attemptsToAscend":0
@@ -1505,15 +1506,15 @@
             {
                 "position": 87,
                 "image": "",
-                "name":"Баннтха-Бракк",
+                "name":"Banntha-Brakk",
                 "height": 7285,
-                "location": "Панмах-Музтаг, Каракорум",
+                "location": "Pannah-Muztag, Karakoram",
                 "coordinates": {
                     "latitude": 35.9475,
                     "longitude": 75.75333
                 },
                 "relativeHeight": 1891,
-                "parent":"Канжут Шар",
+                "parent":"Kanjut Shar",
                 "firstAscent":"1977",
                 "ascents":3,
                 "attemptsToAscend":13
@@ -1523,7 +1524,7 @@
                 "image": "",
                 "name":"Yutmaru Sar",
                 "height": 7283,
-                "location": "Хиспар-Музтаг, Каракорум",
+                "location": "Hispar-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 36.22778,
                     "longitude": 75.36806
@@ -1539,13 +1540,13 @@
                 "image": "",
                 "name":"Baltistan Peak (K6)",
                 "height": 7282,
-                "location": "Машербрум, Каракорум",
+                "location": "Masherbrum, Karakorum",
                 "coordinates": {
                     "latitude": 35.41833,
                     "longitude": 76.55222
                 },
                 "relativeHeight": 1962,
-                "parent":"Чоголиза",
+                "parent":"Chogolisa",
                 "firstAscent":"1970",
                 "ascents":1,
                 "attemptsToAscend":3
@@ -1555,13 +1556,13 @@
                 "image": "",
                 "name":"Kangpenqing (Gang Benchhen)",
                 "height": 7281,
-                "location": "Baiku, Гималаи",
+                "location": "Baiku, Himalayas",
                 "coordinates": {
                     "latitude": 28.55083,
                     "longitude": 85.54556
                 },
                 "relativeHeight": 1340,
-                "parent":"Шишабангма",
+                "parent":"Shishapangma",
                 "firstAscent":"1982",
                 "ascents":1,
                 "attemptsToAscend":1
@@ -1569,15 +1570,15 @@
             {
                 "position": 91,
                 "image": "",
-                "name":"Музтаг-Тауэр",
+                "name":"Muztag Tower",
                 "height": 7276,
-                "location": "Балторо Музтаг, Каракорум",
+                "location": "Baltoro Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.82722,
                     "longitude": 76.36083
                 },
                 "relativeHeight": 1710,
-                "parent":"Скил Брум",
+                "parent":"Skill Broom",
                 "firstAscent":"1956",
                 "ascents":4,
                 "attemptsToAscend":2
@@ -1587,7 +1588,7 @@
                 "image": "",
                 "name":"Mana",
                 "height": 7272,
-                "location": "Garhwal, Гималаи",
+                "location": "Garhwal, Himalayas",
                 "coordinates": {
                     "latitude": 30.88083,
                     "longitude": 79.61556
@@ -1601,15 +1602,15 @@
             {
                 "position": 92,
                 "image": "",
-                "name":"Дхаулагири VI",
+                "name":"Dhaulagiri VI",
                 "height": 7268,
-                "location": "Дхаулагири, Гималаи",
+                "location": "Dhaulagiri, Himalayas",
                 "coordinates": {
                     "latitude": 28.70806,
                     "longitude": 83.2725
                 },
                 "relativeHeight": 485,
-                "parent":"Дхаулагири IV",
+                "parent":"Dhaulagiri IV",
                 "firstAscent":"1970",
                 "ascents":5,
                 "attemptsToAscend":0
@@ -1619,13 +1620,13 @@
                 "image": "",
                 "name":"Diran",
                 "height": 7266,
-                "location": "Ракапоши-Харамош, Каракорум",
+                "location": "Rakaposhi-Haramosh, Karakorum",
                 "coordinates": {
                     "latitude": 36.12194,
                     "longitude": 74.66111
                 },
                 "relativeHeight": 1325,
-                "parent":"Малубитинг",
+                "parent":"Malubiting",
                 "firstAscent":"1968",
                 "ascents":12,
                 "attemptsToAscend":8
@@ -1635,7 +1636,7 @@
                 "image": "",
                 "name":"Labuche Kang III / East",
                 "height": 7250,
-                "location": "Labuche, Гималаи",
+                "location": "Labuche, Himalayas",
                 "coordinates": {
                     "latitude": 28.30028,
                     "longitude": 86.38417
@@ -1651,7 +1652,7 @@
                 "image": "",
                 "name":"Putha Hiunchuli",
                 "height": 7246,
-                "location": "Дхаулагири, Гималаи",
+                "location": "Dhaulagiri, Himalayas",
                 "coordinates": {
                     "latitude": 28.74722,
                     "longitude": 83.14861
@@ -1667,13 +1668,13 @@
                 "image": "",
                 "name":"Apsarasas Kangri",
                 "height": 7245,
-                "location": "Сиачен-Музтаг, Каракорум",
+                "location": "Siachen-Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.53889,
                     "longitude": 77.14972
                 },
                 "relativeHeight": 635,
-                "parent":"Терам Кангри I",
+                "parent":"Teram Kangri I",
                 "firstAscent":"1976",
                 "ascents":2,
                 "attemptsToAscend":0
@@ -1683,7 +1684,7 @@
                 "image": "",
                 "name":"Mukut Parbat",
                 "height": 7242,
-                "location": "Garhwal, Гималаи",
+                "location": "Garhwal, Himalayas",
                 "coordinates": {
                     "latitude": 30.95028,
                     "longitude": 79.56861
@@ -1699,13 +1700,13 @@
                 "image": "",
                 "name":"Rimo III",
                 "height": 7233,
-                "location": "Rimo, Каракорум",
+                "location": "Rimo, Karakorum",
                 "coordinates": {
                     "latitude": 35.37472,
                     "longitude": 77.36167
                 },
                 "relativeHeight": 615,
-                "parent":"Римо I",
+                "parent":"Rimo I",
                 "firstAscent":"1985",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1715,13 +1716,13 @@
                 "image": "",
                 "name":"Langtang Lirung",
                 "height": 7227,
-                "location": "Лангтанг, Гималаи",
+                "location": "Langtang, Himalayas",
                 "coordinates": {
                     "latitude": 28.25556,
                     "longitude": 85.51722
                 },
                 "relativeHeight": 1525,
-                "parent":"Шишабангма",
+                "parent":"Shishapangma",
                 "firstAscent":"1978",
                 "ascents":14,
                 "attemptsToAscend":13
@@ -1729,15 +1730,15 @@
             {
                 "position": 100,
                 "image": "",
-                "name":"Карджианг",
+                "name":"Karjiang",
                 "height": 7221,
-                "location": "Кула-Кангри, Гималаи",
+                "location": "Kula-Kangri, Himalayas",
                 "coordinates": {
                     "latitude": 28.25861,
                     "longitude": 90.64528
                 },
                 "relativeHeight": 880,
-                "parent":"Кула-Кангри",
+                "parent":"Kula-Kangri",
                 "firstAscent":"",
                 "ascents":0,
                 "attemptsToAscend":2
@@ -1745,15 +1746,15 @@
             {
                 "position": 101,
                 "image": "",
-                "name":"Аннапурна Южная",
+                "name":"Annapurna South",
                 "height": 7219,
-                "location": "Аннапурна, Гималаи",
+                "location": "Annapurna, Himalayas",
                 "coordinates": {
                     "latitude": 28.51778,
                     "longitude": 83.8075
                 },
                 "relativeHeight": 775,
-                "parent":"Аннапурна",
+                "parent":"Annapurna",
                 "firstAscent":"1964",
                 "ascents":10,
                 "attemptsToAscend":16
@@ -1761,15 +1762,15 @@
             {
                 "position": 102,
                 "image": "",
-                "name":"Кхартапху",
+                "name":"Khartaphu",
                 "height": 7213,
-                "location": "Махалангур-Химал, Гималаи",
+                "location": "Mahalangur-Himal, Himalayas",
                 "coordinates": {
                     "latitude": 28.0625,
                     "longitude": 86.9775
                 },
                 "relativeHeight": 712,
-                "parent":"Джомолунгма",
+                "parent":"Chomolungma",
                 "firstAscent":"1935",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1777,15 +1778,15 @@
             {
                 "position": 103,
                 "image": "",
-                "name":"Тонгшанджиабу",
+                "name":"Tongshanjiabu",
                 "height": 7207,
-                "location": "Lunana, Гималаи",
+                "location": "Lunana, Himalayas",
                 "coordinates": {
                     "latitude": 28.18667,
                     "longitude": 89.9575
                 },
                 "relativeHeight": 1757,
-                "parent":"Канкар-Пунсум",
+                "parent":"Kankar-Punsum",
                 "firstAscent":"",
                 "ascents":0,
                 "attemptsToAscend":0
@@ -1795,13 +1796,13 @@
                 "image": "",
                 "name":"Malangutti Sar",
                 "height": 7207,
-                "location": "Хиспар-Музтаг, Каракорум",
+                "location": "Hispar-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 36.36417,
                     "longitude": 75.14778
                 },
                 "relativeHeight": 515,
-                "parent":"Дастогхил",
+                "parent":"Dastoghil",
                 "firstAscent":"1985",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1809,15 +1810,15 @@
             {
                 "position": 105,
                 "image": "",
-                "name":"Ноценкансари",
+                "name":"Nocencansari",
                 "height": 7206,
-                "location": "Нагарзе, Гималаи",
+                "location": "Нагарзе, Himalayas",
                 "coordinates": {
                     "latitude": 28.94667,
                     "longitude": 90.17833
                 },
                 "relativeHeight": 2160,
-                "parent":"Тонгшанджиабу",
+                "parent":"Tongshanjiabu",
                 "firstAscent":"1986",
                 "ascents":4,
                 "attemptsToAscend":1
@@ -1825,15 +1826,15 @@
             {
                 "position": 106,
                 "image": "",
-                "name":"Лангтанг-Ри",
+                "name":"Langtang-Ri",
                 "height": 7205,
-                "location": "Лангтанг, Гималаи",
+                "location": "Langtang, Himalayas",
                 "coordinates": {
                     "latitude": 28.38139,
                     "longitude": 85.68361
                 },
                 "relativeHeight": 650,
-                "parent":"Поронг Ри",
+                "parent":"Porong Ri",
                 "firstAscent":"1981",
                 "ascents":4,
                 "attemptsToAscend":0
@@ -1841,15 +1842,15 @@
             {
                 "position": 107,
                 "image": "",
-                "name":"Кангпху-Канг",
+                "name":"Kangphu-Kang",
                 "height": 7204,
-                "location": "Лунана, Гималаи",
+                "location": "Luana, Himalayas",
                 "coordinates": {
                     "latitude": 28.155,
                     "longitude": 90.0625
                 },
                 "relativeHeight": 1200,
-                "parent":"Тонгшанджиабу",
+                "parent":"Tongshanjiabu",
                 "firstAscent":"2002",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1857,15 +1858,15 @@
             {
                 "position": 108,
                 "image": "",
-                "name":"Сингхи-Кангри",
+                "name":"Singhi-Kangri",
                 "height": 7202,
-                "location": "Сиачен-Музтаг, Каракорум",
+                "location": "Siachen-Muztagh Mountain, Karakoram",
                 "coordinates": {
                     "latitude": 35.59889,
                     "longitude": 76.98278
                 },
                 "relativeHeight": 790,
-                "parent":"Терам Кангри III",
+                "parent":"Teram Kangri III",
                 "firstAscent":"1976",
                 "ascents":2,
                 "attemptsToAscend":0
@@ -1873,15 +1874,15 @@
             {
                 "position": 109,
                 "image": "",
-                "name":"Лупгхар-Шар",
+                "name":"Lupghar-Shar",
                 "height": 7200,
-                "location": "Хиспар-Музтаг, Каракорум",
+                "location": "Hispar-Muztag, Karakorum",
                 "coordinates": {
                     "latitude": 36.34833,
                     "longitude": 75.02583
                 },
                 "relativeHeight": 730,
-                "parent":"Момхиль Шар",
+                "parent":"Momhil Shar",
                 "firstAscent":"1979",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1889,30 +1890,31 @@
         ]
     },
     "sevenPeaks": {
-        "source": "https://ru.wikipedia.org/wiki/Семь_вершин",
+        "source": "https://zh.wikipedia.org/wiki/各洲最高峰列表",
         "columns": [
-            "Место",
-            "Изображение",
+            "Place",
+            "Image",
             "Часть света",
-            "Гора",
-            "Высота (м)",
-            "Место расположения",
+            "Mountain",
+            "Height (m)",
+            "Location",
             "Страна",
-            "Координаты",
-            "Видность (м) [Относительная высота вершины]",
-            "Родительская гора",
-            "Первое восхождение",
-            "Восхождения (попытки восхождения)"
+            "Coordinates",
+            "Visibility (m) [relative height of the mountain]",
+            "Parent mountain",
+            "First ascent",
+            "Ascents",
+			"Climbing attempts"
         ],
         "mountains": [
             {
                 "position": 1,
                 "image": "",
-                "partOfTheWorld": "Азия",
-                "name":"Джомолунгма",
+                "partOfTheWorld": "亚洲",
+                "name":"珠穆朗玛峰",
                 "height": 8848,
-                "location": "Гималаи",
-                "county": "Непал/Китай",
+                "location": "Himalayas",
+                "county": "中国、尼泊尔",
                 "coordinates": {
                     "latitude": 27.98806,
                     "longitude": 86.92528
@@ -1926,11 +1928,11 @@
             {
                 "position": 2,
                 "image": "",
-                "partOfTheWorld": "Южная Америка",
-                "name":"Аконкагуа",
+                "partOfTheWorld": "南美洲",
+                "name":"阿空加瓜山",
                 "height": 6962,
-                "location": "Анды",
-                "county": "Аргентина",
+                "location": "Andes",
+                "county": "阿根廷",
                 "coordinates": {
                     "latitude": -32.65383,
                     "longitude": -70.01141
@@ -1944,11 +1946,11 @@
             {
                 "position": 3,
                 "image": "",
-                "partOfTheWorld": "Северная Америка",
-                "name":"Денали (Мак-Кинли)",
+                "partOfTheWorld": "北美洲",
+                "name":"迪纳利山",
                 "height": 6190,
-                "location": "Аляскинский хребет",
-                "county": "США",
+                "location": "Alaska range",
+                "county": "美国阿拉斯加州",
                 "coordinates": {
                     "latitude": 63.0695,
                     "longitude": -151.0074
@@ -1962,11 +1964,11 @@
             {
                 "position": 4,
                 "image": "",
-                "partOfTheWorld": "Африка",
-                "name":"Килиманджаро",
+                "partOfTheWorld": "非洲",
+                "name":"乞力马扎罗山",
                 "height": 5895,
-                "location": "Килиманджаро",
-                "county": "Танзания",
+                "location": "Kilimanjaro",
+                "county": "坦桑尼亚",
                 "coordinates": {
                     "latitude": 3.0644209,
                     "longitude": 37.3582268
@@ -1980,11 +1982,11 @@
             {
                 "position": 5,
                 "image": "",
-                "partOfTheWorld": "Европа",
-                "name":"Эльбрус",
+                "partOfTheWorld": "欧洲",
+                "name":"厄尔布鲁士山",
                 "height": 5642,
-                "location": "Большой Кавказ",
-                "county": "Россия",
+                "location": "greater Caucasus",
+                "county": "俄罗斯",
                 "coordinates": {
                     "latitude": 43.355,
                     "longitude": 42.43917
@@ -1998,11 +2000,11 @@
             {
                 "position": 6,
                 "image": "",
-                "partOfTheWorld": "Европа",
-                "name":"Монблан",
+                "partOfTheWorld": "欧洲",
+                "name":"Mont Blanc",
                 "height": 4810,
-                "location": "Западные Альпы",
-                "county": "Франция/Италия",
+                "location": "Western Alps",
+                "county": "France/Italy",
                 "coordinates": {
                     "latitude": 45.832778,
                     "longitude": 6.864722
@@ -2016,10 +2018,10 @@
             {
                 "position": 7,
                 "image": "",
-                "partOfTheWorld": "Антарктида",
-                "name":"массив Винсон",
+                "partOfTheWorld": "南极洲",
+                "name":"文森山",
                 "height": 4892,
-                "location": "Элсуэрт",
+                "location": "南极洲",
                 "county": "",
                 "coordinates": {
                     "latitude": -78.58333,
@@ -2034,11 +2036,11 @@
             {
                 "position": 8,
                 "image": "",
-                "partOfTheWorld": "Австралия и Океания",
-                "name":"Джая",
+                "partOfTheWorld": "大洋洲",
+                "name":"查亞峰",
                 "height": 4884,
-                "location": "Маоке",
-                "county": "Индонезия",
+                "location": "Maoke",
+                "county": "印度尼西亚",
                 "coordinates": {
                     "latitude": -4.08333,
                     "longitude": 137.183333
@@ -2052,11 +2054,11 @@
             {
                 "position": 9,
                 "image": "",
-                "partOfTheWorld": "Австралия",
-                "name":"гора Косцюшко",
+                "partOfTheWorld": "Australia",
+                "name":"mount Kosciusko",
                 "height": 2228,
-                "location": "Австралийские Альпы",
-                "county": "Австралия",
+                "location": "Australian Alps",
+                "county": "Australia",
                 "coordinates": {
                     "latitude": -36.45,
                     "longitude": 148.267
@@ -2072,24 +2074,25 @@
     "snowLeopardOfRussia": {
         "source": "https://ru.wikipedia.org/wiki/Снежный_барс_России_(звание)",
         "columns": [
-            "Место",
-            "Изображение",
-            "Гора",
-            "Высота (м)",
-            "Место расположения",
-            "Координаты",
-            "Видность (м) [Относительная высота вершины]",
-            "Родительская гора",
-            "Первое восхождение",
-            "Восхождения (попытки восхождения)"
+            "Place",
+            "Image",
+            "Mountain",
+            "Height (m)",
+            "Location",
+            "Coordinates",
+            "Visibility (m) [relative height of the mountain]",
+            "Parent mountain",
+            "First ascent",
+            "Ascents",
+			"Climbing attempts"
         ],
         "mountains": [
             {
                 "position": 1,
                 "image": "",
-                "name":"Эльбрус",
+                "name":"Elbrus",
                 "height": 5642,
-                "location": "Кавказ, самая высокая горная вершина России и Европы",
+                "location": "Caucasus, the highest mountain peak in Russia and Europe",
                 "coordinates": {
                     "latitude": 43.355,
                     "longitude": 42.43917
@@ -2103,9 +2106,9 @@
             {
                 "position": 2,
                 "image": "",
-                "name":"Дыхтау",
+                "name":"Dykhtau",
                 "height": 5204,
-                "location": "Боковой хребет Большого Кавказа",
+                "location": "Side ridge of the Greater Caucasus",
                 "coordinates": {
                     "latitude": 43.05444,
                     "longitude": 43.13028
@@ -2119,9 +2122,9 @@
             {
                 "position": 3,
                 "image": "",
-                "name":"Шхара",
+                "name":"Shkhara",
                 "height": 5193,
-                "location": "Главный Кавказский хребет",
+                "location": "main Caucasian range",
                 "coordinates": {
                     "latitude": 42.99944,
                     "longitude": 43.11167
@@ -2135,9 +2138,9 @@
             {
                 "position": 4,
                 "image": "",
-                "name":"Коштантау",
+                "name":"Koshtantau",
                 "height": 5151,
-                "location": "Центральный Кавказ",
+                "location": "central Caucasus",
                 "coordinates": {
                     "latitude": 43.05009,
                     "longitude": 43.21426
@@ -2151,9 +2154,9 @@
             {
                 "position": 5,
                 "image": "",
-                "name":"Мижирги",
+                "name":"Mizhirgi",
                 "height": 5025,
-                "location": "Главный Кавказский хребет, Безенгийская стена",
+                "location": "The main Caucasus range, the Bezengi wall",
                 "coordinates": {
                     "latitude": 43.043889,
                     "longitude": 43.149167
@@ -2167,9 +2170,9 @@
             {
                 "position": 6,
                 "image": "",
-                "name":"Пик Пушкина",
+                "name":"Pushkin's Peak",
                 "height": 5100,
-                "location": "Боковой Кавказский хребет",
+                "location": "Side of the Caucasus range",
                 "coordinates": {
                     "latitude": 43.049167,
                     "longitude": 43.1375
@@ -2183,9 +2186,9 @@
             {
                 "position": 7,
                 "image": "",
-                "name":"Джангитау",
+                "name":"Dzhangitau",
                 "height": 5085,
-                "location": "Главный Кавказский хребет, Безенгийская стена",
+                "location": "The main Caucasus range, the Bezengi wall",
                 "coordinates": {
                     "latitude": 43.017778,
                     "longitude": 43.0575
@@ -2199,9 +2202,9 @@
             {
                 "position": 8,
                 "image": "",
-                "name":"Казбек",
+                "name":"Kazbek",
                 "height": 5034,
-                "location": "Кавказ, потухший стратовулкан, самый восточный пятитысячник Кавказа",
+                "location": "The Caucasus, an extinct stratovolcano, the easternmost five-thousandth of the Caucasus",
                 "coordinates": {
                     "latitude": 42.69708,
                     "longitude": 44.51792
@@ -2215,9 +2218,9 @@
             {
                 "position": 9,
                 "image": "",
-                "name":"Ключевская Сопка",
+                "name":"Klyuchevskaya Sopka",
                 "height": 4688,
-                "location": "Камчатка, самый высокий вулкан Евразии, действует",
+                "location": "Kamchatka, the highest volcano in Eurasia, is active",
                 "coordinates": {
                     "latitude": 56.067,
                     "longitude": 160.633
@@ -2231,9 +2234,9 @@
             {
                 "position": 10,
                 "image": "",
-                "name":"Белуха",
+                "name":"Belukha",
                 "height": 4506,
-                "location": "Катунский хребет, высшая точка Алтая и Сибири",
+                "location": "Katunsky range, the highest point of Altai and Siberia",
                 "coordinates": {
                     "latitude": 49.80667,
                     "longitude": 86.59083
