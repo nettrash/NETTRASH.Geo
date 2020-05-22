@@ -96,7 +96,7 @@ extension MapMountainPoint : MKAnnotation {
 			case .SEVEN_PEAKS:
 				return String(format: NSLocalizedString("MountainDetails", comment: ""), mMountain.height!, "(\(mMountain.location ?? ""))")
 			case .SNOW_LEOPARD_OF_RUSSIA:
-				return String(format: NSLocalizedString("MountainDetails", comment: ""), mMountain.height!, "(\(mMountain.location ?? ""))")
+				return "#\(mMountain.position ?? 0) \(String(format: NSLocalizedString("MountainDetails", comment: ""), mMountain.height!, "(\(mMountain.location ?? ""))"))"
 			}
 		}
 	}

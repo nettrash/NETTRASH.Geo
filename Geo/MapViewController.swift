@@ -184,6 +184,14 @@ extension MapViewController: MKMapViewDelegate {
 					btnDetails.addTarget(self, action: #selector(showAnnotationDetails), for: .touchUpInside)
 					pinView!.rightCalloutAccessoryView = btnDetails
 				}
+				if annotation is MapMountainPoint {
+					let details = UILabel()
+					details.numberOfLines = 3
+					details.text = (annotation as? MapMountainPoint)?.subtitle
+					details.textColor = .lightGray
+					details.font = details.font.withSize(13)
+					pinView!.detailCalloutAccessoryView = details
+				}
 			} else {
 				pinView?.annotation = annotation
 			}

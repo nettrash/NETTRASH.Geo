@@ -17,7 +17,7 @@
             {
                 "position": 1,
                 "image": "1.jpg",
-                "name":"Джомолунгма",
+                "name":"Джомолунгма (Эверест)",
                 "height": 8848,
                 "location": "Махалангур-Химал, Гималаи",
                 "coordinates": {
@@ -2089,7 +2089,7 @@
                 "image": "",
                 "name":"Эльбрус",
                 "height": 5642,
-                "location": "",
+                "location": "Кавказ, самая высокая горная вершина России и Европы",
                 "coordinates": {
                     "latitude": 43.355,
                     "longitude": 42.43917
@@ -2105,7 +2105,7 @@
                 "image": "",
                 "name":"Дыхтау",
                 "height": 5204,
-                "location": "",
+                "location": "Боковой хребет Большого Кавказа",
                 "coordinates": {
                     "latitude": 43.05444,
                     "longitude": 43.13028
@@ -2121,7 +2121,7 @@
                 "image": "",
                 "name":"Шхара",
                 "height": 5193,
-                "location": "",
+                "location": "Главный Кавказский хребет",
                 "coordinates": {
                     "latitude": 42.99944,
                     "longitude": 43.11167
@@ -2137,7 +2137,7 @@
                 "image": "",
                 "name":"Коштантау",
                 "height": 5151,
-                "location": "",
+                "location": "Центральный Кавказ",
                 "coordinates": {
                     "latitude": 43.05009,
                     "longitude": 43.21426
@@ -2153,7 +2153,7 @@
                 "image": "",
                 "name":"Мижирги",
                 "height": 5025,
-                "location": "",
+                "location": "Главный Кавказский хребет, Безенгийская стена",
                 "coordinates": {
                     "latitude": 43.043889,
                     "longitude": 43.149167
@@ -2169,7 +2169,7 @@
                 "image": "",
                 "name":"Пик Пушкина",
                 "height": 5100,
-                "location": "",
+                "location": "Боковой Кавказский хребет",
                 "coordinates": {
                     "latitude": 43.049167,
                     "longitude": 43.1375
@@ -2185,7 +2185,7 @@
                 "image": "",
                 "name":"Джангитау",
                 "height": 5085,
-                "location": "",
+                "location": "Главный Кавказский хребет, Безенгийская стена",
                 "coordinates": {
                     "latitude": 43.017778,
                     "longitude": 43.0575
@@ -2201,7 +2201,7 @@
                 "image": "",
                 "name":"Казбек",
                 "height": 5034,
-                "location": "",
+                "location": "Кавказ, потухший стратовулкан, самый восточный пятитысячник Кавказа",
                 "coordinates": {
                     "latitude": 42.69708,
                     "longitude": 44.51792
@@ -2217,7 +2217,7 @@
                 "image": "",
                 "name":"Ключевская Сопка",
                 "height": 4688,
-                "location": "",
+                "location": "Камчатка, самый высокий вулкан Евразии, действует",
                 "coordinates": {
                     "latitude": 56.067,
                     "longitude": 160.633
@@ -2233,7 +2233,7 @@
                 "image": "",
                 "name":"Белуха",
                 "height": 4506,
-                "location": "",
+                "location": "Катунский хребет, высшая точка Алтая и Сибири",
                 "coordinates": {
                     "latitude": 49.80667,
                     "longitude": 86.59083
