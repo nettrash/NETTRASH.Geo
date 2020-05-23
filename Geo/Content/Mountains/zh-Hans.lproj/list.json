@@ -18,9 +18,9 @@
             {
                 "position": 1,
                 "image": "1.jpg",
-                "name":"Jomolungma (Everest)",
+                "name":"珠穆朗瑪峰",
                 "height": 8848,
-                "location": "Mahalangur-Himal, Himalayas",
+                "location": "馬哈蘭格·喜瑪爾 喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.98806,
                     "longitude": 86.92528
@@ -34,9 +34,9 @@
             {
                 "position": 2,
                 "image": "2.jpg",
-                "name":"Chogori",
+                "name":"喬戈里峰（K2峰",
                 "height": 8611,
-                "location": "Baltoro Muztagh Mountain, Karakoram",
+                "location": "巴爾托洛慕士塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.8825,
                     "longitude": 76.51333
@@ -50,15 +50,15 @@
             {
                 "position": 3,
                 "image": "3.jpg",
-                "name":"Kanchenjunga",
+                "name":"干城章嘉峰",
                 "height": 8586,
-                "location": "Kanchenjunga, Himalayas",
+                "location": "干城章嘉喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.7025,
                     "longitude": 88.14694
                 },
                 "relativeHeight": 3922,
-                "parent":"",
+                "parent":"珠穆朗瑪峰",
                 "firstAscent":"1955",
                 "ascents":38,
                 "attemptsToAscend":24
@@ -66,15 +66,15 @@
             {
                 "position": 4,
                 "image": "4.jpg",
-                "name":"Lhotse",
+                "name":"洛子峰",
                 "height": 8516,
-                "location": "Mahalangur-Himal, Himalayas",
+                "location": "馬哈蘭格·喜瑪爾 喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.96167,
                     "longitude": 86.93306
                 },
                 "relativeHeight": 610,
-                "parent":"Chomolungma",
+                "parent":"珠穆朗瑪峰",
                 "firstAscent":"1956",
                 "ascents":26,
                 "attemptsToAscend":26
@@ -82,15 +82,15 @@
             {
                 "position": 5,
                 "image": "5.jpg",
-                "name":"Makalu",
+                "name":"馬卡魯峰",
                 "height": 8485,
-                "location": "Mahalangur-Himal, Himalayas",
+                "location": "馬哈蘭格·喜瑪爾 喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.88917,
                     "longitude": 87.08861
                 },
                 "relativeHeight": 2386,
-                "parent":"Lhotse",
+                "parent":"珠穆朗瑪峰（洛子峰",
                 "firstAscent":"1955",
                 "ascents":45,
                 "attemptsToAscend":52
@@ -98,15 +98,15 @@
             {
                 "position": 6,
                 "image": "6.jpg",
-                "name":"Cho-Oyu",
+                "name":"卓奧友峰",
                 "height": 8188,
-                "location": "Mahalangur-Himal, Himalayas",
+                "location": "馬哈蘭格·喜瑪爾 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.09417,
                     "longitude": 86.66083
                 },
                 "relativeHeight": 2340,
-                "parent":"Chomolungma",
+                "parent":"珠穆朗瑪峰",
                 "firstAscent":"1954",
                 "ascents":79,
                 "attemptsToAscend":28
@@ -114,15 +114,15 @@
             {
                 "position": 7,
                 "image": "7.jpg",
-                "name":"Dhaulagiri",
+                "name":"道拉吉里峰",
                 "height": 8167,
-                "location": "Dhaulagiri, Himalayas",
+                "location": "道拉吉里峰喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.69583,
                     "longitude": 83.49333
                 },
                 "relativeHeight": 3357,
-                "parent":"",
+                "parent":"珠穆朗瑪峰",
                 "firstAscent":"1960",
                 "ascents":51,
                 "attemptsToAscend":39
@@ -130,15 +130,15 @@
             {
                 "position": 8,
                 "image": "8.jpg",
-                "name":"Manaslu",
+                "name":"马纳斯卢峰",
                 "height": 8163,
-                "location": "Manaslu, Himalayas",
+                "location": "马纳斯卢喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.54944,
                     "longitude": 84.56083
                 },
                 "relativeHeight": 3092,
-                "parent":"",
+                "parent":"卓奧友峰",
                 "firstAscent":"1956",
                 "ascents":49,
                 "attemptsToAscend":45
@@ -146,15 +146,15 @@
             {
                 "position": 9,
                 "image": "9.jpg",
-                "name":"Nangaparbat",
+                "name":"南迦帕尔巴特峰",
                 "height": 8126,
-                "location": "Nangaparbat, Himalayas",
+                "location": "南迦帕尔巴特喜馬拉雅",
                 "coordinates": {
                     "latitude": 35.23833,
                     "longitude": 74.58944
                 },
                 "relativeHeight": 4608,
-                "parent":"",
+                "parent":"道拉吉里峰",
                 "firstAscent":"1953",
                 "ascents":52,
                 "attemptsToAscend":67
@@ -162,15 +162,15 @@
             {
                 "position": 10,
                 "image": "10.jpg",
-                "name":"Annapurna I",
+                "name":"安纳布尔纳峰",
                 "height": 8091,
-                "location": "Annapurna, Himalayas",
+                "location": "安纳布尔纳喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.59528,
                     "longitude": 83.81972
                 },
                 "relativeHeight": 2984,
-                "parent":"",
+                "parent":"卓奧友峰",
                 "firstAscent":"1950",
                 "ascents":36,
                 "attemptsToAscend":47
@@ -178,15 +178,15 @@
             {
                 "position": 11,
                 "image": "11.jpg",
-                "name":"Gasherbrum I",
+                "name":"加舒尔布鲁木I峰",
                 "height": 8080,
-                "location": "Baltoro Muztagh Mountain, Karakoram",
+                "location": "巴爾托洛慕士塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.72417,
                     "longitude": 76.69556
                 },
                 "relativeHeight": 2155,
-                "parent":"",
+                "parent":"喬戈里峰",
                 "firstAscent":"1958",
                 "ascents":31,
                 "attemptsToAscend":16
@@ -194,15 +194,15 @@
             {
                 "position": 12,
                 "image": "12.jpg",
-                "name":"Broad Peak",
+                "name":"布洛阿特峰",
                 "height": 8051,
-                "location": "Baltoro Muztagh Mountain, Karakoram",
+                "location": "巴爾托洛慕士塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.81056,
                     "longitude": 76.56806
                 },
                 "relativeHeight": 1701,
-                "parent":"Gasherbrum I",
+                "parent":"加舒尔布鲁木I峰",
                 "firstAscent":"1957",
                 "ascents":39,
                 "attemptsToAscend":19
@@ -210,15 +210,15 @@
             {
                 "position": 13,
                 "image": "13.jpg",
-                "name":"Gasherbrum II",
+                "name":"加舒尔布鲁木II峰",
                 "height": 8034,
-                "location": "Baltoro Muztagh Mountain, Karakoram",
+                "location": "巴爾托洛慕士塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.7575,
                     "longitude": 76.65306
                 },
                 "relativeHeight": 1523,
-                "parent":"Gasherbrum I",
+                "parent":"加舒尔布鲁木I峰",
                 "firstAscent":"1956",
                 "ascents":54,
                 "attemptsToAscend":12
@@ -226,15 +226,15 @@
             {
                 "position": 14,
                 "image": "14.jpg",
-                "name":"Shishapangma",
+                "name":"希夏邦马峰",
                 "height": 8027,
-                "location": "Langtang, Himalayas",
+                "location": "Langtang 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.35333,
                     "longitude": 85.77861
                 },
                 "relativeHeight": 2897,
-                "parent":"",
+                "parent":"卓奧友峰",
                 "firstAscent":"1964",
                 "ascents":43,
                 "attemptsToAscend":19
@@ -242,15 +242,15 @@
             {
                 "position": 15,
                 "image": "15-0.jpg",
-                "name":"Gyachung-Kang",
+                "name":"格重康峰",
                 "height": 7952,
-                "location": "Mahalangur-Himal, Himalayas",
+                "location": "馬哈蘭格·喜瑪爾 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.09778,
                     "longitude": 86.74639
                 },
                 "relativeHeight": 700,
-                "parent":"Cho-Oyu",
+                "parent":"卓奧友峰",
                 "firstAscent":"1964",
                 "ascents":5,
                 "attemptsToAscend":3
@@ -258,15 +258,15 @@
             {
                 "position": 15,
                 "image": "15-1.jpg",
-                "name":"Gasherbrum III",
+                "name":"加舒爾布魯木III峰",
                 "height": 7946,
-                "location": "Baltoro Muztagh Mountain, Karakoram",
+                "location": "巴爾托洛慕士塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.75944,
                     "longitude": 76.64194
                 },
                 "relativeHeight": 355,
-                "parent":"Gasherbrum II",
+                "parent":"加舒爾布魯木II峰",
                 "firstAscent":"1975",
                 "ascents":2,
                 "attemptsToAscend":2
@@ -274,15 +274,15 @@
             {
                 "position": 16,
                 "image": "16.jpg",
-                "name":"Annapurna II",
+                "name":"安納普那II峰",
                 "height": 7937,
-                "location": "Annapurna, Himalayas",
+                "location": "安納普那喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.53417,
                     "longitude": 84.12222
                 },
                 "relativeHeight": 2437,
-                "parent":"Annapurna I",
+                "parent":"安納普那I峰",
                 "firstAscent":"1960",
                 "ascents":6,
                 "attemptsToAscend":19
@@ -290,15 +290,15 @@
             {
                 "position": 17,
                 "image": "17.jpg",
-                "name":"Gasherbrum IV",
+                "name":"加舒爾布魯木IV峰",
                 "height": 7932,
-                "location": "Baltoro Muztagh Mountain, Karakoram",
+                "location": "巴爾托洛慕士塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.75917,
                     "longitude": 76.61583
                 },
                 "relativeHeight": 715,
-                "parent":"Gasherbrum III",
+                "parent":"加舒爾布魯木III峰",
                 "firstAscent":"1958",
                 "ascents":4,
                 "attemptsToAscend":11
@@ -306,15 +306,15 @@
             {
                 "position": 18,
                 "image": "18.jpg",
-                "name":"Himalchuli",
+                "name":"喜馬爾佐利山",
                 "height": 7893,
-                "location": "Manaslu, Himalayas",
+                "location": "馬拉斯鹿喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.43528,
                     "longitude": 84.64
                 },
                 "relativeHeight": 1633,
-                "parent":"Manaslu",
+                "parent":"馬拉斯鹿峰",
                 "firstAscent":"1960",
                 "ascents":6,
                 "attemptsToAscend":12
@@ -322,15 +322,15 @@
             {
                 "position": 19,
                 "image": "",
-                "name":"Dastoghil",
+                "name":"迪斯特吉峰",
                 "height": 7884,
-                "location": "Hispar-Muztag, Karakorum",
+                "location": "希斯帕慕士塔格山脉 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.32583,
                     "longitude": 75.18833
                 },
                 "relativeHeight": 2525,
-                "parent":"",
+                "parent":"喬戈里峰",
                 "firstAscent":"1960",
                 "ascents":3,
                 "attemptsToAscend":5
@@ -338,15 +338,15 @@
             {
                 "position": 20,
                 "image": "20-0.jpg",
-                "name":"Ngadi-Chouli",
+                "name":"雅迪楚里峰",
                 "height": 7871,
-                "location": "Manaslu, Himalayas",
+                "location": "馬拉斯鹿喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.50333,
                     "longitude": 84.5675
                 },
                 "relativeHeight": 1020,
-                "parent":"Manaslu",
+                "parent":"馬拉斯鹿峰",
                 "firstAscent":"1970",
                 "ascents":2,
                 "attemptsToAscend":6
@@ -354,15 +354,15 @@
             {
                 "position": 20,
                 "image": "20-1.jpg",
-                "name":"Nuptse",
+                "name":"努子峰",
                 "height": 7864,
-                "location": "Mahalangur-Himal, Himalayas",
+                "location": "馬哈蘭格·喜瑪爾 喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.96722,
                     "longitude": 86.88611
                 },
                 "relativeHeight": 319,
-                "parent":"Chomolungma",
+                "parent":"洛子峰",
                 "firstAscent":"1961",
                 "ascents":5,
                 "attemptsToAscend":12
@@ -370,15 +370,15 @@
             {
                 "position": 21,
                 "image": "21.jpg",
-                "name":"Kuniang-Kish",
+                "name":"昆揚基什峰",
                 "height": 7823,
-                "location": "Hispar-Muztag, Karakorum",
+                "location": "希斯帕慕士塔格山脉 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.20528,
                     "longitude": 75.20778
                 },
                 "relativeHeight": 1765,
-                "parent":"Dastoghil",
+                "parent":"迪斯特吉峰",
                 "firstAscent":"1971",
                 "ascents":2,
                 "attemptsToAscend":6
@@ -386,15 +386,15 @@
             {
                 "position": 22,
                 "image": "22.jpg",
-                "name":"Masherbrum",
+                "name":"瑪夏布洛姆峰",
                 "height": 7821,
-                "location": "Masherbrum, Karakorum",
+                "location": "瑪夏布洛姆 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.64111,
                     "longitude": 76.30583
                 },
                 "relativeHeight": 2457,
-                "parent":"",
+                "parent":"加舒爾布魯木I峰",
                 "firstAscent":"1960",
                 "ascents":4,
                 "attemptsToAscend":9
@@ -402,15 +402,15 @@
             {
                 "position": 23,
                 "image": "23.jpg",
-                "name":"Nandadevi",
+                "name":"楠達德維山",
                 "height": 7816,
-                "location": "Garhwal, Himalayas",
+                "location": "Kumaon 喜馬拉雅",
                 "coordinates": {
                     "latitude": 30.37667,
                     "longitude": 79.97083
                 },
                 "relativeHeight": 3139,
-                "parent":"",
+                "parent":"道拉吉里峰",
                 "firstAscent":"1936",
                 "ascents":14,
                 "attemptsToAscend":12
@@ -418,15 +418,15 @@
             {
                 "position": 24,
                 "image": "24.jpg",
-                "name":"Chomolonzo",
+                "name":"珠穆隆索峰",
                 "height": 7804,
-                "location": "Mahalangur-Himal, Himalayas",
+                "location": "馬哈蘭格·喜瑪爾 喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.93,
                     "longitude": 87.10806
                 },
                 "relativeHeight": 590,
-                "parent":"Makalu",
+                "parent":"馬卡魯峰",
                 "firstAscent":"1954",
                 "ascents":3,
                 "attemptsToAscend":1
@@ -434,15 +434,15 @@
             {
                 "position": 25,
                 "image": "25.jpg",
-                "name":"Batura-Shar",
+                "name":"巴托拉峰",
                 "height": 7795,
-                "location": "Batura-Muztagh Mountain, Karakoram",
+                "location": "巴托拉·木孜塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.51,
                     "longitude": 74.52417
                 },
                 "relativeHeight": 3118,
-                "parent":"",
+                "parent":"迪斯特吉峰",
                 "firstAscent":"1976",
                 "ascents":4,
                 "attemptsToAscend":6
@@ -450,15 +450,15 @@
             {
                 "position": 26,
                 "image": "26.jpg",
-                "name":"Kanjut-Shar",
+                "name":"坎巨提峰",
                 "height": 7790,
-                "location": "Hispar-Muztag, Karakorum",
+                "location": "希斯帕慕士塔格山脉 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.205,
                     "longitude": 75.41778
                 },
                 "relativeHeight": 1690,
-                "parent":"Kuniang Kish",
+                "parent":"昆揚基什峰",
                 "firstAscent":"1959",
                 "ascents":2,
                 "attemptsToAscend":1
@@ -466,15 +466,15 @@
             {
                 "position": 27,
                 "image": "27.jpg",
-                "name":"Rakaposhi",
+                "name":"拉卡波希峰",
                 "height": 7788,
-                "location": "Rakaposhi-Haramosh, Karakorum",
+                "location": "Rakaposhi-Haramosh 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.1425,
                     "longitude": 74.48917
                 },
                 "relativeHeight": 2818,
-                "parent":"Kuniang Kish",
+                "parent":"昆揚基什峰",
                 "firstAscent":"1958",
                 "ascents":8,
                 "attemptsToAscend":13
@@ -482,15 +482,15 @@
             {
                 "position": 28,
                 "image": "28.jpg",
-                "name":"Namjagbarwa",
+                "name":"南迦巴瓦峰",
                 "height": 7782,
-                "location": "Assam, Himalayas",
+                "location": "Assam 喜馬拉雅",
                 "coordinates": {
                     "latitude": 29.63056,
                     "longitude": 95.05528
                 },
                 "relativeHeight": 4106,
-                "parent":"Kanchenjunga",
+                "parent":"干城章嘉峰",
                 "firstAscent":"1992",
                 "ascents":1,
                 "attemptsToAscend":2
@@ -498,15 +498,15 @@
             {
                 "position": 29,
                 "image": "",
-                "name":"Kamet",
+                "name":"卡密特山",
                 "height": 7756,
-                "location": "Garhwal, Himalayas",
+                "location": "Garhwal 喜馬拉雅",
                 "coordinates": {
                     "latitude": 30.92,
                     "longitude": 79.59167
                 },
                 "relativeHeight": 2825,
-                "parent":"Nandadevi",
+                "parent":"楠達德維山",
                 "firstAscent":"1931",
                 "ascents":23,
                 "attemptsToAscend":14
@@ -514,15 +514,15 @@
             {
                 "position": 30,
                 "image": "30.jpg",
-                "name":"Dhaulagiri II",
+                "name":"道拉吉里II峰",
                 "height": 7751,
-                "location": "Dhaulagiri, Himalayas",
+                "location": "道拉吉里峰喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.76278,
                     "longitude": 83.38722
                 },
                 "relativeHeight": 2396,
-                "parent":"Dhaulagiri",
+                "parent":"道拉吉里峰",
                 "firstAscent":"1971",
                 "ascents":4,
                 "attemptsToAscend":11
@@ -530,15 +530,15 @@
             {
                 "position": 31,
                 "image": "31.jpg",
-                "name":"Saltoro-Kangri",
+                "name":"薩爾托洛崗日峰",
                 "height": 7742,
-                "location": "Saltoro, Karakorum",
+                "location": "薩爾托洛山脈 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.39917,
                     "longitude": 76.8475
                 },
                 "relativeHeight": 2160,
-                "parent":"Gasherbrum I",
+                "parent":"加舒爾布魯木I峰",
                 "firstAscent":"1962",
                 "ascents":2,
                 "attemptsToAscend":1
@@ -546,15 +546,15 @@
             {
                 "position": 32,
                 "image": "32.jpg",
-                "name":"Jeannu",
+                "name":"賈奴峰",
                 "height": 7711,
-                "location": "Kanchenjunga, Himalayas",
+                "location": "干城章嘉喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.68167,
                     "longitude": 88.04333
                 },
                 "relativeHeight": 1036,
-                "parent":"Kanchenjunga",
+                "parent":"干城章嘉峰",
                 "firstAscent":"1962",
                 "ascents":17,
                 "attemptsToAscend":12
@@ -562,15 +562,15 @@
             {
                 "position": 33,
                 "image": "33-0.jpg",
-                "name":"Tirichmir",
+                "name":"蒂里傑米爾峰",
                 "height": 7708,
-                "location": "Gindukush",
+                "location": "興都庫什",
                 "coordinates": {
                     "latitude": 36.25528,
                     "longitude": 71.84167
                 },
                 "relativeHeight": 3910,
-                "parent":"Batura-Shar",
+                "parent":"巴托拉峰",
                 "firstAscent":"1950",
                 "ascents":20,
                 "attemptsToAscend":11
@@ -578,15 +578,15 @@
             {
                 "position": 33,
                 "image": "",
-                "name":"Molamenqing",
+                "name":"摩拉门青峰",
                 "height": 7703,
-                "location": "Langtang, Himalayas",
+                "location": "Langtang 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.35472,
                     "longitude": 85.81083
                 },
                 "relativeHeight": 430,
-                "parent":"Shishapangma",
+                "parent":"希夏邦馬峰",
                 "firstAscent":"1981",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -594,15 +594,15 @@
             {
                 "position": 34,
                 "image": "34.jpg",
-                "name":"Gurla-Mandhata",
+                "name":"纳木那尼峰",
                 "height": 7694,
-                "location": "Alcancar-Himal, Himalayas",
+                "location": "Nalakankar 喜馬拉雅",
                 "coordinates": {
                     "latitude": 30.43806,
                     "longitude": 81.29806
                 },
                 "relativeHeight": 2788,
-                "parent":"Dhaulagiri",
+                "parent":"道拉吉里峰",
                 "firstAscent":"1985",
                 "ascents":6,
                 "attemptsToAscend":4
@@ -610,15 +610,15 @@
             {
                 "position": 35,
                 "image": "",
-                "name":"Saser-Kangri I",
+                "name":"莎瑟峰 I",
                 "height": 7672,
-                "location": "Saser-Muztag, Karakorum",
+                "location": "Saser 喀喇昆仑",
                 "coordinates": {
                     "latitude": 34.86667,
                     "longitude": 77.7525
                 },
                 "relativeHeight": 2304,
-                "parent":"Gasherbrum I",
+                "parent":"加舒爾布魯木I峰",
                 "firstAscent":"1973",
                 "ascents":6,
                 "attemptsToAscend":4
@@ -626,15 +626,15 @@
             {
                 "position": 36,
                 "image": "36-0.jpg",
-                "name":"Chogolisa",
+                "name":"喬戈里薩峰",
                 "height": 7665,
-                "location": "Masherbrum, Karakorum",
+                "location": "瑪夏布洛姆 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.61167,
                     "longitude": 76.57167
                 },
                 "relativeHeight": 1624,
-                "parent":"Masherbrum",
+                "parent":"瑪夏布洛姆峰",
                 "firstAscent":"1975",
                 "ascents":4,
                 "attemptsToAscend":2
@@ -642,15 +642,15 @@
             {
                 "position": 36,
                 "image": "36-1.jpg",
-                "name":"Dhaulagiri IV",
+                "name":"道拉吉里IV峰",
                 "height": 7661,
-                "location": "Dhaulagiri, Himalayas",
+                "location": "道拉吉里峰喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.73583,
                     "longitude": 83.31528
                 },
                 "relativeHeight": 469,
-                "parent":"Dhaulagiri II",
+                "parent":"道拉吉里II峰",
                 "firstAscent":"1975",
                 "ascents":2,
                 "attemptsToAscend":10
@@ -658,15 +658,15 @@
             {
                 "position": 37,
                 "image": "37-0.jpg",
-                "name":"Kongur",
+                "name":"公格尔峰",
                 "height": 7649,
-                "location": "Kongur, Kunlun",
+                "location": "公格尔山昆仑山脉",
                 "coordinates": {
                     "latitude": 38.59333,
                     "longitude": 75.31333
                 },
                 "relativeHeight": 3585,
-                "parent":"Dastoghil",
+                "parent":"迪斯特吉峰",
                 "firstAscent":"1981",
                 "ascents":2,
                 "attemptsToAscend":4
@@ -674,15 +674,15 @@
             {
                 "position": 37,
                 "image": "37-1.jpg",
-                "name":"Dhaulagiri V",
+                "name":"道拉吉里V峰",
                 "height": 7618,
-                "location": "Dhaulagiri, Himalayas",
+                "location": "道拉吉里峰喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.73389,
                     "longitude": 83.36139
                 },
                 "relativeHeight": 340,
-                "parent":"Dhaulagiri IV",
+                "parent":"道拉吉里IV峰",
                 "firstAscent":"1975",
                 "ascents":2,
                 "attemptsToAscend":3
@@ -690,15 +690,15 @@
             {
                 "position": 38,
                 "image": "38.jpg",
-                "name":"Shispar",
+                "name":"喜士帕爾峰",
                 "height": 7611,
-                "location": "Batura-Muztagh Mountain, Karakoram",
+                "location": "巴托拉·木孜塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.44056,
                     "longitude": 74.68083
                 },
                 "relativeHeight": 1240,
-                "parent":"Batura-Shar",
+                "parent":"巴托拉峰",
                 "firstAscent":"1974",
                 "ascents":3,
                 "attemptsToAscend":1
@@ -708,13 +708,13 @@
                 "image": "",
                 "name":"Trivor",
                 "height": 7577,
-                "location": "Hispar-Muztag, Karakorum",
+                "location": "庫拉岡日峰 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.2875,
                     "longitude": 75.08611
                 },
                 "relativeHeight": 980,
-                "parent":"Dastoghil",
+                "parent":"迪斯特吉峰",
                 "firstAscent":"1960",
                 "ascents":2,
                 "attemptsToAscend":5
@@ -722,15 +722,15 @@
             {
                 "position": 40,
                 "image": "40.jpg",
-                "name":"Kankar-Punsum",
+                "name":"干卡本森峰",
                 "height": 7570,
-                "location": "Kula-Kangri, Himalayas",
+                "location": "庫拉岡日峰 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.04667,
                     "longitude": 90.45583
                 },
                 "relativeHeight": 2995,
-                "parent":"Kanchenjunga",
+                "parent":"干城章嘉峰",
                 "firstAscent":"",
                 "ascents":0,
                 "attemptsToAscend":3
@@ -738,15 +738,15 @@
             {
                 "position": 41,
                 "image": "41.jpg",
-                "name":"Gungashan",
+                "name":"贡嘎山",
                 "height": 7556,
-                "location": "Daxu-Shan, Sichuan",
+                "location": "大雪山",
                 "coordinates": {
                     "latitude": 29.59528,
                     "longitude": 101.87972
                 },
                 "relativeHeight": 3642,
-                "parent":"Chomolungma",
+                "parent":"贡嘎山",
                 "firstAscent":"1932",
                 "ascents":6,
                 "attemptsToAscend":7
@@ -754,15 +754,15 @@
             {
                 "position": 42,
                 "image": "42.jpg",
-                "name":"Annapurna III",
+                "name":"安納普那III峰",
                 "height": 7555,
-                "location": "Annapurna, Himalayas",
+                "location": "安納普那喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.58472,
                     "longitude": 83.99111
                 },
                 "relativeHeight": 703,
-                "parent":"Annapurna I",
+                "parent":"安納普那I峰",
                 "firstAscent":"1961",
                 "ascents":10,
                 "attemptsToAscend":17
@@ -770,15 +770,15 @@
             {
                 "position": 43,
                 "image": "43.jpg",
-                "name":"Muztagata",
+                "name":"慕士塔格峰",
                 "height": 7546,
-                "location": "Muztagata, Kunlun",
+                "location": "Muztagata昆仑山脉",
                 "coordinates": {
                     "latitude": 38.27833,
                     "longitude": 75.11583
                 },
                 "relativeHeight": 2735,
-                "parent":"Kongur",
+                "parent":"公格尔峰",
                 "firstAscent":"1956",
                 "ascents":-1,
                 "attemptsToAscend":-1
@@ -786,15 +786,15 @@
             {
                 "position": 44,
                 "image": "44.jpg",
-                "name":"Skjang-Kangri",
+                "name":"斯坎格里峰",
                 "height": 7545,
-                "location": "Baltoro Muztagh Mountain, Karakoram",
+                "location": "巴爾托洛慕士塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.92639,
                     "longitude": 76.5675
                 },
                 "relativeHeight": 1085,
-                "parent":"Chogori",
+                "parent":"喬戈里峰",
                 "firstAscent":"1976",
                 "ascents":1,
                 "attemptsToAscend":2
@@ -802,15 +802,15 @@
             {
                 "position": 45,
                 "image": "45.jpg",
-                "name":"Changtse",
+                "name":"章子峰",
                 "height": 7543,
-                "location": "Mahalangur-Himal, Himalayas",
+                "location": "馬哈蘭格·喜瑪爾 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.02472,
                     "longitude": 86.90861
                 },
                 "relativeHeight": 520,
-                "parent":"Chomolungma",
+                "parent":"珠穆朗瑪峰",
                 "firstAscent":"1982",
                 "ascents":9,
                 "attemptsToAscend":9
@@ -818,15 +818,15 @@
             {
                 "position": 46,
                 "image": "",
-                "name":"Kula-Kangri",
+                "name":"库拉岗日峰",
                 "height": 7538,
-                "location": "Kula-Kangri, Himalayas",
+                "location": "Kula Kangri 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.22611,
                     "longitude": 90.615
                 },
                 "relativeHeight": 1650,
-                "parent":"Kankar-Punsum",
+                "parent":"Gangkhar Puensum",
                 "firstAscent":"1986",
                 "ascents":3,
                 "attemptsToAscend":2
@@ -834,15 +834,15 @@
             {
                 "position": 47,
                 "image": "47.jpg",
-                "name":"Kongurtube",
+                "name":"公格尔九别峰",
                 "height": 7530,
-                "location": "Kongur, Kunlun",
+                "location": "公格尔山昆仑山脉",
                 "coordinates": {
                     "latitude": 38.61639,
                     "longitude": 75.19861
                 },
                 "relativeHeight": 840,
-                "parent":"Kongur",
+                "parent":"公格尔峰",
                 "firstAscent":"1956",
                 "ascents":2,
                 "attemptsToAscend":3
@@ -850,15 +850,15 @@
             {
                 "position": 48,
                 "image": "",
-                "name":"Mamostong-Kangri",
+                "name":"瑪莫斯通崗日峰",
                 "height": 7516,
-                "location": "Rimo, Karakorum",
+                "location": "Rimo 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.14083,
                     "longitude": 77.5775
                 },
                 "relativeHeight": 1803,
-                "parent":"Gasherbrum I",
+                "parent":"加舒爾布魯木I峰",
                 "firstAscent":"1984",
                 "ascents":5,
                 "attemptsToAscend":0
@@ -866,15 +866,15 @@
             {
                 "position": 49,
                 "image": "49.jpg",
-                "name":"Saser-Kangri II",
+                "name":"莎瑟峰 II E",
                 "height": 7513,
-                "location": "Saser-Muztag, Karakorum",
+                "location": "Saser 喀喇昆仑",
                 "coordinates": {
                     "latitude": 34.80417,
                     "longitude": 77.805
                 },
                 "relativeHeight": 1450,
-                "parent":"Saser-Kangri I",
+                "parent":"莎瑟峰 I",
                 "firstAscent":"2011",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -882,15 +882,15 @@
             {
                 "position": 50,
                 "image": "50.jpg",
-                "name":"Ismoil Somoni Peak",
+                "name":"伊斯梅爾索莫尼峰",
                 "height": 7495,
-                "location": "ridge of the Academy of Sciences, Pamir",
+                "location": "帕米爾高原",
                 "coordinates": {
                     "latitude": 38.94222,
                     "longitude": 72.01583
                 },
                 "relativeHeight": 3402,
-                "parent":"Muztagata",
+                "parent":"慕士塔格峰",
                 "firstAscent":"1933",
                 "ascents":-1,
                 "attemptsToAscend":-1
@@ -898,15 +898,15 @@
             {
                 "position": 51,
                 "image": "51.jpg",
-                "name":"Saser-Kangri III",
+                "name":"莎瑟峰 III",
                 "height": 7495,
-                "location": "Saser-Muztag, Karakorum",
+                "location": "Saser 喀喇昆仑",
                 "coordinates": {
                     "latitude": 34.84556,
                     "longitude": 77.785
                 },
                 "relativeHeight": 850,
-                "parent":"Saser-Kangri I",
+                "parent":"莎瑟峰 I",
                 "firstAscent":"1986",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -914,15 +914,15 @@
             {
                 "position": 52,
                 "image": "52.jpg",
-                "name":"Noshak",
+                "name":"諾沙克峰",
                 "height": 7492,
-                "location": "Gindukush",
+                "location": "興都庫什山脈",
                 "coordinates": {
                     "latitude": 36.43333,
                     "longitude": 71.82778
                 },
                 "relativeHeight": 2024,
-                "parent":"Tirichmir",
+                "parent":"蒂里傑米爾峰",
                 "firstAscent":"1960",
                 "ascents":33,
                 "attemptsToAscend":3
@@ -930,15 +930,15 @@
             {
                 "position": 53,
                 "image": "",
-                "name":"Pumari-Kish",
+                "name":"普馬里基什峰",
                 "height": 7492,
-                "location": "Hispar-Muztag, Karakorum",
+                "location": "希斯帕慕士塔格山脉 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.21111,
                     "longitude": 75.25278
                 },
                 "relativeHeight": 890,
-                "parent":"Kuniang Kish",
+                "parent":"昆揚基什峰",
                 "firstAscent":"1979",
                 "ascents":1,
                 "attemptsToAscend":2
@@ -946,15 +946,15 @@
             {
                 "position": 54,
                 "image": "54.jpg",
-                "name":"Pasu-Sar",
+                "name":"普馬里基什峰",
                 "height": 7476,
-                "location": "Batura-Muztagh Mountain, Karakoram",
+                "location": "巴托拉·木孜塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.48778,
                     "longitude": 74.58778
                 },
                 "relativeHeight": 645,
-                "parent":"Batura-Shar",
+                "parent":"巴托拉峰",
                 "firstAscent":"1994",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -962,15 +962,15 @@
             {
                 "position": 55,
                 "image": "",
-                "name":"Ukshin-Gardanne-Sar",
+                "name":"雅克辛嘎丹峰",
                 "height": 7469,
-                "location": "Hispar-Muztag, Karakorum",
+                "location": "希斯帕慕士塔格山脉 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.25,
                     "longitude": 75.375
                 },
                 "relativeHeight": 1313,
-                "parent":"Pumari Kish",
+                "parent":"普馬里基什峰",
                 "firstAscent":"1984",
                 "ascents":4,
                 "attemptsToAscend":1
@@ -978,15 +978,15 @@
             {
                 "position": 56,
                 "image": "",
-                "name":"Teram Kangri I",
+                "name":"特拉木坎力峰 I",
                 "height": 7462,
-                "location": "Siachen-Muztagh Mountain, Karakoram",
+                "location": "Siachen 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.58,
                     "longitude": 77.07833
                 },
                 "relativeHeight": 1702,
-                "parent":"Gasherbrum I",
+                "parent":"加舒爾布魯木I峰",
                 "firstAscent":"1975",
                 "ascents":2,
                 "attemptsToAscend":0
@@ -994,15 +994,15 @@
             {
                 "position": 57,
                 "image": "",
-                "name":"Jongsong",
+                "name":"琼桑峰",
                 "height": 7462,
-                "location": "Kanchenjunga, Himalayas",
+                "location": "干城章加喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.88111,
                     "longitude": 88.13472
                 },
                 "relativeHeight": 1298,
-                "parent":"Kanchenjunga",
+                "parent":"干城章嘉峰",
                 "firstAscent":"1930",
                 "ascents":2,
                 "attemptsToAscend":3
@@ -1010,9 +1010,9 @@
             {
                 "position": 58,
                 "image": "",
-                "name":"Malubiting",
+                "name":"馬魯畢庭峰",
                 "height": 7458,
-                "location": "Rakaposhi-Haramosh, Karakorum",
+                "location": "Rakaposhi-Haramosh 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.00333,
                     "longitude": 74.87528
@@ -1028,13 +1028,13 @@
                 "image": "59.jpg",
                 "name":"Gangapurna",
                 "height": 7455,
-                "location": "Annapurna, Himalayas",
+                "location": "安納普那喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.60472,
                     "longitude": 83.96417
                 },
                 "relativeHeight": 563,
-                "parent":"Annapurna III",
+                "parent":"安納普那三峰",
                 "firstAscent":"1965",
                 "ascents":8,
                 "attemptsToAscend":13
@@ -1042,15 +1042,15 @@
             {
                 "position": 60,
                 "image": "60.jpg",
-                "name":"Pobeda peak",
+                "name":"托木尔峰",
                 "height": 7439,
-                "location": "Tyan-Shan",
+                "location": "天山",
                 "coordinates": {
                     "latitude": 42.035,
                     "longitude": 80.12556
                 },
                 "relativeHeight": 4148,
-                "parent":"Ismoil Somoni Peak",
+                "parent":"伊斯梅爾·索莫尼峰",
                 "firstAscent":"1938",
                 "ascents":-1,
                 "attemptsToAscend":-1
@@ -1058,15 +1058,15 @@
             {
                 "position": 61,
                 "image": "",
-                "name":"K12",
+                "name":"K12峰",
                 "height": 7428,
-                "location": "Saltoro, Karakorum",
+                "location": "薩爾托洛山脈 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.295,
                     "longitude": 77.02167
                 },
                 "relativeHeight": 1978,
-                "parent":"Saltoro-Kangri",
+                "parent":"薩爾托洛崗日峰",
                 "firstAscent":"1974",
                 "ascents":4,
                 "attemptsToAscend":2
@@ -1074,15 +1074,15 @@
             {
                 "position": 62,
                 "image": "",
-                "name":"Yangra (Ganesh I)",
+                "name":"Yangra（Ganesh I）",
                 "height": 7422,
-                "location": "Ganesh-Himal, Himalayas",
+                "location": "Ganesh 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.39111,
                     "longitude": 85.12722
                 },
                 "relativeHeight": 2352,
-                "parent":"Manaslu",
+                "parent":"馬拉斯鹿峰",
                 "firstAscent":"1955",
                 "ascents":1,
                 "attemptsToAscend":6
@@ -1090,15 +1090,15 @@
             {
                 "position": 63,
                 "image": "",
-                "name":"Sia Kangri",
+                "name":"錫亞康戈里峰",
                 "height": 7422,
-                "location": "Siachen-Muztagh Mountain, Karakoram",
+                "location": "Siachen 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.66333,
                     "longitude": 76.7625
                 },
                 "relativeHeight": 640,
-                "parent":"Gasherbrum I",
+                "parent":"加舒爾布魯木I峰",
                 "firstAscent":"1934",
                 "ascents":6,
                 "attemptsToAscend":0
@@ -1106,9 +1106,9 @@
             {
                 "position": 64,
                 "image": "",
-                "name":"Momhil-Shar",
+                "name":"莫慕希爾峰",
                 "height": 7414,
-                "location": "Hispar-Muztag, Karakorum",
+                "location": "希斯帕慕士塔格山脉 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.31778,
                     "longitude": 75.03639
@@ -1122,15 +1122,15 @@
             {
                 "position": 65,
                 "image": "",
-                "name":"Kabru",
+                "name":"卡布魯峰 N",
                 "height": 7412,
-                "location": "Kanchenjunga, Himalayas",
+                "location": "干城章嘉喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.63389,
                     "longitude": 88.11667
                 },
                 "relativeHeight": 780,
-                "parent":"Kanchenjunga",
+                "parent":"干城章嘉峰",
                 "firstAscent":"1994",
                 "ascents":1,
                 "attemptsToAscend":2
@@ -1138,15 +1138,15 @@
             {
                 "position": 66,
                 "image": "",
-                "name":"Skill-Broom",
+                "name":"斯吉爾布魯木峰",
                 "height": 7410,
-                "location": "Baltoro Muztagh Mountain, Karakoram",
+                "location": "巴爾托洛慕士塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.85083,
                     "longitude": 76.42917
                 },
                 "relativeHeight": 1152,
-                "parent":"Chogori",
+                "parent":"喬戈里峰",
                 "firstAscent":"1957",
                 "ascents":2,
                 "attemptsToAscend":1
@@ -1154,15 +1154,15 @@
             {
                 "position": 67,
                 "image": "",
-                "name":"Haramosh",
+                "name":"哈拉莫什峰",
                 "height": 7409,
-                "location": "Rakaposhi-Haramosh, Karakorum",
+                "location": "Rakaposhi 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.84,
                     "longitude": 74.8975
                 },
                 "relativeHeight": 2277,
-                "parent":"Malubiting",
+                "parent":"馬魯畢庭峰",
                 "firstAscent":"1958",
                 "ascents":4,
                 "attemptsToAscend":3
@@ -1170,15 +1170,15 @@
             {
                 "position": 68,
                 "image": "",
-                "name":"Istor-o-Nal",
+                "name":"伊斯托歐納爾峰",
                 "height": 7403,
-                "location": "Gindukush",
+                "location": "興都庫什山脈",
                 "coordinates": {
                     "latitude": 36.37639,
                     "longitude": 71.89861
                 },
                 "relativeHeight": 1040,
-                "parent":"Noshaq",
+                "parent":"諾沙克峰",
                 "firstAscent":"1969",
                 "ascents":4,
                 "attemptsToAscend":5
@@ -1186,15 +1186,15 @@
             {
                 "position": 69,
                 "image": "",
-                "name":"Ghent Kangri",
+                "name":"根特崗日峰",
                 "height": 7401,
-                "location": "Saltoro, Karakorum",
+                "location": "薩爾托洛崗日峰 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.5175,
                     "longitude": 76.80028
                 },
                 "relativeHeight": 1493,
-                "parent":"Saltoro-Kangri",
+                "parent":"薩爾托洛崗日峰",
                 "firstAscent":"1961",
                 "ascents":4,
                 "attemptsToAscend":0
@@ -1202,15 +1202,15 @@
             {
                 "position": 70,
                 "image": "",
-                "name":"Ultar",
+                "name":"烏爾塔峰",
                 "height": 7388,
-                "location": "Batura-Muztagh Mountain, Karakoram",
+                "location": "巴托拉·木孜塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.39833,
                     "longitude": 74.70889
                 },
                 "relativeHeight": 700,
-                "parent":"Shispar",
+                "parent":"喜士帕爾峰",
                 "firstAscent":"1996",
                 "ascents":2,
                 "attemptsToAscend":5
@@ -1218,15 +1218,15 @@
             {
                 "position": 71,
                 "image": "",
-                "name":"Rimo I",
+                "name":"里莫I峰",
                 "height": 7385,
-                "location": "Rimo-Muztagh Mountain, Karakoram",
+                "location": "Rimo 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.35583,
                     "longitude": 77.36806
                 },
                 "relativeHeight": 1438,
-                "parent":"Teram Kangri I",
+                "parent":"特拉木坎力峰",
                 "firstAscent":"1988",
                 "ascents":1,
                 "attemptsToAscend":3
@@ -1236,13 +1236,13 @@
                 "image": "",
                 "name":"Churen Himal",
                 "height": 7385,
-                "location": "Dhaulagiri, Himalayas",
+                "location": "道拉吉里峰喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.735,
                     "longitude": 83.21611
                 },
                 "relativeHeight": 600,
-                "parent":"Dhaulagiri IV",
+                "parent":"道拉吉里四峰",
                 "firstAscent":"1970",
                 "ascents":3,
                 "attemptsToAscend":0
@@ -1250,15 +1250,15 @@
             {
                 "position": 73,
                 "image": "",
-                "name":"Teram Kangri III",
+                "name":"特拉木坎力峰",
                 "height": 7382,
-                "location": "Siachen-Muztagh Mountain, Karakoram",
+                "location": "Siachen 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.59972,
                     "longitude": 77.04806
                 },
                 "relativeHeight": 520,
-                "parent":"Teram Kangri I",
+                "parent":"特拉木坎力峰",
                 "firstAscent":"1979",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1266,15 +1266,15 @@
             {
                 "position": 74,
                 "image": "",
-                "name":"Sherpi Kangri",
+                "name":"舍披崗日峰",
                 "height": 7380,
-                "location": "Saltoro, Karakorum",
+                "location": "薩爾托洛山脈 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.46611,
                     "longitude": 76.78139
                 },
                 "relativeHeight": 1000,
-                "parent":"Ghent Kangri",
+                "parent":"根特崗日峰",
                 "firstAscent":"1976",
                 "ascents":1,
                 "attemptsToAscend":1
@@ -1282,15 +1282,15 @@
             {
                 "position": 75,
                 "image": "",
-                "name":"Labuche Kang",
+                "name":"拉布吉康峰",
                 "height": 7367,
-                "location": "Labuche, Himalayas",
+                "location": "Labuche 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.30417,
                     "longitude": 86.35083
                 },
                 "relativeHeight": 1957,
-                "parent":"Cho-Oyu",
+                "parent":"卓奧友峰",
                 "firstAscent":"1987",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1298,15 +1298,15 @@
             {
                 "position": 76,
                 "image": "",
-                "name":"Kirat-Chuli",
+                "name":"Kirat Chuli",
                 "height": 7362,
-                "location": "Kanchenjunga, Himalayas",
+                "location": "干城章嘉喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.78694,
                     "longitude": 88.19444
                 },
                 "relativeHeight": 1168,
-                "parent":"Kanchenjunga",
+                "parent":"干城章嘉峰",
                 "firstAscent":"1939",
                 "ascents":1,
                 "attemptsToAscend":6
@@ -1316,13 +1316,13 @@
                 "image": "",
                 "name":"Abi Gamin",
                 "height": 7355,
-                "location": "Garhwal, Himalayas",
+                "location": "Garhwal 喜馬拉雅",
                 "coordinates": {
                     "latitude": 30.9325,
                     "longitude": 79.6025
                 },
                 "relativeHeight": 217,
-                "parent":"Kamet",
+                "parent":"卡密特山",
                 "firstAscent":"1950",
                 "ascents":17,
                 "attemptsToAscend":2
@@ -1330,15 +1330,15 @@
             {
                 "position": 77,
                 "image": "",
-                "name":"Nangpai-Gosum",
+                "name":"Nangpai Gosum",
                 "height": 7350,
-                "location": "Mahalangur-Himal, Himalayas",
+                "location": "馬哈蘭格·喜瑪爾 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.07222,
                     "longitude": 86.61444
                 },
                 "relativeHeight": 500,
-                "parent":"Cho-Oyu",
+                "parent":"卓奧友峰",
                 "firstAscent":"1996",
                 "ascents":3,
                 "attemptsToAscend":1
@@ -1346,15 +1346,15 @@
             {
                 "position": 77,
                 "image": "",
-                "name":"Gimmigela (The Twins)",
+                "name":"Gimmigela（The Twins）",
                 "height": 7350,
-                "location": "Kanchenjunga, Himalayas",
+                "location": "干城章嘉喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.74,
                     "longitude": 88.15778
                 },
                 "relativeHeight": 432,
-                "parent":"Kanchenjunga",
+                "parent":"干城章嘉峰",
                 "firstAscent":"1994",
                 "ascents":3,
                 "attemptsToAscend":1
@@ -1364,13 +1364,13 @@
                 "image": "",
                 "name":"Saraghrar",
                 "height": 7349,
-                "location": "Gindukush",
+                "location": "興都庫什山脈",
                 "coordinates": {
                     "latitude": 36.5475,
                     "longitude": 72.115
                 },
                 "relativeHeight": 1979,
-                "parent":"Noshak",
+                "parent":"諾沙克峰",
                 "firstAscent":"1959",
                 "ascents":2,
                 "attemptsToAscend":3
@@ -1380,13 +1380,13 @@
                 "image": "",
                 "name":"Chamlang",
                 "height": 7321,
-                "location": "Mahalangur-Himal, Himalayas",
+                "location": "馬哈蘭格·喜瑪爾 喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.775,
                     "longitude": 86.97972
                 },
                 "relativeHeight": 1240,
-                "parent":"Lhotse",
+                "parent":"洛子峰",
                 "firstAscent":"1961",
                 "ascents":7,
                 "attemptsToAscend":1
@@ -1394,15 +1394,15 @@
             {
                 "position": 80,
                 "image": "",
-                "name":"Jomolhari",
+                "name":"绰木拉日峰",
                 "height": 7315,
-                "location": "Jomolhari, Himalayas",
+                "location": "绰木拉日喜馬拉雅",
                 "coordinates": {
                     "latitude": 27.82694,
                     "longitude": 89.27444
                 },
                 "relativeHeight": 2065,
-                "parent":"Kankar-Punsum",
+                "parent":"Gangkhar Puensum",
                 "firstAscent":"1937",
                 "ascents":4,
                 "attemptsToAscend":0
@@ -1412,13 +1412,13 @@
                 "image": "",
                 "name":"Chongtar",
                 "height": 7315,
-                "location": "Baltoro Muztagh Mountain, Karakoram",
+                "location": "巴爾托洛慕士塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.91167,
                     "longitude": 76.42917
                 },
                 "relativeHeight": 1300,
-                "parent":"Skill Broom",
+                "parent":"斯吉爾布魯木峰",
                 "firstAscent":"1994",
                 "ascents":1,
                 "attemptsToAscend":1
@@ -1426,15 +1426,15 @@
             {
                 "position": 82,
                 "image": "",
-                "name":"Baltoro Kangri",
+                "name":"巴托羅崗日峰",
                 "height": 7312,
-                "location": "Masherbrum, Karakorum",
+                "location": "瑪夏布洛姆 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.63917,
                     "longitude": 76.67333
                 },
                 "relativeHeight": 1200,
-                "parent":"Chogolisa",
+                "parent":"喬戈里薩峰",
                 "firstAscent":"1976",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1442,15 +1442,15 @@
             {
                 "position": 83,
                 "image": "",
-                "name":"Siguang-Ri",
+                "name":"四光峰",
                 "height": 7309,
-                "location": "Mahalangur-Himal, Himalayas",
+                "location": "馬哈蘭格·喜瑪爾 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.14694,
                     "longitude": 86.685
                 },
                 "relativeHeight": 650,
-                "parent":"Cho-Oyu",
+                "parent":"卓奧友峰",
                 "firstAscent":"1989",
                 "ascents":2,
                 "attemptsToAscend":1
@@ -1458,15 +1458,15 @@
             {
                 "position": 84,
                 "image": "",
-                "name":"The Crown",
+                "name":"皇冠山",
                 "height": 7295,
-                "location": "Yengisogat, Каракорум",
+                "location": "Yengisogat 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.10611,
                     "longitude": 76.20722
                 },
                 "relativeHeight": 1919,
-                "parent":"Skil Broom, Chogori",
+                "parent":"斯吉爾布魯木峰",
                 "firstAscent":"1993",
                 "ascents":1,
                 "attemptsToAscend":3
@@ -1474,15 +1474,15 @@
             {
                 "position": 85,
                 "image": "",
-                "name":"Gyala Peri",
+                "name":"加拉白垒峰",
                 "height": 7294,
-                "location": "Assam, Himalayas",
+                "location": "Assam 喜馬拉雅",
                 "coordinates": {
                     "latitude": 29.81306,
                     "longitude": 94.9675
                 },
                 "relativeHeight": 2942,
-                "parent":"Chomolungma",
+                "parent":"珠穆朗瑪峰",
                 "firstAscent":"1986",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1490,15 +1490,15 @@
             {
                 "position": 86,
                 "image": "",
-                "name":"Porong-Ri",
+                "name":"Porong Ri",
                 "height": 7292,
-                "location": "Langtang, Himalayas",
+                "location": "Langtang 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.38944,
                     "longitude": 85.72139
                 },
                 "relativeHeight": 520,
-                "parent":"Shishapangma",
+                "parent":"Shisha Pangma",
                 "firstAscent":"1982",
                 "ascents":5,
                 "attemptsToAscend":0
@@ -1506,15 +1506,15 @@
             {
                 "position": 87,
                 "image": "",
-                "name":"Banntha-Brakk",
+                "name":"拜塔布拉克峰",
                 "height": 7285,
-                "location": "Pannah-Muztag, Karakoram",
+                "location": "Panmah 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.9475,
                     "longitude": 75.75333
                 },
                 "relativeHeight": 1891,
-                "parent":"Kanjut Shar",
+                "parent":"坎巨提峰",
                 "firstAscent":"1977",
                 "ascents":3,
                 "attemptsToAscend":13
@@ -1524,13 +1524,13 @@
                 "image": "",
                 "name":"Yutmaru Sar",
                 "height": 7283,
-                "location": "Hispar-Muztag, Karakorum",
+                "location": "希斯帕慕士塔格山脉 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.22778,
                     "longitude": 75.36806
                 },
                 "relativeHeight": 620,
-                "parent":"Yukshin Gardan Sar",
+                "parent":"雅克辛嘎丹峰",
                 "firstAscent":"1980",
                 "ascents":1,
                 "attemptsToAscend":1
@@ -1538,15 +1538,15 @@
             {
                 "position": 89,
                 "image": "",
-                "name":"Baltistan Peak (K6)",
+                "name":"巴爾蒂斯坦峰 (K6)",
                 "height": 7282,
-                "location": "Masherbrum, Karakorum",
+                "location": "瑪夏布洛姆 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.41833,
                     "longitude": 76.55222
                 },
                 "relativeHeight": 1962,
-                "parent":"Chogolisa",
+                "parent":"喬戈里薩峰",
                 "firstAscent":"1970",
                 "ascents":1,
                 "attemptsToAscend":3
@@ -1554,15 +1554,15 @@
             {
                 "position": 90,
                 "image": "",
-                "name":"Kangpenqing (Gang Benchhen)",
+                "name":"Kangpenqing",
                 "height": 7281,
-                "location": "Baiku, Himalayas",
+                "location": "Baiku 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.55083,
                     "longitude": 85.54556
                 },
                 "relativeHeight": 1340,
-                "parent":"Shishapangma",
+                "parent":"希夏邦馬峰",
                 "firstAscent":"1982",
                 "ascents":1,
                 "attemptsToAscend":1
@@ -1570,15 +1570,15 @@
             {
                 "position": 91,
                 "image": "",
-                "name":"Muztag Tower",
+                "name":"慕士塔格塔峰",
                 "height": 7276,
-                "location": "Baltoro Muztagh Mountain, Karakoram",
+                "location": "巴爾托洛慕士塔格山 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.82722,
                     "longitude": 76.36083
                 },
                 "relativeHeight": 1710,
-                "parent":"Skill Broom",
+                "parent":"斯吉爾布魯木峰",
                 "firstAscent":"1956",
                 "ascents":4,
                 "attemptsToAscend":2
@@ -1588,13 +1588,13 @@
                 "image": "",
                 "name":"Mana",
                 "height": 7272,
-                "location": "Garhwal, Himalayas",
+                "location": "Garhwal 喜馬拉雅",
                 "coordinates": {
                     "latitude": 30.88083,
                     "longitude": 79.61556
                 },
                 "relativeHeight": 730,
-                "parent":"Kamet",
+                "parent":"慕士塔格塔峰",
                 "firstAscent":"1937",
                 "ascents":7,
                 "attemptsToAscend":3
@@ -1602,15 +1602,15 @@
             {
                 "position": 92,
                 "image": "",
-                "name":"Dhaulagiri VI",
+                "name":"道拉吉里六峰",
                 "height": 7268,
-                "location": "Dhaulagiri, Himalayas",
+                "location": "道拉吉里峰喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.70806,
                     "longitude": 83.2725
                 },
                 "relativeHeight": 485,
-                "parent":"Dhaulagiri IV",
+                "parent":"道拉吉里四峰",
                 "firstAscent":"1970",
                 "ascents":5,
                 "attemptsToAscend":0
@@ -1618,15 +1618,15 @@
             {
                 "position": 93,
                 "image": "",
-                "name":"Diran",
+                "name":"迪讓峰",
                 "height": 7266,
-                "location": "Rakaposhi-Haramosh, Karakorum",
+                "location": "拉卡波希－哈拉莫什山脈 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.12194,
                     "longitude": 74.66111
                 },
                 "relativeHeight": 1325,
-                "parent":"Malubiting",
+                "parent":"馬魯畢庭峰",
                 "firstAscent":"1968",
                 "ascents":12,
                 "attemptsToAscend":8
@@ -1634,15 +1634,15 @@
             {
                 "position": 94,
                 "image": "",
-                "name":"Labuche Kang III / East",
+                "name":"拉布吉康峰 III / East",
                 "height": 7250,
-                "location": "Labuche, Himalayas",
+                "location": "拉布吉康 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.30028,
                     "longitude": 86.38417
                 },
                 "relativeHeight": 570,
-                "parent":"Labuche Kang",
+                "parent":"拉布吉康峰",
                 "firstAscent":"",
                 "ascents":0,
                 "attemptsToAscend":0
@@ -1652,7 +1652,7 @@
                 "image": "",
                 "name":"Putha Hiunchuli",
                 "height": 7246,
-                "location": "Dhaulagiri, Himalayas",
+                "location": "道拉吉里峰喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.74722,
                     "longitude": 83.14861
@@ -1668,13 +1668,13 @@
                 "image": "",
                 "name":"Apsarasas Kangri",
                 "height": 7245,
-                "location": "Siachen-Muztagh Mountain, Karakoram",
+                "location": "Siachen 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.53889,
                     "longitude": 77.14972
                 },
                 "relativeHeight": 635,
-                "parent":"Teram Kangri I",
+                "parent":"特拉木坎力峰 I",
                 "firstAscent":"1976",
                 "ascents":2,
                 "attemptsToAscend":0
@@ -1684,13 +1684,13 @@
                 "image": "",
                 "name":"Mukut Parbat",
                 "height": 7242,
-                "location": "Garhwal, Himalayas",
+                "location": "Garhwal 喜馬拉雅",
                 "coordinates": {
                     "latitude": 30.95028,
                     "longitude": 79.56861
                 },
                 "relativeHeight": 840,
-                "parent":"Kamet",
+                "parent":"卡密特山",
                 "firstAscent":"1951",
                 "ascents":2,
                 "attemptsToAscend":1
@@ -1698,15 +1698,15 @@
             {
                 "position": 98,
                 "image": "",
-                "name":"Rimo III",
+                "name":"里莫III峰",
                 "height": 7233,
-                "location": "Rimo, Karakorum",
+                "location": "里莫山脈 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.37472,
                     "longitude": 77.36167
                 },
                 "relativeHeight": 615,
-                "parent":"Rimo I",
+                "parent":"里莫I峰",
                 "firstAscent":"1985",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1716,13 +1716,13 @@
                 "image": "",
                 "name":"Langtang Lirung",
                 "height": 7227,
-                "location": "Langtang, Himalayas",
+                "location": "Langtang 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.25556,
                     "longitude": 85.51722
                 },
                 "relativeHeight": 1525,
-                "parent":"Shishapangma",
+                "parent":"Shisha Pangma",
                 "firstAscent":"1978",
                 "ascents":14,
                 "attemptsToAscend":13
@@ -1730,15 +1730,15 @@
             {
                 "position": 100,
                 "image": "",
-                "name":"Karjiang",
+                "name":"卡贊峰",
                 "height": 7221,
-                "location": "Kula-Kangri, Himalayas",
+                "location": "Kula Kangri 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.25861,
                     "longitude": 90.64528
                 },
                 "relativeHeight": 880,
-                "parent":"Kula-Kangri",
+                "parent":"庫拉岡日峰",
                 "firstAscent":"",
                 "ascents":0,
                 "attemptsToAscend":2
@@ -1746,15 +1746,15 @@
             {
                 "position": 101,
                 "image": "",
-                "name":"Annapurna South",
+                "name":"Annapurna Dakshin",
                 "height": 7219,
-                "location": "Annapurna, Himalayas",
+                "location": "安納普那喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.51778,
                     "longitude": 83.8075
                 },
                 "relativeHeight": 775,
-                "parent":"Annapurna",
+                "parent":"安納普那峰",
                 "firstAscent":"1964",
                 "ascents":10,
                 "attemptsToAscend":16
@@ -1764,13 +1764,13 @@
                 "image": "",
                 "name":"Khartaphu",
                 "height": 7213,
-                "location": "Mahalangur-Himal, Himalayas",
+                "location": "馬哈蘭格·喜瑪爾 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.0625,
                     "longitude": 86.9775
                 },
                 "relativeHeight": 712,
-                "parent":"Chomolungma",
+                "parent":"珠穆朗瑪峰",
                 "firstAscent":"1935",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1778,15 +1778,15 @@
             {
                 "position": 103,
                 "image": "",
-                "name":"Tongshanjiabu",
+                "name":"同山加布峰",
                 "height": 7207,
-                "location": "Lunana, Himalayas",
+                "location": "Lunana 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.18667,
                     "longitude": 89.9575
                 },
                 "relativeHeight": 1757,
-                "parent":"Kankar-Punsum",
+                "parent":"Gangkar Puensum",
                 "firstAscent":"",
                 "ascents":0,
                 "attemptsToAscend":0
@@ -1796,13 +1796,13 @@
                 "image": "",
                 "name":"Malangutti Sar",
                 "height": 7207,
-                "location": "Hispar-Muztag, Karakorum",
+                "location": "希斯帕慕士塔格山脉 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.36417,
                     "longitude": 75.14778
                 },
                 "relativeHeight": 515,
-                "parent":"Dastoghil",
+                "parent":"迪斯特吉峰",
                 "firstAscent":"1985",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1810,15 +1810,15 @@
             {
                 "position": 105,
                 "image": "",
-                "name":"Nocencansari",
+                "name":"寧金抗沙峰",
                 "height": 7206,
-                "location": "Нагарзе, Himalayas",
+                "location": "拉轨岗日喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.94667,
                     "longitude": 90.17833
                 },
                 "relativeHeight": 2160,
-                "parent":"Tongshanjiabu",
+                "parent":"同山加布峰",
                 "firstAscent":"1986",
                 "ascents":4,
                 "attemptsToAscend":1
@@ -1826,9 +1826,9 @@
             {
                 "position": 106,
                 "image": "",
-                "name":"Langtang-Ri",
+                "name":"南当里峰",
                 "height": 7205,
-                "location": "Langtang, Himalayas",
+                "location": "Langtang 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.38139,
                     "longitude": 85.68361
@@ -1842,15 +1842,15 @@
             {
                 "position": 107,
                 "image": "",
-                "name":"Kangphu-Kang",
+                "name":"Kangphu Kang",
                 "height": 7204,
-                "location": "Luana, Himalayas",
+                "location": "Lunana 喜馬拉雅",
                 "coordinates": {
                     "latitude": 28.155,
                     "longitude": 90.0625
                 },
                 "relativeHeight": 1200,
-                "parent":"Tongshanjiabu",
+                "parent":"同山加布峰",
                 "firstAscent":"2002",
                 "ascents":1,
                 "attemptsToAscend":0
@@ -1858,15 +1858,15 @@
             {
                 "position": 108,
                 "image": "",
-                "name":"Singhi-Kangri",
+                "name":"Singhi Kangri",
                 "height": 7202,
-                "location": "Siachen-Muztagh Mountain, Karakoram",
+                "location": "Siachen 喀喇昆仑",
                 "coordinates": {
                     "latitude": 35.59889,
                     "longitude": 76.98278
                 },
                 "relativeHeight": 790,
-                "parent":"Teram Kangri III",
+                "parent":"特拉木坎力峰III",
                 "firstAscent":"1976",
                 "ascents":2,
                 "attemptsToAscend":0
@@ -1874,15 +1874,15 @@
             {
                 "position": 109,
                 "image": "",
-                "name":"Lupghar-Shar",
+                "name":"Lupghar Sar",
                 "height": 7200,
-                "location": "Hispar-Muztag, Karakorum",
+                "location": "希斯帕慕士塔格山脉 喀喇昆仑",
                 "coordinates": {
                     "latitude": 36.34833,
                     "longitude": 75.02583
                 },
                 "relativeHeight": 730,
-                "parent":"Momhil Shar",
+                "parent":"莫慕希爾峰",
                 "firstAscent":"1979",
                 "ascents":1,
                 "attemptsToAscend":0
