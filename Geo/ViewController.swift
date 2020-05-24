@@ -93,6 +93,25 @@ class ViewController: UIViewController {
 		self.items[0]![1] = ""
 	}
 	
+	private func nearestMountain() -> String? {
+		
+		guard let loc = self.location else {
+			return nil
+		}
+		let app = UIApplication.shared.delegate as! AppDelegate
+		var m: [MountainInfo] = []
+		m.append(contentsOf: app.mountainsData?.highest?.mountains ?? [])
+		m.append(contentsOf: app.mountainsData?.sevenPeaks?.mountains ?? [])
+		m.append(contentsOf: app.mountainsData?.snowLeopardOfRussia?.mountains ?? [])
+		if let v = m.min(by: { (a: MountainInfo, b: MountainInfo) -> Bool in
+			loc.distance(from: CLLocation(latitude: a.coordinates?.latitude ?? 0, longitude: a.coordinates?.longitude ?? 0)) < loc.distance(from: CLLocation(latitude: b.coordinates?.latitude ?? 0, longitude: b.coordinates?.longitude ?? 0))
+		}) {
+			return String(format: NSLocalizedString("nearestMountain", comment: ""), loc.distance(from: CLLocation(latitude: v.coordinates?.latitude ?? 0, longitude: v.coordinates?.longitude ?? 0)) / 1000.0, v.name ?? "", v.height ?? 0)
+		} else {
+			return nil
+		}
+	}
+	
 	#if targetEnvironment(simulator)
 	
 	private func refreshSimulatorInfo() {
@@ -586,11 +605,13 @@ extension ViewController: CLLocationManagerDelegate {
 				//Location Longitude
 				self.items[1]![1] = String(format: NSLocalizedString("%.6f longitude", comment: ""), self.location!.coordinate.longitude)
 				self.items[1]![2] = "::actionBar"
+				self.items[1]![3] = nearestMountain()
 			} else {
 				self.items[0]![1] = ""
 				self.items[1]![0] = ""
 				self.items[1]![1] = ""
 				self.items[1]![2] = nil
+				self.items[1]![3] = nil
 			}
 			traceLocation();
 		}

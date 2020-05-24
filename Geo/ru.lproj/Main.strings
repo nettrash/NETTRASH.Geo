@@ -40,3 +40,21 @@
 
 /* Class = "UILabel"; text = "longitude"; ObjectID = "4gY-ee-zn1"; */
 "4gY-ee-zn1.text" = "долгота";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "9dT-WY-SA3"; */
+"9dT-WY-SA3.text" = "Настройки";
+
+/* Class = "UILabel"; text = "Show history"; ObjectID = "hD6-4C-eVi"; */
+"hD6-4C-eVi.text" = "Показать историю";
+
+/* Class = "UILabel"; text = "Show markers"; ObjectID = "QU5-Ta-LCn"; */
+"QU5-Ta-LCn.text" = "Показать метки";
+
+/* Class = "UILabel"; text = "Highest 100"; ObjectID = "qKg-lK-TjV"; */
+"qKg-lK-TjV.text" = "Высочайшие вершины";
+
+/* Class = "UILabel"; text = "7 peaks"; ObjectID = "mZ1-tg-rh0"; */
+"mZ1-tg-rh0.text" = " Семь вершин";
+
+/* Class = "UILabel"; text = "Show markers"; ObjectID = "uV4-YX-HD7"; */
+"uV4-YX-HD7.text" = "Снежный Барс (Россия)";

@@ -13,9 +13,26 @@ import CoreData
 
 class MapViewController : UIViewController {
 	
+	private enum SettingsState {
+        case collapsed
+        case expanded
+    }
+	
+	private var nextState: SettingsState {
+        return settingsVisible ? .collapsed : .expanded
+    }
+    private var settingsViewController: MapSetupViewController!
+    private var visualEffectView: UIVisualEffectView!
+    private var endSettingsHeight: CGFloat = 0
+    private var startSettingsHeight: CGFloat = 0
+    private var settingsVisible = false
+    private var runningAnimations = [UIViewPropertyAnimator]()
+    private var animationProgressWhenInterrupted: CGFloat = 0
 	private var points: [MapPoint] = []
 	private var markers: [MapMarkPoint] = []
-	private var mountains: [MapMountainPoint] = []
+	private var mountainsHighest100: [MapMountainPoint] = []
+	private var mountains7Peaks: [MapMountainPoint] = []
+	private var mountainsSnowLeopardRussia: [MapMountainPoint] = []
 
 	@IBOutlet var map: MKMapView!
 	
@@ -50,7 +67,9 @@ class MapViewController : UIViewController {
 					everest: element!["everest"] as! Double,
 					altitudeGPS: element!["altitudeGPS"] as! Double))
 		}
-		map.addAnnotations(points)
+		if UserDefaults.standard.bool(forKey: "showPoints", default: true) {
+			map.addAnnotations(points)
+		}
 	}
 	
 	private func refreshMarkers() {
@@ -76,22 +95,34 @@ class MapViewController : UIViewController {
 				)
 			)
 		}
-		self.map.addAnnotations(markers)
+		if UserDefaults.standard.bool(forKey: "showMarkers", default: true) {
+			self.map.addAnnotations(markers)
+		}
 	}
 	
 	private func refreshMountains() {
-		self.map.removeAnnotations(mountains)
+		self.map.removeAnnotations(mountainsHighest100)
+		self.map.removeAnnotations(mountains7Peaks)
+		self.map.removeAnnotations(mountainsSnowLeopardRussia)
 		let app = UIApplication.shared.delegate as! AppDelegate
-		mountains = (app.mountainsData?.highest?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
+		mountainsHighest100 = (app.mountainsData?.highest?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
 			MapMountainPoint(mountain: m, type: .HIGHEST)
 		}) ?? []) as [MapMountainPoint]
-		mountains.append(contentsOf: (app.mountainsData?.sevenPeaks?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
+		mountains7Peaks = (app.mountainsData?.sevenPeaks?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
 			MapMountainPoint(mountain: m, type: .SEVEN_PEAKS)
-		}) ?? []))
-		mountains.append(contentsOf: (app.mountainsData?.snowLeopardOfRussia?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
+		}) ?? [])
+		mountainsSnowLeopardRussia = (app.mountainsData?.snowLeopardOfRussia?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
 			MapMountainPoint(mountain: m, type: .SNOW_LEOPARD_OF_RUSSIA)
-		}) ?? []))
-		self.map.addAnnotations(mountains)
+		}) ?? [])
+		if UserDefaults.standard.bool(forKey: "showHighest", default: true) {
+			self.map.addAnnotations(mountainsHighest100)
+		}
+		if UserDefaults.standard.bool(forKey: "showSevenPeaks", default: true) {
+			self.map.addAnnotations(mountains7Peaks)
+		}
+		if UserDefaults.standard.bool(forKey: "showSnowLeopardRussia", default: true) {
+			self.map.addAnnotations(mountainsSnowLeopardRussia)
+		}
 	}
 	
 	private func setupMap() {
@@ -123,6 +154,123 @@ class MapViewController : UIViewController {
 		}
 	}
 
+	private func setupSettings() {
+        endSettingsHeight = 400//self.view.frame.height * 0.7
+        startSettingsHeight = 100//self.view.frame.height * 0.3
+        
+		let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+		guard let svc = storyboard.instantiateViewController(withIdentifier: "MapSetupViewController") as? MapSetupViewController else {
+			return
+		}
+		settingsViewController = svc
+		
+        visualEffectView = UIVisualEffectView()
+		visualEffectView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(visualEffectView)
+		visualEffectView.isUserInteractionEnabled = false
+		self.view.addSubview(settingsViewController.view)
+		
+        settingsViewController.view.frame = CGRect(x: 0, y: self.view.frame.height - startSettingsHeight, width: self.view.bounds.width, height: endSettingsHeight + 200)
+        settingsViewController.view.clipsToBounds = true
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MapViewController.handleSettingsTap(recognzier:)))
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(MapViewController.handleSettingsPan(recognizer:)))
+
+        settingsViewController.handleArea.addGestureRecognizer(tapGestureRecognizer)
+        settingsViewController.handleArea.addGestureRecognizer(panGestureRecognizer)
+		settingsViewController.switchPoints.addTarget(self, action: #selector(handleSwitch(_:)), for: .valueChanged)
+		settingsViewController.switchMarkers.addTarget(self, action: #selector(handleSwitch(_:)), for: .valueChanged)
+		settingsViewController.switchHighest.addTarget(self, action: #selector(handleSwitch(_:)), for: .valueChanged)
+		settingsViewController.switchSevenPeaks.addTarget(self, action: #selector(handleSwitch(_:)), for: .valueChanged)
+		settingsViewController.switchSnowLeopard.addTarget(self, action: #selector(handleSwitch(_:)), for: .valueChanged)
+		
+		loadSettings()
+	}
+
+	private func animateTransitionIfNeeded (state: SettingsState, duration: TimeInterval) {
+		if runningAnimations.isEmpty {
+			let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
+				switch state {
+				case .expanded:
+					self.settingsViewController.view.frame.origin.y = self.view.frame.height - self.endSettingsHeight
+					self.visualEffectView.effect = UIBlurEffect(style: .dark)
+					self.visualEffectView.isUserInteractionEnabled = true
+				case .collapsed:
+					self.settingsViewController.view.frame.origin.y = self.view.frame.height - self.startSettingsHeight
+					self.visualEffectView.effect = nil
+					self.visualEffectView.isUserInteractionEnabled = false
+				}
+			}
+			 
+			frameAnimator.addCompletion { _ in
+				self.settingsVisible = !self.settingsVisible
+				self.runningAnimations.removeAll()
+			}
+			 
+			frameAnimator.startAnimation()
+			 
+			runningAnimations.append(frameAnimator)
+			 
+			let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
+				switch state {
+				case .expanded:
+					self.settingsViewController.view.layer.cornerRadius = 20
+					 
+				case .collapsed:
+					self.settingsViewController.view.layer.cornerRadius = 0
+				}
+			}
+			 
+			cornerRadiusAnimator.startAnimation()
+			 
+			runningAnimations.append(cornerRadiusAnimator)
+			 
+		}
+	}
+	 
+	private func startInteractiveTransition(state: SettingsState, duration: TimeInterval) {
+		 
+		if runningAnimations.isEmpty {
+			animateTransitionIfNeeded(state: state, duration: duration)
+		}
+		 
+		for animator in runningAnimations {
+			animator.pauseAnimation()
+			animationProgressWhenInterrupted = animator.fractionComplete
+		}
+	}
+	 
+	private func updateInteractiveTransition(fractionCompleted:CGFloat) {
+		for animator in runningAnimations {
+			animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
+		}
+	}
+	 
+	private func continueInteractiveTransition (){
+		for animator in runningAnimations {
+			animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+		}
+	}
+	
+	private func loadSettings() {
+		UserDefaults.standard.synchronize()
+		settingsViewController.switchPoints.isOn = UserDefaults.standard.bool(forKey: "showPoints", default: true)
+		settingsViewController.switchMarkers.isOn = UserDefaults.standard.bool(forKey: "showMarkers", default: true)
+		settingsViewController.switchHighest.isOn = UserDefaults.standard.bool(forKey: "showHighest", default: true)
+		settingsViewController.switchSevenPeaks.isOn = UserDefaults.standard.bool(forKey: "showSevenPeaks", default: true)
+		settingsViewController.switchSnowLeopard.isOn = UserDefaults.standard.bool(forKey: "showSnowLeopardRussia", default: true)
+	}
+	
+	private func saveSettings() {
+		UserDefaults.standard.synchronize()
+		UserDefaults.standard.set(settingsViewController.switchPoints.isOn, forKey: "showPoints")
+		UserDefaults.standard.set(settingsViewController.switchMarkers.isOn, forKey: "showMarkers")
+		UserDefaults.standard.set(settingsViewController.switchHighest.isOn, forKey: "showHighest")
+		UserDefaults.standard.set(settingsViewController.switchSevenPeaks.isOn, forKey: "showSevenPeaks")
+		UserDefaults.standard.set(settingsViewController.switchSnowLeopard.isOn, forKey: "showSnowLeopardRussia")
+		UserDefaults.standard.synchronize()
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -140,6 +288,7 @@ class MapViewController : UIViewController {
 			 NSAttributedString.Key.foregroundColor: UIColor.lightGray]
 		
 		self.setupMap()
+		self.setupSettings()
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -149,10 +298,82 @@ class MapViewController : UIViewController {
 		}
 	}
 	
-	@objc func addMark() {
+	@objc
+	func addMark() {
 		performSegue(withIdentifier: "addmark", sender: self)
 	}
 		
+	@objc
+	func handleSettingsTap(recognzier: UITapGestureRecognizer) {
+		switch recognzier.state {
+		case .ended:
+			animateTransitionIfNeeded(state: nextState, duration: 0.9)
+		default:
+			break
+		}
+	}
+	
+	@objc
+	func handleSettingsPan (recognizer: UIPanGestureRecognizer) {
+		switch recognizer.state {
+		case .began:
+			startInteractiveTransition(state: nextState, duration: 0.9)
+			
+		case .changed:
+			let translation = recognizer.translation(in: self.settingsViewController.handleArea)
+			var fractionComplete = translation.y / endSettingsHeight
+			fractionComplete = settingsVisible ? fractionComplete : -fractionComplete
+			updateInteractiveTransition(fractionCompleted: fractionComplete)
+		case .ended:
+			continueInteractiveTransition()
+		default:
+			break
+		}
+	}
+
+	@objc
+	func handleSwitch(_ sender: Any?) {
+		switch sender as! UISwitch {
+		case settingsViewController.switchPoints:
+			if settingsViewController.switchPoints.isOn {
+				self.map.addAnnotations(self.points)
+			} else {
+				self.map.removeAnnotations(self.points)
+			}
+			break
+		case settingsViewController.switchMarkers:
+			if settingsViewController.switchMarkers.isOn {
+				self.map.addAnnotations(self.markers)
+			} else {
+				self.map.removeAnnotations(self.markers)
+			}
+			break
+		case settingsViewController.switchHighest:
+			if settingsViewController.switchHighest.isOn {
+				self.map.addAnnotations(self.mountainsHighest100)
+			} else {
+				self.map.removeAnnotations(self.mountainsHighest100)
+			}
+			break
+		case settingsViewController.switchSevenPeaks:
+			if settingsViewController.switchSevenPeaks.isOn {
+				self.map.addAnnotations(self.mountains7Peaks)
+			} else {
+				self.map.removeAnnotations(self.mountains7Peaks)
+			}
+			break
+		case settingsViewController.switchSnowLeopard:
+			if settingsViewController.switchSnowLeopard.isOn {
+				self.map.addAnnotations(self.mountainsSnowLeopardRussia)
+			} else {
+				self.map.removeAnnotations(self.mountainsSnowLeopardRussia)
+			}
+			break
+		default:
+			break
+		}
+		saveSettings()
+	}
 }
 
 extension MapViewController: MKMapViewDelegate {

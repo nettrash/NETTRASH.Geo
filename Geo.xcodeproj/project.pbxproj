@@ -65,6 +65,8 @@
 		E582AD7F22B2221B00F5364A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582AD7D22B2221400F5364A /* Weather.swift */; };
 		E582AD8122B2245900F5364A /* OpenWeatherMapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582AD8022B2245900F5364A /* OpenWeatherMapResponse.swift */; };
 		E582AD8222B2245900F5364A /* OpenWeatherMapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582AD8022B2245900F5364A /* OpenWeatherMapResponse.swift */; };
+		E5851B48247AB9760004877E /* MapSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5851B47247AB9760004877E /* MapSetupViewController.swift */; };
+		E5851B4A247AF6340004877E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5851B49247AF6340004877E /* UserDefaults.swift */; };
 		E58D19D522D4B03B00EEBA49 /* Trace+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57FD35522D4AF33009A1740 /* Trace+CoreDataClass.swift */; };
 		E58D19D622D4B03F00EEBA49 /* Trace+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57FD35422D4AF33009A1740 /* Trace+CoreDataProperties.swift */; };
 		E59909152462ED3700CB1A85 /* AddMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59909142462ED3700CB1A85 /* AddMarkViewController.swift */; };
@@ -255,6 +257,8 @@
 		E57FD35B22D4AF44009A1740 /* Geo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Geo.xcdatamodel; sourceTree = "<group>"; };
 		E582AD7D22B2221400F5364A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		E582AD8022B2245900F5364A /* OpenWeatherMapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapResponse.swift; sourceTree = "<group>"; };
+		E5851B47247AB9760004877E /* MapSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSetupViewController.swift; sourceTree = "<group>"; };
+		E5851B49247AF6340004877E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		E59909142462ED3700CB1A85 /* AddMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMarkViewController.swift; sourceTree = "<group>"; };
 		E59909172462F50000CB1A85 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		E59B24082472CD38003D6E77 /* MountainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInfo.swift; sourceTree = "<group>"; };
@@ -453,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				E59909172462F50000CB1A85 /* UIButton.swift */,
+				E5851B49247AF6340004877E /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -514,6 +519,7 @@
 				E59909142462ED3700CB1A85 /* AddMarkViewController.swift */,
 				E5F65F432464506D00D39403 /* MarkDetailsViewController.swift */,
 				E5D8318223A636C100A54C9F /* MapViewController.swift */,
+				E5851B47247AB9760004877E /* MapSetupViewController.swift */,
 				E5BD41E022893DA30085CA4B /* Main.storyboard */,
 				E5BD41E322893DA50085CA4B /* Assets.xcassets */,
 				E5BD41E522893DA50085CA4B /* LaunchScreen.storyboard */,
@@ -981,6 +987,7 @@
 				E59B24092472CD38003D6E77 /* MountainInfo.swift in Sources */,
 				E59B24132472D117003D6E77 /* MountainList.swift in Sources */,
 				E57FD35C22D4AF45009A1740 /* Geo.xcdatamodeld in Sources */,
+				E5851B4A247AF6340004877E /* UserDefaults.swift in Sources */,
 				E5BD41DF22893DA30085CA4B /* ViewController.swift in Sources */,
 				E57FD32722D4A82E009A1740 /* PersistentContainer.swift in Sources */,
 				E59B241924730248003D6E77 /* MapMountainPoint.swift in Sources */,
@@ -996,6 +1003,7 @@
 				E59909182462F50000CB1A85 /* UIButton.swift in Sources */,
 				E50AFE0D23F9914900BFB71E /* MapPoint.swift in Sources */,
 				E528F2022403118A00F01CD6 /* Mark+CoreDataProperties.swift in Sources */,
+				E5851B48247AB9760004877E /* MapSetupViewController.swift in Sources */,
 				E536F74D22D51BCF00258788 /* GraphView.swift in Sources */,
 				E59B24152472D162003D6E77 /* MountainData.swift in Sources */,
 				E5D78BEB22B91EDE006A3DF0 /* GeoTableViewCell.swift in Sources */,
@@ -1213,7 +1221,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1801;
+				CURRENT_PROJECT_VERSION = 2200;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -1236,7 +1244,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1801;
+				CURRENT_PROJECT_VERSION = 2200;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Today/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -1379,7 +1387,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit Extension/Geo WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1801;
+				CURRENT_PROJECT_VERSION = 2200;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = "Geo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1408,7 +1416,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit Extension/Geo WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1801;
+				CURRENT_PROJECT_VERSION = 2200;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = "Geo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1437,7 +1445,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit App/Geo WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1801;
+				CURRENT_PROJECT_VERSION = 2200;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				IBSC_MODULE = Geo_WatchKit_Extension;
 				INFOPLIST_FILE = "Geo WatchKit App/Info.plist";
@@ -1469,7 +1477,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Geo WatchKit App/Geo WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1801;
+				CURRENT_PROJECT_VERSION = 2200;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				IBSC_MODULE = Geo_WatchKit_Extension;
 				INFOPLIST_FILE = "Geo WatchKit App/Info.plist";
@@ -1500,7 +1508,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Geo/Geo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1801;
+				CURRENT_PROJECT_VERSION = 2200;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Geo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1526,7 +1534,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Geo/Geo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1801;
+				CURRENT_PROJECT_VERSION = 2200;
 				DEVELOPMENT_TEAM = L3973VL47F;
 				INFOPLIST_FILE = Geo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

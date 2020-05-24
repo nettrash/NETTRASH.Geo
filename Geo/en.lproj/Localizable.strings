@@ -59,3 +59,4 @@
 "MountainDetails"="height %im %@";
 "MountainSummit"="(first ascent %@)";
 "MountainNoSummit"="(not conquered)";
+"nearestMountain"="Nearest: %.2fkm - %@ (%im)";

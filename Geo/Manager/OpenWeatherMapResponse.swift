@@ -91,31 +91,58 @@ class OpenWeatherMapResponse : Decodable {
 	
 	var weatherDetailsTemperature: String? {
 		get {
-			return String(format:NSLocalizedString("Temperature: %.1f C", comment: ""), main!.temp!-273.15)
+			guard let m = main else {
+				return ""
+			}
+			guard let t = m.temp else {
+				return ""
+			}
+			return String(format:NSLocalizedString("Temperature: %.1f C", comment: ""), t-273.15)
 		}
 	}
 	
 	var weatherDetailsHumidity: String? {
 		get {
-			return String(format: NSLocalizedString("Humidity: %i %%", comment: ""), main!.humidity!)
+			guard let m = main else {
+				return ""
+			}
+			guard let h = m.humidity else {
+				return ""
+			}
+			return String(format: NSLocalizedString("Humidity: %i %%", comment: ""), h)
 		}
 	}
 	
 	var weatherDetailsVisibility: String? {
 		get {
-			return String(format:NSLocalizedString("Visibility: %i m", comment: ""), visibility!)
+			guard let v = visibility else {
+				return ""
+			}
+			return String(format:NSLocalizedString("Visibility: %i m", comment: ""), v)
 		}
 	}
 	
 	var weatherDetailsWindSpeed: String? {
 		get {
-			return String(format:NSLocalizedString("Wind speed: %.1f m/s", comment: ""), wind!.speed!)
+			guard let w = wind else {
+				return ""
+			}
+			guard let s = w.speed else {
+				return ""
+			}
+			return String(format:NSLocalizedString("Wind speed: %.1f m/s", comment: ""), s)
 		}
 	}
 	
 	var weatherDetailsWindDirection: String? {
 		get {
-			return String(format:NSLocalizedString("Wind direction: %s (%.1f deg)", comment: ""), wind!.getDirection()!, wind!.deg!)
+			guard let w = wind else {
+				return ""
+			}
+			guard let deg = w.deg else {
+				return ""
+			}
+			return String(format:NSLocalizedString("Wind direction: %s (%.1f deg)", comment: ""), w.getDirection()!, deg)
 		}
 	}
 }
