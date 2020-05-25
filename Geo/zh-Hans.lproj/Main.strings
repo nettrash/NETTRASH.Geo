@@ -40,3 +40,21 @@
 
 /* Class = "UILabel"; text = "longitude"; ObjectID = "4gY-ee-zn1"; */
 "4gY-ee-zn1.text" = "经度";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "9dT-WY-SA3"; */
+"9dT-WY-SA3.text" = "定制";
+
+/* Class = "UILabel"; text = "Show history"; ObjectID = "hD6-4C-eVi"; */
+"hD6-4C-eVi.text" = "显示历史";
+
+/* Class = "UILabel"; text = "Show markers"; ObjectID = "QU5-Ta-LCn"; */
+"QU5-Ta-LCn.text" = "显示地标";
+
+/* Class = "UILabel"; text = "Highest 100"; ObjectID = "qKg-lK-TjV"; */
+"qKg-lK-TjV.text" = "最高峰";
+
+/* Class = "UILabel"; text = "7 peaks"; ObjectID = "mZ1-tg-rh0"; */
+"mZ1-tg-rh0.text" = "七次首脑会议";
+
+/* Class = "UILabel"; text = "Show markers"; ObjectID = "uV4-YX-HD7"; */
+"uV4-YX-HD7.text" = "雪豹（俄罗斯)";
