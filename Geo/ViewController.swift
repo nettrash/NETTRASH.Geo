@@ -22,6 +22,7 @@ class ViewController: UIViewController {
 	private var barPressure: Double = 0
 	private var location: CLLocation? = nil
 	private var stepLocation: CLLocation? = nil
+	private var refreshJobs: Int = 0
 	
 	@IBOutlet var tblData: UITableView!
 	@IBOutlet var aiLoading: UIActivityIndicatorView!
@@ -112,6 +113,18 @@ class ViewController: UIViewController {
 		}
 	}
 	
+	private func highestDistance() -> String? {
+		guard let loc = self.location else {
+			return nil
+		}
+		let app = UIApplication.shared.delegate as! AppDelegate
+		guard let highest = app.mountainsData?.highest?.mountains?.first else {
+			return nil
+		}
+		let distance = loc.distance(from: CLLocation(latitude: highest.coordinates?.latitude ?? 0, longitude: highest.coordinates?.longitude ?? 0))
+		return String(format: NSLocalizedString("highestMountain", comment: ""), distance / 1000.0, highest.name!, highest.height!)
+	}
+	
 	#if targetEnvironment(simulator)
 	
 	private func refreshSimulatorInfo() {
@@ -143,11 +156,17 @@ class ViewController: UIViewController {
 	
 	#endif
 		
+	@objc
+	private func refreshNow(_ sender: Any?) {
+		refreshData()
+	}
+	
 	private func refreshData() {
-		DispatchQueue.main.async {
+		refreshJobs = 2
+		DispatchQueue.global().async {
 			self.refreshGeocode()
 		}
-		DispatchQueue.main.async {
+		DispatchQueue.global().async {
 			self.refreshWeather()
 		}
 	}
@@ -211,6 +230,12 @@ class ViewController: UIViewController {
 		}
 		//self.tblData.reloadData()
 		//refreshView()
+		refreshJobs = refreshJobs - 1
+		if refreshJobs <= 0 {
+			DispatchQueue.main.async {
+				self.tblData.refreshControl?.endRefreshing()
+			}
+		}
 	}
 	
 	private func refreshWeather() {
@@ -230,8 +255,17 @@ class ViewController: UIViewController {
 			self.items[3]![4] = nil
 		}
 		
-		self.tblData.reloadData()
-		refreshView()
+		DispatchQueue.main.async {
+			self.tblData.reloadData()
+			self.refreshView()
+		}
+		
+		refreshJobs = refreshJobs - 1
+		if refreshJobs <= 0 {
+			DispatchQueue.main.async {
+				self.tblData.refreshControl?.endRefreshing()
+			}
+		}
 	}
 
 	// TRACE
@@ -453,6 +487,14 @@ class ViewController: UIViewController {
 		title = NSLocalizedString("NETTRASH.Geo", comment: "")
 
 		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addMark))
+		
+		#if !targetEnvironment(simulator)
+		
+		let refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(refreshNow), for: UIControl.Event.valueChanged)
+		tblData.refreshControl = refreshControl
+		
+		#endif
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -605,13 +647,17 @@ extension ViewController: CLLocationManagerDelegate {
 				//Location Longitude
 				self.items[1]![1] = String(format: NSLocalizedString("%.6f longitude", comment: ""), self.location!.coordinate.longitude)
 				self.items[1]![2] = "::actionBar"
-				self.items[1]![3] = nearestMountain()
+				self.items[1]![3] = ""
+				self.items[1]![4] = nearestMountain()
+				self.items[1]![5] = highestDistance()
 			} else {
 				self.items[0]![1] = ""
 				self.items[1]![0] = ""
 				self.items[1]![1] = ""
 				self.items[1]![2] = nil
 				self.items[1]![3] = nil
+				self.items[1]![4] = nil
+				self.items[1]![5] = nil
 			}
 			traceLocation();
 		}

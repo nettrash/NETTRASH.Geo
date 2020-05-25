@@ -60,3 +60,4 @@
 "MountainSummit"="(第一次上升 %@)";
 "MountainNoSummit"="(没有征服)";
 "nearestMountain"="最近的山: %.2fkm - %@ (%im)";
+"highestMountain"="最高的山: %.2fkm - %@ (%im)";

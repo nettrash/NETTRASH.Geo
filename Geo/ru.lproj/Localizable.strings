@@ -60,3 +60,4 @@
 "MountainSummit"="(первое восхождение %@г)";
 "MountainNoSummit"="(не покорена)";
 "nearestMountain"="Ближайшая: %.2fкм - %@ (%iм)";
+"highestMountain"="Высочайшая: %.2fкм - %@ (%iм)";
