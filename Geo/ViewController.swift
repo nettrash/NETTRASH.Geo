@@ -588,7 +588,8 @@ extension ViewController: UITableViewDataSource {
 
 		cell.textLabel?.text = value
 		
-		if indexPath.section == 4 && indexPath.row == 1 {
+		if (indexPath.section == 4 && indexPath.row == 1) ||
+			(indexPath.section == 1 && indexPath.row == 5) {
 			cell.textLabel?.numberOfLines = 0
 		} else {
 			cell.textLabel?.numberOfLines = 1
@@ -606,7 +607,8 @@ extension ViewController: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		if indexPath.section == 4 && indexPath.row == 1 {
+		if (indexPath.section == 4 && indexPath.row == 1) ||
+			(indexPath.section == 1 && indexPath.row == 5) {
 			return 44
 		}
 		return 22

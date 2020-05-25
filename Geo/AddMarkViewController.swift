@@ -66,6 +66,7 @@ class AddMarkViewController : UIViewController {
 		self.initialize()
 		self.lblTitle.text = title
 		roundButtons(view: self.view, radius: 8)
+		self.markerName.becomeFirstResponder()
 	}
 	
 	@objc @IBAction func cancelMarker() {
