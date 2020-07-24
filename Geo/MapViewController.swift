@@ -104,23 +104,37 @@ class MapViewController : UIViewController {
 		self.map.removeAnnotations(mountainsHighest100)
 		self.map.removeAnnotations(mountains7Peaks)
 		self.map.removeAnnotations(mountainsSnowLeopardRussia)
+		mountainsHighest100.removeAll()
+		mountains7Peaks.removeAll()
+		mountainsSnowLeopardRussia.removeAll()
+
 		let app = UIApplication.shared.delegate as! AppDelegate
-		mountainsHighest100 = (app.mountainsData?.highest?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
-			MapMountainPoint(mountain: m, type: .HIGHEST)
-		}) ?? []) as [MapMountainPoint]
-		mountains7Peaks = (app.mountainsData?.sevenPeaks?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
-			MapMountainPoint(mountain: m, type: .SEVEN_PEAKS)
-		}) ?? [])
-		mountainsSnowLeopardRussia = (app.mountainsData?.snowLeopardOfRussia?.mountains?.map({ (m: MountainInfo) -> MapMountainPoint in
-			MapMountainPoint(mountain: m, type: .SNOW_LEOPARD_OF_RUSSIA)
-		}) ?? [])
+				
 		if UserDefaults.standard.bool(forKey: "showHighest", default: true) {
+			mountainsHighest100 = app.mountainsData!.highest!.mountains!.sorted(by: { (a: MountainInfo, b: MountainInfo) -> Bool in
+				a.position ?? 0 < b.position ?? 0
+			}).map({ (m: MountainInfo) -> MapMountainPoint in
+				MapMountainPoint(mountain: m, type: .HIGHEST)
+			})
+
 			self.map.addAnnotations(mountainsHighest100)
 		}
 		if UserDefaults.standard.bool(forKey: "showSevenPeaks", default: true) {
+			mountains7Peaks = app.mountainsData!.sevenPeaks!.mountains!.sorted(by: { (a: MountainInfo, b: MountainInfo) -> Bool in
+				a.position ?? 0 < b.position ?? 0
+			}).map({ (m: MountainInfo) -> MapMountainPoint in
+				MapMountainPoint(mountain: m, type: .SEVEN_PEAKS)
+			})
+			
 			self.map.addAnnotations(mountains7Peaks)
 		}
 		if UserDefaults.standard.bool(forKey: "showSnowLeopardRussia", default: true) {
+			mountainsSnowLeopardRussia = app.mountainsData!.snowLeopardOfRussia!.mountains!.sorted(by: { (a: MountainInfo, b: MountainInfo) -> Bool in
+				a.position ?? 0 < b.position ?? 0
+			}).map({ (m: MountainInfo) -> MapMountainPoint in
+				MapMountainPoint(mountain: m, type: .SNOW_LEOPARD_OF_RUSSIA)
+			})
+			
 			self.map.addAnnotations(mountainsSnowLeopardRussia)
 		}
 	}
@@ -141,12 +155,7 @@ class MapViewController : UIViewController {
 		self.map.showsBuildings = true
 		self.map.showsPointsOfInterest = true
 		self.map.camera.altitude = 1500
-		if self.markers.count > 0 {
-			self.map.centerCoordinate = self.markers.first!.coordinate
-			DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-				self.map.selectAnnotation(self.markers.first!, animated: true)
-			}
-		} else if self.points.count > 0 {
+		if self.points.count > 0 {
 			self.map.centerCoordinate = self.points.first!.coordinate
 			DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
 				self.map.selectAnnotation(self.points.first!, animated: true)
@@ -386,7 +395,7 @@ extension MapViewController: MKMapViewDelegate {
 			let point = annotation as! MapPointBase
 			var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: point.identifier) as? MKPinAnnotationView
 			if pinView == nil {
-				pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: point.identifier)
+				pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "map")
 				pinView!.pinTintColor = point.tintColor
 				pinView!.animatesDrop = true
 				pinView!.canShowCallout = true
@@ -396,7 +405,7 @@ extension MapViewController: MKMapViewDelegate {
 				if annotation is MapMarkPoint {
 					let details = UILabel()
 					details.numberOfLines = 2
-					details.text = (annotation as? MapMarkPoint)?.subtitle
+					details.text = (annotation as? MapMarkPoint)?.subtitle ?? ""
 					details.textColor = .lightGray
 					details.font = details.font.withSize(13)
 					pinView!.detailCalloutAccessoryView = details
@@ -408,7 +417,7 @@ extension MapViewController: MKMapViewDelegate {
 				if annotation is MapMountainPoint {
 					let details = UILabel()
 					details.numberOfLines = 3
-					details.text = (annotation as? MapMountainPoint)?.subtitle
+					details.text = (annotation as? MapMountainPoint)?.subtitle ?? ""
 					details.textColor = .lightGray
 					details.font = details.font.withSize(13)
 					pinView!.detailCalloutAccessoryView = details

@@ -19,18 +19,15 @@ enum MountainType {
 
 open class MapMountainPoint: MapPointBase {
 	
-	private var mMountain: MountainInfo
 	private var mMountainType: MountainType
+	private var mTitle: String
+	private var mSubtitle: String
+	private var mLatitude: Double
+	private var mLongitude: Double
+	
 	override public var identifier: String {
 		get {
-			switch mMountainType {
-			case .HIGHEST:
-				return "MapMountainHighestPointAnnotationView"
-			case .SEVEN_PEAKS:
-				return "MapMountainSevenPeaksPointAnnotationView"
-			case .SNOW_LEOPARD_OF_RUSSIA:
-				return "MapMountainSnowLeopardPointAnnotationView"
-			}
+			return "\(mMountainType)"
 		}
 	}
 	override public var tintColor: UIColor {
@@ -59,8 +56,30 @@ open class MapMountainPoint: MapPointBase {
 	}
 
 	init(mountain: MountainInfo, type mountainType: MountainType) {
-		mMountain = mountain
 		mMountainType = mountainType
+		mTitle = mountain.name ?? ""
+		mSubtitle = ""
+		switch mMountainType {
+		case .HIGHEST:
+			var summitInfo = ""
+			if (mountain.firstAscent ?? "" == "") {
+				summitInfo = NSLocalizedString("MountainNoSummit", comment: "")
+			} else {
+				summitInfo = String(format: NSLocalizedString("MountainSummit", comment: ""), mountain.firstAscent!)
+			}
+			mSubtitle = String(format: NSLocalizedString("MountainDetails", comment: ""), mountain.height!, summitInfo)
+		case .SEVEN_PEAKS:
+			mSubtitle = String(format: NSLocalizedString("MountainDetails", comment: ""), mountain.height!, "(\(mountain.location ?? ""))")
+		case .SNOW_LEOPARD_OF_RUSSIA:
+			mSubtitle = "#\(mountain.position ?? 0) \(String(format: NSLocalizedString("MountainDetails", comment: ""), mountain.height!, "(\(mountain.location ?? ""))"))"
+		}
+		if let coord = mountain.coordinates {
+			mLatitude = coord.latitude!
+			mLongitude = coord.longitude!
+		} else {
+			mLatitude = 0
+			mLongitude = 0
+		}
 	}
 }
 
@@ -71,33 +90,20 @@ extension MapMountainPoint : MKAnnotation {
 		get {
 			return
 				CLLocationCoordinate2D(
-					latitude: (mMountain.coordinates?.latitude)!,
-					longitude: (mMountain.coordinates?.longitude)!)
+					latitude: mLatitude,
+					longitude: mLongitude)
 		}
 	}
 	
 	public var title: String? {
 		get {
-			return mMountain.name
+			return mTitle
 		}
 	}
 	
 	public var subtitle: String? {
 		get {
-			switch mMountainType {
-			case .HIGHEST:
-				var summitInfo = ""
-				if (mMountain.firstAscent ?? "" == "") {
-					summitInfo = NSLocalizedString("MountainNoSummit", comment: "")
-				} else {
-					summitInfo = String(format: NSLocalizedString("MountainSummit", comment: ""), mMountain.firstAscent!)
-				}
-				return String(format: NSLocalizedString("MountainDetails", comment: ""), mMountain.height!, summitInfo)
-			case .SEVEN_PEAKS:
-				return String(format: NSLocalizedString("MountainDetails", comment: ""), mMountain.height!, "(\(mMountain.location ?? ""))")
-			case .SNOW_LEOPARD_OF_RUSSIA:
-				return "#\(mMountain.position ?? 0) \(String(format: NSLocalizedString("MountainDetails", comment: ""), mMountain.height!, "(\(mMountain.location ?? ""))"))"
-			}
+			return mSubtitle
 		}
 	}
 	

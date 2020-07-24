@@ -2090,6 +2090,7 @@
             {
                 "position": 1,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Эльбрус",
                 "height": 5642,
                 "location": "Кавказ, самая высокая горная вершина России и Европы",
@@ -2106,6 +2107,7 @@
             {
                 "position": 2,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Дыхтау",
                 "height": 5204,
                 "location": "Боковой хребет Большого Кавказа",
@@ -2122,6 +2124,7 @@
             {
                 "position": 3,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Шхара",
                 "height": 5193,
                 "location": "Главный Кавказский хребет",
@@ -2138,6 +2141,7 @@
             {
                 "position": 4,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Коштантау",
                 "height": 5151,
                 "location": "Центральный Кавказ",
@@ -2154,6 +2158,7 @@
             {
                 "position": 5,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Мижирги",
                 "height": 5025,
                 "location": "Главный Кавказский хребет, Безенгийская стена",
@@ -2170,6 +2175,7 @@
             {
                 "position": 6,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Пик Пушкина",
                 "height": 5100,
                 "location": "Боковой Кавказский хребет",
@@ -2186,6 +2192,7 @@
             {
                 "position": 7,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Джангитау",
                 "height": 5085,
                 "location": "Главный Кавказский хребет, Безенгийская стена",
@@ -2202,6 +2209,7 @@
             {
                 "position": 8,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Казбек",
                 "height": 5034,
                 "location": "Кавказ, потухший стратовулкан, самый восточный пятитысячник Кавказа",
@@ -2218,6 +2226,7 @@
             {
                 "position": 9,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Ключевская Сопка",
                 "height": 4688,
                 "location": "Камчатка, самый высокий вулкан Евразии, действует",
@@ -2234,6 +2243,7 @@
             {
                 "position": 10,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Белуха",
                 "height": 4506,
                 "location": "Катунский хребет, высшая точка Алтая и Сибири",

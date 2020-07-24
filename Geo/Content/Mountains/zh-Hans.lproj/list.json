@@ -2076,6 +2076,7 @@
         "columns": [
             "Place",
             "Image",
+			"Part of the World",
             "Mountain",
             "Height (m)",
             "Location",
@@ -2090,6 +2091,7 @@
             {
                 "position": 1,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Elbrus",
                 "height": 5642,
                 "location": "Caucasus, the highest mountain peak in Russia and Europe",
@@ -2106,6 +2108,7 @@
             {
                 "position": 2,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Dykhtau",
                 "height": 5204,
                 "location": "Side ridge of the Greater Caucasus",
@@ -2122,6 +2125,7 @@
             {
                 "position": 3,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Shkhara",
                 "height": 5193,
                 "location": "main Caucasian range",
@@ -2138,6 +2142,7 @@
             {
                 "position": 4,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Koshtantau",
                 "height": 5151,
                 "location": "central Caucasus",
@@ -2154,6 +2159,7 @@
             {
                 "position": 5,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Mizhirgi",
                 "height": 5025,
                 "location": "The main Caucasus range, the Bezengi wall",
@@ -2170,6 +2176,7 @@
             {
                 "position": 6,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Pushkin's Peak",
                 "height": 5100,
                 "location": "Side of the Caucasus range",
@@ -2186,6 +2193,7 @@
             {
                 "position": 7,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Dzhangitau",
                 "height": 5085,
                 "location": "The main Caucasus range, the Bezengi wall",
@@ -2202,6 +2210,7 @@
             {
                 "position": 8,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Kazbek",
                 "height": 5034,
                 "location": "The Caucasus, an extinct stratovolcano, the easternmost five-thousandth of the Caucasus",
@@ -2218,6 +2227,7 @@
             {
                 "position": 9,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Klyuchevskaya Sopka",
                 "height": 4688,
                 "location": "Kamchatka, the highest volcano in Eurasia, is active",
@@ -2234,6 +2244,7 @@
             {
                 "position": 10,
                 "image": "",
+				"partOfTheWorld": "",
                 "name":"Belukha",
                 "height": 4506,
                 "location": "Katunsky range, the highest point of Altai and Siberia",
