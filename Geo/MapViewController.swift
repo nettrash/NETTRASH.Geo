@@ -164,7 +164,7 @@ class MapViewController : UIViewController {
 	}
 
 	private func setupSettings() {
-        endSettingsHeight = 400//self.view.frame.height * 0.7
+        endSettingsHeight = 430//self.view.frame.height * 0.7
         startSettingsHeight = 100//self.view.frame.height * 0.3
         
 		let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
@@ -192,7 +192,7 @@ class MapViewController : UIViewController {
 		settingsViewController.switchHighest.addTarget(self, action: #selector(handleSwitch(_:)), for: .valueChanged)
 		settingsViewController.switchSevenPeaks.addTarget(self, action: #selector(handleSwitch(_:)), for: .valueChanged)
 		settingsViewController.switchSnowLeopard.addTarget(self, action: #selector(handleSwitch(_:)), for: .valueChanged)
-		
+		settingsViewController.segmentMapStyle.addTarget(self, action: #selector(handleSegment(_:)), for: .valueChanged)
 		loadSettings()
 	}
 
@@ -268,6 +268,7 @@ class MapViewController : UIViewController {
 		settingsViewController.switchHighest.isOn = UserDefaults.standard.bool(forKey: "showHighest", default: true)
 		settingsViewController.switchSevenPeaks.isOn = UserDefaults.standard.bool(forKey: "showSevenPeaks", default: true)
 		settingsViewController.switchSnowLeopard.isOn = UserDefaults.standard.bool(forKey: "showSnowLeopardRussia", default: true)
+		settingsViewController.segmentMapStyle.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "mapType")
 	}
 	
 	private func saveSettings() {
@@ -277,6 +278,7 @@ class MapViewController : UIViewController {
 		UserDefaults.standard.set(settingsViewController.switchHighest.isOn, forKey: "showHighest")
 		UserDefaults.standard.set(settingsViewController.switchSevenPeaks.isOn, forKey: "showSevenPeaks")
 		UserDefaults.standard.set(settingsViewController.switchSnowLeopard.isOn, forKey: "showSnowLeopardRussia")
+		UserDefaults.standard.set(settingsViewController.segmentMapStyle.selectedSegmentIndex, forKey: "mapType")
 		UserDefaults.standard.synchronize()
 	}
 	
@@ -376,6 +378,30 @@ class MapViewController : UIViewController {
 				self.map.addAnnotations(self.mountainsSnowLeopardRussia)
 			} else {
 				self.map.removeAnnotations(self.mountainsSnowLeopardRussia)
+			}
+			break
+		default:
+			break
+		}
+		saveSettings()
+	}
+	
+	@objc
+	func handleSegment(_ sender: Any?) {
+		switch sender as! UISegmentedControl {
+		case settingsViewController.segmentMapStyle:
+			switch settingsViewController.segmentMapStyle.selectedSegmentIndex {
+			case 0:
+				self.map.mapType = .standard
+				break
+			case 1:
+				self.map.mapType = .satellite
+				break
+			case 2:
+				self.map.mapType = .hybrid
+				break
+			default:
+				break
 			}
 			break
 		default:

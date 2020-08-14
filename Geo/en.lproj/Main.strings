@@ -1,0 +1,207 @@
+
+/* Class = "UILabel"; text = "S"; ObjectID = "177-qY-o4V"; */
+"177-qY-o4V.text" = "S";
+
+/* Class = "UILabel"; text = "5 июля"; ObjectID = "1YE-Iv-3Ip"; */
+"1YE-Iv-3Ip.text" = "5 июля";
+
+/* Class = "UILabel"; text = "5 июля"; ObjectID = "1ka-C2-sV6"; */
+"1ka-C2-sV6.text" = "5 июля";
+
+/* Class = "UILabel"; text = "latitude"; ObjectID = "2UM-FS-qdY"; */
+"2UM-FS-qdY.text" = "latitude";
+
+/* Class = "UILabel"; text = "W"; ObjectID = "3Lb-YV-Nhh"; */
+"3Lb-YV-Nhh.text" = "W";
+
+/* Class = "UILabel"; text = "Everest %"; ObjectID = "3PX-gX-DtW"; */
+"3PX-gX-DtW.text" = "Everest %";
+
+/* Class = "UILabel"; text = "F"; ObjectID = "3YJ-KY-ySp"; */
+"3YJ-KY-ySp.text" = "F";
+
+/* Class = "UILabel"; text = "T"; ObjectID = "3q3-S2-o2l"; */
+"3q3-S2-o2l.text" = "T";
+
+/* Class = "UILabel"; text = "longitude"; ObjectID = "4gY-ee-zn1"; */
+"4gY-ee-zn1.text" = "longitude";
+
+/* Class = "UITextField"; placeholder = "Marker name"; ObjectID = "5cm-7G-isQ"; */
+"5cm-7G-isQ.placeholder" = "Marker name";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "5oS-6P-0rN"; */
+"5oS-6P-0rN.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "6PJ-Yn-veh"; */
+"6PJ-Yn-veh.text" = "0";
+
+/* Class = "UILabel"; text = "Average"; ObjectID = "6uB-u3-ztu"; */
+"6uB-u3-ztu.text" = "Average";
+
+/* Class = "UILabel"; text = "according to the gps"; ObjectID = "8sL-9d-5dv"; */
+"8sL-9d-5dv.text" = "according to the gps";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "9dT-WY-SA3"; */
+"9dT-WY-SA3.text" = "Settings";
+
+/* Class = "UISegmentedControl"; AT3-Ge-dIm.segmentTitles[0] = "Map"; ObjectID = "AT3-Ge-dIm"; */
+"AT3-Ge-dIm.segmentTitles[0]" = "Map";
+
+/* Class = "UISegmentedControl"; AT3-Ge-dIm.segmentTitles[1] = "Satellite"; ObjectID = "AT3-Ge-dIm"; */
+"AT3-Ge-dIm.segmentTitles[1]" = "Satellite";
+
+/* Class = "UISegmentedControl"; AT3-Ge-dIm.segmentTitles[2] = "Hybrid"; ObjectID = "AT3-Ge-dIm"; */
+"AT3-Ge-dIm.segmentTitles[2]" = "Hybrid";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "AW2-5O-b7v"; */
+"AW2-5O-b7v.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "M"; ObjectID = "Cc0-9C-ipj"; */
+"Cc0-9C-ipj.text" = "M";
+
+/* Class = "UILabel"; text = "M"; ObjectID = "Dwf-zH-gd6"; */
+"Dwf-zH-gd6.text" = "M";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "GwL-48-sHr"; */
+"GwL-48-sHr.text" = "S";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "IL9-Zl-P2C"; */
+"IL9-Zl-P2C.text" = "Title";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "JWA-3y-6Nk"; */
+"JWA-3y-6Nk.text" = "0";
+
+/* Class = "UILabel"; text = "11"; ObjectID = "L0B-LQ-Xtb"; */
+"L0B-LQ-Xtb.text" = "11";
+
+/* Class = "UILabel"; text = "5 июля"; ObjectID = "PQY-f6-e26"; */
+"PQY-f6-e26.text" = "5 июля";
+
+/* Class = "UILabel"; text = "Average"; ObjectID = "QDy-Dl-j4b"; */
+"QDy-Dl-j4b.text" = "Average";
+
+/* Class = "UILabel"; text = "Pressure"; ObjectID = "QGb-IA-Y5g"; */
+"QGb-IA-Y5g.text" = "Pressure";
+
+/* Class = "UILabel"; text = "Show markers"; ObjectID = "QU5-Ta-LCn"; */
+"QU5-Ta-LCn.text" = "Show markers";
+
+/* Class = "UIButton"; normalTitle = "Share"; ObjectID = "Qhz-9W-7DV"; */
+"Qhz-9W-7DV.normalTitle" = "Share";
+
+/* Class = "UILabel"; text = "W"; ObjectID = "Trk-CG-LbO"; */
+"Trk-CG-LbO.text" = "W";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "TyW-dd-2Ji"; */
+"TyW-dd-2Ji.text" = "Title";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "Udi-iy-TlH"; */
+"Udi-iy-TlH.text" = "Location";
+
+/* Class = "UILabel"; text = "Average"; ObjectID = "VW5-aD-VaK"; */
+"VW5-aD-VaK.text" = "Average";
+
+/* Class = "UIButton"; normalTitle = "Map"; ObjectID = "W6C-4P-50s"; */
+"W6C-4P-50s.normalTitle" = "Map";
+
+/* Class = "UILabel"; text = "T"; ObjectID = "YLq-Ov-NLk"; */
+"YLq-Ov-NLk.text" = "T";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "ZhD-7C-BUN"; */
+"ZhD-7C-BUN.text" = "S";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Zoe-2N-1rJ"; */
+"Zoe-2N-1rJ.text" = "0";
+
+/* Class = "UILabel"; text = "8848"; ObjectID = "a3x-yo-dWO"; */
+"a3x-yo-dWO.text" = "8848";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "dED-gX-Vhw"; */
+"dED-gX-Vhw.text" = "S";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "dyT-N4-IQY"; */
+"dyT-N4-IQY.text" = "Title";
+
+/* Class = "UILabel"; text = "T"; ObjectID = "eii-Vq-DNQ"; */
+"eii-Vq-DNQ.text" = "T";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "gBe-lF-z2J"; */
+"gBe-lF-z2J.text" = "S";
+
+/* Class = "UILabel"; text = "F"; ObjectID = "gT7-o6-OMD"; */
+"gT7-o6-OMD.text" = "F";
+
+/* Class = "UILabel"; text = "T"; ObjectID = "grD-DT-3IX"; */
+"grD-DT-3IX.text" = "T";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "h2b-U5-clO"; */
+"h2b-U5-clO.text" = "Title";
+
+/* Class = "UILabel"; text = "Show history"; ObjectID = "hD6-4C-eVi"; */
+"hD6-4C-eVi.text" = "Show history";
+
+/* Class = "UILabel"; text = "8848"; ObjectID = "hjw-eV-1lq"; */
+"hjw-eV-1lq.text" = "8848";
+
+/* Class = "UILabel"; text = "11"; ObjectID = "i4g-Ha-FvE"; */
+"i4g-Ha-FvE.text" = "11";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ibg-zY-CK3"; */
+"ibg-zY-CK3.text" = "Label";
+
+/* Class = "UILabel"; text = "W"; ObjectID = "jMr-7l-0pJ"; */
+"jMr-7l-0pJ.text" = "W";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "m2d-Lp-DWV"; */
+"m2d-Lp-DWV.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "mLc-sK-coN"; */
+"mLc-sK-coN.text" = "0";
+
+/* Class = "UILabel"; text = "7 peaks"; ObjectID = "mZ1-tg-rh0"; */
+"mZ1-tg-rh0.text" = "7 peaks";
+
+/* Class = "UILabel"; text = "according to the barometer"; ObjectID = "nwm-Rg-VoT"; */
+"nwm-Rg-VoT.text" = "according to the barometer";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "pT0-7G-Ks9"; */
+"pT0-7G-Ks9.text" = "0";
+
+/* Class = "UILabel"; text = "M"; ObjectID = "qEr-QU-g9w"; */
+"qEr-QU-g9w.text" = "M";
+
+/* Class = "UILabel"; text = "Highest 100"; ObjectID = "qKg-lK-TjV"; */
+"qKg-lK-TjV.text" = "Highest 100";
+
+/* Class = "UILabel"; text = "T"; ObjectID = "rca-aN-aOh"; */
+"rca-aN-aOh.text" = "T";
+
+/* Class = "UILabel"; text = "8848"; ObjectID = "soC-zp-wOZ"; */
+"soC-zp-wOZ.text" = "8848";
+
+/* Class = "UILabel"; text = "Snow Leopard (Russia)"; ObjectID = "uV4-YX-HD7"; */
+"uV4-YX-HD7.text" = "Snow Leopard (Russia)";
+
+/* Class = "UILabel"; text = "Altitude"; ObjectID = "uYO-Yo-yYF"; */
+"uYO-Yo-yYF.text" = "Altitude";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vEF-rB-ZPm"; */
+"vEF-rB-ZPm.text" = "Label";
+
+/* Class = "UILabel"; text = "T"; ObjectID = "wR9-HU-zLy"; */
+"wR9-HU-zLy.text" = "T";
+
+/* Class = "UINavigationItem"; title = "NETTRASH.Geo"; ObjectID = "wmD-Tq-Fv3"; */
+"wmD-Tq-Fv3.title" = "NETTRASH.Geo";
+
+/* Class = "UILabel"; text = "F"; ObjectID = "xAT-A7-MRJ"; */
+"xAT-A7-MRJ.text" = "F";
+
+/* Class = "UILabel"; text = "11"; ObjectID = "xBD-ZA-PkT"; */
+"xBD-ZA-PkT.text" = "11";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "zah-ub-SlH"; */
+"zah-ub-SlH.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "zeS-5n-Rbw"; */
+"zeS-5n-Rbw.text" = "S";

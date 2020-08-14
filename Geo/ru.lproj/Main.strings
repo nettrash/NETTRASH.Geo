@@ -58,3 +58,9 @@
 
 /* Class = "UILabel"; text = "Show markers"; ObjectID = "uV4-YX-HD7"; */
 "uV4-YX-HD7.text" = "Снежный Барс (Россия)";
+
+/* Class = "UISegmentedControl"; ObjectID = "AT3-Ge-dIm"; */
+"AT3-Ge-dIm.segmentTitles[0]" = "Карта";
+"AT3-Ge-dIm.segmentTitles[1]" = "Спутник";
+"AT3-Ge-dIm.segmentTitles[2]" = "Гибрид";
+

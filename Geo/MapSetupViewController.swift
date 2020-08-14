@@ -17,6 +17,7 @@ class MapSetupViewController : UIViewController {
 	@IBOutlet weak var switchHighest: UISwitch!
 	@IBOutlet weak var switchSevenPeaks: UISwitch!
 	@IBOutlet weak var switchSnowLeopard: UISwitch!
+	@IBOutlet weak var segmentMapStyle: UISegmentedControl!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

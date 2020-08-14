@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qx9-dg-g4X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qx9-dg-g4X">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -746,6 +746,14 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AT3-Ge-dIm">
+                                <rect key="frame" x="16" y="318" width="343" height="32"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -762,6 +770,8 @@
                             <constraint firstItem="LYN-sw-ni7" firstAttribute="trailing" secondItem="o0w-Fg-cLX" secondAttribute="trailing" constant="25" id="Llb-Ld-cnv"/>
                             <constraint firstItem="uV4-YX-HD7" firstAttribute="leading" secondItem="LYN-sw-ni7" secondAttribute="leading" constant="25" id="NFj-dI-gNd"/>
                             <constraint firstItem="I1e-TJ-hLh" firstAttribute="trailing" secondItem="LYN-sw-ni7" secondAttribute="trailing" id="PRZ-iV-n6r"/>
+                            <constraint firstItem="AT3-Ge-dIm" firstAttribute="top" secondItem="Bh4-DZ-dzn" secondAttribute="bottom" constant="12" id="aIe-5i-735"/>
+                            <constraint firstItem="AT3-Ge-dIm" firstAttribute="leading" secondItem="LYN-sw-ni7" secondAttribute="leading" constant="16" id="aQi-Me-pby"/>
                             <constraint firstItem="51P-hH-esH" firstAttribute="top" secondItem="9dT-WY-SA3" secondAttribute="bottom" constant="60" id="bCK-jG-fCC"/>
                             <constraint firstItem="LYN-sw-ni7" firstAttribute="trailing" secondItem="Bh4-DZ-dzn" secondAttribute="trailing" constant="25" id="clI-NI-eSK"/>
                             <constraint firstItem="I1e-TJ-hLh" firstAttribute="top" secondItem="dS8-iA-hNV" secondAttribute="top" id="dB9-8d-9IR"/>
@@ -769,6 +779,7 @@
                             <constraint firstItem="hD6-4C-eVi" firstAttribute="top" secondItem="9dT-WY-SA3" secondAttribute="bottom" constant="65" id="fvh-tt-NCm"/>
                             <constraint firstItem="mZ1-tg-rh0" firstAttribute="leading" secondItem="LYN-sw-ni7" secondAttribute="leading" constant="25" id="h2B-8O-Ob9"/>
                             <constraint firstItem="QU5-Ta-LCn" firstAttribute="leading" secondItem="LYN-sw-ni7" secondAttribute="leading" constant="25" id="hvJ-hv-861"/>
+                            <constraint firstItem="LYN-sw-ni7" firstAttribute="trailing" secondItem="AT3-Ge-dIm" secondAttribute="trailing" constant="16" id="jw0-x8-STe"/>
                             <constraint firstItem="I1e-TJ-hLh" firstAttribute="leading" secondItem="LYN-sw-ni7" secondAttribute="leading" id="llD-Co-GDh"/>
                             <constraint firstItem="hD6-4C-eVi" firstAttribute="leading" secondItem="LYN-sw-ni7" secondAttribute="leading" constant="25" id="qLh-Wb-iHK"/>
                             <constraint firstItem="vWl-g2-1iu" firstAttribute="top" secondItem="deP-SN-GOb" secondAttribute="bottom" constant="10" id="rX8-gt-PMu"/>
@@ -781,6 +792,7 @@
                     <size key="freeformSize" width="375" height="812"/>
                     <connections>
                         <outlet property="handleArea" destination="I1e-TJ-hLh" id="iZI-8K-IA8"/>
+                        <outlet property="segmentMapStyle" destination="AT3-Ge-dIm" id="VEK-zp-Ico"/>
                         <outlet property="switchHighest" destination="vWl-g2-1iu" id="PWw-Wa-Zdc"/>
                         <outlet property="switchMarkers" destination="deP-SN-GOb" id="qhu-Zx-ghE"/>
                         <outlet property="switchPoints" destination="51P-hH-esH" id="KuO-eP-lK6"/>

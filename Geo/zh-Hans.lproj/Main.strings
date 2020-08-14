@@ -58,3 +58,8 @@
 
 /* Class = "UILabel"; text = "Show markers"; ObjectID = "uV4-YX-HD7"; */
 "uV4-YX-HD7.text" = "雪豹（俄罗斯)";
+
+/* Class = "UISegmentedControl"; ObjectID = "AT3-Ge-dIm"; */
+"AT3-Ge-dIm.segmentTitles[0]" = "地图";
+"AT3-Ge-dIm.segmentTitles[1]" = "卫星";
+"AT3-Ge-dIm.segmentTitles[2]" = "混合动力";

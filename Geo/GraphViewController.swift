@@ -117,7 +117,7 @@ class GraphViewController : UIViewController {
 		
 		graphViewAltitudeBar.graphPoints = graphPointsAltitudeBar.map({ (_ v: Int) -> Int in
 			return v - min
-		})
+			}).reversed()
 		graphViewAltitudeBar.setNeedsDisplay()
 		graphViewAltitudeBar.lblMaxY.text = "\(max)"
 		graphViewAltitudeBar.lblMinY.text = "\(min)"
@@ -173,7 +173,7 @@ class GraphViewController : UIViewController {
 		
 		graphViewPressure.graphPoints = graphPointsPressure.map({ (_ v: Int) -> Int in
 			return v - min
-		})
+			}).reversed()
 		graphViewPressure.setNeedsDisplay()
 		graphViewPressure.lblMaxY.text = "\(max)"
 		graphViewPressure.lblMinY.text = "\(min)"
@@ -229,7 +229,7 @@ class GraphViewController : UIViewController {
 		
 		graphViewEverest.graphPoints = graphPointsEverest.map({ (_ v: Int) -> Int in
 			return v - min
-		})
+			}).reversed()
 		graphViewEverest.setNeedsDisplay()
 		graphViewEverest.lblMaxY.text = "\(max)"
 		graphViewEverest.lblMinY.text = "\(min)"
