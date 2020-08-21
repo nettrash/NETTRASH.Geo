@@ -161,6 +161,24 @@ class MapViewController : UIViewController {
 				self.map.selectAnnotation(self.points.first!, animated: true)
 			}
 		}
+		if UserDefaults.standard.contains("mapType") {
+			switch UserDefaults.standard.integer(forKey: "mapType") {
+				case 0:
+					self.map.mapType = .standard
+					break
+				case 1:
+					self.map.mapType = .satellite
+					break
+				case 2:
+					self.map.mapType = .hybrid
+					break
+				default:
+					self.map.mapType = .standard
+					break
+			}
+		} else {
+			self.map.mapType = .standard
+		}
 	}
 
 	private func setupSettings() {
